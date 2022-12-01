@@ -38,6 +38,8 @@ namespace Project
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +64,8 @@ namespace Project
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Info;
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.comboBox3);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.comboBox2);
@@ -708,6 +712,24 @@ namespace Project
             this.label3.TabIndex = 40;
             this.label3.Text = "Please Re-Enter Your Password";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(423, 109);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 47);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "back";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(346, 181);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 47);
+            this.button2.TabIndex = 43;
+            this.button2.Text = "Sign Up";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // createuser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -735,5 +757,7 @@ namespace Project
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
