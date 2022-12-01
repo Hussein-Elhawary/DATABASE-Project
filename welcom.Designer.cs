@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class Form1
+    partial class welcom
     {
         /// <summary>
         /// Required designer variable.

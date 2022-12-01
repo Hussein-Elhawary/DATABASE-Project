@@ -10,15 +10,22 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class Form4 : Form
+    public partial class CustmerCA : Form
     {
-        public Form4()
+        public CustmerCA()
         {
             InitializeComponent();
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form3 newform3 = new Form3();
+            this.Hide();
+            newform3.Show();
 
         }
     }

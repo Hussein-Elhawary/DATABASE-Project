@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class Form1 : Form
+    public partial class welcom : Form
     {
-        public Form1()
+        public welcom()
         {
             InitializeComponent();
         }
@@ -39,7 +39,7 @@ namespace Project
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form2 newform2 = new Form2();
+            CustmerCA newform2 = new CustmerCA();
             this.Hide();
             newform2.Show();
         }
