@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class EmploueeCA : Form
+    public partial class Remove : Form
     {
-        public EmploueeCA()
+        public Remove()
         {
             InitializeComponent();
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
