@@ -70,11 +70,15 @@ namespace Project
             this.label9 = new System.Windows.Forms.Label();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -482,6 +486,7 @@ namespace Project
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -651,6 +656,31 @@ namespace Project
             this.label11.TabIndex = 200;
             this.label11.Text = "Confirm The New Password";
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Controls.Add(this.panel10);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1036, 46);
+            this.panel8.TabIndex = 23;
+            // 
+            // panel9
+            // 
+            this.panel9.Location = new System.Drawing.Point(515, 49);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(525, 613);
+            this.panel9.TabIndex = 22;
+            // 
+            // panel10
+            // 
+            this.panel10.Location = new System.Drawing.Point(3, 52);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1243, 661);
+            this.panel10.TabIndex = 20;
+            // 
             // Remove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -668,6 +698,7 @@ namespace Project
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -715,5 +746,8 @@ namespace Project
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel10;
     }
 }
