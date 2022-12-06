@@ -31,5 +31,16 @@ namespace Project
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Home h1 = new Home();
+            h1.Show();
+        }
     }
 }

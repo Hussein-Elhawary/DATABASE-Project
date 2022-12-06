@@ -16,5 +16,11 @@ namespace Project
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Home h2 = new Home();
+            h2.Show();
+        }
     }
 }
