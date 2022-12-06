@@ -26,5 +26,12 @@ namespace Project
         {
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcom w1 = new welcom();
+            w1.Show();
+            this.Hide();
+        }
     }
 }

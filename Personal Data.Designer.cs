@@ -30,9 +30,16 @@ namespace Project
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.maskedTextBox17 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox16 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox15 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox14 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox13 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox12 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox11 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox10 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
@@ -60,13 +67,7 @@ namespace Project
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox12 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox13 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox14 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox15 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox16 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox17 = new System.Windows.Forms.MaskedTextBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +75,7 @@ namespace Project
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -82,13 +84,6 @@ namespace Project
             this.panel1.Size = new System.Drawing.Size(1161, 46);
             this.panel1.TabIndex = 23;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(3, 52);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1243, 661);
-            this.panel2.TabIndex = 20;
             // 
             // button3
             // 
@@ -101,6 +96,13 @@ namespace Project
             this.button3.TabIndex = 28;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(3, 52);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1243, 661);
+            this.panel2.TabIndex = 20;
             // 
             // panel5
             // 
@@ -144,6 +146,62 @@ namespace Project
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1161, 635);
             this.panel5.TabIndex = 24;
+            // 
+            // maskedTextBox17
+            // 
+            this.maskedTextBox17.Location = new System.Drawing.Point(722, 217);
+            this.maskedTextBox17.Name = "maskedTextBox17";
+            this.maskedTextBox17.ReadOnly = true;
+            this.maskedTextBox17.Size = new System.Drawing.Size(132, 22);
+            this.maskedTextBox17.TabIndex = 218;
+            // 
+            // maskedTextBox16
+            // 
+            this.maskedTextBox16.Location = new System.Drawing.Point(722, 282);
+            this.maskedTextBox16.Name = "maskedTextBox16";
+            this.maskedTextBox16.ReadOnly = true;
+            this.maskedTextBox16.Size = new System.Drawing.Size(132, 22);
+            this.maskedTextBox16.TabIndex = 217;
+            // 
+            // maskedTextBox15
+            // 
+            this.maskedTextBox15.Location = new System.Drawing.Point(722, 327);
+            this.maskedTextBox15.Name = "maskedTextBox15";
+            this.maskedTextBox15.ReadOnly = true;
+            this.maskedTextBox15.Size = new System.Drawing.Size(132, 22);
+            this.maskedTextBox15.TabIndex = 216;
+            // 
+            // maskedTextBox14
+            // 
+            this.maskedTextBox14.Location = new System.Drawing.Point(60, 518);
+            this.maskedTextBox14.Name = "maskedTextBox14";
+            this.maskedTextBox14.ReadOnly = true;
+            this.maskedTextBox14.Size = new System.Drawing.Size(132, 22);
+            this.maskedTextBox14.TabIndex = 215;
+            // 
+            // maskedTextBox13
+            // 
+            this.maskedTextBox13.Location = new System.Drawing.Point(60, 389);
+            this.maskedTextBox13.Name = "maskedTextBox13";
+            this.maskedTextBox13.ReadOnly = true;
+            this.maskedTextBox13.Size = new System.Drawing.Size(132, 22);
+            this.maskedTextBox13.TabIndex = 214;
+            // 
+            // maskedTextBox12
+            // 
+            this.maskedTextBox12.Location = new System.Drawing.Point(60, 332);
+            this.maskedTextBox12.Name = "maskedTextBox12";
+            this.maskedTextBox12.ReadOnly = true;
+            this.maskedTextBox12.Size = new System.Drawing.Size(132, 22);
+            this.maskedTextBox12.TabIndex = 213;
+            // 
+            // maskedTextBox9
+            // 
+            this.maskedTextBox9.Location = new System.Drawing.Point(60, 227);
+            this.maskedTextBox9.Name = "maskedTextBox9";
+            this.maskedTextBox9.ReadOnly = true;
+            this.maskedTextBox9.Size = new System.Drawing.Size(132, 22);
+            this.maskedTextBox9.TabIndex = 212;
             // 
             // maskedTextBox11
             // 
@@ -378,61 +436,18 @@ namespace Project
             this.label1.TabIndex = 178;
             this.label1.Text = "First Name";
             // 
-            // maskedTextBox9
+            // linkLabel1
             // 
-            this.maskedTextBox9.Location = new System.Drawing.Point(60, 227);
-            this.maskedTextBox9.Name = "maskedTextBox9";
-            this.maskedTextBox9.ReadOnly = true;
-            this.maskedTextBox9.Size = new System.Drawing.Size(132, 22);
-            this.maskedTextBox9.TabIndex = 212;
-            // 
-            // maskedTextBox12
-            // 
-            this.maskedTextBox12.Location = new System.Drawing.Point(60, 332);
-            this.maskedTextBox12.Name = "maskedTextBox12";
-            this.maskedTextBox12.ReadOnly = true;
-            this.maskedTextBox12.Size = new System.Drawing.Size(132, 22);
-            this.maskedTextBox12.TabIndex = 213;
-            // 
-            // maskedTextBox13
-            // 
-            this.maskedTextBox13.Location = new System.Drawing.Point(60, 389);
-            this.maskedTextBox13.Name = "maskedTextBox13";
-            this.maskedTextBox13.ReadOnly = true;
-            this.maskedTextBox13.Size = new System.Drawing.Size(132, 22);
-            this.maskedTextBox13.TabIndex = 214;
-            // 
-            // maskedTextBox14
-            // 
-            this.maskedTextBox14.Location = new System.Drawing.Point(60, 518);
-            this.maskedTextBox14.Name = "maskedTextBox14";
-            this.maskedTextBox14.ReadOnly = true;
-            this.maskedTextBox14.Size = new System.Drawing.Size(132, 22);
-            this.maskedTextBox14.TabIndex = 215;
-            // 
-            // maskedTextBox15
-            // 
-            this.maskedTextBox15.Location = new System.Drawing.Point(722, 327);
-            this.maskedTextBox15.Name = "maskedTextBox15";
-            this.maskedTextBox15.ReadOnly = true;
-            this.maskedTextBox15.Size = new System.Drawing.Size(132, 22);
-            this.maskedTextBox15.TabIndex = 216;
-            // 
-            // maskedTextBox16
-            // 
-            this.maskedTextBox16.Location = new System.Drawing.Point(722, 282);
-            this.maskedTextBox16.Name = "maskedTextBox16";
-            this.maskedTextBox16.ReadOnly = true;
-            this.maskedTextBox16.Size = new System.Drawing.Size(132, 22);
-            this.maskedTextBox16.TabIndex = 217;
-            // 
-            // maskedTextBox17
-            // 
-            this.maskedTextBox17.Location = new System.Drawing.Point(722, 217);
-            this.maskedTextBox17.Name = "maskedTextBox17";
-            this.maskedTextBox17.ReadOnly = true;
-            this.maskedTextBox17.Size = new System.Drawing.Size(132, 22);
-            this.maskedTextBox17.TabIndex = 218;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(1051, 9);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(98, 29);
+            this.linkLabel1.TabIndex = 219;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Log Out";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Personal_Data
             // 
@@ -444,6 +459,7 @@ namespace Project
             this.Name = "Personal_Data";
             this.Text = "Personal_Data";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
@@ -490,5 +506,6 @@ namespace Project
         private System.Windows.Forms.MaskedTextBox maskedTextBox13;
         private System.Windows.Forms.MaskedTextBox maskedTextBox12;
         private System.Windows.Forms.MaskedTextBox maskedTextBox9;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
