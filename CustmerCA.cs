@@ -35,7 +35,13 @@ namespace Project
                 label13.Text = "Please Enter Your Last Name!";
                 return;
             }
-         
+
+            if (City_Box.Text.Length < 1)
+            {
+                label13.Text = "Please Enter Your City!";
+                return;
+            }
+
             if (maskedTextBox3.Text.Length < 1)
             {
                 label13.Text = "Please Enter Your Address!";
@@ -62,11 +68,9 @@ namespace Project
 
             label13.Text = "";
 
-            createuser a = new createuser(maskedTextBox1.Text,maskedTextBox2.Text,maskedTextBox5.Text,comboBox1.SelectedItem.ToString(),comboBox2.SelectedItem.ToString(),maskedTextBox3.Text,maskedTextBox4.Text,maskedTextBox7.Text.ToString(),dateTimePicker1.Text,comboBox4.SelectedIndex,maskedTextBox6.Text);
+            createuser a = new createuser(maskedTextBox1.Text,maskedTextBox2.Text,maskedTextBox5.Text,comboBox1.SelectedItem.ToString(),City_Box.Text.ToString(),maskedTextBox3.Text,maskedTextBox4.Text,maskedTextBox7.Text.ToString(),dateTimePicker1.Text,comboBox4.SelectedIndex,maskedTextBox6.Text);
             this.Hide();
             a.Show();
-
-            // mobile data type is a string maybe needs to be changed
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -131,7 +135,6 @@ namespace Project
         private void CustmerCA_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
             comboBox4.SelectedIndex = 0;
         }
 

@@ -32,7 +32,6 @@ namespace Project
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
@@ -60,6 +59,7 @@ namespace Project
             this.Con_Button = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.Back_Button = new System.Windows.Forms.Button();
+            this.City_Box = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,18 +97,6 @@ namespace Project
             this.dateTimePicker1.TabIndex = 37;
             this.dateTimePicker1.Value = new System.DateTime(2022, 11, 22, 0, 0, 0, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Cairo"});
-            this.comboBox2.Location = new System.Drawing.Point(4, 89);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(92, 21);
-            this.comboBox2.TabIndex = 36;
             // 
             // comboBox1
             // 
@@ -526,9 +514,9 @@ namespace Project
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.City_Box);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.maskedTextBox3);
             this.groupBox2.Controls.Add(this.label6);
@@ -605,6 +593,13 @@ namespace Project
             this.Back_Button.UseVisualStyleBackColor = true;
             this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
             // 
+            // City_Box
+            // 
+            this.City_Box.Location = new System.Drawing.Point(4, 89);
+            this.City_Box.Name = "City_Box";
+            this.City_Box.Size = new System.Drawing.Size(92, 20);
+            this.City_Box.TabIndex = 36;
+            // 
             // CustmerCA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -641,7 +636,6 @@ namespace Project
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox5;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
@@ -669,5 +663,6 @@ namespace Project
         private System.Windows.Forms.Button Con_Button;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button Back_Button;
+        private System.Windows.Forms.MaskedTextBox City_Box;
     }
 }
