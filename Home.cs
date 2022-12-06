@@ -26,7 +26,13 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //complains
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Personal_Data pd = new Personal_Data();
+            pd.Show();
         }
     }
 }

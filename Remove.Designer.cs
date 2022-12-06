@@ -30,6 +30,7 @@ namespace Project
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -73,7 +74,6 @@ namespace Project
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,6 +94,18 @@ namespace Project
             this.panel1.Size = new System.Drawing.Size(1036, 46);
             this.panel1.TabIndex = 22;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(54, 42);
+            this.button3.TabIndex = 27;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(515, 49);
@@ -110,7 +122,7 @@ namespace Project
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel4.Controls.Add(this.groupBox2);
             this.panel4.Controls.Add(this.groupBox1);
             this.panel4.Controls.Add(this.button2);
@@ -682,18 +694,6 @@ namespace Project
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1243, 661);
             this.panel7.TabIndex = 20;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(54, 42);
-            this.button3.TabIndex = 27;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Remove
             // 

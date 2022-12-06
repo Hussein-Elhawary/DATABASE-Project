@@ -35,9 +35,9 @@ namespace Project
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -92,17 +92,17 @@ namespace Project
             this.panel6.Size = new System.Drawing.Size(1243, 661);
             this.panel6.TabIndex = 20;
             // 
-            // button1
+            // button3
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImage = global::Project.Properties.Resources._3356402;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(88, 107);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 87);
-            this.button1.TabIndex = 25;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = global::Project.Properties.Resources.download__1_;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(456, 107);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(111, 87);
+            this.button3.TabIndex = 27;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -116,16 +116,17 @@ namespace Project
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // button1
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = global::Project.Properties.Resources.download__1_;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(456, 107);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 87);
-            this.button3.TabIndex = 27;
-            this.button3.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::Project.Properties.Resources._3356402;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(88, 107);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 87);
+            this.button1.TabIndex = 25;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Home
             // 

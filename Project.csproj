@@ -65,6 +65,12 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personal Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal Data.Designer.cs">
+      <DependentUpon>Personal Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Remove.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal Data.resx">
+      <DependentUpon>Personal Data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Remove.resx">
       <DependentUpon>Remove.cs</DependentUpon>
