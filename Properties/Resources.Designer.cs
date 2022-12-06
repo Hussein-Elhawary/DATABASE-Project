@@ -73,6 +73,16 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _433_4338423_home_button_image_black_home_icon_png {
+            get {
+                object obj = ResourceManager.GetObject("433-4338423_home-button-image-black-home-icon-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
@@ -86,6 +96,16 @@ namespace Project.Properties {
         internal static System.Drawing.Bitmap download__1_ {
             get {
                 object obj = ResourceManager.GetObject("download (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m {
+            get {
+                object obj = ResourceManager.GetObject("imgbin-computer-icons-home-button-sign-home-MkjkgcTaBkXHYRzyyEgLbmQ2m", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -147,5 +147,11 @@
   <ItemGroup>
     <None Include="Resources\download %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgbin-computer-icons-home-button-sign-home-MkjkgcTaBkXHYRzyyEgLbmQ2m.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\433-4338423_home-button-image-black-home-icon-png.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
