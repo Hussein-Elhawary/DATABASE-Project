@@ -16,17 +16,61 @@ namespace Project
         {
             InitializeComponent();
         }
+        private void Con_Button_Click(object sender, EventArgs e)
+        {
+            if (maskedTextBox1.Text.Length < 1)
+            {
+                label13.Text = "Please Enter Your First Name!";
+                return;
+            }
+
+            if (maskedTextBox2.Text.Length < 1)
+            {
+                label13.Text = "Please Enter Your Middle Name!";
+                return;
+            }
+
+            if (maskedTextBox5.Text.Length < 1)
+            {
+                label13.Text = "Please Enter Your Last Name!";
+                return;
+            }
+         
+            if (maskedTextBox3.Text.Length < 1)
+            {
+                label13.Text = "Please Enter Your Address!";
+                return;
+            }
+
+            if (maskedTextBox4.Text.Length < 1)
+            {
+                label13.Text = "Please Enter An E-mail!";
+                return;
+            }
+
+            if (maskedTextBox7.Text.Length < 11)
+            {
+                label13.Text = "Please Enter a valid Phone Number!";
+                return;
+            }
+
+            if (maskedTextBox1.Text.Length < 1)
+            {
+                label13.Text = "Please Enter Your Prefered Delivery Time!";
+                return;
+            }
+
+            label13.Text = "";
+
+            createuser a = new createuser(maskedTextBox1.Text,maskedTextBox2.Text,maskedTextBox5.Text,comboBox1.SelectedItem.ToString(),comboBox2.SelectedItem.ToString(),maskedTextBox3.Text,maskedTextBox4.Text,maskedTextBox7.Text.ToString(),dateTimePicker1.Text,comboBox4.SelectedIndex,maskedTextBox6.Text);
+            this.Hide();
+            a.Show();
+
+            // mobile data type is a string maybe needs to be changed
+        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form3 newform3 = new Form3();
-            this.Hide();
-            newform3.Show();
-
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -86,12 +130,21 @@ namespace Project
 
         private void CustmerCA_Load(object sender, EventArgs e)
         {
-
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            comboBox4.SelectedIndex = 0;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Back_Button_Click(object sender, EventArgs e)
+        {
+            welcom a = new welcom();
+            this.Hide();
+            a.Show();
         }
     }
 }
