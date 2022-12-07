@@ -54,9 +54,12 @@ namespace Project
                 label4.Text = "Passwords are not matching!";
                 return;
             }
-
-
             label4.Text = "";
+
+            CustomerHomePage a = new CustomerHomePage();
+            this.Hide();
+            a.Show();
+
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)

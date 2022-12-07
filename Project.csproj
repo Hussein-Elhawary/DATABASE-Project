@@ -73,6 +73,12 @@
     <Compile Include="createuser.Designer.cs">
       <DependentUpon>createuser.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerHomePage.Designer.cs">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditPD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="createuser.resx">
       <DependentUpon>createuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerHomePage.resx">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditPD.resx">
       <DependentUpon>EditPD.cs</DependentUpon>
@@ -190,6 +199,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\433-4338423_home-button-image-black-home-icon-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cog-web-fundamentals-cog-sv-11563436231kk2ureja9k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cog-web-fundamentals-cog-sv-11563436231kk2ureja9k1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\33-339225_person-icon-clip-arts-user-profile-icon-transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lol.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
