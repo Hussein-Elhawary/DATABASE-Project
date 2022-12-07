@@ -73,6 +73,12 @@
     <Compile Include="createuser.Designer.cs">
       <DependentUpon>createuser.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditPD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPD.Designer.cs">
+      <DependentUpon>EditPD.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeCA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="createuser.resx">
       <DependentUpon>createuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPD.resx">
+      <DependentUpon>EditPD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeCA.resx">
       <DependentUpon>EmployeeCA.cs</DependentUpon>
