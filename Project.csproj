@@ -103,6 +103,12 @@
     <Compile Include="Remove.Designer.cs">
       <DependentUpon>Remove.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewComplaints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewComplaints.Designer.cs">
+      <DependentUpon>ViewComplaints.cs</DependentUpon>
+    </Compile>
     <Compile Include="welcom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Remove.resx">
       <DependentUpon>Remove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComplaints.resx">
+      <DependentUpon>ViewComplaints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="welcom.resx">
       <DependentUpon>welcom.cs</DependentUpon>
