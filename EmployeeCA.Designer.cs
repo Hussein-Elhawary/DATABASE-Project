@@ -30,6 +30,7 @@ namespace Project
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -71,7 +72,6 @@ namespace Project
             this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -88,6 +88,18 @@ namespace Project
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1257, 46);
             this.panel1.TabIndex = 21;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(54, 42);
+            this.button2.TabIndex = 26;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel3
             // 
@@ -261,6 +273,7 @@ namespace Project
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Afghanistan",
@@ -472,6 +485,7 @@ namespace Project
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(23, 403);
             this.comboBox2.Name = "comboBox2";
@@ -535,6 +549,7 @@ namespace Project
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(23, 239);
             this.comboBox3.Name = "comboBox3";
@@ -597,6 +612,7 @@ namespace Project
             // 
             // comboBox6
             // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(495, 290);
             this.comboBox6.Name = "comboBox6";
@@ -605,6 +621,7 @@ namespace Project
             // 
             // comboBox5
             // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(495, 176);
             this.comboBox5.Name = "comboBox5";
@@ -613,6 +630,7 @@ namespace Project
             // 
             // comboBox4
             // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(495, 239);
             this.comboBox4.Name = "comboBox4";
@@ -622,6 +640,7 @@ namespace Project
             // maskedTextBox11
             // 
             this.maskedTextBox11.Location = new System.Drawing.Point(495, 403);
+            this.maskedTextBox11.Mask = "000-0000";
             this.maskedTextBox11.Name = "maskedTextBox11";
             this.maskedTextBox11.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox11.TabIndex = 174;
@@ -650,6 +669,7 @@ namespace Project
             // maskedTextBox7
             // 
             this.maskedTextBox7.Location = new System.Drawing.Point(495, 109);
+            this.maskedTextBox7.Mask = "000-0000";
             this.maskedTextBox7.Name = "maskedTextBox7";
             this.maskedTextBox7.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox7.TabIndex = 170;
@@ -657,21 +677,10 @@ namespace Project
             // maskedTextBox6
             // 
             this.maskedTextBox6.Location = new System.Drawing.Point(495, 348);
+            this.maskedTextBox6.Mask = "000000";
             this.maskedTextBox6.Name = "maskedTextBox6";
             this.maskedTextBox6.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox6.TabIndex = 169;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(54, 42);
-            this.button2.TabIndex = 26;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // EmployeeCA
             // 

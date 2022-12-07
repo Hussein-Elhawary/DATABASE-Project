@@ -200,6 +200,7 @@ namespace Project
             // 
             // comboBox7
             // 
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(12, 229);
             this.comboBox7.Name = "comboBox7";
@@ -218,6 +219,7 @@ namespace Project
             // maskedTextBox6
             // 
             this.maskedTextBox6.Location = new System.Drawing.Point(350, 172);
+            this.maskedTextBox6.Mask = "00000";
             this.maskedTextBox6.Name = "maskedTextBox6";
             this.maskedTextBox6.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox6.TabIndex = 196;
@@ -225,6 +227,7 @@ namespace Project
             // maskedTextBox11
             // 
             this.maskedTextBox11.Location = new System.Drawing.Point(178, 172);
+            this.maskedTextBox11.Mask = "0000-0000";
             this.maskedTextBox11.Name = "maskedTextBox11";
             this.maskedTextBox11.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox11.TabIndex = 198;
@@ -240,6 +243,7 @@ namespace Project
             // 
             // comboBox5
             // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(6, 43);
             this.comboBox5.Name = "comboBox5";
@@ -273,6 +277,7 @@ namespace Project
             // 
             // comboBox6
             // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(178, 43);
             this.comboBox6.Name = "comboBox6";
@@ -503,6 +508,7 @@ namespace Project
             // maskedTextBox7
             // 
             this.maskedTextBox7.Location = new System.Drawing.Point(12, 172);
+            this.maskedTextBox7.Mask = "0000-0000";
             this.maskedTextBox7.Name = "maskedTextBox7";
             this.maskedTextBox7.Size = new System.Drawing.Size(121, 22);
             this.maskedTextBox7.TabIndex = 191;
