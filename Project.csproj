@@ -118,6 +118,12 @@
     <Compile Include="Manager.Designer.cs">
       <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagersupdatesbyIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagersupdatesbyIT.Designer.cs">
+      <DependentUpon>ManagersupdatesbyIT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personal Data.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagersupdatesbyIT.resx">
+      <DependentUpon>ManagersupdatesbyIT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personal Data.resx">
       <DependentUpon>Personal Data.cs</DependentUpon>
