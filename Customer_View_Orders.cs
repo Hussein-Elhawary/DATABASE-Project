@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,20 +10,14 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class EditPD : Form
+    public partial class Customer_View_Orders : Form
     {
-        public EditPD()
+        public Customer_View_Orders()
         {
             InitializeComponent();
         }
 
-        private void Return_Button_Click(object sender, EventArgs e)
-        {
-            CustomerHomePage a = new CustomerHomePage();
-            this.Hide();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

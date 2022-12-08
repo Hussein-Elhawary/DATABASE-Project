@@ -79,6 +79,12 @@
     <Compile Include="CustomerHomePage.Designer.cs">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer_View_Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_View_Orders.Designer.cs">
+      <DependentUpon>Customer_View_Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditPD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerHomePage.resx">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_View_Orders.resx">
+      <DependentUpon>Customer_View_Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditPD.resx">
       <DependentUpon>EditPD.cs</DependentUpon>

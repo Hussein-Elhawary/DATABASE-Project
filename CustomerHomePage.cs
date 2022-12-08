@@ -28,13 +28,24 @@ namespace Project
         private void ViewProfile_Button_Click(object sender, EventArgs e)
         {
             EditPD a = new EditPD();
-            this.Hide();
             a.Show();
         }
 
         private void ViewProfile_Button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
+        }
+
+        private void Complaint_Button_Click(object sender, EventArgs e)
+        {
+            ComplaintForm a = new ComplaintForm();
+            a.Show();
+        }
+
+        private void OrderDetails_Button_Click(object sender, EventArgs e)
+        {
+            Customer_View_Orders a = new Customer_View_Orders();
+            a.Show();
         }
     }
 }
