@@ -11,10 +11,9 @@ namespace WindowsFormsApplication1
 {
     public class DBManager
     {
-        static string DB_Connection_String = "replace with your connection string";
+        String DB_Connection_String = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
         SqlConnection myConnection;
-        
-        
+
         public DBManager()
         {
             myConnection = new SqlConnection(DB_Connection_String);

@@ -12,6 +12,7 @@ namespace Project
 {
     public partial class Home : Form
     {
+        
         public Home()
         {
             InitializeComponent();
@@ -26,13 +27,20 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //complains
+            ViewComplaints vca = new ViewComplaints();
+            vca.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Personal_Data pd = new Personal_Data();
             pd.Show();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcom w1 = new welcom();
+            w1.Show();
         }
     }
 }
