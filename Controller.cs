@@ -32,10 +32,28 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public int checkc(string userc,string passc)       //login customers
+        public DataTable checkc(string userc,string passc)       //login customers
         {
             string query = "";
-            return dbMan.ExecuteNonQuery(query);
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable fillnamesbydepartement(string dept)
+        {
+            string query = "Select * from employee where = '" + dept + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable viewmanagersrequests ()
+        {
+            string query = "Select * From ManagerRequests;";
+            return dbMan.ExecuteReader(query);     
+        }
+
+        public DataTable viewcustomersrequests()
+        {
+            string query = "Select * From CustmoerRequests;";
+            return dbMan.ExecuteReader(query);
         }
     }
 }
