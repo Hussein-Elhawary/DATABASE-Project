@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace Project
 {
     public class Controller
     {

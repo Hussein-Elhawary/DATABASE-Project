@@ -7,7 +7,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Configuration;
 
-namespace WindowsFormsApplication1
+namespace Project
 {
     public class DBManager
     {
