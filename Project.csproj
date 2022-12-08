@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller.cs" />
     <Compile Include="createuser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +86,7 @@
     <Compile Include="Customer_View_Orders.Designer.cs">
       <DependentUpon>Customer_View_Orders.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBManager.cs" />
     <Compile Include="EditPD.cs">
       <SubType>Form</SubType>
     </Compile>
