@@ -551,6 +551,9 @@ namespace Project
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Male",
+            "Female "});
             this.comboBox3.Location = new System.Drawing.Point(23, 239);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 24);
@@ -636,6 +639,7 @@ namespace Project
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 24);
             this.comboBox4.TabIndex = 175;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // maskedTextBox11
             // 

@@ -97,6 +97,7 @@ namespace Project
             this.button1.TabIndex = 7;
             this.button1.Text = "Sign in";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -159,6 +160,7 @@ namespace Project
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(390, 22);
             this.maskedTextBox2.TabIndex = 1;
+            this.maskedTextBox2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
             // 
             // maskedTextBox1
             // 
@@ -167,6 +169,7 @@ namespace Project
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(390, 22);
             this.maskedTextBox1.TabIndex = 0;
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // panel3
             // 
