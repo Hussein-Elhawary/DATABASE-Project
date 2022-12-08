@@ -30,8 +30,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.OrderCount_Label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -39,9 +39,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 29);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(773, 375);
+            this.dataGridView1.Size = new System.Drawing.Size(773, 380);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -55,17 +55,6 @@
             this.panel1.Size = new System.Drawing.Size(773, 31);
             this.panel1.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Number of Orders:";
-            // 
             // OrderCount_Label
             // 
             this.OrderCount_Label.AutoSize = true;
@@ -77,13 +66,24 @@
             this.OrderCount_Label.TabIndex = 3;
             this.OrderCount_Label.Text = "0";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Number of Orders:";
+            // 
             // Customer_View_Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 406);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.Name = "Customer_View_Orders";
             this.Text = "Orders";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

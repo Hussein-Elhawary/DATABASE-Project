@@ -47,5 +47,21 @@ namespace Project
             Customer_View_Orders a = new Customer_View_Orders();
             a.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProductMenu_Button_Click(object sender, EventArgs e)
+        {
+            Customer_Catalogue a = new Customer_Catalogue();
+            a.Show();
+        }
     }
 }
