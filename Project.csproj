@@ -47,14 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller.cs" />
     <Compile Include="createuser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="createuser.Designer.cs">
       <DependentUpon>createuser.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBManager.cs" />
     <Compile Include="EmployeeCA.cs">
       <SubType>Form</SubType>
     </Compile>
