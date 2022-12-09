@@ -12,6 +12,7 @@ namespace Project
 {
     public partial class welcom : Form
     {
+        Controller controllerobj = new Controller();
         public welcom()
         {
             InitializeComponent();
@@ -50,6 +51,57 @@ namespace Project
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string un = maskedTextBox1.Text;
+            string pass = maskedTextBox2.Text;
+            if (un == "" || pass == "")
+            {
+                MessageBox.Show("Please Enter Your Credentials");
+            }
+            else if (un[0] == 'I' || un[0] == 'i') 
+            {
+                DataTable dt = null;
+                dt = controllerobj.checke(un, pass);
+                if (dt == null)
+                {
+                    MessageBox.Show("No Employee with this credentials");
+                }
+                else
+                {
+                    Home h1 = new Home();
+                    h1.Show();
+                    this.Hide();
+                }
+            }
+            else if (un[0] == 'E' || un[0] == 'e')
+            {
+                DataTable dt = null;
+                dt = controllerobj.checke(un, pass);
+                if (dt == null)
+                {
+                    MessageBox.Show("No Employee with this credentials");
+                }
+                else
+                {
+                   // Home h1 = new Home();
+                   // h1.Show();
+                   // this.Hide();
+                }
+            }
+            
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

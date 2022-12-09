@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class Remove
+    partial class ManagersupdatesbyIT
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,9 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
@@ -63,62 +62,46 @@ namespace Project
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel8.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel8
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkBlue;
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1036, 46);
-            this.panel1.TabIndex = 22;
+            this.panel8.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Controls.Add(this.panel10);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel8.Location = new System.Drawing.Point(0, 683);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1163, 46);
+            this.panel8.TabIndex = 26;
             // 
-            // button3
+            // panel9
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(54, 42);
-            this.button3.TabIndex = 27;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.panel9.Location = new System.Drawing.Point(515, 49);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(525, 613);
+            this.panel9.TabIndex = 22;
             // 
-            // panel3
+            // panel10
             // 
-            this.panel3.Location = new System.Drawing.Point(515, 49);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(525, 613);
-            this.panel3.TabIndex = 22;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(3, 52);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1243, 661);
-            this.panel2.TabIndex = 20;
+            this.panel10.Location = new System.Drawing.Point(3, 52);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1243, 661);
+            this.panel10.TabIndex = 20;
             // 
             // panel4
             // 
@@ -130,8 +113,8 @@ namespace Project
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 46);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1036, 621);
-            this.panel4.TabIndex = 23;
+            this.panel4.Size = new System.Drawing.Size(1163, 683);
+            this.panel4.TabIndex = 25;
             // 
             // groupBox2
             // 
@@ -206,7 +189,6 @@ namespace Project
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(121, 24);
             this.comboBox7.TabIndex = 199;
-            this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -250,7 +232,6 @@ namespace Project
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(121, 24);
             this.comboBox5.TabIndex = 179;
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -276,6 +257,7 @@ namespace Project
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox1.TabIndex = 197;
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // comboBox6
             // 
@@ -569,10 +551,10 @@ namespace Project
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.comboBox4);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.maskedTextBox9);
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Location = new System.Drawing.Point(27, 9);
@@ -580,7 +562,7 @@ namespace Project
             this.groupBox1.Size = new System.Drawing.Size(419, 143);
             this.groupBox1.TabIndex = 199;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Remove User";
+            this.groupBox1.Text = "Remove Manager";
             // 
             // comboBox4
             // 
@@ -607,16 +589,7 @@ namespace Project
             this.maskedTextBox9.Name = "maskedTextBox9";
             this.maskedTextBox9.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox9.TabIndex = 197;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(178, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 180;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.maskedTextBox9.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox9_MaskInputRejected);
             // 
             // label1
             // 
@@ -654,125 +627,115 @@ namespace Project
             this.button1.Text = "Remove/Delete";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // panel5
+            // panel1
             // 
-            this.panel5.BackColor = System.Drawing.Color.DarkBlue;
-            this.panel5.Controls.Add(this.panel8);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.panel7);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 621);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1036, 46);
-            this.panel5.TabIndex = 24;
+            this.panel1.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1163, 46);
+            this.panel1.TabIndex = 24;
             // 
-            // panel8
+            // button3
             // 
-            this.panel8.BackColor = System.Drawing.Color.DarkBlue;
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Controls.Add(this.panel10);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1036, 46);
-            this.panel8.TabIndex = 23;
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(54, 42);
+            this.button3.TabIndex = 27;
+            this.button3.UseVisualStyleBackColor = false;
             // 
-            // panel9
+            // panel3
             // 
-            this.panel9.Location = new System.Drawing.Point(515, 49);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(525, 613);
-            this.panel9.TabIndex = 22;
+            this.panel3.Location = new System.Drawing.Point(515, 49);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(525, 613);
+            this.panel3.TabIndex = 22;
             // 
-            // panel10
+            // panel2
             // 
-            this.panel10.Location = new System.Drawing.Point(3, 52);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1243, 661);
-            this.panel10.TabIndex = 20;
+            this.panel2.Location = new System.Drawing.Point(3, 52);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1243, 661);
+            this.panel2.TabIndex = 20;
             // 
-            // panel6
+            // textBox1
             // 
-            this.panel6.Location = new System.Drawing.Point(515, 49);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(525, 613);
-            this.panel6.TabIndex = 22;
+            this.textBox1.Location = new System.Drawing.Point(185, 45);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(120, 22);
+            this.textBox1.TabIndex = 201;
             // 
-            // panel7
-            // 
-            this.panel7.Location = new System.Drawing.Point(3, 52);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1243, 661);
-            this.panel7.TabIndex = 20;
-            // 
-            // Remove
+            // ManagersupdatesbyIT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 667);
-            this.Controls.Add(this.panel5);
+            this.ClientSize = new System.Drawing.Size(1163, 729);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Name = "Remove";
-            this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
+            this.Name = "ManagersupdatesbyIT";
+            this.Text = "Managersupdatesbyit";
+            this.panel8.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox7;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox11;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox9;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox7;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

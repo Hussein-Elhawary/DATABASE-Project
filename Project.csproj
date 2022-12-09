@@ -32,8 +32,29 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
@@ -47,11 +68,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller.cs" />
     <Compile Include="createuser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="createuser.Designer.cs">
       <DependentUpon>createuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerHomePage.Designer.cs">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Catalogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_Catalogue.Designer.cs">
+      <DependentUpon>Customer_Catalogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_View_Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_View_Orders.Designer.cs">
+      <DependentUpon>Customer_View_Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBManager.cs" />
+    <Compile Include="EditPD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPD.Designer.cs">
+      <DependentUpon>EditPD.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeCA.cs">
       <SubType>Form</SubType>
@@ -59,11 +106,41 @@
     <Compile Include="EmployeeCA.Designer.cs">
       <DependentUpon>EmployeeCA.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagersupdatesbyIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagersupdatesbyIT.Designer.cs">
+      <DependentUpon>ManagersupdatesbyIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personal Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal Data.Designer.cs">
+      <DependentUpon>Personal Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Remove.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Remove.Designer.cs">
       <DependentUpon>Remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComplaints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewComplaints.Designer.cs">
+      <DependentUpon>ViewComplaints.cs</DependentUpon>
     </Compile>
     <Compile Include="welcom.cs">
       <SubType>Form</SubType>
@@ -77,22 +154,49 @@
     <Compile Include="CustmerCA.Designer.cs">
       <DependentUpon>CustmerCA.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="ComplaintForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="ComplaintForm.Designer.cs">
+      <DependentUpon>ComplaintForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="createuser.resx">
       <DependentUpon>createuser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerHomePage.resx">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_Catalogue.resx">
+      <DependentUpon>Customer_Catalogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_View_Orders.resx">
+      <DependentUpon>Customer_View_Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPD.resx">
+      <DependentUpon>EditPD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeCA.resx">
       <DependentUpon>EmployeeCA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagersupdatesbyIT.resx">
+      <DependentUpon>ManagersupdatesbyIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal Data.resx">
+      <DependentUpon>Personal Data.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Remove.resx">
       <DependentUpon>Remove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewComplaints.resx">
+      <DependentUpon>ViewComplaints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="welcom.resx">
       <DependentUpon>welcom.cs</DependentUpon>
@@ -100,8 +204,8 @@
     <EmbeddedResource Include="CustmerCA.resx">
       <DependentUpon>CustmerCA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="ComplaintForm.resx">
+      <DependentUpon>ComplaintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,6 +215,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -124,6 +229,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-complaint-complaints-cdr-angle-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3356402.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgbin-computer-icons-home-button-sign-home-MkjkgcTaBkXHYRzyyEgLbmQ2m.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\433-4338423_home-button-image-black-home-icon-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cog-web-fundamentals-cog-sv-11563436231kk2ureja9k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cog-web-fundamentals-cog-sv-11563436231kk2ureja9k1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\33-339225_person-icon-clip-arts-user-profile-icon-transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lol.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,452 @@
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[CustomerRequests]    Script Date: 12/7/2022 10:30:55 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[CustomerRequests](
+	[Request ID] [varchar](50) NOT NULL,
+	[Request Type] [varchar](50) NOT NULL,
+	[Date Issued] [date] NOT NULL,
+	[Details] [varchar](max) NOT NULL,
+	[Resolved] [varchar](50) NOT NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Customers]    Script Date: 12/7/2022 10:31:50 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Customers](
+	[Customer ID] [varchar](50) NOT NULL,
+	[Password] [varchar](50) NOT NULL,
+	[Username] [varchar](50) NOT NULL,
+	[First Name] [varchar](50) NOT NULL,
+	[Middle Name] [varchar](50) NOT NULL,
+	[Last Name] [varchar](50) NOT NULL,
+	[Country Delivery Address] [varchar](50) NOT NULL,
+	[District Delivery Address] [varchar](50) NULL,
+	[City Delivery Address] [varchar](50) NOT NULL,
+	[Email] [varbinary](50) NOT NULL,
+	[Phone Number] [int] NOT NULL,
+	[Country Code] [int] NOT NULL,
+	[Birth Date] [date] NOT NULL,
+	[Gender] [varchar](50) NULL,
+	[Preferred Delivery Time] [time](7) NOT NULL,
+ CONSTRAINT [PK_Customers_1] PRIMARY KEY CLUSTERED 
+(
+	[Username] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Departement]    Script Date: 12/7/2022 10:32:04 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Departement](
+	[Departement ID] [varchar](50) NOT NULL,
+	[Description] [varchar](5000) NOT NULL,
+	[Name] [varchar](100) NOT NULL,
+ CONSTRAINT [PK_Departement] PRIMARY KEY CLUSTERED 
+(
+	[Departement ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Dependents]    Script Date: 12/7/2022 10:32:20 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Dependents](
+	[Name] [varchar](50) NOT NULL,
+	[Gender] [varchar](50) NULL,
+	[Birthdate] [date] NOT NULL,
+	[Relationship] [varchar](50) NOT NULL
+) ON [PRIMARY]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Employee]    Script Date: 12/7/2022 10:32:34 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Employee](
+	[Employee ID] [varchar](50) NOT NULL,
+	[Phone] [numeric](18, 0) NOT NULL,
+	[Email] [varchar](50) NOT NULL,
+	[Username] [nvarchar](50) NOT NULL,
+	[Password] [varchar](50) NOT NULL,
+	[City address] [varchar](50) NOT NULL,
+	[District address] [varchar](50) NULL,
+	[Country address] [varchar](50) NOT NULL,
+	[First name] [varchar](50) NOT NULL,
+	[Middle name] [varchar](50) NOT NULL,
+	[Last name] [varchar](50) NOT NULL,
+	[Gender] [varchar](50) NULL,
+	[Specialization] [varchar](50) NULL,
+	[Fixed salary] [int] NOT NULL,
+	[Bonus Salary] [int] NULL,
+	[Birth date] [date] NOT NULL,
+	[Nationality] [varchar](50) NOT NULL,
+	[Extension] [int] NOT NULL,
+ CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED 
+(
+	[Employee ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Insurance]    Script Date: 12/7/2022 10:32:44 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Insurance](
+	[Hospital/Clinic/Phamacy Name] [varchar](50) NOT NULL,
+	[Expiration Date] [date] NOT NULL,
+	[Country Address] [varchar](50) NOT NULL,
+	[City Address] [varchar](50) NOT NULL,
+	[District Address] [varchar](50) NOT NULL,
+	[Phone Number] [int] NOT NULL,
+ CONSTRAINT [PK_Insurance] PRIMARY KEY CLUSTERED 
+(
+	[Hospital/Clinic/Phamacy Name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[ManagerRequests]    Script Date: 12/7/2022 10:32:57 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ManagerRequests](
+	[Request ID] [varchar](50) NOT NULL,
+	[Request Type] [varchar](50) NOT NULL,
+	[Date Issued] [date] NOT NULL,
+	[Details] [varchar](max) NOT NULL,
+	[Resolved] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_ManagerRequests] PRIMARY KEY CLUSTERED 
+(
+	[Request ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Manages]    Script Date: 12/7/2022 10:33:07 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Manages](
+	[Employee ID] [varchar](50) NOT NULL,
+	[Departement ID] [varchar](50) NOT NULL,
+	[Start Date] [date] NOT NULL
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Manages]  WITH CHECK ADD  CONSTRAINT [FK_Manages_Departement] FOREIGN KEY([Departement ID])
+REFERENCES [dbo].[Departement] ([Departement ID])
+ON UPDATE CASCADE
+GO
+
+ALTER TABLE [dbo].[Manages] CHECK CONSTRAINT [FK_Manages_Departement]
+GO
+
+ALTER TABLE [dbo].[Manages]  WITH CHECK ADD  CONSTRAINT [FK_Manages_Employee] FOREIGN KEY([Employee ID])
+REFERENCES [dbo].[Employee] ([Employee ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[Manages] CHECK CONSTRAINT [FK_Manages_Employee]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Orders]    Script Date: 12/7/2022 10:33:40 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Orders](
+	[Order Number] [varchar](50) NOT NULL,
+	[Notes] [varchar](5000) NULL,
+	[Order Date] [date] NOT NULL,
+	[Order Status] [varchar](50) NOT NULL,
+	[Expected Delivery Date] [date] NOT NULL,
+ CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED 
+(
+	[Order Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Products]    Script Date: 12/7/2022 10:33:51 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Products](
+	[Product ID] [varchar](50) NOT NULL,
+	[Price] [int] NOT NULL,
+	[Description] [varchar](5000) NULL,
+	[Name] [varchar](100) NOT NULL,
+	[Amount in stock] [int] NULL,
+	[Production Cost] [int] NOT NULL,
+ CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED 
+(
+	[Product ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Projects]    Script Date: 12/7/2022 10:34:02 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Projects](
+	[Project ID] [varchar](50) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[Description] [varchar](5000) NOT NULL,
+	[Start Date] [date] NOT NULL,
+	[End Date] [date] NOT NULL,
+	[Deadline] [date] NOT NULL,
+	[Budget] [int] NULL,
+ CONSTRAINT [PK_Projects] PRIMARY KEY CLUSTERED 
+(
+	[Project ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Raw Materials]    Script Date: 12/7/2022 10:34:13 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Raw Materials](
+	[Material ID] [varchar](50) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[Amount in stock] [int] NOT NULL,
+	[Price] [int] NOT NULL,
+	[Type] [varchar](50) NULL,
+	[Description] [varchar](max) NULL,
+ CONSTRAINT [PK_Raw Materials] PRIMARY KEY CLUSTERED 
+(
+	[Material ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Requests]    Script Date: 12/7/2022 10:34:24 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Requests](
+	[Request ID] [varchar](50) NOT NULL,
+	[Request Type] [varchar](50) NOT NULL,
+	[Date Issued] [date] NOT NULL,
+	[Details] [varchar](max) NOT NULL,
+	[Resolved] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Requests] PRIMARY KEY CLUSTERED 
+(
+	[Request ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Suppliers]    Script Date: 12/7/2022 10:34:37 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Suppliers](
+	[Supplier ID] [varchar](50) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[Phone Number] [int] NOT NULL,
+	[Email] [varchar](50) NOT NULL,
+	[Commercial Record Number] [varchar](50) NOT NULL,
+	[District address] [varchar](50) NULL,
+	[City address] [varchar](50) NOT NULL,
+	[Country address] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Suppliers] PRIMARY KEY CLUSTERED 
+(
+	[Supplier ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Works For]    Script Date: 12/7/2022 10:34:46 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Works For](
+	[Employee ID] [varchar](50) NOT NULL,
+	[Department ID] [varchar](50) NOT NULL
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Works For]  WITH CHECK ADD  CONSTRAINT [FK_Works For_Departement] FOREIGN KEY([Department ID])
+REFERENCES [dbo].[Departement] ([Departement ID])
+ON UPDATE CASCADE
+GO
+
+ALTER TABLE [dbo].[Works For] CHECK CONSTRAINT [FK_Works For_Departement]
+GO
+
+ALTER TABLE [dbo].[Works For]  WITH CHECK ADD  CONSTRAINT [FK_Works For_Employee] FOREIGN KEY([Employee ID])
+REFERENCES [dbo].[Employee] ([Employee ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[Works For] CHECK CONSTRAINT [FK_Works For_Employee]
+GO
+
+
+
+USE [Project]
+GO
+
+/****** Object:  Table [dbo].[Works On]    Script Date: 12/7/2022 10:34:55 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Works On](
+	[Employee ID] [varchar](50) NOT NULL,
+	[Project ID] [varchar](50) NOT NULL,
+	[Hours Spent] [int] NOT NULL
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Works On]  WITH CHECK ADD  CONSTRAINT [FK_Works On_Employee] FOREIGN KEY([Employee ID])
+REFERENCES [dbo].[Employee] ([Employee ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[Works On] CHECK CONSTRAINT [FK_Works On_Employee]
+GO
+
+ALTER TABLE [dbo].[Works On]  WITH CHECK ADD  CONSTRAINT [FK_Works On_Projects] FOREIGN KEY([Project ID])
+REFERENCES [dbo].[Projects] ([Project ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[Works On] CHECK CONSTRAINT [FK_Works On_Projects]
+GO
+
+
+
