@@ -31,5 +31,10 @@ namespace Project
         {
 
         }
+
+        private void ManagersupdatesbyIT_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

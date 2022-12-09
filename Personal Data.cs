@@ -33,5 +33,10 @@ namespace Project
             w1.Show();
             this.Hide();
         }
+
+        private void Personal_Data_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
