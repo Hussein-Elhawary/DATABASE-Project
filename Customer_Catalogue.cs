@@ -16,5 +16,10 @@ namespace Project
         {
             InitializeComponent();
         }
+
+        private void Return_Label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

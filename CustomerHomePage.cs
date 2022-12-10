@@ -63,5 +63,10 @@ namespace Project
             Customer_Catalogue a = new Customer_Catalogue();
             a.Show();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

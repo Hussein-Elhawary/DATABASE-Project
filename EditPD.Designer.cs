@@ -391,7 +391,7 @@ namespace Project
             // 
             // maskedTextBox7
             // 
-            this.maskedTextBox7.Location = new System.Drawing.Point(227, 125);
+            this.maskedTextBox7.Location = new System.Drawing.Point(218, 125);
             this.maskedTextBox7.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox7.Mask = "00000000000";
             this.maskedTextBox7.Name = "maskedTextBox7";
@@ -401,7 +401,7 @@ namespace Project
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(224, 108);
+            this.label16.Location = new System.Drawing.Point(215, 108);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 13);
