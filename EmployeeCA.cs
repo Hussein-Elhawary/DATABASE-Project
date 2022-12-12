@@ -52,5 +52,12 @@ namespace Project
         {
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcom newform = new welcom();
+            newform.Show();
+            this.Hide();
+        }
     }
 }

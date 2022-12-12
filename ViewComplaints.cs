@@ -65,5 +65,12 @@ namespace Project
                 MessageBox.Show("Please Choose a type of requests to show its data");
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcom newform = new welcom();
+            newform.Show();
+            this.Hide();
+        }
     }
 }
