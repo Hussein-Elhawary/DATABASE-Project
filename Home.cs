@@ -42,5 +42,10 @@ namespace Project
             welcom w1 = new welcom();
             w1.Show();
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

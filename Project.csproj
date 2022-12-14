@@ -106,11 +106,23 @@
     <Compile Include="EditPD.Designer.cs">
       <DependentUpon>EditPD.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditPDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPDE.Designer.cs">
+      <DependentUpon>EditPDE.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeCA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EmployeeCA.Designer.cs">
       <DependentUpon>EmployeeCA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeHomepage.Designer.cs">
+      <DependentUpon>EmployeeHomepage.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -147,6 +159,18 @@
     </Compile>
     <Compile Include="ViewComplaints.Designer.cs">
       <DependentUpon>ViewComplaints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewInsurance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewInsurance.Designer.cs">
+      <DependentUpon>ViewInsurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewprojectE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewprojectE.Designer.cs">
+      <DependentUpon>ViewprojectE.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewProjects.cs">
       <SubType>Form</SubType>
@@ -192,8 +216,14 @@
     <EmbeddedResource Include="EditPD.resx">
       <DependentUpon>EditPD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditPDE.resx">
+      <DependentUpon>EditPDE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeCA.resx">
       <DependentUpon>EmployeeCA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeHomepage.resx">
+      <DependentUpon>EmployeeHomepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -212,6 +242,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComplaints.resx">
       <DependentUpon>ViewComplaints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewInsurance.resx">
+      <DependentUpon>ViewInsurance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewprojectE.resx">
+      <DependentUpon>ViewprojectE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewProjects.resx">
       <DependentUpon>ViewProjects.cs</DependentUpon>
