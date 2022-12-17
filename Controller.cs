@@ -55,5 +55,18 @@ namespace Project
             string query = "Select * From CustmoerRequests;";
             return dbMan.ExecuteReader(query);
         }
+
+        public DataTable forgotpasswordem1(string user, string phone)
+        {
+            string query = "Select * From Employee where Username = '" + user + "' and Phone Number ='" + phone + "';"; 
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int changepasswordem (string user1, string phone1,string pass1)
+        {// will depend on join
+            //this function is still in the writing proccess.DON'T USE IT
+            string query = "Select * From Employee where Username = '" + user1 + "' and Phone Number ='" + phone1 + "';"; ;
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }

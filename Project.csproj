@@ -124,6 +124,12 @@
     <Compile Include="EmployeeHomepage.Designer.cs">
       <DependentUpon>EmployeeHomepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forgotpassowrd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forgotpassowrd.Designer.cs">
+      <DependentUpon>Forgotpassowrd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeHomepage.resx">
       <DependentUpon>EmployeeHomepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forgotpassowrd.resx">
+      <DependentUpon>Forgotpassowrd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

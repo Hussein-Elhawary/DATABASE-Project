@@ -52,7 +52,9 @@ namespace Project
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Forgotpassowrd h4 = new Forgotpassowrd();
+            h4.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -61,7 +63,7 @@ namespace Project
             string pass = maskedTextBox2.Text;
             if (un == "" || pass == "")
             {
-                MessageBox.Show("Please Enter Your Credentials");
+                MessageBox.Show("Please Enter Your Credentials!");
             }
             else if (un[0] == 'I' || un[0] == 'i') 
             {
@@ -88,9 +90,9 @@ namespace Project
                 }
                 else
                 {
-                   // Home h1 = new Home();
-                   // h1.Show();
-                   // this.Hide();
+                    EmployeeHomepage h2 = new EmployeeHomepage();
+                    h2.Show();
+                    this.Hide();
                 }
             }
             
