@@ -63,9 +63,9 @@ namespace Project
         }
 
         public int changepasswordem (string user1, string phone1,string pass1)
-        {// will depend on join
-            //this function is still in the writing proccess.DON'T USE IT
-            string query = "Select * From Employee where Username = '" + user1 + "' and Phone Number ='" + phone1 + "';"; ;
+        { 
+            string query = "Update Password From Employee where Username = '" + user1 + "' and " +
+                "Phone Number ='" + phone1 + "' and Password = '" + pass1 + "';"; 
             return dbMan.ExecuteNonQuery(query);
         }
 
