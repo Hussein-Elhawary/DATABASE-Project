@@ -17,6 +17,7 @@ namespace Project
         {
             InitializeComponent();
             DataTable dt = null;
+            DataTable dt1 = null;
             dt = controllerobj.filldepartements();
             comboBox4.DataSource = dt;
             comboBox4.DisplayMember = "Name";
@@ -24,6 +25,9 @@ namespace Project
             comboBox5.DisplayMember = "Name";
             comboBox7.DataSource = dt;
             comboBox7.DisplayMember = "Name";
+            dt1 = controllerobj.fillemployeesnames();
+            comboBox1.DataSource = dt1;
+            comboBox1.DisplayMember = "First Name";
         }
 
         private void button3_Click(object sender, EventArgs e)

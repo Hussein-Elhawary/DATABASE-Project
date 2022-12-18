@@ -68,5 +68,11 @@ namespace Project
             string query = "Select * From Employee where Username = '" + user1 + "' and Phone Number ='" + phone1 + "';"; ;
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable fillemployeesnames()
+        {
+            string query = "Select * From Employee;";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }
