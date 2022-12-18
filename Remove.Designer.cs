@@ -30,6 +30,7 @@ namespace Project
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -74,7 +75,6 @@ namespace Project
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -95,6 +95,19 @@ namespace Project
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1036, 46);
             this.panel1.TabIndex = 22;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(926, 9);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(98, 29);
+            this.linkLabel1.TabIndex = 220;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Log Out";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // button3
             // 
@@ -655,6 +668,7 @@ namespace Project
             this.button1.TabIndex = 182;
             this.button1.Text = "Remove/Delete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel5
             // 
@@ -706,19 +720,6 @@ namespace Project
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1243, 661);
             this.panel7.TabIndex = 20;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(926, 9);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(98, 29);
-            this.linkLabel1.TabIndex = 220;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Log Out";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Remove
             // 
