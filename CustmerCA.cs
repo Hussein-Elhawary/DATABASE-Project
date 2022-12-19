@@ -56,6 +56,12 @@ namespace Project
                 return;
             }
 
+            if (Ccode_textbox.Text.Length < 1)
+            {
+                label13.Text = "Please Enter a valid Country Code!";
+                return;
+            }
+
             if (maskedTextBox7.Text.Length < 11)
             {
                 label13.Text = "Please Enter a valid Phone Number!";
@@ -70,7 +76,7 @@ namespace Project
 
             label13.Text = "";
 
-            createuser a = new createuser(maskedTextBox1.Text,maskedTextBox2.Text,maskedTextBox5.Text,comboBox1.SelectedItem.ToString(),City_Box.Text.ToString(),maskedTextBox3.Text,maskedTextBox4.Text,maskedTextBox7.Text.ToString(),dateTimePicker1.Text,comboBox4.SelectedIndex,maskedTextBox6.Text);
+            createuser a = new createuser(maskedTextBox1.Text,maskedTextBox2.Text,maskedTextBox5.Text,comboBox1.SelectedItem.ToString(),City_Box.Text,maskedTextBox3.Text,maskedTextBox4.Text,Ccode_textbox.Text,maskedTextBox7.Text.ToString(),dateTimePicker1.Text,comboBox4.SelectedIndex,maskedTextBox6.Text);
             this.Hide();
             a.Show();
         }

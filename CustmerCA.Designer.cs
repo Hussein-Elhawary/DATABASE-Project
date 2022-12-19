@@ -54,12 +54,14 @@ namespace Project
             this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.City_Box = new System.Windows.Forms.MaskedTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Con_Button = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.Back_Button = new System.Windows.Forms.Button();
-            this.City_Box = new System.Windows.Forms.MaskedTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Ccode_textbox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -432,18 +434,18 @@ namespace Project
             // 
             // maskedTextBox7
             // 
-            this.maskedTextBox7.Location = new System.Drawing.Point(5, 91);
+            this.maskedTextBox7.Location = new System.Drawing.Point(44, 91);
             this.maskedTextBox7.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox7.Mask = "00000000000";
             this.maskedTextBox7.Name = "maskedTextBox7";
-            this.maskedTextBox7.Size = new System.Drawing.Size(67, 20);
+            this.maskedTextBox7.Size = new System.Drawing.Size(75, 20);
             this.maskedTextBox7.TabIndex = 40;
             this.maskedTextBox7.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox7_MaskInputRejected);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 75);
+            this.label10.Location = new System.Drawing.Point(46, 75);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 13);
@@ -527,10 +529,19 @@ namespace Project
             this.groupBox2.Size = new System.Drawing.Size(226, 209);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Adress";
+            this.groupBox2.Text = "Address";
+            // 
+            // City_Box
+            // 
+            this.City_Box.Location = new System.Drawing.Point(4, 89);
+            this.City_Box.Name = "City_Box";
+            this.City_Box.Size = new System.Drawing.Size(92, 20);
+            this.City_Box.TabIndex = 36;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.Ccode_textbox);
+            this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.maskedTextBox4);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.maskedTextBox7);
@@ -593,12 +604,21 @@ namespace Project
             this.Back_Button.UseVisualStyleBackColor = true;
             this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
             // 
-            // City_Box
+            // label11
             // 
-            this.City_Box.Location = new System.Drawing.Point(4, 89);
-            this.City_Box.Name = "City_Box";
-            this.City_Box.Size = new System.Drawing.Size(92, 20);
-            this.City_Box.TabIndex = 36;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(5, 75);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(32, 13);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "Code";
+            // 
+            // Ccode_textbox
+            // 
+            this.Ccode_textbox.Location = new System.Drawing.Point(4, 91);
+            this.Ccode_textbox.Name = "Ccode_textbox";
+            this.Ccode_textbox.Size = new System.Drawing.Size(33, 20);
+            this.Ccode_textbox.TabIndex = 43;
             // 
             // CustmerCA
             // 
@@ -664,5 +684,7 @@ namespace Project
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button Back_Button;
         private System.Windows.Forms.MaskedTextBox City_Box;
+        private System.Windows.Forms.TextBox Ccode_textbox;
+        private System.Windows.Forms.Label label11;
     }
 }

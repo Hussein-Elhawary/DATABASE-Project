@@ -74,5 +74,25 @@ namespace Project
             string query = "Select * From Employee;";
             return dbMan.ExecuteReader(query);
         }
+
+        public DataTable SelectMaxCutomerID()            //Gets the max id of the last registered customer
+        {
+            string query = "Select max([Customer ID]) from Customers;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetUsernamefromCustomerUsername(string Username)            //Need it for checking an existing username
+        {
+            string query = "Select Username from Customers where Username = '" + Username + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int InsertNewCustomer(string  id,string password,string username,string FirstName, string MiddleName, string LastName, string COR, string City, string Address, string Email, string Ccode, string phone, string BDate, string Gender, string PreTime)
+        {
+            string query = "insert into Customers values ('" + id + "',':" + password + "','" + username + "','" + FirstName + "','" + MiddleName + "','" + LastName + "',' " + COR + "','"+ Address + "','" + City + "','" + Email + "','" + phone + "','" + Ccode + "','" + BDate + "','" + Gender + "','" + PreTime + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
     }
 }

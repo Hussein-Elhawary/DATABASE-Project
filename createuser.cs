@@ -12,9 +12,27 @@ namespace Project
 {
     public partial class createuser : Form
     {
-        public createuser(string FirstName,string MiddleName,string LastName,string COR,string City,string Address,string Email,string phone,string BDate,int Gender,string PreTime)
+
+        Controller ControllerDB;
+        string DBFirstName, DBMiddleName, DBLastName, DBCOR, DBCity, DBAddress, DBEmail, DBCcode, DBphone, DB_BDate, DBGender, DBPreTime;
+        public createuser(string FirstName,string MiddleName,string LastName,string COR,string City,string Address,string Email,string Ccode,string phone,string BDate,int Gender,string PreTime)
         {
             InitializeComponent();
+            DBFirstName = FirstName;
+            DBMiddleName = MiddleName;
+            DBLastName = LastName;
+            DBCOR = COR;
+            DBCity = City;
+            DBAddress = Address;
+            DBEmail = Email;
+            DBCcode = Ccode;
+            DBphone = phone;
+            DB_BDate = BDate;
+            if (Gender == 0)
+                DBGender = "M";
+            else
+                DBGender = "F";
+            DBPreTime = PreTime + ":00";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -31,6 +49,8 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
+            ControllerDB = new Controller();
+
             if (Username.Text[0] != 'C')
             {
                 label4.Text = "UserName Must start with an UpperCase C !";
@@ -54,7 +74,23 @@ namespace Project
                 label4.Text = "Passwords are not matching!";
                 return;
             }
+
+            DataTable DT = ControllerDB.GetUsernamefromCustomerUsername(Username.Text);
+
+            if (DT != null)
+            {
+                label4.Text = "Username Already Taken!";
+                return;
+            }
+
             label4.Text = "";
+
+            ControllerDB = new Controller();
+            DT = ControllerDB.SelectMaxCutomerID();
+
+            int newID = Convert.ToInt16(DT.Rows[0][0]) + 1;
+
+            ControllerDB.InsertNewCustomer(newID.ToString(),Password.Text,Username.Text,DBFirstName,DBMiddleName,DBLastName,DBCOR,DBCity,DBAddress,DBEmail,DBCcode,DBphone,DB_BDate,DBGender,DBPreTime);
 
             CustomerHomePage a = new CustomerHomePage();
             this.Hide();
