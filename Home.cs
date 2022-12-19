@@ -22,13 +22,14 @@ namespace Project
         {
             EmployeeCA eca = new EmployeeCA();
             eca.Show();
-            
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             ViewComplaints vca = new ViewComplaints();
             vca.Show();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)

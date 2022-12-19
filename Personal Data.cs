@@ -11,12 +11,25 @@ using System.Windows.Forms;
 namespace Project
 {
     public partial class Personal_Data : Form
-    {        
+    {
+        string username;
+        DataTable dt = null;
         Controller controllerobj = new Controller();
         public Personal_Data()
         {
             InitializeComponent();
-            // call all queries here
+            controllerobj = new Controller();
+            dt = controllerobj.retrievePD(username);
+            maskedTextBox7.Text = dt.Rows[0]["Phone"].ToString();
+            maskedTextBox1.Text = dt.Rows[0]["First name"].ToString();
+            maskedTextBox10.Text = username;
+            textBox1.Text = username;
+        }
+
+        public Personal_Data(string user)
+        {
+            username = user;
+            InitializeComponent();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -54,6 +67,31 @@ namespace Project
         }
 
         private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox7_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox10_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox16_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
