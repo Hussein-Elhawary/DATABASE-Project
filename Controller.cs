@@ -140,7 +140,7 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable GetCustIDfromCustUn(string UN)            //Gets Order Count for specific customer
+        public DataTable GetCustIDfromCustUn(string UN)            //Need to send the id of the customer to his form
         {
             string query = "select [Customer ID] from Customers where Username = '" + UN + "';";
             return dbMan.ExecuteReader(query);
