@@ -153,7 +153,7 @@ namespace Project
 
         private void Back_Button_Click(object sender, EventArgs e)
         {
-            welcom a = new welcom();
+            welcome a = new welcome();
             this.Hide();
             a.Show();
         }

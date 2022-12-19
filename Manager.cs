@@ -12,7 +12,7 @@ namespace Project
 {
     public partial class Manager : Form
     {
-        welcom f;
+        welcome f;
         Personal_Data t;
         AddBranch b;
         EditPD p;
@@ -20,7 +20,7 @@ namespace Project
         public Manager()
         {
             InitializeComponent();
-            f = new welcom();
+            f = new welcome();
             t = new Personal_Data();
             b = new AddBranch();
             p = new EditPD();

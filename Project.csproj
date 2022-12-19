@@ -184,11 +184,11 @@
     <Compile Include="ViewProjects.Designer.cs">
       <DependentUpon>ViewProjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="welcom.cs">
+    <Compile Include="welcome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="welcom.Designer.cs">
-      <DependentUpon>welcom.cs</DependentUpon>
+    <Compile Include="welcome.Designer.cs">
+      <DependentUpon>welcome.cs</DependentUpon>
     </Compile>
     <Compile Include="CustmerCA.cs">
       <SubType>Form</SubType>
@@ -261,8 +261,8 @@
     <EmbeddedResource Include="ViewProjects.resx">
       <DependentUpon>ViewProjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="welcom.resx">
-      <DependentUpon>welcom.cs</DependentUpon>
+    <EmbeddedResource Include="welcome.resx">
+      <DependentUpon>welcome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustmerCA.resx">
       <DependentUpon>CustmerCA.cs</DependentUpon>

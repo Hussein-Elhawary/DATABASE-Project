@@ -39,7 +39,7 @@ namespace Project
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            welcom w1 = new welcom();
+            welcome w1 = new welcome();
             w1.Show();
         }
 

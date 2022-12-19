@@ -20,7 +20,7 @@ namespace Project
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            welcom a = new welcom();
+            welcome a = new welcome();
             this.Hide();
             a.Show();
         }

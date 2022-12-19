@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class welcom : Form
+    public partial class welcome : Form
     {
         Controller controllerobj = new Controller();
-        public welcom()
+        public welcome()
         {
             InitializeComponent();
         }
