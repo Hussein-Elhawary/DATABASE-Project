@@ -24,7 +24,9 @@ namespace Project
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-
+            Home h5 = new Home();
+            h5.Show();
+            this.Hide();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -35,6 +37,21 @@ namespace Project
         }
 
         private void Personal_Data_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
         {
 
         }
