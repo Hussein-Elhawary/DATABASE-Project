@@ -65,7 +65,7 @@ namespace Project
             {
                 MessageBox.Show("Please Enter Your Credentials!");
             }
-            else if (un[0] == 'I' || un[0] == 'i') 
+            else if (un[0] == 'I' || un[0] == 'i')
             {
                 DataTable dt = null;
                 dt = controllerobj.checke(un, pass);
@@ -93,6 +93,25 @@ namespace Project
                     EmployeeHomepage h2 = new EmployeeHomepage();
                     h2.Show();
                     this.Hide();
+                }
+            }
+            else if (un[0] == 'C')
+            {
+                DataTable dt = null;
+                dt = controllerobj.GetUsernamefromCustomerUsername(un);
+                if (dt == null)
+                {
+                    MessageBox.Show("No Customer with this credentials");
+                }
+                else 
+                {
+                    controllerobj = new Controller();
+                    dt = controllerobj.GetCustIDfromCustUn(un);
+
+                    CustomerHomePage a = new CustomerHomePage(dt.Rows[0][0].ToString());
+                    a.Show();
+                    this.Hide();
+
                 }
             }
             

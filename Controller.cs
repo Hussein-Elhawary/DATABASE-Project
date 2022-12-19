@@ -14,13 +14,13 @@ namespace Project
         {
             dbMan = new DBManager();
         }
-        
+
         public void TerminateConnection()
         {
             dbMan.CloseConnection();
         }
 
-        public DataTable filldepartements ()            //to fill the combobox of departements
+        public DataTable filldepartements()            //to fill the combobox of departements
         {
             string query = "Select * from departement;";
             return dbMan.ExecuteReader(query);
@@ -28,11 +28,11 @@ namespace Project
 
         public DataTable checke(string user, string pass)   //login employees, admins and managers
         {
-            string query = "Select * From Employee where Username = '" + user + "' and Password ='" + pass +"';";
+            string query = "Select * From Employee where Username = '" + user + "' and Password ='" + pass + "';";
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable checkc(string userc,string passc)       //login customers
+        public DataTable checkc(string userc, string passc)       //login customers
         {
             string query = "";
             return dbMan.ExecuteReader(query);
@@ -44,10 +44,10 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewmanagersrequests ()
+        public DataTable viewmanagersrequests()
         {
             string query = "Select * From ManagerRequests;";
-            return dbMan.ExecuteReader(query);     
+            return dbMan.ExecuteReader(query);
         }
 
         public DataTable viewcustomersrequests()
@@ -58,14 +58,14 @@ namespace Project
 
         public DataTable forgotpasswordem1(string user, string phone)
         {
-            string query = "Select * From Employee where Username = '" + user + "' and Phone Number ='" + phone + "';"; 
+            string query = "Select * From Employee where Username = '" + user + "' and Phone Number ='" + phone + "';";
             return dbMan.ExecuteReader(query);
         }
 
-        public int changepasswordem (string user1, string phone1,string pass1)
-        { 
+        public int changepasswordem(string user1, string phone1, string pass1)
+        {
             string query = "Update Password From Employee where Username = '" + user1 + "' and " +
-                "Phone Number ='" + phone1 + "' and Password = '" + pass1 + "';"; 
+                "Phone Number ='" + phone1 + "' and Password = '" + pass1 + "';";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -110,10 +110,42 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public DataTable retrievePD (string username1)
+        public DataTable retrievePD(string username1)
         {
             string query = "Select * From Employee where Username = '" + username1 + "';";
             return dbMan.ExecuteReader(query);
         }
+
+        public DataTable GetCustomerINFO(string id)            //Gets all customer Attributes for specific customer
+        {
+            string query = "Select * from Customers where [Customer ID] = '" + id + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetOdersforSelectedCustomer(string id)            //Gets Orders for specific customer
+        {
+            string query = "Select [Order Number],Notes,[Order Date],[Order Status],[Expected Delivery Date] from Customers C,Orders O where C.[Customer ID] = O.[Customer ID] and C.[Customer ID] = '" + id + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetNumberofOrdersForSelectedCustomer(string id)            //Gets Order Count for specific customer
+        {
+            string query = "Select Count([Order Number])  from Customers C,Orders O where C.[Customer ID] = O.[Customer ID] and C.[Customer ID] = '" + id + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetCustIDfromCustUn(string UN)            //Gets Order Count for specific customer
+        {
+            string query = "select [Customer ID] from Customers where Username = '" + UN + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int UpdateCustomerInfo(string Cust_ID, string COD, string City, string Address, string Ccode, string phone, string email)                        // Updates Cutomer Information
+        {
+            string query = "UPDATE Customers SET [Country Delivery Address] = '" + COD +  "', [City Delivery Address] = '" + City + "', [District Delivery Address] = '" + Address + "' , [Country Code] = '" + Ccode + "' , [Phone Number] = '" + phone + "' , Email = '" + email + "' where [Customer ID] = '" + Cust_ID + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
     }
 }
