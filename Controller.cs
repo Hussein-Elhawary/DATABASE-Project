@@ -109,5 +109,11 @@ namespace Project
             string query = "insert into Customers values ('" + id + "',':" + password + "','" + username + "','" + FirstName + "','" + MiddleName + "','" + LastName + "',' " + COR + "','" + Address + "','" + City + "','" + Email + "','" + phone + "','" + Ccode + "','" + BDate + "','" + Gender + "','" + PreTime + "');";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable retrievePD (string username1)
+        {
+            string query = "Select * From Employee where Username = '" + username1 + "';";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

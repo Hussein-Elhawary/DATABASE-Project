@@ -11,7 +11,8 @@ using System.Windows.Forms;
 namespace Project
 {
     public partial class Personal_Data : Form
-    {
+    {        
+        Controller controllerobj = new Controller();
         public Personal_Data()
         {
             InitializeComponent();
