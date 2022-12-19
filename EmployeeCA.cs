@@ -39,7 +39,10 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string fname = maskedTextBox1.Text;
+            string mname = maskedTextBox2.Text;
+            string lname = maskedTextBox5.Text;
+            string mail = maskedTextBox4.Text;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -58,6 +61,31 @@ namespace Project
             welcome newform = new welcome();
             newform.Show();
             this.Hide();
+        }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox5_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox4_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }
