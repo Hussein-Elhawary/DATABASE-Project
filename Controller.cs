@@ -52,7 +52,7 @@ namespace Project
 
         public DataTable viewcustomersrequests()
         {
-            string query = "Select * From CustmoerRequests;";
+            string query = "Select * From CustomerRequests;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -72,6 +72,24 @@ namespace Project
         public DataTable fillemployeesnames()
         {
             string query = "Select * From Employee;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable viewhospitals()
+        {
+            string query = "Select * From Insurance Where Service Type = '+H+';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable viewlaboratories()
+        {
+            string query = "Select * From Insurance Where Service Type == L  ;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable viewpharmacies()
+        {
+            string query = "Select * From Insurance Where Service Type == P  ;";
             return dbMan.ExecuteReader(query);
         }
     }

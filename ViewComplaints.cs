@@ -39,6 +39,7 @@ namespace Project
                 dataGridView1.DataSource = dt;
                 if (dt == null)
                 {
+                    dataGridView1.Hide();
                     MessageBox.Show("No data is found");
                 }
                 else
@@ -52,6 +53,7 @@ namespace Project
                 dt = controllerobj.viewcustomersrequests();
                 if (dt==null)
                 {
+                    dataGridView1.Hide();
                     MessageBox.Show("No data is found");
                 }
                 else
