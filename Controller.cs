@@ -52,7 +52,7 @@ namespace Project
 
         public DataTable viewcustomersrequests()
         {
-            string query = "Select * From CustmoerRequests;";
+            string query = "Select * From CustomerRequests;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -75,24 +75,22 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable SelectMaxCutomerID()            //Gets the max id of the last registered customer
+        public DataTable viewhospitals()
         {
-            string query = "Select max([Customer ID]) from Customers;";
+            string query = "Select * From Insurance Where Service Type = '+H+';";
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable GetUsernamefromCustomerUsername(string Username)            //Need it for checking an existing username
+        public DataTable viewlaboratories()
         {
-            string query = "Select Username from Customers where Username = '" + Username + "';";
+            string query = "Select * From Insurance Where Service Type == L  ;";
             return dbMan.ExecuteReader(query);
         }
 
-        public int InsertNewCustomer(string  id,string password,string username,string FirstName, string MiddleName, string LastName, string COR, string City, string Address, string Email, string Ccode, string phone, string BDate, string Gender, string PreTime)
+        public DataTable viewpharmacies()
         {
-            string query = "insert into Customers values ('" + id + "',':" + password + "','" + username + "','" + FirstName + "','" + MiddleName + "','" + LastName + "',' " + COR + "','"+ Address + "','" + City + "','" + Email + "','" + phone + "','" + Ccode + "','" + BDate + "','" + Gender + "','" + PreTime + "');";
-            return dbMan.ExecuteNonQuery(query);
+            string query = "Select * From Insurance Where Service Type == P  ;";
+            return dbMan.ExecuteReader(query);
         }
-
-
     }
 }
