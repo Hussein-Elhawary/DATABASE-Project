@@ -121,5 +121,36 @@ namespace Project
         string query = "Select[First Name] From Employee where[Employee ID] = (Select[Manager ID] from Departement where[Departement ID] =  1)";        
         return dbMan.ExecuteReader(query);
         }
+
+        public DataTable GetCustomerINFO(string id)            //Gets all customer Attributes for specific customer
+        {
+            string query = "Select * from Customers where [Customer ID] = '" + id + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetOdersforSelectedCustomer(string id)            //Gets Orders for specific customer
+        {
+            string query = "Select [Order Number],Notes,[Order Date],[Order Status],[Expected Delivery Date] from Customers C,Orders O where C.[Customer ID] = O.[Customer ID] and C.[Customer ID] = '" + id + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetNumberofOrdersForSelectedCustomer(string id)            //Gets Order Count for specific customer
+        {
+            string query = "Select Count([Order Number])  from Customers C,Orders O where C.[Customer ID] = O.[Customer ID] and C.[Customer ID] = '" + id + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable GetCustIDfromCustUn(string UN)            //Gets Order Count for specific customer
+        {
+            string query = "select [Customer ID] from Customers where Username = '" + UN + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int UpdateCustomerInfo(string Cust_ID, string COD, string City, string Address, string Ccode, string phone, string email)                        // Updates Cutomer Information
+        {
+            string query = "UPDATE Customers SET [Country Delivery Address] = '" + COD + "', [City Delivery Address] = '" + City + "', [District Delivery Address] = '" + Address + "' , [Country Code] = '" + Ccode + "' , [Phone Number] = '" + phone + "' , Email = '" + email + "' where [Customer ID] = '" + Cust_ID + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
     }
 }
