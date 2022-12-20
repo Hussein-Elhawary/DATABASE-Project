@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,6 +57,14 @@ namespace Project
             {
                 return;
             }
+            
+            if (Convert.ToInt32(dataGridView1.Rows[Convert.ToInt32(Product_List.SelectedIndex)].Cells["stock"].Value) < Convert.ToInt32(maskedTextBox1.Text))
+            {
+                MessageBox.Show("Not enough amount in stock!");
+                return;
+            }
+
+            dataGridView1.Rows[Convert.ToInt32(Product_List.SelectedIndex)].Cells["stock"].Value = (Convert.ToInt32(dataGridView1.Rows[Convert.ToInt32(Product_List.SelectedIndex)].Cells["stock"].Value) - Convert.ToInt32(maskedTextBox1.Text)).ToString();
 
             controllerobj = new Controller();
 
@@ -64,12 +73,6 @@ namespace Project
             int TPrice = Convert.ToInt32(maskedTextBox1.Text) * Convert.ToInt32(DT.Rows[0][1].ToString());
 
             string[] row = new string[] { DT.Rows[0][3].ToString(), DT.Rows[0][1].ToString(),maskedTextBox1.Text,TPrice.ToString()};
-
-            if (Convert.ToInt32(maskedTextBox1.Text) > Convert.ToInt32(DT.Rows[0][4]))
-            {
-                MessageBox.Show("Not enough amount in stock!");
-                return;
-            }
 
             dataGridView2.Rows.Add(row);
             RunningTotal += TPrice;
