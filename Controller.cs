@@ -206,9 +206,22 @@ namespace Project
         }
 
         public int Addemployee (string ph, string mail, string user, string pass, string cit, string dist, string coun,string fn, string mn, string ln, string ge, string spec, string sala)
-        {
+        {// not finished
             string query = "Insert Into employee values";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable fillemployeebydept(int val)
+        {
+            string query = "Select [First name], [Employee ID] From employee where Department = '" + val.ToString() + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable retrieveemployeebyid(int idval)
+        {
+            string query = "Select [Employee ID] from employee where [Employee ID] = '" + idval.ToString() + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
     }
 }

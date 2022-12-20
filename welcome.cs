@@ -68,6 +68,7 @@ namespace Project
             else if (un[0] == 'I' || un[0] == 'i')
             {
                 DataTable dt = null;
+                controllerobj = new Controller();
                 dt = controllerobj.checke(un, pass);
                 if (dt == null)
                 {
@@ -83,6 +84,7 @@ namespace Project
             else if (un[0] == 'E' || un[0] == 'e')
             {
                 DataTable dt = null;
+                controllerobj = new Controller();
                 dt = controllerobj.checke(un, pass);
                 if (dt == null)
                 {
@@ -98,6 +100,7 @@ namespace Project
             else if (un[0] == 'C')
             {
                 DataTable dt = null;
+                controllerobj = new Controller();
                 dt = controllerobj.GetUsernamefromCustomerUsername(un);
                 if (dt == null)
                 {
