@@ -15,8 +15,8 @@ namespace Project
 
         Controller controllerobj;
         string Cust_ID;
-        DataTable Shopping_Cart;
         int RunningTotal = 0;
+        DateTime ExpectedDate = DateTime.Now.AddDays(20);
 
         public Customer_Catalogue()
         {
@@ -36,6 +36,7 @@ namespace Project
 
         private void Customer_Catalogue_Load(object sender, EventArgs e)
         {
+            label8.Hide();
             controllerobj = new Controller();
             DataTable DT1 = controllerobj.SelectAllProdcuts();
             Product_List.DataSource = DT1;
@@ -57,8 +58,11 @@ namespace Project
             }
 
             controllerobj = new Controller();
+
             DataTable DT = controllerobj.SelectProdcutFromID(Product_List.SelectedValue.ToString());
+
             int TPrice = Convert.ToInt32(maskedTextBox1.Text) * Convert.ToInt32(DT.Rows[0][1].ToString());
+
             string[] row = new string[] { DT.Rows[0][3].ToString(), DT.Rows[0][1].ToString(),maskedTextBox1.Text,TPrice.ToString()};
 
             if (Convert.ToInt32(maskedTextBox1.Text) > Convert.ToInt32(DT.Rows[0][4]))
@@ -100,19 +104,52 @@ namespace Project
 
         private void Order_Button_Click(object sender, EventArgs e)
         {
+            controllerobj = new Controller();
+
             if (dataGridView2.Rows.Count < 2)
             {
                 MessageBox.Show("Order must contain atleast one item!");
                 return;
             }
 
+            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            {
+                int StockTaken = Convert.ToInt32(dataGridView2.Rows[i].Cells["Column3"].Value);
+                controllerobj.UpdateProductAfterMakingOrder(dataGridView2.Rows[i].Cells["Column1"].Value.ToString(),StockTaken);
+            }
+
+            DataTable DT = controllerobj.SelectMaxOrderNum();
+            int next_ordernum = Convert.ToInt32(DT.Rows[0][0]) + 1;
+
+
+            controllerobj.InsertNewOrder(next_ordernum.ToString(),Note_textbox.Text,DateTime.Now.ToString("yyyy-MM-dd"),"Pending",ExpectedDate.ToString("yyyy-MM-dd"),Cust_ID);
+
             MessageBox.Show("Order Made!");
+            this.Hide();
 
         }
 
         private void dataGridView2_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                RunningTotal += 100;
+                ExpectedDate = ExpectedDate.AddDays(-17);
+                label8.Show();
+                label6.Text = RunningTotal.ToString();
+            }
+            else if (checkBox1.Checked == false)
+            {
+                RunningTotal -= 100;
+                ExpectedDate = ExpectedDate.AddDays(17);
+                label8.Hide();
+                label6.Text = RunningTotal.ToString();
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Net;
 using System.Runtime.ConstrainedExecution;
+using System.Security;
 
 namespace Project
 {
@@ -184,6 +185,24 @@ namespace Project
         {
             string query = "Select * from Products where [Product ID] = '" + id + "';";
             return dbMan.ExecuteReader(query);
+        }
+
+        public int UpdateProductAfterMakingOrder(string name,int amount)                        // Updates Prodcut when someone makes an order
+        {
+            string query = "UPDATE Products SET [Amount in stock] -= " + amount + " WHERE Name = '" + name + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable SelectMaxOrderNum()
+        {
+            string query = "select MAX(Cast([Order Number] as INT)) from Orders;";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int InsertNewOrder(string OrderNum,string Notes,string Date,string Status,string expected,string Cust_ID)
+        {
+            string query = "INSERT INTO Orders VALUES ('" + OrderNum + "','" + Notes + "','" + Date + "','" + Status + "','" + expected + "','" + Cust_ID + "');";
+            return dbMan.ExecuteNonQuery(query);
         }
 
     }
