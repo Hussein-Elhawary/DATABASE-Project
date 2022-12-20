@@ -72,7 +72,6 @@ namespace Project
             this.label7 = new System.Windows.Forms.Label();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox12 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -132,7 +131,6 @@ namespace Project
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Info;
-            this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.groupBox4);
             this.panel5.Controls.Add(this.groupBox3);
             this.panel5.Controls.Add(this.groupBox2);
@@ -203,6 +201,7 @@ namespace Project
             this.maskedTextBox2.ReadOnly = true;
             this.maskedTextBox2.Size = new System.Drawing.Size(132, 22);
             this.maskedTextBox2.TabIndex = 188;
+            this.maskedTextBox2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
             // 
             // maskedTextBox8
             // 
@@ -212,6 +211,7 @@ namespace Project
             this.maskedTextBox8.ReadOnly = true;
             this.maskedTextBox8.Size = new System.Drawing.Size(132, 22);
             this.maskedTextBox8.TabIndex = 206;
+            this.maskedTextBox8.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox8_MaskInputRejected);
             // 
             // maskedTextBox14
             // 
@@ -239,6 +239,7 @@ namespace Project
             this.maskedTextBox17.ReadOnly = true;
             this.maskedTextBox17.Size = new System.Drawing.Size(132, 22);
             this.maskedTextBox17.TabIndex = 218;
+            this.maskedTextBox17.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox17_MaskInputRejected);
             // 
             // label4
             // 
@@ -257,6 +258,7 @@ namespace Project
             this.maskedTextBox5.ReadOnly = true;
             this.maskedTextBox5.Size = new System.Drawing.Size(129, 22);
             this.maskedTextBox5.TabIndex = 194;
+            this.maskedTextBox5.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox5_MaskInputRejected);
             // 
             // label9
             // 
@@ -275,6 +277,7 @@ namespace Project
             this.maskedTextBox9.ReadOnly = true;
             this.maskedTextBox9.Size = new System.Drawing.Size(132, 22);
             this.maskedTextBox9.TabIndex = 212;
+            this.maskedTextBox9.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox9_MaskInputRejected);
             // 
             // label17
             // 
@@ -348,6 +351,7 @@ namespace Project
             this.maskedTextBox15.ReadOnly = true;
             this.maskedTextBox15.Size = new System.Drawing.Size(132, 22);
             this.maskedTextBox15.TabIndex = 216;
+            this.maskedTextBox15.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox15_MaskInputRejected);
             // 
             // label13
             // 
@@ -366,6 +370,7 @@ namespace Project
             this.maskedTextBox6.ReadOnly = true;
             this.maskedTextBox6.Size = new System.Drawing.Size(132, 22);
             this.maskedTextBox6.TabIndex = 204;
+            this.maskedTextBox6.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox6_MaskInputRejected);
             // 
             // maskedTextBox10
             // 
@@ -425,7 +430,7 @@ namespace Project
             this.maskedTextBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maskedTextBox7.Name = "maskedTextBox7";
             this.maskedTextBox7.ReadOnly = true;
-            this.maskedTextBox7.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBox7.Size = new System.Drawing.Size(132, 22);
             this.maskedTextBox7.TabIndex = 205;
             this.maskedTextBox7.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox7_MaskInputRejected);
             // 
@@ -454,8 +459,9 @@ namespace Project
             this.maskedTextBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maskedTextBox11.Name = "maskedTextBox11";
             this.maskedTextBox11.ReadOnly = true;
-            this.maskedTextBox11.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBox11.Size = new System.Drawing.Size(132, 22);
             this.maskedTextBox11.TabIndex = 208;
+            this.maskedTextBox11.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox11_MaskInputRejected);
             // 
             // groupBox1
             // 
@@ -527,14 +533,6 @@ namespace Project
             this.maskedTextBox12.Size = new System.Drawing.Size(132, 22);
             this.maskedTextBox12.TabIndex = 213;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(511, 401);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 222;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // Personal_Data
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -549,7 +547,6 @@ namespace Project
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -607,6 +604,5 @@ namespace Project
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

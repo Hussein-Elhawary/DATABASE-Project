@@ -75,8 +75,7 @@ namespace Project
                 }
                 else
                 {
-                    Home h1 = new Home();
-                    Personal_Data pd1 = new Personal_Data(un);
+                    Home h1 = new Home(un);
                     h1.Show();
                     this.Hide();
                 }
