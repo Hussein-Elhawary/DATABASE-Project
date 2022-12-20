@@ -205,5 +205,10 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int Addemployee (string ph, string mail, string user, string pass, string cit, string dist, string coun,string fn, string mn, string ln, string ge, string spec, string sala)
+        {
+            string query = "Insert Into employee values";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }
