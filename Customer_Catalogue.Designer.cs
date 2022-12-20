@@ -80,6 +80,7 @@
             this.AddToCart_Button.TabIndex = 4;
             this.AddToCart_Button.Text = "Add to Cart";
             this.AddToCart_Button.UseVisualStyleBackColor = true;
+            this.AddToCart_Button.Click += new System.EventHandler(this.AddToCart_Button_Click);
             // 
             // label1
             // 
@@ -127,6 +128,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Customer_Catalogue";
             this.Text = "Catalogue";
+            this.Load += new System.EventHandler(this.Customer_Catalogue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

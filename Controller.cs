@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Windows.Forms;
+using System.Drawing;
+using static System.Windows.Forms.AxHost;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Net;
+using System.Runtime.ConstrainedExecution;
 
 namespace Project
 {
@@ -106,7 +112,7 @@ namespace Project
 
         public int InsertNewCustomer(string id, string password, string username, string FirstName, string MiddleName, string LastName, string COR, string City, string Address, string Email, string Ccode, string phone, string BDate, string Gender, string PreTime)
         {
-            string query = "insert into Customers values ('" + id + "',':" + password + "','" + username + "','" + FirstName + "','" + MiddleName + "','" + LastName + "',' " + COR + "','" + Address + "','" + City + "','" + Email + "','" + phone + "','" + Ccode + "','" + BDate + "','" + Gender + "','" + PreTime + "');";
+            string query = "insert into Customers values ('" + id + "','" + password + "','" + username + "','" + FirstName + "','" + MiddleName + "','" + LastName + "',' " + COR + "','" + Address + "','" + City + "','" + Email + "','" + phone + "','" + Ccode + "','" + BDate + "','" + Gender + "','" + PreTime + "');";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -151,6 +157,29 @@ namespace Project
             string query = "UPDATE Customers SET [Country Delivery Address] = '" + COD + "', [City Delivery Address] = '" + City + "', [District Delivery Address] = '" + Address + "' , [Country Code] = '" + Ccode + "' , [Phone Number] = '" + phone + "' , Email = '" + email + "' where [Customer ID] = '" + Cust_ID + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable SelectAllProdcuts()
+        {
+            string query = "Select * from Products";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAllProdcutsForDatagrid()
+        {
+            string query = "Select Name,Description,Price,[Amount in stock] as 'stock' from Products";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectMaxCustRequetID()            //Gets the max id of the last Request
+        {
+            string query = "Select Max([Request ID]) from CustomerRequests;";
+            return dbMan.ExecuteReader(query);
+        }
+        public int InsertNewCustRequest(string R_ID,string type,string date,string details,string Resolved,string Emp_ID,string Cust_ID,string Order_ID)
+        {
+            string query = "insert into CustomerRequests VALUES ('" + R_ID + "','" + type + "','" + date + "','" + details + "','" + Resolved + "','" + Emp_ID + "','" + Cust_ID + "','" + Order_ID + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
 
     }
 }

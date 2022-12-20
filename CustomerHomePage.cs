@@ -14,7 +14,7 @@ namespace Project
 
     public partial class CustomerHomePage : Form
     {
-        string Cus_ID = 3.ToString();
+        string Cus_ID;
         Controller ControllerDB;
         public CustomerHomePage()
         {
@@ -47,7 +47,7 @@ namespace Project
 
         private void Complaint_Button_Click(object sender, EventArgs e)
         {
-            ComplaintForm a = new ComplaintForm();
+            ComplaintForm a = new ComplaintForm(Cus_ID);
             a.Show();
         }
 
@@ -69,7 +69,7 @@ namespace Project
 
         private void ProductMenu_Button_Click(object sender, EventArgs e)
         {
-            Customer_Catalogue a = new Customer_Catalogue();
+            Customer_Catalogue a = new Customer_Catalogue(Cus_ID);
             a.Show();
         }
 
