@@ -76,6 +76,7 @@ namespace Project
                 else
                 {
                     Home h1 = new Home();
+                    Personal_Data pd1 = new Personal_Data(un);
                     h1.Show();
                     this.Hide();
                 }
@@ -107,11 +108,9 @@ namespace Project
                 {
                     controllerobj = new Controller();
                     dt = controllerobj.GetCustIDfromCustUn(un);
-
                     CustomerHomePage a = new CustomerHomePage(dt.Rows[0][0].ToString());
                     a.Show();
                     this.Hide();
-
                 }
             }
             

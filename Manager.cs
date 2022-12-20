@@ -20,11 +20,11 @@ namespace Project
         public Manager()
         {
             InitializeComponent();
-            f = new welcome();
-            t = new Personal_Data();
-            b = new AddBranch();
-            p = new EditPD();
-            v = new ViewProjects();
+            //f = new welcome();
+            //t = new Personal_Data();
+            //b = new AddBranch();
+            //p = new EditPD();
+            //v = new ViewProjects();
         }
         private void label1_Click(object sender, EventArgs e)
         {
