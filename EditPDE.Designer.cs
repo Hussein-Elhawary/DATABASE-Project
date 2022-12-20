@@ -46,9 +46,10 @@ namespace Project
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Info;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 46);
+            this.panel4.Location = new System.Drawing.Point(0, 37);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1149, 560);
+            this.panel4.Size = new System.Drawing.Size(862, 456);
             this.panel4.TabIndex = 29;
             // 
             // panel8
@@ -57,37 +58,42 @@ namespace Project
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.panel10);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 606);
+            this.panel8.Location = new System.Drawing.Point(0, 493);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1149, 46);
+            this.panel8.Size = new System.Drawing.Size(862, 37);
             this.panel8.TabIndex = 28;
             // 
             // panel9
             // 
-            this.panel9.Location = new System.Drawing.Point(515, 49);
+            this.panel9.Location = new System.Drawing.Point(386, 40);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(525, 613);
+            this.panel9.Size = new System.Drawing.Size(394, 498);
             this.panel9.TabIndex = 22;
             // 
             // panel10
             // 
-            this.panel10.Location = new System.Drawing.Point(3, 52);
+            this.panel10.Location = new System.Drawing.Point(2, 42);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1243, 661);
+            this.panel10.Size = new System.Drawing.Size(932, 537);
             this.panel10.TabIndex = 20;
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(3, 52);
+            this.panel2.Location = new System.Drawing.Point(2, 42);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1243, 661);
+            this.panel2.Size = new System.Drawing.Size(932, 537);
             this.panel2.TabIndex = 20;
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(515, 49);
+            this.panel3.Location = new System.Drawing.Point(386, 40);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(525, 613);
+            this.panel3.Size = new System.Drawing.Size(394, 498);
             this.panel3.TabIndex = 22;
             // 
             // button3
@@ -95,9 +101,10 @@ namespace Project
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(3, 4);
+            this.button3.Location = new System.Drawing.Point(2, 3);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(54, 42);
+            this.button3.Size = new System.Drawing.Size(40, 34);
             this.button3.TabIndex = 27;
             this.button3.UseVisualStyleBackColor = false;
             // 
@@ -106,9 +113,10 @@ namespace Project
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(1151, 9);
+            this.linkLabel1.Location = new System.Drawing.Point(863, 7);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(98, 29);
+            this.linkLabel1.Size = new System.Drawing.Size(77, 24);
             this.linkLabel1.TabIndex = 220;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Log Out";
@@ -122,20 +130,23 @@ namespace Project
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1149, 46);
+            this.panel1.Size = new System.Drawing.Size(862, 37);
             this.panel1.TabIndex = 27;
             // 
             // EditPDE
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1149, 652);
+            this.ClientSize = new System.Drawing.Size(862, 530);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditPDE";
             this.Text = "EditPDE";
+            this.Load += new System.EventHandler(this.EditPDE_Load);
             this.panel8.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

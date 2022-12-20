@@ -74,5 +74,10 @@ namespace Project
             newform.Show();
             this.Hide();
         }
+
+        private void ViewComplaints_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
