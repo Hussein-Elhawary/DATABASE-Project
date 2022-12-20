@@ -67,5 +67,10 @@ namespace Project
         {
 
         }
+
+        private void Remove_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

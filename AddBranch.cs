@@ -12,6 +12,7 @@ namespace Project
 {
     public partial class AddBranch : Form
     {
+        Manager m;
         public AddBranch()
         {
             InitializeComponent();
@@ -36,6 +37,12 @@ namespace Project
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) //numbers only
                 e.Handled = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
         }
     }
 }

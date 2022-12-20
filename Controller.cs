@@ -38,7 +38,32 @@ namespace Project
             string query = "Select * From Employee where Username = '" + user + "' and Password ='" + pass + "';";
             return dbMan.ExecuteReader(query);
         }
-
+        public DataTable SelectManagerName(string user)
+        {
+            string query = "Select [First name] From Employee where Username = '" + user + "';";
+            return dbMan.ExecuteReader(query);
+        }
+        
+        public DataTable SelectDepartment(string user)
+        {
+            string query = "Select Department From Employee where Username = '" + user + "';";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectEmployeeFirstNameFromDepartmentid(int id)
+        {
+            string query = "Select DISTINCT [First name] From Employee where Department = " + id + ";";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectEmployeeMiddleNameFromDepartmentid(int id)
+        {
+            string query = "Select DISTINCT [Middle name] From Employee where Department = " + id + ";";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectEmployeeLastNameFromDepartmentid(int id)
+        {
+            string query = "Select DISTINCT [Last name] From Employee where Department = " + id + ";";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable checkc(string userc, string passc)       //login customers
         {
             string query = "";
@@ -205,5 +230,10 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public DataTable Getmanagername(string deptid)
+        {
+            string query = "Select[First Name] From Employee where[Employee ID] = (Select[Manager ID] from Departement where[Departement ID] =  1)";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }
