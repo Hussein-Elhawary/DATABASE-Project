@@ -67,6 +67,11 @@ namespace Project
                 return;
             }
 
+            if (comboBox1.SelectedIndex == 1)
+            {
+                comboBox3.Text = 0.ToString();      //If the request is an account issue the order number will be 0
+            }
+
             controllerobj = new Controller();
             DataTable DT = controllerobj.SelectMaxCustRequetID();
             string next_ID = (Convert.ToInt16(DT.Rows[0][0]) + 1).ToString();

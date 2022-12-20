@@ -180,6 +180,11 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public DataTable SelectProdcutFromID(string id)
+        {
+            string query = "Select * from Products where [Product ID] = '" + id + "';";
+            return dbMan.ExecuteReader(query);
+        }
 
     }
 }
