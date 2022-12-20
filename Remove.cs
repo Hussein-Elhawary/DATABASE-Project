@@ -18,13 +18,24 @@ namespace Project
             InitializeComponent();
             DataTable dt = null;
             DataTable dt1 = null;
+            DataTable dt2 = null;
+            
             dt = controllerobj.filldepartements();
+            dt1 = controllerobj.filldepartements();
+            dt2 = controllerobj.filldepartements();
+            
             comboBox4.DataSource = dt;
             comboBox4.DisplayMember = "Name";
-            comboBox5.DataSource = dt;
+            comboBox4.ValueMember = "Departement ID";
+            
+            comboBox5.DataSource = dt1;
             comboBox5.DisplayMember = "Name";
-            comboBox7.DataSource = dt;
+            comboBox5.ValueMember = "Departement ID";
+            
+            comboBox7.DataSource = dt2;
             comboBox7.DisplayMember = "Name";
+            comboBox7.ValueMember = "Departement ID";
+            
             dt1 = controllerobj.fillemployeesnames();
             comboBox1.DataSource = dt1;
             comboBox1.DisplayMember = "First Name";

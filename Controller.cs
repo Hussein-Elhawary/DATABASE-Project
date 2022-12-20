@@ -230,10 +230,10 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public DataTable Getmanagername(string deptid)
+        public int Addemployee (string ph, string mail, string user, string pass, string cit, string dist, string coun,string fn, string mn, string ln, string ge, string spec, string sala)
         {
-            string query = "Select[First Name] From Employee where[Employee ID] = (Select[Manager ID] from Departement where[Departement ID] =  1)";
-            return dbMan.ExecuteReader(query);
+            string query = "Insert Into employee values";
+            return dbMan.ExecuteNonQuery(query);
         }
     }
 }

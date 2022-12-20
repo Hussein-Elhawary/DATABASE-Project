@@ -18,18 +18,25 @@ namespace Project
         public Personal_Data()
         {
             InitializeComponent();
-            controllerobj = new Controller();
-            dt = controllerobj.retrievePD(username);
-            maskedTextBox7.Text = dt.Rows[0]["Phone"].ToString();
-            maskedTextBox1.Text = dt.Rows[0]["First name"].ToString();
-            maskedTextBox10.Text = username;
-            textBox1.Text = username;
         }
 
         public Personal_Data(string user)
         {
-            username = user;
             InitializeComponent();
+            username = user;
+            controllerobj = new Controller();
+            dt = controllerobj.retrievePD(user);
+            maskedTextBox1.Text = dt.Rows[0]["First name"].ToString();
+            maskedTextBox2.Text = dt.Rows[0]["Middle Name"].ToString();
+            maskedTextBox5.Text = dt.Rows[0]["Last Name"].ToString();
+            maskedTextBox6.Text = dt.Rows[0]["Fixed salary"].ToString();
+            maskedTextBox7.Text = dt.Rows[0]["Phone"].ToString();
+            maskedTextBox8.Text = dt.Rows[0]["Employee ID"].ToString();
+            maskedTextBox10.Text = username;
+            maskedTextBox11.Text = dt.Rows[0]["Extension"].ToString();
+            maskedTextBox15.Text = dt.Rows[0]["Specialization"].ToString();
+            maskedTextBox17.Text = dt.Rows[0]["Nationality"].ToString();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -91,7 +98,42 @@ namespace Project
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox5_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox9_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox17_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox8_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox11_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox15_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox6_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

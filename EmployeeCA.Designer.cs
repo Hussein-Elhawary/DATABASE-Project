@@ -577,6 +577,7 @@ namespace Project
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 24);
             this.comboBox3.TabIndex = 168;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label19
             // 
@@ -650,6 +651,7 @@ namespace Project
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(121, 24);
             this.comboBox5.TabIndex = 176;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // comboBox4
             // 
@@ -689,14 +691,16 @@ namespace Project
             this.maskedTextBox8.Name = "maskedTextBox8";
             this.maskedTextBox8.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox8.TabIndex = 171;
+            this.maskedTextBox8.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox8_MaskInputRejected);
             // 
             // maskedTextBox7
             // 
             this.maskedTextBox7.Location = new System.Drawing.Point(495, 109);
-            this.maskedTextBox7.Mask = "000-0000";
+            this.maskedTextBox7.Mask = "000-00000000";
             this.maskedTextBox7.Name = "maskedTextBox7";
             this.maskedTextBox7.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox7.TabIndex = 170;
+            this.maskedTextBox7.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox7_MaskInputRejected);
             // 
             // maskedTextBox6
             // 

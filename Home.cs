@@ -12,10 +12,15 @@ namespace Project
 {
     public partial class Home : Form
     {
-        
+        string username;
         public Home()
         {
             InitializeComponent();
+        }
+        public Home(string user)
+        {
+            InitializeComponent();
+            username = user;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,8 +39,9 @@ namespace Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Personal_Data pd = new Personal_Data();
+            Personal_Data pd = new Personal_Data(username);
             pd.Show();
+            this.Hide();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
