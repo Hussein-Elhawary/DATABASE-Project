@@ -43,7 +43,7 @@ namespace Project
             string query = "Select [First name] From Employee where Username = '" + user + "';";
             return dbMan.ExecuteReader(query);
         }
-        
+
         public DataTable SelectDepartment(string user)
         {
             string query = "Select Department From Employee where Username = '" + user + "';";
@@ -78,7 +78,7 @@ namespace Project
 
         public DataTable viewmanagersrequests(int pp)
         {
-            string query = "Select * From ManagerRequests where [Date Issued] = '" +pp+ "'";
+            string query = "Select * From ManagerRequests where [Date Issued] = '" + pp + "'";
             return dbMan.ExecuteReader(query);
         }
 
@@ -148,10 +148,10 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable retrievemanager (int deptid)
+        public DataTable retrievemanager(int deptid)
         {
-        string query = "Select * From Employee where[Employee ID] = (Select[Manager ID] from Departement where[Departement ID] = '" + deptid.ToString() + "' )";        
-        return dbMan.ExecuteReader(query);
+            string query = "Select * From Employee where[Employee ID] = (Select[Manager ID] from Departement where[Departement ID] = '" + deptid.ToString() + "' )";
+            return dbMan.ExecuteReader(query);
         }
 
         public DataTable GetCustomerINFO(string id)            //Gets all customer Attributes for specific customer
@@ -200,7 +200,7 @@ namespace Project
             string query = "Select Max([Request ID]) from CustomerRequests;";
             return dbMan.ExecuteReader(query);
         }
-        public int InsertNewCustRequest(string R_ID,string type,string date,string details,string Resolved,string Emp_ID,string Cust_ID,string Order_ID)
+        public int InsertNewCustRequest(string R_ID, string type, string date, string details, string Resolved, string Emp_ID, string Cust_ID, string Order_ID)
         {
             string query = "insert into CustomerRequests VALUES ('" + R_ID + "','" + type + "','" + date + "','" + details + "','" + Resolved + "','" + Emp_ID + "','" + Cust_ID + "','" + Order_ID + "');";
             return dbMan.ExecuteNonQuery(query);
@@ -212,7 +212,7 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public int UpdateProductAfterMakingOrder(string name,int amount)                        // Updates Prodcut when someone makes an order
+        public int UpdateProductAfterMakingOrder(string name, int amount)                        // Updates Prodcut when someone makes an order
         {
             string query = "UPDATE Products SET [Amount in stock] -= " + amount + " WHERE Name = '" + name + "';";
             return dbMan.ExecuteNonQuery(query);
@@ -224,13 +224,13 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public int InsertNewOrder(string OrderNum,string Notes,string Date,string Status,string expected,string Cust_ID)
+        public int InsertNewOrder(string OrderNum, string Notes, string Date, string Status, string expected, string Cust_ID)
         {
             string query = "INSERT INTO Orders VALUES ('" + OrderNum + "','" + Notes + "','" + Date + "','" + Status + "','" + expected + "','" + Cust_ID + "');";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int Addemployee (string ph, string mail, string user, string pass, string cit, string dist, string coun,string fn, string mn, string ln, string ge, string spec, string sala)
+        public int Addemployee(string ph, string mail, string user, string pass, string cit, string dist, string coun, string fn, string mn, string ln, string ge, string spec, string sala)
         {// not finished
             string query = "Insert Into employee values";
             return dbMan.ExecuteNonQuery(query);
@@ -253,5 +253,12 @@ namespace Project
             string query = "Delete From employee where [Employee ID] = '" + id + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable SelectCPassFromCUsername(string UN)
+        {
+            string query = "Select Password from Customers where Username = '" + UN + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
     }
 }
