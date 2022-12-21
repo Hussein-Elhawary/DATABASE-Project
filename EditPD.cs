@@ -13,9 +13,19 @@ namespace Project
 {
     public partial class EditPD : Form
     {
+
+        Controller ControllerDB;
+        string Cust_ID;
+
         public EditPD()
         {
             InitializeComponent();
+        }
+
+        public EditPD(string id)
+        {
+            InitializeComponent();
+            Cust_ID = id;
         }
 
         private void Return_Button_Click(object sender, EventArgs e)
@@ -31,7 +41,19 @@ namespace Project
 
         private void EditPD_Load(object sender, EventArgs e)
         {
+
+            ControllerDB = new Controller();
+            DataTable DT = ControllerDB.GetCustomerINFO(Cust_ID);
+            COD_textbox.Text = DT.Rows[0][6].ToString();
+            maskedTextBox13.Text = DT.Rows[0][8].ToString();
+            maskedTextBox3.Text = DT.Rows[0][7].ToString();
+            maskedTextBox7.Text = DT.Rows[0][10].ToString();
+            Ccode_textbox.Text = DT.Rows[0][11].ToString();
+            maskedTextBox4.Text = DT.Rows[0][9].ToString();
+
+            COD_textbox.ReadOnly = true;
             comboBox1.Enabled = false;
+            Ccode_textbox.ReadOnly = true;
             maskedTextBox13.ReadOnly = true;
             maskedTextBox3.ReadOnly = true;
             maskedTextBox7.ReadOnly = true;
@@ -42,16 +64,21 @@ namespace Project
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            COD_textbox.Hide();
             comboBox1.Enabled = true;
             maskedTextBox13.ReadOnly = false;
             maskedTextBox3.ReadOnly = false;
             Confirm_Edits_Button.Enabled = true;
             maskedTextBox7.ReadOnly = false;
             maskedTextBox4.ReadOnly = false;
+            Ccode_textbox.ReadOnly = false;
         }
 
         private void Confirm_Edits_Button_Click(object sender, EventArgs e)
         {
+
+            ControllerDB = new Controller();
+
             if (maskedTextBox13.Text.Length < 1 || maskedTextBox3.Text.Length < 1 || maskedTextBox4.Text.Length < 1 || maskedTextBox7.Text.Length < 11)
             {
                 MessageBox.Show("Incomplete Information!");
@@ -59,9 +86,11 @@ namespace Project
             }
             else
             {
-                MessageBox.Show("Location Updated");
+                ControllerDB.UpdateCustomerInfo(Cust_ID,comboBox1.Text,maskedTextBox13.Text,maskedTextBox3.Text,Ccode_textbox.Text,maskedTextBox7.Text,maskedTextBox4.Text);
+                MessageBox.Show("Info Updated");
                 this.Hide();
             }
+
             
         }
 

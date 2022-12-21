@@ -86,6 +86,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Customer_View_Orders";
             this.Text = "Orders";
+            this.Load += new System.EventHandler(this.Customer_View_Orders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

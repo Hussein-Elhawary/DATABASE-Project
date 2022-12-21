@@ -33,16 +33,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UserLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Buy_button = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.OrderDetails_Button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Complaint_Button = new System.Windows.Forms.Button();
             this.ProductMenu_Button = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -110,9 +106,6 @@
             this.panel1.Controls.Add(this.ViewProfile_Button);
             this.panel1.Controls.Add(this.UserLabel);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.Buy_button);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.OrderDetails_Button);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.Complaint_Button);
@@ -124,37 +117,9 @@
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // Buy_button
-            // 
-            this.Buy_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Buy_button.Location = new System.Drawing.Point(489, 76);
-            this.Buy_button.Name = "Buy_button";
-            this.Buy_button.Size = new System.Drawing.Size(75, 23);
-            this.Buy_button.TabIndex = 8;
-            this.Buy_button.Text = "Buy";
-            this.Buy_button.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(254, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 21);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Shopping Cart";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(258, 107);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(306, 299);
-            this.dataGridView1.TabIndex = 5;
-            // 
             // OrderDetails_Button
             // 
-            this.OrderDetails_Button.Location = new System.Drawing.Point(48, 320);
+            this.OrderDetails_Button.Location = new System.Drawing.Point(211, 297);
             this.OrderDetails_Button.Name = "OrderDetails_Button";
             this.OrderDetails_Button.Size = new System.Drawing.Size(126, 23);
             this.OrderDetails_Button.TabIndex = 4;
@@ -173,7 +138,7 @@
             // 
             // Complaint_Button
             // 
-            this.Complaint_Button.Location = new System.Drawing.Point(48, 155);
+            this.Complaint_Button.Location = new System.Drawing.Point(211, 132);
             this.Complaint_Button.Name = "Complaint_Button";
             this.Complaint_Button.Size = new System.Drawing.Size(126, 23);
             this.Complaint_Button.TabIndex = 3;
@@ -183,7 +148,7 @@
             // 
             // ProductMenu_Button
             // 
-            this.ProductMenu_Button.Location = new System.Drawing.Point(48, 237);
+            this.ProductMenu_Button.Location = new System.Drawing.Point(211, 214);
             this.ProductMenu_Button.Name = "ProductMenu_Button";
             this.ProductMenu_Button.Size = new System.Drawing.Size(126, 23);
             this.ProductMenu_Button.TabIndex = 2;
@@ -209,9 +174,9 @@
             this.Controls.Add(this.panel1);
             this.Name = "CustomerHomePage";
             this.Text = "CustomerHomePage";
+            this.Load += new System.EventHandler(this.CustomerHomePage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -231,8 +196,5 @@
         private System.Windows.Forms.Button OrderDetails_Button;
         private System.Windows.Forms.Button Complaint_Button;
         private System.Windows.Forms.Button ProductMenu_Button;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Buy_button;
     }
 }

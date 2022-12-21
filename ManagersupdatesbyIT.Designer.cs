@@ -184,6 +184,7 @@ namespace Project
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(214, 22);
             this.textBox1.TabIndex = 201;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -222,6 +223,7 @@ namespace Project
             this.comboBox4.Size = new System.Drawing.Size(244, 24);
             this.comboBox4.TabIndex = 179;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.comboBox4.SelectionChangeCommitted += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -241,6 +243,7 @@ namespace Project
             this.button1.TabIndex = 182;
             this.button1.Text = "Remove/Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 

@@ -11,11 +11,20 @@ using System.Windows.Forms;
 
 namespace Project
 {
+
     public partial class CustomerHomePage : Form
     {
+        string Cus_ID;
+        Controller ControllerDB;
         public CustomerHomePage()
         {
             InitializeComponent();
+        }
+
+        public CustomerHomePage(string id)
+        {
+            InitializeComponent();
+            Cus_ID = id;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -27,7 +36,7 @@ namespace Project
 
         private void ViewProfile_Button_Click(object sender, EventArgs e)
         {
-            EditPD a = new EditPD();
+            EditPD a = new EditPD(Cus_ID);
             a.Show();
         }
 
@@ -38,13 +47,13 @@ namespace Project
 
         private void Complaint_Button_Click(object sender, EventArgs e)
         {
-            ComplaintForm a = new ComplaintForm();
+            ComplaintForm a = new ComplaintForm(Cus_ID);
             a.Show();
         }
 
         private void OrderDetails_Button_Click(object sender, EventArgs e)
         {
-            Customer_View_Orders a = new Customer_View_Orders();
+            Customer_View_Orders a = new Customer_View_Orders(Cus_ID);
             a.Show();
         }
 
@@ -60,13 +69,20 @@ namespace Project
 
         private void ProductMenu_Button_Click(object sender, EventArgs e)
         {
-            Customer_Catalogue a = new Customer_Catalogue();
+            Customer_Catalogue a = new Customer_Catalogue(Cus_ID);
             a.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void CustomerHomePage_Load(object sender, EventArgs e)
+        {
+            ControllerDB = new Controller();
+            DataTable DT = ControllerDB.GetCustomerINFO(Cus_ID);
+            UserLabel.Text = DT.Rows[0][3].ToString();
         }
     }
 }

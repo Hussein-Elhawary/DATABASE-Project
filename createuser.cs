@@ -92,7 +92,7 @@ namespace Project
 
             ControllerDB.InsertNewCustomer(newID.ToString(),Password.Text,Username.Text,DBFirstName,DBMiddleName,DBLastName,DBCOR,DBCity,DBAddress,DBEmail,DBCcode,DBphone,DB_BDate,DBGender,DBPreTime);
 
-            CustomerHomePage a = new CustomerHomePage();
+            welcome a = new welcome();
             this.Hide();
             a.Show();
 

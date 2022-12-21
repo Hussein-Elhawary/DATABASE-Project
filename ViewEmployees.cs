@@ -10,16 +10,20 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class EditPDE : Form
+    public partial class ViewEmployees : Form
     {
-        public EditPDE()
+        Manager m;
+        public ViewEmployees()
         {
+            
             InitializeComponent();
+            m = new Manager();
         }
 
-        private void EditPDE_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            m.Show();
+            this.Close();
         }
     }
 }

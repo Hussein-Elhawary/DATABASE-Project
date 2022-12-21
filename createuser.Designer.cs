@@ -32,6 +32,8 @@ namespace Project
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.PasswordAgain = new System.Windows.Forms.TextBox();
@@ -42,8 +44,6 @@ namespace Project
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@ namespace Project
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 37);
+            this.panel1.Size = new System.Drawing.Size(526, 37);
             this.panel1.TabIndex = 20;
             // 
             // panel2
@@ -87,6 +87,25 @@ namespace Project
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(600, 332);
             this.panel3.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(170, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(198, 13);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "Password Must be  8 - 20 Charcters long";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(170, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(331, 13);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "UserName must start with an UpperCase C and be  5 - 15 Characters";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // checkBox2
             // 
@@ -183,30 +202,11 @@ namespace Project
             this.label2.Text = "UserName";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(170, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(331, 13);
-            this.label5.TabIndex = 49;
-            this.label5.Text = "UserName must start with an UpperCase C and be  5 - 15 Characters";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(170, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(198, 13);
-            this.label6.TabIndex = 50;
-            this.label6.Text = "Password Must be  8 - 20 Charcters long";
-            // 
             // createuser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(526, 358);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
