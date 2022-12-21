@@ -74,6 +74,7 @@ namespace Project
                 comboBox1.DataSource = dt3;
                 comboBox1.DisplayMember = "First name";
                 comboBox1.ValueMember = "Employee ID";
+                comboBox1.Refresh();
             }
         }
 
@@ -83,11 +84,11 @@ namespace Project
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int value;
-            Int32.TryParse(comboBox1.SelectedValue.ToString(), out value);
+        {//check this
+            int value1;
+            Int32.TryParse(comboBox1.SelectedValue.ToString(), out value1);
             controllerobj = new Controller();
-            dt4 = controllerobj.retrieveemployeebyid(value);
+            dt4 = controllerobj.retrieveemployeebyid(value1);
             if (dt4 != null)
             {
                 maskedTextBox9.Text = dt4.ToString();
@@ -103,7 +104,17 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string deleteuser = comboBox1.SelectedValue.ToString();
+            controllerobj = new Controller();
+            int result = controllerobj.deleteemployee(deleteuser);
+            if (result == 1)
+            {
+                MessageBox.Show("Deletion Occurs Successfullt");
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
         }
 
         private void maskedTextBox9_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

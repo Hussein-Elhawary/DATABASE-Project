@@ -248,5 +248,10 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
+        public int deleteemployee(string id)
+        {
+            string query = "Delete From employee where [Employee ID] = '" + id + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }
