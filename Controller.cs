@@ -253,5 +253,13 @@ namespace Project
             string query = "Delete From employee where [Employee ID] = '" + id + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+        public DataTable retrieveemployeebyusername(string idval)
+        {
+            string storedproc = StoredProcedures.Selecet_employees_by_username;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Username", idval);
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
+
     }
 }

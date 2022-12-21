@@ -14,14 +14,46 @@ namespace Project
     public partial class EditPDE : Form
     { 
         string username;
-    
+        Controller controllerobj;
+        DataTable dt = null;
+        DataTable dt1 = null;
         public EditPDE(string usernamec)
         {
             InitializeComponent();
             username = usernamec;
             UsernameTextbox.Text = username;
+            controllerobj = new Controller();
             //call query to get the rest of the data
             //use the data to fill the rest of the textboxes
+            dt = controllerobj.retrieveemployeebyusername(username);
+            if (dt != null)
+            {
+                FirstnameTextbox.Text = dt.Rows[0]["First name"].ToString();
+                MiddlenameTextbox.Text = dt.Rows[0]["Middle name"].ToString();
+                LastnameTextbox.Text = dt.Rows[0]["Last name"].ToString();
+                // EmailTextbox.Text = dt.Rows[0]["Email"].ToString();
+                PhonenumberTextbox.Text = dt.Rows[0]["Phone"].ToString();
+                DistrictTextbox.Text = dt.Rows[0]["District address"].ToString();
+                CityTextbox.Text = dt.Rows[0]["City address"].ToString();
+                CountryTextbox.Text = dt.Rows[0]["Country address"].ToString();
+                GenderTextbox.Text = dt.Rows[0]["Gender"].ToString();
+                SalaryTextbox.Text = dt.Rows[0]["Fixed Salary"].ToString();
+                BirthDateTextbox.Text = dt.Rows[0]["Birth date"].ToString();
+                NationalIDTextbox.Text = dt.Rows[0]["Employee ID"].ToString();
+                NationalityTextbox.Text = dt.Rows[0]["Employee ID"].ToString();
+                
+            }
+            dt1 = controllerobj.SelectDepartment(username);
+            if (dt1 != null)
+            {
+                DepartmentTextbox.Text = dt1.Rows[0]["Department"].ToString();
+            }
+            
+           // dt1 = controllerobj.sele(username);
+            if (dt1 != null)
+            {
+                // DepartmentTextbox.Text = dt1.Rows[0]["Department"].ToString();
+            }
         }
 
         private void EditPDE_Load(object sender, EventArgs e)
@@ -109,4 +141,9 @@ namespace Project
 
         }
     }
-}
+
+        //private void panel6_Paint(object sender, PaintEventArgs e)
+        //{
+
+        //}
+    }

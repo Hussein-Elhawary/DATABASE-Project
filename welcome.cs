@@ -110,7 +110,7 @@ namespace Project
                 else 
                 {
                     controllerobj = new Controller();
-                    dt = controllerobj.SelectCPassFromCUsername(un);
+                   // dt = controllerobj.SelectCPassFromCUsername(un);
                     if (pass == dt.Rows[0][0].ToString())
                     {
                         controllerobj = new Controller();
