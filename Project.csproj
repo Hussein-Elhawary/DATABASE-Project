@@ -323,5 +323,9 @@
   <ItemGroup>
     <None Include="Resources\lol.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Employee\" />
+    <Folder Include="Resources\NewFolder1\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
