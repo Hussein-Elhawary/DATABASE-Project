@@ -253,5 +253,11 @@ namespace Project
             string query = "Delete From employee where [Employee ID] = '" + id + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable SelectCPassFromCUsername(string UN)
+        {
+            string query = "Select Password from Customers where Username = '" + UN + "';";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

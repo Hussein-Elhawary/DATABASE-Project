@@ -79,6 +79,8 @@ namespace Project
             createuser a = new createuser(maskedTextBox1.Text,maskedTextBox2.Text,maskedTextBox5.Text,comboBox1.SelectedItem.ToString(),City_Box.Text,maskedTextBox3.Text,maskedTextBox4.Text,Ccode_textbox.Text,maskedTextBox7.Text.ToString(),dateTimePicker1.Text,comboBox4.SelectedIndex,maskedTextBox6.Text);
             this.Hide();
             a.Show();
+
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
