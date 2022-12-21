@@ -266,6 +266,30 @@ namespace Project
             Parameters.Add("@Username", idval);
             return dbMan.ExecuteReader(storedproc, Parameters);
         }
-
+        public DataTable SelectDepartmentByID(string ID)
+        {
+            string storedproc = StoredProcedures.select_department_By_ID;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ID", ID);
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
+        public DataTable SelectBranchByID(string ID)
+        {
+            string storedproc = StoredProcedures.select_Branch_by_ID;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ID", ID);
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
+        public int UpdateEmployeeInfo(string username,  string Country , string City, string District,string Phone)
+        {
+            string storedproc = StoredProcedures.Update_employee_data;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Username", username);
+            Parameters.Add("@Phone", Phone);
+            Parameters.Add("@Country", Country);
+            Parameters.Add("@City", City);
+            Parameters.Add("@District", District);
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
+        }
     }
 }

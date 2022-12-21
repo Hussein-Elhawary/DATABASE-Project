@@ -56,7 +56,7 @@ namespace Project
             h4.Show();
             this.Hide();
         }
-
+        //finance starts with F , Research P , General G
         private void button1_Click(object sender, EventArgs e)
         {
             string un = maskedTextBox1.Text;
@@ -65,7 +65,7 @@ namespace Project
             {
                 MessageBox.Show("Please Enter Your Credentials!");
             }
-            else if (un[0] == 'I' || un[0] == 'i')
+            else if (un[0] == 'I' || un[0] == 'i')//IT
             {
                 DataTable dt = null;
                 controllerobj = new Controller();
@@ -81,7 +81,7 @@ namespace Project
                     this.Hide();
                 }
             }
-            else if (un[0] == 'E' || un[0] == 'e')
+            else if (un[0] == 'E' || un[0] == 'e')//general as well
             {
                 DataTable dt = null;
                 controllerobj = new Controller();
@@ -97,6 +97,39 @@ namespace Project
                     this.Hide();
                 }
             }
+            else if (un[0] == 'G' || un[0] == 'g')//general
+            {
+                DataTable dt = null;
+                controllerobj = new Controller();
+                dt = controllerobj.checke(un, pass);
+                if (dt == null)
+                {
+                    MessageBox.Show("No Employee with this credentials");
+                }
+                else
+                {
+                    EmployeeHomepage h2 = new EmployeeHomepage(un);
+                    h2.Show();
+                    this.Hide();
+                }
+            }
+            else if (un[0] == 'F' || un[0] == 'f')//finance
+            {
+                DataTable dt = null;
+                controllerobj = new Controller();
+                dt = controllerobj.checke(un, pass);
+                if (dt == null)
+                {
+                    MessageBox.Show("No Employee with this credentials");
+                }
+                else
+                {
+                    EmployeeHomepage h2 = new EmployeeHomepage(un);
+                    h2.Show();
+                    this.Hide();
+                }
+            }
+
             else if (un[0] == 'C')
             {
                 DataTable dt = null;

@@ -12,7 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace Project
 {
     public partial class EditPDE : Form
-    { 
+    {
         string username;
         Controller controllerobj;
         DataTable dt = null;
@@ -36,23 +36,30 @@ namespace Project
                 DistrictTextbox.Text = dt.Rows[0]["District address"].ToString();
                 CityTextbox.Text = dt.Rows[0]["City address"].ToString();
                 CountryTextbox.Text = dt.Rows[0]["Country address"].ToString();
-                GenderTextbox.Text = dt.Rows[0]["Gender"].ToString();
+                if ((dt.Rows[0]["Gender"]).ToString() == "True")
+                {
+                    GenderTextbox.Text = "Male";
+                }
+                else
+                {
+                    GenderTextbox.Text = "Female";
+                }
                 SalaryTextbox.Text = dt.Rows[0]["Fixed Salary"].ToString();
                 BirthDateTextbox.Text = dt.Rows[0]["Birth date"].ToString();
                 NationalIDTextbox.Text = dt.Rows[0]["Employee ID"].ToString();
                 NationalityTextbox.Text = dt.Rows[0]["Employee ID"].ToString();
-                
+                ExtentionTextbox.Text = dt.Rows[0]["Extension"].ToString();
             }
-            dt1 = controllerobj.SelectDepartment(username);
+            dt1 = controllerobj.SelectDepartmentByID(dt.Rows[0]["Department"].ToString());
             if (dt1 != null)
             {
-                DepartmentTextbox.Text = dt1.Rows[0]["Department"].ToString();
+                DepartmentTextbox.Text = dt1.Rows[0]["Name"].ToString();
             }
-            
-           // dt1 = controllerobj.sele(username);
+
+            dt1 = controllerobj.SelectBranchByID(dt.Rows[0]["Branch"].ToString());
             if (dt1 != null)
             {
-                // DepartmentTextbox.Text = dt1.Rows[0]["Department"].ToString();
+                BranchTextbox.Text = dt1.Rows[0]["Type"].ToString();//type because branches dont have names
             }
         }
 
@@ -139,6 +146,26 @@ namespace Project
         private void label43_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UsernameTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExtentionTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateInformation_Click_1(object sender, EventArgs e)
+        {
+            dt.Rows[0]["Phone"] = PhonenumberTextbox.Text;
+            dt.Rows[0]["District address"] = DistrictTextbox.Text;
+            dt.Rows[0]["City address"] = CityTextbox.Text;
+            dt.Rows[0]["Country address"] = CountryTextbox.Text;
+            Checkpasswordandupdate checkpasswordandupdateobj = new Checkpasswordandupdate(username, dt.Rows[0]["Password"].ToString(), dt);
+            checkpasswordandupdateobj.Show();
         }
     }
 
