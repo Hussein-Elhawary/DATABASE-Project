@@ -37,7 +37,7 @@ namespace Project
             f = new welcome();
             t = new Personal_Data();
             b = new AddBranch();
-            p = new EditPDE();
+            p = new EditPDE(username);
             v = new ViewProjects();
             E = new ViewEmployees();
             dt = controllerobj.SelectManagerName(username);

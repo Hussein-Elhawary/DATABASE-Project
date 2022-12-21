@@ -92,7 +92,7 @@ namespace Project
                 }
                 else
                 {
-                    EmployeeHomepage h2 = new EmployeeHomepage();
+                    EmployeeHomepage h2 = new EmployeeHomepage(un);
                     h2.Show();
                     this.Hide();
                 }

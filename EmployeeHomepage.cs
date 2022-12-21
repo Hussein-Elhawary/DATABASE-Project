@@ -12,9 +12,28 @@ namespace Project
 {
     public partial class EmployeeHomepage : Form
     {
-        public EmployeeHomepage()
+        string username;
+        public EmployeeHomepage(string usernamec)
         {
             InitializeComponent();
+            username = usernamec;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditPDE editPDE = new EditPDE(username);
+            editPDE.Show();
         }
     }
 }

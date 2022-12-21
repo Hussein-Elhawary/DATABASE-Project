@@ -74,6 +74,12 @@
     <Compile Include="AddBranch.Designer.cs">
       <DependentUpon>AddBranch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Checkpassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkpassword.Designer.cs">
+      <DependentUpon>Checkpassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="createuser.cs">
       <SubType>Form</SubType>
