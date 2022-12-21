@@ -18,6 +18,9 @@ namespace Project
         DataTable dt2 = null;
         DataTable dt3 = null;
         DataTable dt4 = null;
+        DataTable dt5 = null;
+        DataTable dt6 = null;
+        DataTable dt7 = null;
         public Remove()
         {
             InitializeComponent();
@@ -106,14 +109,22 @@ namespace Project
         {
             string deleteuser = comboBox1.SelectedValue.ToString();
             controllerobj = new Controller();
-            int result = controllerobj.deleteemployee(deleteuser);
-            if (result == 1)
+            dt5 = controllerobj.checkifmanager(deleteuser);
+            if (dt5 == null)
             {
-                MessageBox.Show("Deletion Occurs Successfullt");
+                int result = controllerobj.deleteemployee(deleteuser);
+                if (result == 1)
+                {
+                    MessageBox.Show("Deletion Occurs Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Can't Delete A Manager! Please Go To The Manager Section");
             }
         }
 

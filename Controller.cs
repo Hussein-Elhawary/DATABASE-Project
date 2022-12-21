@@ -76,9 +76,9 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewmanagersrequests()
+        public DataTable viewmanagersrequests(int pp)
         {
-            string query = "Select * From ManagerRequests;";
+            string query = "Select * From ManagerRequests where [Date Issued] = '" +pp+ "'";
             return dbMan.ExecuteReader(query);
         }
 
@@ -148,9 +148,9 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable retrievemanager (string deptid)
+        public DataTable retrievemanager (int deptid)
         {
-        string query = "Select[First Name] From Employee where[Employee ID] = (Select[Manager ID] from Departement where[Departement ID] =  1)";        
+        string query = "Select * From Employee where[Employee ID] = (Select[Manager ID] from Departement where[Departement ID] = '" + deptid.ToString() + "' )";        
         return dbMan.ExecuteReader(query);
         }
 
@@ -253,5 +253,17 @@ namespace Project
             string query = "Delete From employee where [Employee ID] = '" + id + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable checkifmanager(string id)
+        {
+            string query = "Select * From Departement where [Manager ID] = '" + id + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        //public DataTable retrievedeptmdanager(string dep)
+        //{
+        //    string query = "Select * from Department Where Name = '" + dep + "' and ";
+        //    return dbMan.ExecuteReader(query);
+        //}
     }
 }

@@ -14,6 +14,7 @@ namespace Project
     {
         Controller controllerobj = new Controller();
         DataTable dt = null;
+        DataTable dt1 = null;
         public ManagersupdatesbyIT()
         {
             InitializeComponent();
@@ -21,7 +22,6 @@ namespace Project
             comboBox4.DataSource = dt;
             comboBox4.DisplayMember = "Name";
             comboBox4.ValueMember = "Departement ID";
-            //comboBox4.Text = "Select Departement";
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -36,7 +36,18 @@ namespace Project
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int value;
+            Int32.TryParse(comboBox4.SelectedValue.ToString(), out value);
+            controllerobj = new Controller();
+            dt = controllerobj.retrievemanager(value);
+            dt1 = controllerobj.fillemployeebydept(value);
+            if (dt != null) 
+            {
+                textBox1.Text = dt.Rows[0]["First name"].ToString();
+                maskedTextBox9.Text = dt.Rows[0]["Employee ID"].ToString();
+                comboBox1.DataSource = dt1;
+                comboBox1.DisplayMember = "First name";
+            }
         }
 
         private void ManagersupdatesbyIT_Load(object sender, EventArgs e)
@@ -53,14 +64,23 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string nameo = textBox1.Text;
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {//not working
-            string deptid = comboBox4.SelectedValue.ToString();
-            dt = controllerobj.retrievemanager(deptid);
-            textBox1.Text = dt.Columns[9].ToString();
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

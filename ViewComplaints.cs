@@ -35,7 +35,7 @@ namespace Project
             DataTable dt = null;
             if (radioButton1.Checked == true)
             {
-                dt = controllerobj.viewmanagersrequests();
+                //dt = controllerobj.viewmanagersrequests();
                 dataGridView1.DataSource = dt;
                 if (dt == null)
                 {
@@ -45,6 +45,10 @@ namespace Project
                 else
                 {
                     dataGridView1.Show();
+                    if (radioButton6.Checked == true)
+                    {
+
+                    }
                     dataGridView1.DataSource = dt;
                 }
             }
@@ -76,6 +80,11 @@ namespace Project
         }
 
         private void ViewComplaints_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
 
         }
