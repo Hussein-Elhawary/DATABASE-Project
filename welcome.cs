@@ -92,7 +92,7 @@ namespace Project
                 }
                 else
                 {
-                    EmployeeHomepage h2 = new EmployeeHomepage();
+                    EmployeeHomepage h2 = new EmployeeHomepage(un);
                     h2.Show();
                     this.Hide();
                 }
@@ -104,15 +104,26 @@ namespace Project
                 dt = controllerobj.GetUsernamefromCustomerUsername(un);
                 if (dt == null)
                 {
-                    MessageBox.Show("No Customer with this credentials");
+                    MessageBox.Show("No Customer with this credentials!");
+                    return;
                 }
                 else 
                 {
                     controllerobj = new Controller();
-                    dt = controllerobj.GetCustIDfromCustUn(un);
-                    CustomerHomePage a = new CustomerHomePage(dt.Rows[0][0].ToString());
-                    a.Show();
-                    this.Hide();
+                    dt = controllerobj.SelectCPassFromCUsername(un);
+                    if (pass == dt.Rows[0][0].ToString())
+                    {
+                        controllerobj = new Controller();
+                        dt = controllerobj.GetCustIDfromCustUn(un);
+                        CustomerHomePage a = new CustomerHomePage(dt.Rows[0][0].ToString());
+                        a.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Incorrect Password!");
+                        return;
+                    }
                 }
             }
             

@@ -52,7 +52,7 @@ namespace Project
 
         private void AddToCart_Button_Click(object sender, EventArgs e)
         {
-            ////////////////// NOT COMPLETE
+
             if (maskedTextBox1.Text == "" || maskedTextBox1.Text == "0")
             {
                 return;

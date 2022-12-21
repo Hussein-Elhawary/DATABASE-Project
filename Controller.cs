@@ -253,17 +253,5 @@ namespace Project
             string query = "Delete From employee where [Employee ID] = '" + id + "';";
             return dbMan.ExecuteNonQuery(query);
         }
-
-        public DataTable checkifmanager(string id)
-        {
-            string query = "Select * From Departement where [Manager ID] = '" + id + "';";
-            return dbMan.ExecuteReader(query);
-        }
-
-        //public DataTable retrievedeptmdanager(string dep)
-        //{
-        //    string query = "Select * from Department Where Name = '" + dep + "' and ";
-        //    return dbMan.ExecuteReader(query);
-        //}
     }
 }
