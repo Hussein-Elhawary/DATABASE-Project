@@ -267,5 +267,13 @@ namespace Project
             return dbMan.ExecuteReader(storedproc, Parameters);
         }
 
+        public int updatemanager(string midn, string deptid, string date)
+        {
+            string query = "Update Departement Set [Manager ID] = '" + midn + "', [Start Date] = '" + date + "' where [Departement ID] = '" + deptid + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
+
     }
 }

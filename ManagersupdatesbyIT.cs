@@ -47,6 +47,7 @@ namespace Project
                 maskedTextBox9.Text = dt.Rows[0]["Employee ID"].ToString();
                 comboBox1.DataSource = dt1;
                 comboBox1.DisplayMember = "First name";
+                comboBox1.ValueMember = "Employee ID";
             }
         }
 
@@ -64,8 +65,19 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string nameo = textBox1.Text;
-            
+            controllerobj = new Controller();
+            string newname = comboBox1.SelectedValue.ToString();
+            string deptid = comboBox4.SelectedValue.ToString();
+            string startdate = DateTime.Today.ToString("M/d/yyyy");
+            int result = controllerobj.updatemanager(newname,deptid,startdate);
+            if (result == 1)
+            {
+                MessageBox.Show("Update Done!");
+            }
+            else
+            {
+                MessageBox.Show("Sad");
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -79,6 +91,14 @@ namespace Project
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int value1;
+            Int32.TryParse(comboBox1.SelectedValue.ToString(), out value1);
+            maskedTextBox5.Text = value1.ToString();
+            
+        }
+
+        private void maskedTextBox5_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
