@@ -36,6 +36,9 @@ namespace Project
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.COD_textbox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Ccode_textbox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Confirm_Edits_Button = new System.Windows.Forms.Button();
@@ -49,9 +52,6 @@ namespace Project
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Ccode_textbox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.COD_textbox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -140,6 +140,30 @@ namespace Project
             this.panel4.Size = new System.Drawing.Size(411, 378);
             this.panel4.TabIndex = 25;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // COD_textbox
+            // 
+            this.COD_textbox.Location = new System.Drawing.Point(54, 75);
+            this.COD_textbox.Name = "COD_textbox";
+            this.COD_textbox.Size = new System.Drawing.Size(100, 20);
+            this.COD_textbox.TabIndex = 241;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(219, 109);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 240;
+            this.label4.Text = "Code";
+            // 
+            // Ccode_textbox
+            // 
+            this.Ccode_textbox.Location = new System.Drawing.Point(217, 125);
+            this.Ccode_textbox.Name = "Ccode_textbox";
+            this.Ccode_textbox.Size = new System.Drawing.Size(36, 20);
+            this.Ccode_textbox.TabIndex = 239;
             // 
             // comboBox1
             // 
@@ -460,30 +484,6 @@ namespace Project
             this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 216;
             this.label2.Text = "Country Of Residence ";
-            // 
-            // Ccode_textbox
-            // 
-            this.Ccode_textbox.Location = new System.Drawing.Point(217, 125);
-            this.Ccode_textbox.Name = "Ccode_textbox";
-            this.Ccode_textbox.Size = new System.Drawing.Size(36, 20);
-            this.Ccode_textbox.TabIndex = 239;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(219, 109);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 240;
-            this.label4.Text = "Code";
-            // 
-            // COD_textbox
-            // 
-            this.COD_textbox.Location = new System.Drawing.Point(54, 75);
-            this.COD_textbox.Name = "COD_textbox";
-            this.COD_textbox.Size = new System.Drawing.Size(100, 20);
-            this.COD_textbox.TabIndex = 241;
             // 
             // EditPD
             // 
