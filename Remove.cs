@@ -107,9 +107,13 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string deleteuser = comboBox1.SelectedValue.ToString();
+            int deleteuser = Convert.ToInt32(comboBox1.SelectedValue);           
             controllerobj = new Controller();
+<<<<<<< HEAD
            // dt5 = controllerobj.checkifmanager(deleteuser);
+=======
+            dt5 = controllerobj.retrievemanager(deleteuser);
+>>>>>>> 7cdf13e2a6299e565ca7ac512e529a40544ba291
             if (dt5 == null)
             {
                 int result = controllerobj.deleteemployee(deleteuser);
