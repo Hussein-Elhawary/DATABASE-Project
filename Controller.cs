@@ -38,12 +38,16 @@ namespace Project
             string query = "Select * From Employee where Username = '" + user + "' and Password ='" + pass + "';";
             return dbMan.ExecuteReader(query);
         }
-        public DataTable SelectManagerName(string user)
+        public DataTable SelectFirstName(string user)
         {
             string query = "Select [First name] From Employee where Username = '" + user + "';";
             return dbMan.ExecuteReader(query);
         }
-
+        public DataTable SelectEmployeesbyName(string fname,string mname,string lname)
+        {
+            string query = "Select * From Employee where  [First name] = '" + fname + "' and  [Middle name]='" + mname + "' and [Last name]='" + lname + "';";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectDepartment(string user)
         {
             string query = "Select Department From Employee where Username = '" + user + "';";
