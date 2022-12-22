@@ -129,9 +129,11 @@ namespace Project
 
             for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
             {
-               DT = controllerobj.GetProductIDFromName(dataGridView2.Rows[i].Cells["Column0"].Value.ToString());
+                DT = controllerobj.GetProductIDFromName(dataGridView2.Rows[i].Cells["Column1"].Value.ToString());
+                string prod_ID = DT.Rows[0][0].ToString();
+                controllerobj.InsertContains(next_ordernum.ToString(), prod_ID, dataGridView2.Rows[i].Cells["Column3"].Value.ToString());
             }
-
+                
             MessageBox.Show("Order Made!");
             this.Hide();
 

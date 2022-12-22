@@ -113,6 +113,22 @@ namespace Project
                     this.Hide();
                 }
             }
+            else if (un[0] == 'M' || un[0] == 'm')//Manager
+            {
+                DataTable dt = null;
+                controllerobj = new Controller();
+                dt = controllerobj.checke(un, pass);
+                if (dt == null)
+                {
+                    MessageBox.Show("No Employee with this credentials");
+                }
+                else
+                {
+                    Manager h2 = new Manager(un);
+                    h2.Show();
+                    this.Hide();
+                }
+            }
             else if (un[0] == 'F' || un[0] == 'f')//finance
             {
                 DataTable dt = null;
@@ -140,10 +156,10 @@ namespace Project
                     MessageBox.Show("No Customer with this credentials!");
                     return;
                 }
-                else 
+                else
                 {
                     controllerobj = new Controller();
-                   dt = controllerobj.SelectCPassFromCUsername(un);
+                    dt = controllerobj.SelectCPassFromCUsername(un);
                     if (pass == dt.Rows[0][0].ToString())
                     {
                         controllerobj = new Controller();
