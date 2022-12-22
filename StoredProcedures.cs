@@ -15,5 +15,6 @@ namespace Project
         public static string Select_Projects_by_username_and_status_all = "Select_Projects_by_username_all";
         public static string Select_Projects_by_username_and_status_Done = "Select_Projects_by_username_done";
         public static string Select_Projects_by_username_and_status_not_Done = "Select_Projects_by_username_not_done";
+        public static string Select_TotalCM_Unresolved = "Select_CustomerComplaints_UNResolved";
     }
 }

@@ -356,5 +356,12 @@ namespace Project
             return dbMan.ExecuteReader(storedproc, Parameters);
         }
 
+        public DataTable Select_CustomerComplaints_UNResolved()
+        {
+            string storedproc = StoredProcedures.Select_TotalCM_Unresolved;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+          
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
     }
 }
