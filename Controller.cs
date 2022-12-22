@@ -260,5 +260,11 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
+        public int UpdateCustomerPassword(string Cust_ID,string newPass)
+        {
+            string query = "UPDATE Customers SET Password = '" + newPass + "' where [Customer ID] = '" + Cust_ID + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
     }
 }

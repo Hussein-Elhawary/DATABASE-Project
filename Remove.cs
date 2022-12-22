@@ -109,7 +109,7 @@ namespace Project
         {
             string deleteuser = comboBox1.SelectedValue.ToString();
             controllerobj = new Controller();
-            dt5 = controllerobj.checkifmanager(deleteuser);
+            //dt5 = controllerobj.checkifmanager(deleteuser);
             if (dt5 == null)
             {
                 int result = controllerobj.deleteemployee(deleteuser);

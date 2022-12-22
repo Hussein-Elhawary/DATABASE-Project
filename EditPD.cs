@@ -58,7 +58,9 @@ namespace Project
             maskedTextBox3.ReadOnly = true;
             maskedTextBox7.ReadOnly = true;
             maskedTextBox4.ReadOnly = true;
-            
+            chngPass_textbox.ReadOnly = true;
+            ConfirmPassword_Button.Hide();
+
             Confirm_Edits_Button.Enabled = false;
         }
 
@@ -72,6 +74,7 @@ namespace Project
             maskedTextBox7.ReadOnly = false;
             maskedTextBox4.ReadOnly = false;
             Ccode_textbox.ReadOnly = false;
+
         }
 
         private void Confirm_Edits_Button_Click(object sender, EventArgs e)
@@ -102,6 +105,25 @@ namespace Project
         private void panel8_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void changePass_textbox_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            chngPass_textbox.ReadOnly = false;
+            ConfirmPassword_Button.Show();
+        }
+
+        private void ConfirmPassword_Button_Click(object sender, EventArgs e)
+        {
+            if (chngPass_textbox.Text.Length > 20 || chngPass_textbox.Text.Length < 8)
+            {
+                 MessageBox.Show("Password Must be between 8 and 20 characters!");
+                return;
+            }
+            ControllerDB = new Controller();
+            ControllerDB.UpdateCustomerPassword(Cust_ID,chngPass_textbox.Text);
+            MessageBox.Show("Password Updated");
+            this.Hide();
         }
     }
 }

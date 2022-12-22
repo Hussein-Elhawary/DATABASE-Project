@@ -52,6 +52,10 @@ namespace Project
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.chngPass_textbox = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.changePass_textbox = new System.Windows.Forms.LinkLabel();
+            this.ConfirmPassword_Button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -117,6 +121,9 @@ namespace Project
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Info;
+            this.panel4.Controls.Add(this.ConfirmPassword_Button);
+            this.panel4.Controls.Add(this.changePass_textbox);
+            this.panel4.Controls.Add(this.chngPass_textbox);
             this.panel4.Controls.Add(this.COD_textbox);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.Ccode_textbox);
@@ -151,7 +158,7 @@ namespace Project
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(219, 109);
+            this.label4.Location = new System.Drawing.Point(219, 59);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
@@ -160,7 +167,7 @@ namespace Project
             // 
             // Ccode_textbox
             // 
-            this.Ccode_textbox.Location = new System.Drawing.Point(217, 125);
+            this.Ccode_textbox.Location = new System.Drawing.Point(217, 75);
             this.Ccode_textbox.Name = "Ccode_textbox";
             this.Ccode_textbox.Size = new System.Drawing.Size(36, 20);
             this.Ccode_textbox.TabIndex = 239;
@@ -371,11 +378,12 @@ namespace Project
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.ForeColor = System.Drawing.Color.Blue;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Blue;
             this.linkLabel1.Location = new System.Drawing.Point(51, 30);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(115, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(97, 13);
             this.linkLabel1.TabIndex = 237;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Update Information";
@@ -421,7 +429,7 @@ namespace Project
             // 
             // maskedTextBox7
             // 
-            this.maskedTextBox7.Location = new System.Drawing.Point(258, 125);
+            this.maskedTextBox7.Location = new System.Drawing.Point(258, 75);
             this.maskedTextBox7.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox7.Mask = "00000000000";
             this.maskedTextBox7.Name = "maskedTextBox7";
@@ -431,7 +439,7 @@ namespace Project
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(255, 108);
+            this.label16.Location = new System.Drawing.Point(255, 58);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 13);
@@ -440,7 +448,7 @@ namespace Project
             // 
             // maskedTextBox4
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(217, 179);
+            this.maskedTextBox4.Location = new System.Drawing.Point(217, 125);
             this.maskedTextBox4.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(116, 20);
@@ -467,7 +475,7 @@ namespace Project
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(215, 164);
+            this.label3.Location = new System.Drawing.Point(215, 110);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 13);
@@ -484,6 +492,34 @@ namespace Project
             this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 216;
             this.label2.Text = "Country Of Residence ";
+            // 
+            // chngPass_textbox
+            // 
+            this.chngPass_textbox.Location = new System.Drawing.Point(217, 179);
+            this.chngPass_textbox.Name = "chngPass_textbox";
+            this.chngPass_textbox.Size = new System.Drawing.Size(116, 20);
+            this.chngPass_textbox.TabIndex = 242;
+            // 
+            // changePass_textbox
+            // 
+            this.changePass_textbox.AutoSize = true;
+            this.changePass_textbox.Location = new System.Drawing.Point(214, 160);
+            this.changePass_textbox.Name = "changePass_textbox";
+            this.changePass_textbox.Size = new System.Drawing.Size(93, 13);
+            this.changePass_textbox.TabIndex = 243;
+            this.changePass_textbox.TabStop = true;
+            this.changePass_textbox.Text = "Change Password";
+            this.changePass_textbox.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.changePass_textbox_LinkClicked);
+            // 
+            // ConfirmPassword_Button
+            // 
+            this.ConfirmPassword_Button.Location = new System.Drawing.Point(217, 296);
+            this.ConfirmPassword_Button.Name = "ConfirmPassword_Button";
+            this.ConfirmPassword_Button.Size = new System.Drawing.Size(100, 23);
+            this.ConfirmPassword_Button.TabIndex = 244;
+            this.ConfirmPassword_Button.Text = "Confirm Password";
+            this.ConfirmPassword_Button.UseVisualStyleBackColor = true;
+            this.ConfirmPassword_Button.Click += new System.EventHandler(this.ConfirmPassword_Button_Click);
             // 
             // EditPD
             // 
@@ -530,5 +566,9 @@ namespace Project
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Ccode_textbox;
         private System.Windows.Forms.TextBox COD_textbox;
+        private System.Windows.Forms.TextBox chngPass_textbox;
+        private System.Windows.Forms.LinkLabel changePass_textbox;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button ConfirmPassword_Button;
     }
 }
