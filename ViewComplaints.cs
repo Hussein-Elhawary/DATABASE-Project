@@ -78,6 +78,9 @@ namespace Project
                     {
                         dataGridView1.Show();
                         dataGridView1.DataSource = dt;
+                        comboBox1.DataSource = dt;
+                        comboBox1.DisplayMember = "Request ID";
+                        comboBox1.ValueMember = "Request ID";
                     }
                 }
             }///////////////////////////////////////////////////////////
@@ -116,6 +119,9 @@ namespace Project
                     {
                         dataGridView1.Show();
                         dataGridView1.DataSource = dt;
+                        comboBox1.DataSource = dt;
+                        comboBox1.DisplayMember = "Request ID";
+                        comboBox1.ValueMember = "Request ID";
                     }
                 }
                 else
@@ -136,6 +142,9 @@ namespace Project
                     {
                         dataGridView1.Show();
                         dataGridView1.DataSource = dt;
+                        comboBox1.DataSource = dt;
+                        comboBox1.DisplayMember = "Request ID";
+                        comboBox1.ValueMember = "Request ID";
                     }
                 }
             }
@@ -175,6 +184,24 @@ namespace Project
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string reid = comboBox1.SelectedValue.ToString();
+            Requestdetails rq1 = new Requestdetails();
+            rq1.Show();
+            this.Hide();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
