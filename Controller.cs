@@ -12,6 +12,8 @@ using System.Net;
 using System.Runtime.ConstrainedExecution;
 using System.Security;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace Project
 {
@@ -337,6 +339,37 @@ namespace Project
             Parameters.Add("@username", username);
 
             return dbMan.ExecuteReader(storedproc, Parameters);
+        }
+        public int DeleteProduct(string ID)
+        {
+            string storedproc = StoredProcedures.Delete_products;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ID", ID);
+            
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
+        }
+        public int UpdateProduct(string ID, string Name, string discription, float price, int amountinstock, int production_cost)
+        {
+            string storedproc = StoredProcedures.Update_products;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ID", ID);
+            Parameters.Add("@Name", Name);
+            Parameters.Add("@Description", discription);
+            Parameters.Add("@Price", price);
+            Parameters.Add("@Amount_in_stock", amountinstock);
+            Parameters.Add("@Production_Cost", production_cost);
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
+        }
+        public int Add_products(string Name, string discription, float price, int amountinstock, int production_cost)
+        {
+            string storedproc = StoredProcedures.Add_products;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Name", Name);
+            Parameters.Add("@Description", discription);
+            Parameters.Add("@Price", price);
+            Parameters.Add("@Amount_in_stock", amountinstock);
+            Parameters.Add("@Production_Cost", production_cost);
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
         }
 
     }

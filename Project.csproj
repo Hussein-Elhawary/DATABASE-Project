@@ -74,6 +74,30 @@
     <Compile Include="AddBranch.Designer.cs">
       <DependentUpon>AddBranch.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeRawmaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeRawmaterials.Designer.cs">
+      <DependentUpon>ChangeRawmaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditEmployeeSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEmployeeSalary.Designer.cs">
+      <DependentUpon>EditEmployeeSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProduct.Designer.cs">
+      <DependentUpon>EditProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="StoredProcedures.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="createuser.cs">
@@ -197,6 +221,12 @@
     <Compile Include="ViewProjects.Designer.cs">
       <DependentUpon>ViewProjects.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewRawmaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewRawmaterials.Designer.cs">
+      <DependentUpon>ViewRawmaterials.cs</DependentUpon>
+    </Compile>
     <Compile Include="welcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +250,9 @@
     <EmbeddedResource Include="AddBranch.resx">
       <DependentUpon>AddBranch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Checkpasswordandupdate.resx">
       <DependentUpon>Checkpasswordandupdate.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditPDE.resx">
       <DependentUpon>EditPDE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProduct.resx">
+      <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeCA.resx">
       <DependentUpon>EmployeeCA.cs</DependentUpon>

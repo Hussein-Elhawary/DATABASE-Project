@@ -123,11 +123,9 @@ namespace Project
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label44 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -212,8 +210,6 @@ namespace Project
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.Info;
-            this.panel6.Controls.Add(this.button1);
-            this.panel6.Controls.Add(this.label44);
             this.panel6.Controls.Add(this.UpdateInformation);
             this.panel6.Controls.Add(this.label43);
             this.panel6.Controls.Add(this.ExtentionTextbox);
@@ -400,6 +396,7 @@ namespace Project
             // DistrictTextbox
             // 
             this.DistrictTextbox.Location = new System.Drawing.Point(765, 401);
+            this.DistrictTextbox.MaxLength = 50;
             this.DistrictTextbox.Name = "DistrictTextbox";
             this.DistrictTextbox.Size = new System.Drawing.Size(150, 22);
             this.DistrictTextbox.TabIndex = 17;
@@ -416,6 +413,7 @@ namespace Project
             // CityTextbox
             // 
             this.CityTextbox.Location = new System.Drawing.Point(566, 401);
+            this.CityTextbox.MaxLength = 50;
             this.CityTextbox.Name = "CityTextbox";
             this.CityTextbox.Size = new System.Drawing.Size(157, 22);
             this.CityTextbox.TabIndex = 15;
@@ -432,6 +430,7 @@ namespace Project
             // CountryTextbox
             // 
             this.CountryTextbox.Location = new System.Drawing.Point(362, 401);
+            this.CountryTextbox.MaxLength = 50;
             this.CountryTextbox.Name = "CountryTextbox";
             this.CountryTextbox.Size = new System.Drawing.Size(150, 22);
             this.CountryTextbox.TabIndex = 13;
@@ -524,6 +523,7 @@ namespace Project
             // PhonenumberTextbox
             // 
             this.PhonenumberTextbox.Location = new System.Drawing.Point(765, 289);
+            this.PhonenumberTextbox.MaxLength = 11;
             this.PhonenumberTextbox.Name = "PhonenumberTextbox";
             this.PhonenumberTextbox.Size = new System.Drawing.Size(150, 22);
             this.PhonenumberTextbox.TabIndex = 2;
@@ -1024,18 +1024,6 @@ namespace Project
             this.panel3.Size = new System.Drawing.Size(525, 613);
             this.panel3.TabIndex = 22;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(3, 4);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(53, 42);
-            this.button3.TabIndex = 27;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -1062,25 +1050,17 @@ namespace Project
             this.panel1.Size = new System.Drawing.Size(1149, 46);
             this.panel1.TabIndex = 27;
             // 
-            // label44
+            // button3
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(33, 456);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(69, 64);
-            this.label44.TabIndex = 36;
-            this.label44.Text = "Want to \r\nchange \r\npassword \r\nfrom here";
-            this.label44.Click += new System.EventHandler(this.label44_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(108, 456);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 63);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Update Password";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(3, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(53, 42);
+            this.button3.TabIndex = 27;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // EditPDE
             // 
@@ -1205,7 +1185,5 @@ namespace Project
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox ExtentionTextbox;
         private System.Windows.Forms.Button UpdateInformation;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Button button1;
     }
 }

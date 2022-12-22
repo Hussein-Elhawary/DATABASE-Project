@@ -43,5 +43,38 @@ namespace Project
             this.Hide();
             
         }
+
+        private void EmployeeHomepage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ChangeRawmaterials changeRawmaterials = new ChangeRawmaterials(username);
+            changeRawmaterials.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            EditEmployeeSalary editEmployeeSalary = new EditEmployeeSalary(username);
+            editEmployeeSalary.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EditProduct editProduct = new EditProduct(username);
+            editProduct.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ViewRawmaterials viewRawmaterials = new ViewRawmaterials(username);
+            viewRawmaterials.Show();
+            this.Hide();
+        }
     }
 }
