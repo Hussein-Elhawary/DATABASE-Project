@@ -27,48 +27,47 @@ namespace Project
         {
             InitializeComponent();
 
-            }
-            public Manager(string us)
+         }
+        public Manager(string us)
         {
             InitializeComponent();
             username = us;
-           groupBox7.Enabled = false;
-           groupBox8.Enabled = false;
-            groupBox9.Enabled = false;
             f = new welcome();
             t = new Personal_Data();
             b = new AddBranch();
             p = new EditPDE(username);
             v = new ViewProjects();
+            textBox1.Enabled = false;
+            comboBox1.SelectedIndex = -1;
             dt = controllerobj.SelectFirstName(username);
-            label2.Text =dt.Rows[0][0].ToString(); //Manager First name appears
-            dt3=controllerobj.SelectDepartment(username);//query returns id 
+            label2.Text = dt.Rows[0][0].ToString(); //Manager First name appears
+            dt3 = controllerobj.SelectDepartment(username);//query returns id 
             dt2 = controllerobj.SelectEmployeeFirstNameFromDepartmentid(Convert.ToInt32(dt3.Rows[0][0])); //gets employees first name from a specific department
             comboBox2.DataSource = dt2;
             comboBox2.ValueMember = "First name";
             comboBox2.DisplayMember = "First name";
-            if(comboBox2.Text!=null)
+            // dt2=
+            comboBox2.SelectedIndex = -1;
+            comboBox4.SelectedIndex = -1;
+            if (comboBox4.SelectedText.ToString() != null)
             {
-                groupBox7.Enabled = true; // to choose the middle name after you selected the first name
-                dt2 = controllerobj.SelectEmployeeMiddleNameFromDepartmentid(Convert.ToInt32(dt3.Rows[0][0])); //gets employees first name from a specific department
-                comboBox4.DataSource = dt2;
-                comboBox4.ValueMember = "Middle name";
-                comboBox4.DisplayMember = "Middle name";
-                if (comboBox4.Text != null)
+                dt2 = controllerobj.SelectEmployeeLastName(comboBox2.SelectedText.ToString(), comboBox4.SelectedText.ToString()); //gets employees first name from a specific department
+                comboBox5.DataSource = dt2;
+                comboBox5.ValueMember = "Last name";
+                comboBox5.DisplayMember = "Last name";
+                comboBox5.SelectedIndex = -1;
+
+                if (comboBox5.SelectedText.ToString() != null)
                 {
-                    groupBox8.Enabled = true; // to choose the middle name after you selected the first name
-                    dt2 = controllerobj.SelectEmployeeLastNameFromDepartmentid(Convert.ToInt32(dt3.Rows[0][0])); //gets employees first name from a specific department
-                    comboBox5.DataSource = dt2;
-                    comboBox5.ValueMember = "Last name";
-                    comboBox5.DisplayMember = "Last name";
-                    if (comboBox5.Text != null)
-                    {
-                        groupBox9.Enabled = true;
-                    }
+                    textBox1.Enabled = true;
                 }
 
             }
+
+
+
         }
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -122,9 +121,9 @@ namespace Project
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (comboBox2.Text != null && comboBox4.Text != null && comboBox5.Text != null)
+            if (comboBox5.SelectedIndex != -1 && comboBox4.SelectedIndex != -1 && comboBox2.SelectedIndex != -1)
             {
-                E = new ViewEmployees(comboBox2.Text,comboBox4.Text,comboBox5.Text);
+                E = new ViewEmployees(comboBox2.Text.ToString(), comboBox4.Text.ToString(), comboBox5.Text.ToString()) ;
                 E.Show();
                 this.Hide();
                 
@@ -163,6 +162,43 @@ namespace Project
             {
                 // controllerobj.           //update salary using names
             }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedText.ToString() != null)
+            {
+                dt2 = controllerobj.SelectEmployeeMiddleNameFromFirstName(comboBox2.SelectedText.ToString()); //gets employees first name from a specific department
+                comboBox4.DataSource = dt2;
+                comboBox4.ValueMember = "Middle name";
+                comboBox4.DisplayMember = "Middle name";
+            }
+        }
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+                e.Handled = true;
+        }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+                e.Handled = true;
         }
     }
 }

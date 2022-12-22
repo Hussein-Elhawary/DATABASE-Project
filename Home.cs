@@ -54,5 +54,12 @@ namespace Project
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ViewInsurance vi = new ViewInsurance(username);
+            vi.Show();
+            this.Hide();
+        }
     }
 }

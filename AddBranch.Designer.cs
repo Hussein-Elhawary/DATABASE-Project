@@ -82,7 +82,7 @@ namespace Project
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.Location = new System.Drawing.Point(653, 0);
+            this.panel2.Location = new System.Drawing.Point(652, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(148, 449);
             this.panel2.TabIndex = 1;
@@ -93,7 +93,7 @@ namespace Project
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(148, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(508, 97);
+            this.panel3.Size = new System.Drawing.Size(506, 97);
             this.panel3.TabIndex = 2;
             // 
             // panel4
@@ -174,9 +174,9 @@ namespace Project
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(211, 294);
+            this.groupBox1.Location = new System.Drawing.Point(211, 275);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(301, 129);
+            this.groupBox1.Size = new System.Drawing.Size(301, 148);
             this.groupBox1.TabIndex = 230;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Location";

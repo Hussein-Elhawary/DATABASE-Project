@@ -61,14 +61,14 @@ namespace Project
             string query = "Select DISTINCT [First name] From Employee where Department = " + id + ";";
             return dbMan.ExecuteReader(query);
         }
-        public DataTable SelectEmployeeMiddleNameFromDepartmentid(int id)
+        public DataTable SelectEmployeeMiddleNameFromFirstName(string fname)
         {
-            string query = "Select DISTINCT [Middle name] From Employee where Department = " + id + ";";
+            string query = "Select DISTINCT [Middle name] From Employee where [First name] = '" + fname + "';";
             return dbMan.ExecuteReader(query);
         }
-        public DataTable SelectEmployeeLastNameFromDepartmentid(int id)
+        public DataTable SelectEmployeeLastName(string fname,string mname)
         {
-            string query = "Select DISTINCT [Last name] From Employee where Department = " + id + ";";
+            string query = "Select DISTINCT [Last name] From Employee where [First name] = '" + fname + "' and  [Middle name]='" + mname + "';";
             return dbMan.ExecuteReader(query);
         }
         public DataTable checkc(string userc, string passc)       //login customers
@@ -97,16 +97,33 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
        
-        public DataTable forgotpasswordem1(string user, string phone)
+        public DataTable forgotpassword(string user, string phone, char t)
         {
-            string query = "Select * From Employee where Username = '" + user + "' and Phone Number ='" + phone + "';";
+            string query = null;
+            if (t == 'c' || t == 'C')
+            {
+                query = "Select * From Customers where Username = '" + user + "' and [Phone Number] ='" + phone + "';";
+            }
+            else if (t == 'e' || t == 'E')
+            {
+                query = "Select * From Employee where Username = '" + user + "' and Phone ='" + phone + "';";
+            }
             return dbMan.ExecuteReader(query);
         }
 
-        public int changepasswordem(string user1, string phone1, string pass1)
+        public int changepasswordem(string user1, string phone1, string pass1, char t)
         {
-            string query = "Update Password From Employee where Username = '" + user1 + "' and " +
-                "Phone Number ='" + phone1 + "' and Password = '" + pass1 + "';";
+            string query = null;
+            if (t == 'c' || t == 'C')
+            {
+                query = "Update Customers Set Password = '" + pass1 + "' where Username = '" + user1 + "' and " +
+                    " [Phone Number] ='" + phone1 + "';";
+            }
+            else if (t == 'e' || t == 'E')
+            {
+                query = "Update Employee Set Password = '" + pass1 + "' where Username = '" + user1 + "' and " +
+                    " Phone ='" + phone1 + "';";
+            }
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -116,10 +133,10 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewinsurance (string type, string city)
+        public DataTable viewinsurance (string type, string username)
         {
             string query = "Select [Hospital/Clinic/Phamacy Name], [District Address], [Phone Number] From Insurance where " +
-                "[Service Type] = '" + type + "' and [City Address] = '" + city + "';";
+                "[Service Type] = '" + type + "' and [City Address] = (Select [City address] From Employee where Username = '" + username + "') ;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -372,5 +389,12 @@ namespace Project
             return dbMan.ExecuteNonQuery(storedproc, Parameters);
         }
 
+        public DataTable Select_CustomerComplaints_UNResolved()
+        {
+            string storedproc = StoredProcedures.Select_TotalCM_Unresolved;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+          
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
     }
 }

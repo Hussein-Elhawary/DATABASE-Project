@@ -31,8 +31,6 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // make 2 different queries one for all employees and one for customer or one only and check inside to determine which select to use????
-            
             DataTable dt = null;
             string un = maskedTextBox1.Text;
             string pn = maskedTextBox2.Text;
@@ -55,27 +53,68 @@ namespace Project
                         MessageBox.Show("Please Enter The New Passowrd In The Confirm Field!");
                     }
                     else
-                    {     
-                        dt = controllerobj.forgotpasswordem1(un, pn);
-                        if (dt == null)
+                    {
+                        if (un[0] == 'c' || un[0] == 'C')
                         {
-                            MessageBox.Show("No Employee With This UserName OR Phone Number!" +"\n"+
-                            "Please Contact The IT To Reset Your Data!");
-                            trials++;
-                        }
-                        else
-                        {
-                            int result = controllerobj.changepasswordem(un, pn, pass1);
-                            if (result == 1) 
+                            controllerobj = new Controller();
+                            dt = controllerobj.forgotpassword(un, pn, 'C');
+                            if (dt == null)
                             {
-                                MessageBox.Show("Your Password Has Been Updated");
+                                MessageBox.Show("No Customer With This UserName OR Phone Number!");
+                                trials++;
                             }
                             else
                             {
-                                MessageBox.Show("Your Password Can't Be Updated" + "\n" + "Please Try Again Later!");
+                                controllerobj = new Controller();
+                                int result = controllerobj.changepasswordem(un, pn, pass1, 'C');
+                                if (result == 1)
+                                {
+                                    MessageBox.Show("Your Password Has Been Updated");
+                                    this.Hide();
+                                    welcome w1 = new welcome();
+                                    w1.Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Your Password Can't Be Updated" + "\n" + "Please Try Again Later!");
+                                    trials++;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            controllerobj = new Controller();
+                            dt = controllerobj.forgotpassword(un, pn, 'E');
+                            if (dt == null)
+                            {
+                                MessageBox.Show("No Employee With This UserName OR Phone Number!");
                                 trials++;
                             }
-                        }                       
+                            else
+                            {
+                                controllerobj = new Controller();
+                                int result = controllerobj.changepasswordem(un, pn, pass1, 'E');
+                                if (result == 1)
+                                {
+                                    MessageBox.Show("Your Password Has Been Updated");
+                                    this.Hide();
+                                    welcome w1 = new welcome();
+                                    w1.Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Your Password Can't Be Updated" + "\n" + "Please Try Again Later!");
+                                    trials++;
+                                }
+                            }
+                        }
+                        if (trials == 3) 
+                        {
+                            MessageBox.Show("Your Trails To Update The Password Has Finished" + "\n" + 
+                                "Please Contact The IT To Help You");
+                            this.Close();
+                            // mmkn n3ml direct 3l2 form el requests 
+                        }
                     }
                 }
             }
@@ -84,12 +123,6 @@ namespace Project
         private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
-        }
-
-        private void maskedTextBox4_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-           // string pass1 = null;
-           // Int32.TryParse(maskedTextBox4.Text, out pass1);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -131,3 +164,4 @@ namespace Project
         }
     }
 }
+

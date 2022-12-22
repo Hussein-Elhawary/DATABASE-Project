@@ -35,8 +35,7 @@ namespace Project
             maskedTextBox10.Text = username;
             maskedTextBox11.Text = dt.Rows[0]["Extension"].ToString();
             maskedTextBox15.Text = dt.Rows[0]["Specialization"].ToString();
-            maskedTextBox17.Text = dt.Rows[0]["Nationality"].ToString();
-            
+            maskedTextBox17.Text = dt.Rows[0]["Nationality"].ToString();         
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

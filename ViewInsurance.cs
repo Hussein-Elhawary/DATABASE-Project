@@ -12,11 +12,13 @@ namespace Project
 {
     public partial class ViewInsurance : Form
     {
+        string username = null;
         Controller controllerobj = new Controller();
-        public ViewInsurance()
+        public ViewInsurance(string user)
         {
             InitializeComponent();
             dataGridView1.Hide();
+            username = user;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -35,7 +37,7 @@ namespace Project
             if (radioButton1.Checked == true)
             {
                 controllerobj = new Controller();
-                dt = controllerobj.viewinsurance("H", "Giza");
+                dt = controllerobj.viewinsurance("H", username);
                 if (dt == null)
                 {
                     dataGridView1.Hide();
@@ -50,7 +52,7 @@ namespace Project
             else if (radioButton2.Checked == true)
             {
                 controllerobj = new Controller();
-                dt = controllerobj.viewinsurance("L", "Giza");
+                dt = controllerobj.viewinsurance("L", username);
                 if (dt == null)
                 {
                     dataGridView1.Hide();
@@ -64,8 +66,9 @@ namespace Project
             }
             else if (radioButton3.Checked == true)
             {
+
                 controllerobj = new Controller();
-                dt = controllerobj.viewinsurance("P", "October");
+                dt = controllerobj.viewinsurance("P", username);
                 if (dt == null)
                 {
                     dataGridView1.Hide();
@@ -96,6 +99,18 @@ namespace Project
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ViewInsurance_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcome w2 = new welcome();
+            w2.Show();
+            this.Close();
         }
     }
 }
