@@ -94,16 +94,33 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
        
-        public DataTable forgotpasswordem1(string user, string phone)
+        public DataTable forgotpassword(string user, string phone, char t)
         {
-            string query = "Select * From Employee where Username = '" + user + "' and Phone Number ='" + phone + "';";
+            string query = null;
+            if (t == 'c' || t == 'C')
+            {
+                query = "Select * From Customers where Username = '" + user + "' and [Phone Number] ='" + phone + "';";
+            }
+            else if (t == 'e' || t == 'E')
+            {
+                query = "Select * From Employee where Username = '" + user + "' and Phone ='" + phone + "';";
+            }
             return dbMan.ExecuteReader(query);
         }
 
-        public int changepasswordem(string user1, string phone1, string pass1)
+        public int changepasswordem(string user1, string phone1, string pass1, char t)
         {
-            string query = "Update Password From Employee where Username = '" + user1 + "' and " +
-                "Phone Number ='" + phone1 + "' and Password = '" + pass1 + "';";
+            string query = null;
+            if (t == 'c' || t == 'C')
+            {
+                query = "Update Customers Set Password = '" + pass1 + "' where Username = '" + user1 + "' and " +
+                    " [Phone Number] ='" + phone1 + "';";
+            }
+            else if (t == 'e' || t == 'E')
+            {
+                query = "Update Employee Set Password = '" + pass1 + "' where Username = '" + user1 + "' and " +
+                    " Phone ='" + phone1 + "';";
+            }
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -113,10 +130,10 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewinsurance (string type, string city)
+        public DataTable viewinsurance (string type, string username)
         {
             string query = "Select [Hospital/Clinic/Phamacy Name], [District Address], [Phone Number] From Insurance where " +
-                "[Service Type] = '" + type + "' and [City Address] = '" + city + "';";
+                "[Service Type] = '" + type + "' and [City Address] = (Select [City address] From Employee where Username = '" + username + "') ;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -294,5 +311,6 @@ namespace Project
             string query = "Select * From Departement where [Manager ID] = '" + managerid + "';";
             return dbMan.ExecuteReader(query);
         }
+
     }
 }
