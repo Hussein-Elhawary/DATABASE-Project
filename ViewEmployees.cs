@@ -12,18 +12,32 @@ namespace Project
 {
     public partial class ViewEmployees : Form
     {
-        Manager m;
+        DataTable dt;
+        Controller controllerobj;
         public ViewEmployees()
         {
             
             InitializeComponent();
-            m = new Manager();
+           
         }
+        public ViewEmployees(string fname,string mname,string lname)
+        {
 
+            InitializeComponent();
+            controllerobj = new Controller();
+            dt = new DataTable();
+            dt = controllerobj.SelectEmployeesbyName(fname, mname, lname);
+            dataGridView1.DataSource = dt;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            m.Show();
+            // m.Show();
             this.Close();
+        }
+
+        private void ViewEmployees_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

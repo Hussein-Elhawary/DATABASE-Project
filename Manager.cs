@@ -32,15 +32,15 @@ namespace Project
         {
             InitializeComponent();
             username = us;
-            comboBox4.Enabled = false;
-            comboBox5.Enabled = false;
+           groupBox7.Enabled = false;
+           groupBox8.Enabled = false;
+            groupBox9.Enabled = false;
             f = new welcome();
             t = new Personal_Data();
             b = new AddBranch();
             p = new EditPDE(username);
             v = new ViewProjects();
-            E = new ViewEmployees();
-            dt = controllerobj.SelectManagerName(username);
+            dt = controllerobj.SelectFirstName(username);
             label2.Text =dt.Rows[0][0].ToString(); //Manager First name appears
             dt3=controllerobj.SelectDepartment(username);//query returns id 
             dt2 = controllerobj.SelectEmployeeFirstNameFromDepartmentid(Convert.ToInt32(dt3.Rows[0][0])); //gets employees first name from a specific department
@@ -49,19 +49,24 @@ namespace Project
             comboBox2.DisplayMember = "First name";
             if(comboBox2.Text!=null)
             {
-                comboBox4.Enabled = true; // to choose the middle name after you selected the first name
+                groupBox7.Enabled = true; // to choose the middle name after you selected the first name
                 dt2 = controllerobj.SelectEmployeeMiddleNameFromDepartmentid(Convert.ToInt32(dt3.Rows[0][0])); //gets employees first name from a specific department
                 comboBox4.DataSource = dt2;
                 comboBox4.ValueMember = "Middle name";
                 comboBox4.DisplayMember = "Middle name";
                 if (comboBox4.Text != null)
                 {
-                    comboBox5.Enabled = true; // to choose the middle name after you selected the first name
+                    groupBox8.Enabled = true; // to choose the middle name after you selected the first name
                     dt2 = controllerobj.SelectEmployeeLastNameFromDepartmentid(Convert.ToInt32(dt3.Rows[0][0])); //gets employees first name from a specific department
                     comboBox5.DataSource = dt2;
                     comboBox5.ValueMember = "Last name";
                     comboBox5.DisplayMember = "Last name";
+                    if (comboBox5.Text != null)
+                    {
+                        groupBox9.Enabled = true;
+                    }
                 }
+
             }
         }
         private void label1_Click(object sender, EventArgs e)
@@ -117,8 +122,15 @@ namespace Project
 
         private void button7_Click(object sender, EventArgs e)
         {
-            E.Show();
-            this.Hide();
+            if (comboBox2.Text != null && comboBox4.Text != null && comboBox5.Text != null)
+            {
+                E = new ViewEmployees(comboBox2.Text,comboBox4.Text,comboBox5.Text);
+                E.Show();
+                this.Hide();
+                
+            }
+            else
+                MessageBox.Show("Error Some Info are missing");
         }
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -131,6 +143,26 @@ namespace Project
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) //numbers only
                 e.Handled = true;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) //numbers only
+                e.Handled = true;
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) //numbers only
+                e.Handled = true;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text!=null)
+            {
+                // controllerobj.           //update salary using names
+            }
         }
     }
 }

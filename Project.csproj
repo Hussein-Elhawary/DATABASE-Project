@@ -74,12 +74,7 @@
     <Compile Include="AddBranch.Designer.cs">
       <DependentUpon>AddBranch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Checkpassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Checkpassword.Designer.cs">
-      <DependentUpon>Checkpassword.cs</DependentUpon>
-    </Compile>
+    <Compile Include="StoredProcedures.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="createuser.cs">
       <SubType>Form</SubType>
@@ -135,6 +130,12 @@
     </Compile>
     <Compile Include="Forgotpassowrd.Designer.cs">
       <DependentUpon>Forgotpassowrd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Checkpasswordandupdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkpasswordandupdate.Designer.cs">
+      <DependentUpon>Checkpasswordandupdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -218,6 +219,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddBranch.resx">
       <DependentUpon>AddBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkpasswordandupdate.resx">
+      <DependentUpon>Checkpasswordandupdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="createuser.resx">
       <DependentUpon>createuser.cs</DependentUpon>

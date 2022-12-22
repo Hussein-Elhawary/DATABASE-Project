@@ -236,6 +236,7 @@ namespace Project
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "All Time";
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -248,6 +249,7 @@ namespace Project
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Last Month";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton4
             // 
@@ -260,6 +262,7 @@ namespace Project
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "This Month";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // groupBox2
             // 

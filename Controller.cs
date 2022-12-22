@@ -38,12 +38,16 @@ namespace Project
             string query = "Select * From Employee where Username = '" + user + "' and Password ='" + pass + "';";
             return dbMan.ExecuteReader(query);
         }
-        public DataTable SelectManagerName(string user)
+        public DataTable SelectFirstName(string user)
         {
             string query = "Select [First name] From Employee where Username = '" + user + "';";
             return dbMan.ExecuteReader(query);
         }
-
+        public DataTable SelectEmployeesbyName(string fname,string mname,string lname)
+        {
+            string query = "Select * From Employee where  [First name] = '" + fname + "' and  [Middle name]='" + mname + "' and [Last name]='" + lname + "';";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectDepartment(string user)
         {
             string query = "Select Department From Employee where Username = '" + user + "';";
@@ -76,18 +80,20 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewmanagersrequests(int pp)
+        public DataTable viewmanagersrequests(string date1,string date2)
         {
-            string query = "Select * From ManagerRequests where [Date Issued] = '" + pp + "'";
+            string query = "Select * From ManagerRequests where [Date Issued] >= '" + date1 + "' and " +
+                "[Date Issued] <= '" + date2 + "' and [Resolved] = '" + false + "';";
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewcustomersrequests()
+        public DataTable viewcustomersrequests(string date1, string date2)
         {
-            string query = "Select * From CustomerRequests;";
+            string query = "Select * From CustomerRequests where [Date Issued] >= '" + date1 + "' and " +
+                "[Date Issued] <= '" + date2 + "' and [Resolved] = 'No';";
             return dbMan.ExecuteReader(query);
         }
-
+       
         public DataTable forgotpasswordem1(string user, string phone)
         {
             string query = "Select * From Employee where Username = '" + user + "' and Phone Number ='" + phone + "';";
@@ -107,23 +113,13 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewhospitals()
+        public DataTable viewinsurance (string type, string city)
         {
-            string query = "Select * From Insurance Where Service Type = '+H+';";
+            string query = "Select [Hospital/Clinic/Phamacy Name], [District Address], [Phone Number] From Insurance where " +
+                "[Service Type] = '" + type + "' and [City Address] = '" + city + "';";
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewlaboratories()
-        {
-            string query = "Select * From Insurance Where Service Type == L  ;";
-            return dbMan.ExecuteReader(query);
-        }
-
-        public DataTable viewpharmacies()
-        {
-            string query = "Select * From Insurance Where Service Type == P  ;";
-            return dbMan.ExecuteReader(query);
-        }
         public DataTable SelectMaxCutomerID()            //Gets the max id of the last registered customer
         {
             string query = "Select max([Customer ID]) from Customers;";
@@ -148,9 +144,9 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable retrievemanager(int deptid)
+        public DataTable retrievemanager(string deptid)
         {
-            string query = "Select * From Employee where[Employee ID] = (Select[Manager ID] from Departement where[Departement ID] = '" + deptid.ToString() + "' )";
+            string query = "Select * From Employee where[Employee ID] = (Select [Manager ID] from Departement where [Departement ID] = '" + deptid + "' )";
             return dbMan.ExecuteReader(query);
         }
 
@@ -230,12 +226,6 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int Addemployee(string ph, string mail, string user, string pass, string cit, string dist, string coun, string fn, string mn, string ln, string ge, string spec, string sala)
-        {// not finished
-            string query = "Insert Into employee values";
-            return dbMan.ExecuteNonQuery(query);
-        }
-
         public DataTable fillemployeebydept(int val)
         {
             string query = "Select [First name], [Employee ID] From employee where Department = '" + val.ToString() + "';";
@@ -259,12 +249,50 @@ namespace Project
             string query = "Select Password from Customers where Username = '" + UN + "';";
             return dbMan.ExecuteReader(query);
         }
-
-        public int UpdateCustomerPassword(string Cust_ID,string newPass)
+        public DataTable retrieveemployeebyusername(string idval)
         {
-            string query = "UPDATE Customers SET Password = '" + newPass + "' where [Customer ID] = '" + Cust_ID + "';";
+            string storedproc = StoredProcedures.Selecet_employees_by_username;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Username", idval);
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
+        public DataTable SelectDepartmentByID(string ID)
+        {
+            string storedproc = StoredProcedures.select_department_By_ID;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ID", ID);
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
+        public DataTable SelectBranchByID(string ID)
+        {
+            string storedproc = StoredProcedures.select_Branch_by_ID;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ID", ID);
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
+        public int UpdateEmployeeInfo(string username,  string Country , string City, string District,string Phone)
+        {
+            string storedproc = StoredProcedures.Update_employee_data;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Username", username);
+            Parameters.Add("@Phone", Phone);
+            Parameters.Add("@Country", Country);
+            Parameters.Add("@City", City);
+            Parameters.Add("@District", District);
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
+        }
+
+
+        public int updatemanager(string midn, string deptid, string date)
+        {
+            string query = "Update Departement Set [Manager ID] = '" + midn + "', [Start Date] = '" + date + "' where [Departement ID] = '" + deptid + "';";
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public DataTable checkmanager(string managerid)
+        {
+            string query = "Select * From Departement where [Manager ID] = '" + managerid + "';";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

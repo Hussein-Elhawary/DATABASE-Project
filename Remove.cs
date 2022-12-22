@@ -20,7 +20,6 @@ namespace Project
         DataTable dt4 = null;
         DataTable dt5 = null;
         DataTable dt6 = null;
-        DataTable dt7 = null;
         public Remove()
         {
             InitializeComponent();
@@ -40,16 +39,13 @@ namespace Project
             comboBox7.DataSource = dt2;
             comboBox7.DisplayMember = "Name";
             comboBox7.ValueMember = "Departement ID";
-            
-            //dt1 = controllerobj.fillemployeesnames();
-            //comboBox1.DataSource = dt1;
-            //comboBox1.DisplayMember = "First Name";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Home h2 = new Home();
             h2.Show();
+            this.Hide();
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,12 +53,17 @@ namespace Project
             int value;
             Int32.TryParse(comboBox5.SelectedValue.ToString(), out value);
             controllerobj = new Controller();
-            dt3 = controllerobj.fillemployeebydept(value);
-            if (dt3 != null)
+            dt4 = controllerobj.fillemployeebydept(value);
+            if (dt4 != null)
             {
-                comboBox6.DataSource = dt3;
+                comboBox6.DataSource = dt4;
                 comboBox6.DisplayMember = "First name";
                 comboBox6.ValueMember = "Employee ID";
+                comboBox6.Refresh();
+            }
+            else
+            {
+                comboBox6.DataSource = dt4;
             }
         }
 
@@ -79,6 +80,10 @@ namespace Project
                 comboBox1.ValueMember = "Employee ID";
                 comboBox1.Refresh();
             }
+            else
+            {
+                comboBox1.DataSource = dt3;
+            }
         }
 
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,14 +92,16 @@ namespace Project
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {//check this
-            int value1;
-            Int32.TryParse(comboBox1.SelectedValue.ToString(), out value1);
-            controllerobj = new Controller();
-            dt4 = controllerobj.retrieveemployeebyid(value1);
-            if (dt4 != null)
+        {
+            if (dt3 != null)
             {
-                maskedTextBox9.Text = dt4.ToString();
+                int value1;
+                Int32.TryParse(comboBox1.SelectedValue.ToString(), out value1);
+                maskedTextBox9.Text = value1.ToString();
+            }
+            else
+            {
+                maskedTextBox9.ResetText();
             }
         }
 
@@ -106,16 +113,32 @@ namespace Project
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            string deleteuser = comboBox1.SelectedValue.ToString();
+        {//delete occurs correctly but it should refresh the data in the combobox and textbox
+            int depdel = Convert.ToInt32(comboBox4.SelectedValue.ToString());
+            string deleteuser1 = maskedTextBox9.Text;
             controllerobj = new Controller();
-            dt5 = controllerobj.checkifmanager(deleteuser);
+            dt5 = controllerobj.checkmanager(deleteuser1);
             if (dt5 == null)
             {
-                int result = controllerobj.deleteemployee(deleteuser);
+                controllerobj = new Controller();
+                int result = controllerobj.deleteemployee(deleteuser1);
                 if (result == 1)
                 {
                     MessageBox.Show("Deletion Occurs Successfully");
+                    controllerobj = new Controller();
+                    dt6 = controllerobj.fillemployeebydept(depdel);
+                    if (dt6 != null)
+                    {
+                        comboBox6.DataSource = dt6;
+                        comboBox6.DisplayMember = "First name";
+                        comboBox6.ValueMember = "Employee ID";
+                        comboBox6.Refresh();
+                        maskedTextBox9.ResetText();
+                    }
+                    else
+                    {
+                        comboBox6.DataSource = dt6;
+                    }
                 }
                 else
                 {
@@ -139,6 +162,20 @@ namespace Project
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dt4 != null)
+            {
+                int value2;
+                Int32.TryParse(comboBox6.SelectedValue.ToString(), out value2);
+                maskedTextBox1.Text = value2.ToString();
+            }
+            else
+            {
+                maskedTextBox1.ResetText();
+            }
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

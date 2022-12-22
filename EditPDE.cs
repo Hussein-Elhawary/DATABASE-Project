@@ -12,16 +12,55 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace Project
 {
     public partial class EditPDE : Form
-    { 
+    {
         string username;
-    
+        Controller controllerobj;
+        DataTable dt = null;
+        DataTable dt1 = null;
         public EditPDE(string usernamec)
         {
             InitializeComponent();
             username = usernamec;
             UsernameTextbox.Text = username;
+            controllerobj = new Controller();
             //call query to get the rest of the data
             //use the data to fill the rest of the textboxes
+            dt = controllerobj.retrieveemployeebyusername(username);
+            if (dt != null)
+            {
+                FirstnameTextbox.Text = dt.Rows[0]["First name"].ToString();
+                MiddlenameTextbox.Text = dt.Rows[0]["Middle name"].ToString();
+                LastnameTextbox.Text = dt.Rows[0]["Last name"].ToString();
+                // EmailTextbox.Text = dt.Rows[0]["Email"].ToString();
+                PhonenumberTextbox.Text = dt.Rows[0]["Phone"].ToString();
+                DistrictTextbox.Text = dt.Rows[0]["District address"].ToString();
+                CityTextbox.Text = dt.Rows[0]["City address"].ToString();
+                CountryTextbox.Text = dt.Rows[0]["Country address"].ToString();
+                if ((dt.Rows[0]["Gender"]).ToString() == "True")
+                {
+                    GenderTextbox.Text = "Male";
+                }
+                else
+                {
+                    GenderTextbox.Text = "Female";
+                }
+                SalaryTextbox.Text = dt.Rows[0]["Fixed Salary"].ToString();
+                BirthDateTextbox.Text = dt.Rows[0]["Birth date"].ToString();
+                NationalIDTextbox.Text = dt.Rows[0]["Employee ID"].ToString();
+                NationalityTextbox.Text = dt.Rows[0]["Employee ID"].ToString();
+                ExtentionTextbox.Text = dt.Rows[0]["Extension"].ToString();
+            }
+            dt1 = controllerobj.SelectDepartmentByID(dt.Rows[0]["Department"].ToString());
+            if (dt1 != null)
+            {
+                DepartmentTextbox.Text = dt1.Rows[0]["Name"].ToString();
+            }
+
+            dt1 = controllerobj.SelectBranchByID(dt.Rows[0]["Branch"].ToString());
+            if (dt1 != null)
+            {
+                BranchTextbox.Text = dt1.Rows[0]["Type"].ToString();//type because branches dont have names
+            }
         }
 
         private void EditPDE_Load(object sender, EventArgs e)
@@ -108,5 +147,30 @@ namespace Project
         {
 
         }
+
+        private void UsernameTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExtentionTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateInformation_Click_1(object sender, EventArgs e)
+        {
+            dt.Rows[0]["Phone"] = PhonenumberTextbox.Text;
+            dt.Rows[0]["District address"] = DistrictTextbox.Text;
+            dt.Rows[0]["City address"] = CityTextbox.Text;
+            dt.Rows[0]["Country address"] = CountryTextbox.Text;
+            Checkpasswordandupdate checkpasswordandupdateobj = new Checkpasswordandupdate(username, dt.Rows[0]["Password"].ToString(), dt);
+            checkpasswordandupdateobj.Show();
+        }
     }
-}
+
+        //private void panel6_Paint(object sender, PaintEventArgs e)
+        //{
+
+        //}
+    }
