@@ -35,5 +35,13 @@ namespace Project
             EditPDE editPDE = new EditPDE(username);
             editPDE.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ViewprojectE viewprojectE = new ViewprojectE(username);
+            viewprojectE.Show();
+            this.Hide();
+            
+        }
     }
 }
