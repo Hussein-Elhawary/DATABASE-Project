@@ -63,6 +63,7 @@ namespace Project
             this.Controls.Add(this.dataGridView1);
             this.Name = "ViewEmployees";
             this.Text = "ViewEmployees";
+            this.Load += new System.EventHandler(this.ViewEmployees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

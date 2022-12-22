@@ -131,11 +131,11 @@
     <Compile Include="Forgotpassowrd.Designer.cs">
       <DependentUpon>Forgotpassowrd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Checkpassword.cs">
+    <Compile Include="Checkpasswordandupdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Checkpassword.Designer.cs">
-      <DependentUpon>Checkpassword.cs</DependentUpon>
+    <Compile Include="Checkpasswordandupdate.Designer.cs">
+      <DependentUpon>Checkpasswordandupdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -219,6 +219,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddBranch.resx">
       <DependentUpon>AddBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkpasswordandupdate.resx">
+      <DependentUpon>Checkpasswordandupdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="createuser.resx">
       <DependentUpon>createuser.cs</DependentUpon>

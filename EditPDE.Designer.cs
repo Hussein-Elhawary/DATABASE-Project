@@ -261,6 +261,7 @@ namespace Project
             this.UpdateInformation.TabIndex = 35;
             this.UpdateInformation.Text = "Update Information";
             this.UpdateInformation.UseVisualStyleBackColor = true;
+            this.UpdateInformation.Click += new System.EventHandler(this.UpdateInformation_Click_1);
             // 
             // label43
             // 
@@ -278,6 +279,7 @@ namespace Project
             this.ExtentionTextbox.ReadOnly = true;
             this.ExtentionTextbox.Size = new System.Drawing.Size(150, 22);
             this.ExtentionTextbox.TabIndex = 32;
+            this.ExtentionTextbox.TextChanged += new System.EventHandler(this.ExtentionTextbox_TextChanged);
             // 
             // DepartmentTextbox
             // 
@@ -529,6 +531,7 @@ namespace Project
             this.UsernameTextbox.ReadOnly = true;
             this.UsernameTextbox.Size = new System.Drawing.Size(150, 22);
             this.UsernameTextbox.TabIndex = 1;
+            this.UsernameTextbox.TextChanged += new System.EventHandler(this.UsernameTextbox_TextChanged);
             // 
             // label39
             // 
