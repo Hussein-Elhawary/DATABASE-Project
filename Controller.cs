@@ -11,6 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Net;
 using System.Runtime.ConstrainedExecution;
 using System.Security;
+using System.ComponentModel;
 
 namespace Project
 {
@@ -294,5 +295,24 @@ namespace Project
             string query = "Select * From Departement where [Manager ID] = '" + managerid + "';";
             return dbMan.ExecuteReader(query);
         }
+
+        public int UpdateCustomerPassword(string Cust_ID, string newPass)
+        {
+            string query = "UPDATE Customers SET Password = '" + newPass + "' where [Customer ID] = '" + Cust_ID + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertContains(string ordernum,string productid,string quantity)
+        {
+            string query = "INSERT INTO[contains] VALUES('" + ordernum + "','" + productid + "','" + quantity + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable GetProductIDFromName(string name)
+        {
+            string query = "SELECT [Product ID] FROM Products WHERE Name = '" + name + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
     }
 }

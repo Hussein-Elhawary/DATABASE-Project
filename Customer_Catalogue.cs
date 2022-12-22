@@ -127,6 +127,11 @@ namespace Project
 
             controllerobj.InsertNewOrder(next_ordernum.ToString(),Note_textbox.Text,DateTime.Now.ToString("yyyy-MM-dd"),"Pending",ExpectedDate.ToString("yyyy-MM-dd"),Cust_ID);
 
+            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            {
+               DT = controllerobj.GetProductIDFromName(dataGridView2.Rows[i].Cells["Column0"].Value.ToString());
+            }
+
             MessageBox.Show("Order Made!");
             this.Hide();
 
