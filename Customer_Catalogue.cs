@@ -133,7 +133,7 @@ namespace Project
                 string prod_ID = DT.Rows[0][0].ToString();
                 controllerobj.InsertContains(next_ordernum.ToString(), prod_ID, dataGridView2.Rows[i].Cells["Column3"].Value.ToString());
             }
-
+                
             MessageBox.Show("Order Made!");
             this.Hide();
 
