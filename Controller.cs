@@ -59,14 +59,14 @@ namespace Project
             string query = "Select DISTINCT [First name] From Employee where Department = " + id + ";";
             return dbMan.ExecuteReader(query);
         }
-        public DataTable SelectEmployeeMiddleNameFromDepartmentid(int id)
+        public DataTable SelectEmployeeMiddleNameFromFirstName(string fname)
         {
-            string query = "Select DISTINCT [Middle name] From Employee where Department = " + id + ";";
+            string query = "Select DISTINCT [Middle name] From Employee where [First name] = '" + fname + "';";
             return dbMan.ExecuteReader(query);
         }
-        public DataTable SelectEmployeeLastNameFromDepartmentid(int id)
+        public DataTable SelectEmployeeLastName(string fname,string mname)
         {
-            string query = "Select DISTINCT [Last name] From Employee where Department = " + id + ";";
+            string query = "Select DISTINCT [Last name] From Employee where [First name] = '" + fname + "' and  [Middle name]='" + mname + "';";
             return dbMan.ExecuteReader(query);
         }
         public DataTable checkc(string userc, string passc)       //login customers
