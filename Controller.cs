@@ -144,9 +144,9 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable retrievemanager(string managerid)
+        public DataTable retrievemanager(string deptid)
         {
-            string query = "Select * From Employee where[Employee ID] = (Select [Manager ID] from Departement where [Departement ID] = '" + managerid + "' )";
+            string query = "Select * From Employee where[Employee ID] = (Select [Manager ID] from Departement where [Departement ID] = '" + deptid + "' )";
             return dbMan.ExecuteReader(query);
         }
 
@@ -289,6 +289,10 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
-
+        public DataTable checkmanager(string managerid)
+        {
+            string query = "Select * From Departement where [Manager ID] = '" + managerid + "';";
+            return dbMan.ExecuteReader(query);
+        }
     }
 }

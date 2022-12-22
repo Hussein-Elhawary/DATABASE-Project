@@ -19,7 +19,7 @@ namespace Project
         DataTable dt3 = null;
         DataTable dt4 = null;
         DataTable dt5 = null;
-
+        DataTable dt6 = null;
         public Remove()
         {
             InitializeComponent();
@@ -113,18 +113,32 @@ namespace Project
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            int deleteuser = Convert.ToInt32(comboBox4.SelectedValue);           
+        {//delete occurs correctly but it should refresh the data in the combobox and textbox
+            int depdel = Convert.ToInt32(comboBox4.SelectedValue.ToString());
             string deleteuser1 = maskedTextBox9.Text;
             controllerobj = new Controller();
-            dt5 = controllerobj.retrievemanager(deleteuser.ToString());
-            // needs more work to be running succesfully and change the above query
-            if (dt5.ToString() == null)
+            dt5 = controllerobj.checkmanager(deleteuser1);
+            if (dt5 == null)
             {
-                int result = controllerobj.deleteemployee(deleteuser.ToString());
+                controllerobj = new Controller();
+                int result = controllerobj.deleteemployee(deleteuser1);
                 if (result == 1)
                 {
                     MessageBox.Show("Deletion Occurs Successfully");
+                    controllerobj = new Controller();
+                    dt6 = controllerobj.fillemployeebydept(depdel);
+                    if (dt6 != null)
+                    {
+                        comboBox6.DataSource = dt6;
+                        comboBox6.DisplayMember = "First name";
+                        comboBox6.ValueMember = "Employee ID";
+                        comboBox6.Refresh();
+                        maskedTextBox9.ResetText();
+                    }
+                    else
+                    {
+                        comboBox6.DataSource = dt6;
+                    }
                 }
                 else
                 {
