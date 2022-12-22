@@ -11,6 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Net;
 using System.Runtime.ConstrainedExecution;
 using System.Security;
+using System.ComponentModel;
 
 namespace Project
 {
@@ -310,6 +311,49 @@ namespace Project
         {
             string query = "Select * From Departement where [Manager ID] = '" + managerid + "';";
             return dbMan.ExecuteReader(query);
+        }
+
+        public int UpdateCustomerPassword(string Cust_ID, string newPass)
+        {
+            string query = "UPDATE Customers SET Password = '" + newPass + "' where [Customer ID] = '" + Cust_ID + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int InsertContains(string ordernum,string productid,string quantity)
+        {
+            string query = "INSERT INTO[contains] VALUES('" + ordernum + "','" + productid + "','" + quantity + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable GetProductIDFromName(string name)
+        {
+            string query = "SELECT [Product ID] FROM Products WHERE Name = '" + name + "';";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectProjectsByUsernameAndtatusdone(string username, string status)
+        {
+            string storedproc = StoredProcedures.Select_Projects_by_username_and_status_Done;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@username", username);
+            Parameters.Add("@status", status);
+
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
+        public DataTable SelectProjectsByUsernameAndtatusNotdone(string username)
+        {
+            string storedproc = StoredProcedures.Select_Projects_by_username_and_status_not_Done;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@username", username);
+
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
+        public DataTable SelectProjectsByUsernameAndtatusall(string username)
+        {
+            string storedproc = StoredProcedures.Select_Projects_by_username_and_status_all;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@username", username);
+
+            return dbMan.ExecuteReader(storedproc, Parameters);
         }
 
     }

@@ -167,6 +167,17 @@ namespace Project
             Checkpasswordandupdate checkpasswordandupdateobj = new Checkpasswordandupdate(username, dt.Rows[0]["Password"].ToString(), dt);
             checkpasswordandupdateobj.Show();
         }
+
+        private void label44_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //change password here
+            
+        }
     }
 
         //private void panel6_Paint(object sender, PaintEventArgs e)
