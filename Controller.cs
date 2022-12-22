@@ -341,11 +341,12 @@ namespace Project
 
             return dbMan.ExecuteReader(storedproc, Parameters);
         }
-        public DataTable SelectProjectsByUsernameAndtatusNotdone(string username)
+        public DataTable SelectProjectsByUsernameAndtatusNotdone(string username ,string status)
         {
             string storedproc = StoredProcedures.Select_Projects_by_username_and_status_not_Done;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@username", username);
+            Parameters.Add("@status", status);
 
             return dbMan.ExecuteReader(storedproc, Parameters);
         }

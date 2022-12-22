@@ -24,14 +24,14 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             //search for projects
-            string status;
+            string status = (DateTime.Today).ToString("MM-dd-yyy");
             if (radioButton1.Checked)
             { 
-                dt= ControllerObj.SelectProjectsByUsernameAndtatusNotdone(username);
+                dt= ControllerObj.SelectProjectsByUsernameAndtatusNotdone(username,status);
             }
             else if (radioButton2.Checked)
             {
-                status = (DateTime.Today).ToString("MM-dd-yyy");
+               
                 dt =ControllerObj.SelectProjectsByUsernameAndtatusdone(username, status);
             }
             else if(radioButton3.Checked)
