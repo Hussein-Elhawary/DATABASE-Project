@@ -56,6 +56,7 @@ namespace Project
             this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -74,7 +75,6 @@ namespace Project
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -201,7 +201,7 @@ namespace Project
             // 
             this.maskedTextBox2.Location = new System.Drawing.Point(179, 229);
             this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBox2.Size = new System.Drawing.Size(120, 22);
             this.maskedTextBox2.TabIndex = 199;
             // 
             // label9
@@ -289,8 +289,10 @@ namespace Project
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(350, 45);
             this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.ReadOnly = true;
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox1.TabIndex = 197;
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // comboBox6
             // 
@@ -550,6 +552,15 @@ namespace Project
             this.label2.TabIndex = 184;
             this.label2.Text = "Country Of Residence ";
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(179, 111);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.TabIndex = 190;
+            // 
             // maskedTextBox3
             // 
             this.maskedTextBox3.Location = new System.Drawing.Point(350, 113);
@@ -715,15 +726,6 @@ namespace Project
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1243, 661);
             this.panel7.TabIndex = 20;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(179, 111);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 190;
             // 
             // Remove
             // 

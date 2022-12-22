@@ -92,7 +92,14 @@ namespace Project
 
         private void maskedTextBox4_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+           // string pass1 = null;
+           // Int32.TryParse(maskedTextBox4.Text, out pass1);
+        }
+
+        private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
 
         }
+
     }
 }

@@ -76,18 +76,20 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewmanagersrequests(int pp)
+        public DataTable viewmanagersrequests(string date1,string date2)
         {
-            string query = "Select * From ManagerRequests where [Date Issued] = '" + pp + "'";
+            string query = "Select * From ManagerRequests where [Date Issued] >= '" + date1 + "' and " +
+                "[Date Issued] <= '" + date2 + "' and [Resolved] = '" + false + "';";
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewcustomersrequests()
+        public DataTable viewcustomersrequests(string date1, string date2)
         {
-            string query = "Select * From CustomerRequests;";
+            string query = "Select * From CustomerRequests where [Date Issued] >= '" + date1 + "' and " +
+                "[Date Issued] <= '" + date2 + "' and [Resolved] = 'No';";
             return dbMan.ExecuteReader(query);
         }
-
+       
         public DataTable forgotpasswordem1(string user, string phone)
         {
             string query = "Select * From Employee where Username = '" + user + "' and Phone Number ='" + phone + "';";
@@ -107,23 +109,13 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewhospitals()
+        public DataTable viewinsurance (string type, string city)
         {
-            string query = "Select * From Insurance Where Service Type = '+H+';";
+            string query = "Select [Hospital/Clinic/Phamacy Name], [District Address], [Phone Number] From Insurance where " +
+                "[Service Type] = '" + type + "' and [City Address] = '" + city + "';";
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable viewlaboratories()
-        {
-            string query = "Select * From Insurance Where Service Type == L  ;";
-            return dbMan.ExecuteReader(query);
-        }
-
-        public DataTable viewpharmacies()
-        {
-            string query = "Select * From Insurance Where Service Type == P  ;";
-            return dbMan.ExecuteReader(query);
-        }
         public DataTable SelectMaxCutomerID()            //Gets the max id of the last registered customer
         {
             string query = "Select max([Customer ID]) from Customers;";
@@ -148,9 +140,9 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable retrievemanager(int deptid)
+        public DataTable retrievemanager(string managerid)
         {
-            string query = "Select * From Employee where[Employee ID] = (Select[Manager ID] from Departement where[Departement ID] = '" + deptid.ToString() + "' )";
+            string query = "Select * From Employee where[Employee ID] = (Select [Manager ID] from Departement where [Departement ID] = '" + managerid + "' )";
             return dbMan.ExecuteReader(query);
         }
 
@@ -230,12 +222,6 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int Addemployee(string ph, string mail, string user, string pass, string cit, string dist, string coun, string fn, string mn, string ln, string ge, string spec, string sala)
-        {// not finished
-            string query = "Insert Into employee values";
-            return dbMan.ExecuteNonQuery(query);
-        }
-
         public DataTable fillemployeebydept(int val)
         {
             string query = "Select [First name], [Employee ID] From employee where Department = '" + val.ToString() + "';";
@@ -248,9 +234,9 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public int deleteemployee(int id)
+        public int deleteemployee(string id)
         {
-            string query = "Delete From employee where [Employee ID] = '" + id.ToString() + "';";
+            string query = "Delete From employee where [Employee ID] = '" + id + "';";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -272,7 +258,6 @@ namespace Project
             string query = "Update Departement Set [Manager ID] = '" + midn + "', [Start Date] = '" + date + "' where [Departement ID] = '" + deptid + "';";
             return dbMan.ExecuteNonQuery(query);
         }
-
 
 
     }

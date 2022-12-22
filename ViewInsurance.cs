@@ -34,8 +34,8 @@ namespace Project
             DataTable dt = null;
             if (radioButton1.Checked == true)
             {
-                dt = controllerobj.viewhospitals();
-                dataGridView1.DataSource = dt;
+                controllerobj = new Controller();
+                dt = controllerobj.viewinsurance("H", "Giza");
                 if (dt == null)
                 {
                     dataGridView1.Hide();
@@ -49,7 +49,8 @@ namespace Project
             }
             else if (radioButton2.Checked == true)
             {
-                dt = controllerobj.viewlaboratories();
+                controllerobj = new Controller();
+                dt = controllerobj.viewinsurance("L", "Giza");
                 if (dt == null)
                 {
                     dataGridView1.Hide();
@@ -63,7 +64,8 @@ namespace Project
             }
             else if (radioButton3.Checked == true)
             {
-                dt = controllerobj.viewpharmacies();
+                controllerobj = new Controller();
+                dt = controllerobj.viewinsurance("P", "October");
                 if (dt == null)
                 {
                     dataGridView1.Hide();
@@ -87,6 +89,11 @@ namespace Project
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
 
         }

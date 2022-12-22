@@ -39,7 +39,8 @@ namespace Project
             int value;
             Int32.TryParse(comboBox4.SelectedValue.ToString(), out value);
             controllerobj = new Controller();
-            dt = controllerobj.retrievemanager(value);
+            dt = controllerobj.retrievemanager(value.ToString());
+            controllerobj = new Controller();
             dt1 = controllerobj.fillemployeebydept(value);
             if (dt != null) 
             {
@@ -48,6 +49,10 @@ namespace Project
                 comboBox1.DataSource = dt1;
                 comboBox1.DisplayMember = "First name";
                 comboBox1.ValueMember = "Employee ID";
+            }
+            else
+            {
+                comboBox1.DataSource = dt1;
             }
         }
 
@@ -66,17 +71,29 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             controllerobj = new Controller();
-            string newname = comboBox1.SelectedValue.ToString();
-            string deptid = comboBox4.SelectedValue.ToString();
-            string startdate = DateTime.Today.ToString("M/d/yyyy");
-            int result = controllerobj.updatemanager(newname,deptid,startdate);
-            if (result == 1)
+            string newname = comboBox1.SelectedValue.ToString();    // id of new manager
+            string deptid = comboBox4.SelectedValue.ToString();     // id of the department
+            string startdate = DateTime.Today.ToString("M/d/yyyy"); // start date
+            if (newname != maskedTextBox9.Text)
             {
-                MessageBox.Show("Update Done!");
+                int result = controllerobj.updatemanager(newname, deptid, startdate);
+                if (result == 1)
+                {
+                    MessageBox.Show("Update Done!");
+                    //find another method instead of calling the query
+                    dt = controllerobj.retrievemanager(deptid.ToString());
+                    textBox1.Text = dt.Rows[0]["First name"].ToString();
+                    maskedTextBox9.Text = newname;
+                    maskedTextBox5.ResetText();
+                }
+                else
+                {
+                    MessageBox.Show("Sad");
+                }
             }
             else
             {
-                MessageBox.Show("Sad");
+                MessageBox.Show("The New Manager Can't Be The Same Current Manager");
             }
         }
 
@@ -92,13 +109,24 @@ namespace Project
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int value1;
-            Int32.TryParse(comboBox1.SelectedValue.ToString(), out value1);
-            maskedTextBox5.Text = value1.ToString();
-            
+            if (dt1 != null)
+            {
+                int value1;
+                Int32.TryParse(comboBox1.SelectedValue.ToString(), out value1);
+                maskedTextBox5.Text = value1.ToString();
+            }
+            else
+            {
+                maskedTextBox5.ResetText();
+            }
         }
 
         private void maskedTextBox5_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox5_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
