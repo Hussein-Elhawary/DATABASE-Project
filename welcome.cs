@@ -72,8 +72,8 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             string un = maskedTextBox1.Text;
-            string pass = Encrypt(maskedTextBox2.Text);
-            if (un == "" || pass == "")
+            string Pass = maskedTextBox2.Text; 
+            if (un == "" || Pass == "")
             {
                 MessageBox.Show("Please Enter Your Credentials!");
             }
@@ -82,6 +82,7 @@ namespace Project
                 
                 DataTable dt = null;
                 controllerobj = new Controller();
+                string pass = Encrypt(Pass);
                 dt = controllerobj.checke(un, pass);
                 if (dt == null)
                 {
@@ -98,6 +99,7 @@ namespace Project
             {
                 DataTable dt = null;
                 controllerobj = new Controller();
+                string pass = Encrypt(Pass);
                 dt = controllerobj.checke(un, pass);
                 if (dt == null)
                 {
@@ -114,6 +116,7 @@ namespace Project
             {
                 DataTable dt = null;
                 controllerobj = new Controller();
+                string pass = Encrypt(Pass);
                 dt = controllerobj.checke(un, pass);
                 if (dt == null)
                 {
@@ -130,6 +133,7 @@ namespace Project
             {
                 DataTable dt = null;
                 controllerobj = new Controller();
+                string pass = Encrypt(Pass);
                 dt = controllerobj.checke(un, pass);
                 if (dt == null)
                 {
@@ -146,6 +150,7 @@ namespace Project
             {
                 DataTable dt = null;
                 controllerobj = new Controller();
+                string pass = Encrypt(Pass);
                 dt = controllerobj.checke(un, pass);
                 if (dt == null)
                 {
@@ -173,6 +178,7 @@ namespace Project
                 {
                     controllerobj = new Controller();
                     dt = controllerobj.SelectCPassFromCUsername(un);
+                    string pass = Encrypt(Pass);
                     if (pass == dt.Rows[0][0].ToString())
                     {
                         controllerobj = new Controller();

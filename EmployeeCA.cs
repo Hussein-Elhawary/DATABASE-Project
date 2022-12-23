@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Project
 {
@@ -29,6 +30,16 @@ namespace Project
             comboBox2.ValueMember = "Branch Number";
         }
 
+        static string Encrypt(string passbefore)
+        {
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding uTF8 = new UTF8Encoding();
+                byte[] data = md5.ComputeHash(uTF8.GetBytes(passbefore));
+                return Convert.ToBase64String(data);
+            }
+        }
+
         private void label10_Click(object sender, EventArgs e)
         {
 
@@ -47,7 +58,6 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             string user = maskedTextBox10.Text;
-            string pass = maskedTextBox9.Text;
             string fname = maskedTextBox1.Text;
             string mname = maskedTextBox2.Text;
             string lname = maskedTextBox5.Text;
@@ -63,17 +73,27 @@ namespace Project
             string branch = comboBox2.SelectedValue.ToString();
             string spe = maskedTextBox3.Text;
             string dept = comboBox4.SelectedValue.ToString();
+            string password = maskedTextBox9.Text;
 
-            controllerobj = new Controller();
-            int resu = controllerobj.addnewEmployee(id, PN, mail, user, pass, "0", "0", "0", fname, mname, lname, "true", spe, salary, BD, "00", IP,dept,branch);
-            if (resu == 1)
+            if (password == "")
             {
-                MessageBox.Show("Added Successfully");
+
             }
             else
             {
-                MessageBox.Show("Error");
+                string sendpass = Encrypt(maskedTextBox9.Text);
+                controllerobj = new Controller();
+                int resu = controllerobj.addnewEmployee(id, PN, mail, user, sendpass, "0", "0", "0", fname, mname, lname, "true", spe, salary, BD, "00", IP, dept, branch);
+                if (resu == 1)
+                {
+                    MessageBox.Show("Added Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
             }
+
         }
 
         private void button2_Click(object sender, EventArgs e)

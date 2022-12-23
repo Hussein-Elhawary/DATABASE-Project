@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Project
 {
@@ -17,6 +18,16 @@ namespace Project
         public Forgotpassowrd()
         {
             InitializeComponent();
+        }
+
+        static string Encrypt(string passbefore)
+        {
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding uTF8 = new UTF8Encoding();
+                byte[] data = md5.ComputeHash(uTF8.GetBytes(passbefore));
+                return Convert.ToBase64String(data);
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -36,6 +47,7 @@ namespace Project
             string pn = maskedTextBox2.Text;
             string pass1 = textBox1.Text;
             string cpass = textBox2.Text;
+            
             if (un == "" || pn == "")
             {
                 MessageBox.Show("Please Enter Your Credentials!");
@@ -54,6 +66,7 @@ namespace Project
                     }
                     else
                     {
+                        string pass = Encrypt(cpass);
                         if (un[0] == 'c' || un[0] == 'C')
                         {
                             controllerobj = new Controller();
@@ -66,7 +79,7 @@ namespace Project
                             else
                             {
                                 controllerobj = new Controller();
-                                int result = controllerobj.changepasswordem(un, pn, pass1, 'C');
+                                int result = controllerobj.changepasswordem(un, pn, pass, 'C');
                                 if (result == 1)
                                 {
                                     MessageBox.Show("Your Password Has Been Updated");
@@ -93,7 +106,7 @@ namespace Project
                             else
                             {
                                 controllerobj = new Controller();
-                                int result = controllerobj.changepasswordem(un, pn, pass1, 'E');
+                                int result = controllerobj.changepasswordem(un, pn, pass, 'E');
                                 if (result == 1)
                                 {
                                     MessageBox.Show("Your Password Has Been Updated");
