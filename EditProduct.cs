@@ -23,12 +23,14 @@ namespace Project
             username = usernamec;
             dt = ControllerObj.SelectAllProdcuts();
             dataGridView1.DataSource = dt;
+            dataGridView1.ReadOnly = true;
             dataGridView1.Refresh();
             Product_List.DataSource = dt;
             Product_List.DisplayMember = "Name";
             Product_List.ValueMember = "Product ID";
             Product_List.Refresh();
             dt1 = ControllerObj.SelectAllProdcuts();
+            
         }
 
         private void label36_Click(object sender, EventArgs e)
@@ -101,29 +103,69 @@ namespace Project
         private void updatedata_Click(object sender, EventArgs e)
         {
             //call Add function
-            string name = Product_List.Text;
-            string id = Product_List.SelectedValue.ToString();
-            float price = float.Parse(PricetextBox.Text);
-            int Amountinstock = Convert.ToInt32(AmountinstocktextBox.Text);
-            int Productioncost = Convert.ToInt32(ProductionCosttextBox.Text);
-            string Discription = Discriptiontextbox.Text;
-            int r = ControllerObj.UpdateProduct(id, name, Discription , price, Amountinstock, Productioncost);
-
-            if (r > 0)
+            int idistance;
+            float fdistance;
+            if (Discriptiontextbox.Text == "")
             {
-                MessageBox.Show("Product Updated");
-                dt = ControllerObj.SelectAllProdcuts();
-                dataGridView1.DataSource = dt;
-                dataGridView1.Refresh();
-                Product_List.DataSource = dt;
-                Product_List.DisplayMember = "Name";
-                Product_List.ValueMember = "Product ID";
-                Product_List.Refresh();
-                dt1 = ControllerObj.SelectAllProdcuts();
+                MessageBox.Show("Please Enter Product Description");
+                return;
+            }
+            else if (PricetextBox.Text == "")
+            {
+                MessageBox.Show("Please Enter Product Price");
+                return;
+            }
+            else if (AmountinstocktextBox.Text == "")
+            {
+                MessageBox.Show("Please Enter Product Amount in stock");
+                return;
+            }
+            else if (ProductionCosttextBox.Text == "")
+            {
+                MessageBox.Show("Please Enter Product Production Cost");
+                return;
+            }
+            else if (!(float.TryParse(PricetextBox.Text, out fdistance)))
+            {
+                MessageBox.Show("Product Price must be a number");
+                return;
+            }
+            else if (!(int.TryParse(AmountinstocktextBox.Text, out idistance)))
+            {
+                MessageBox.Show("Amount in stock must be an integer");
+                return;
+            }
+            else if (!(int.TryParse(ProductionCosttextBox.Text, out idistance)))
+            {
+                MessageBox.Show("Product Production Cost must be a number");
+                return;
             }
             else
-                MessageBox.Show("Product Not Updated");
-        }
+            {
+                string name = Product_List.Text;
+                string id = Product_List.SelectedValue.ToString();
+                float price = float.Parse(PricetextBox.Text);
+                int Amountinstock = Convert.ToInt32(AmountinstocktextBox.Text);
+                int Productioncost = Convert.ToInt32(ProductionCosttextBox.Text);
+                string Discription = Discriptiontextbox.Text;
+                int r = ControllerObj.UpdateProduct(id, name, Discription, price, Amountinstock, Productioncost);
+
+                if (r > 0)
+                {
+                    MessageBox.Show("Product Updated");
+                    dt = ControllerObj.SelectAllProdcuts();
+                    dataGridView1.DataSource = dt;
+                    dataGridView1.Refresh();
+                    Product_List.DataSource = dt;
+                    Product_List.DisplayMember = "Name";
+                    Product_List.ValueMember = "Product ID";
+                    Product_List.Refresh();
+                    dt1 = ControllerObj.SelectAllProdcuts();
+                }
+                else
+                    MessageBox.Show("Product Not Updated");
+            }
+            }
 
         private void Reffreshdata_Click(object sender, EventArgs e)
         {
@@ -135,6 +177,11 @@ namespace Project
             Product_List.ValueMember = "Product ID";
             Product_List.Refresh();
             dt1 = ControllerObj.SelectAllProdcuts();
+        }
+
+        private void PricetextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -44,18 +44,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ProductioncosttextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaterialsCombobox = new System.Windows.Forms.ComboBox();
+            this.InsertMaterialbutton = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(605, 236);
+            this.button1.Location = new System.Drawing.Point(616, 86);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 246;
-            this.button1.Text = "Add";
+            this.button1.Text = "Add product";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -75,6 +80,7 @@
             this.PricetextBox.Name = "PricetextBox";
             this.PricetextBox.Size = new System.Drawing.Size(96, 22);
             this.PricetextBox.TabIndex = 244;
+            this.PricetextBox.TextChanged += new System.EventHandler(this.PricetextBox_TextChanged);
             // 
             // DescriptiontextBox
             // 
@@ -211,11 +217,61 @@
             this.label7.TabIndex = 250;
             this.label7.Text = "Production cost";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(142, 405);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(153, 25);
+            this.label6.TabIndex = 251;
+            this.label6.Text = "Materials used";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(578, 272);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(138, 163);
+            this.dataGridView1.TabIndex = 252;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // MaterialsCombobox
+            // 
+            this.MaterialsCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MaterialsCombobox.FormattingEnabled = true;
+            this.MaterialsCombobox.Location = new System.Drawing.Point(419, 405);
+            this.MaterialsCombobox.Margin = new System.Windows.Forms.Padding(4);
+            this.MaterialsCombobox.Name = "MaterialsCombobox";
+            this.MaterialsCombobox.Size = new System.Drawing.Size(96, 24);
+            this.MaterialsCombobox.TabIndex = 253;
+            this.MaterialsCombobox.SelectedIndexChanged += new System.EventHandler(this.Product_List_SelectedIndexChanged);
+            // 
+            // InsertMaterialbutton
+            // 
+            this.InsertMaterialbutton.Location = new System.Drawing.Point(578, 242);
+            this.InsertMaterialbutton.Name = "InsertMaterialbutton";
+            this.InsertMaterialbutton.Size = new System.Drawing.Size(138, 23);
+            this.InsertMaterialbutton.TabIndex = 254;
+            this.InsertMaterialbutton.Text = "Insert Maretial";
+            this.InsertMaterialbutton.UseVisualStyleBackColor = true;
+            this.InsertMaterialbutton.Click += new System.EventHandler(this.InsertMaterialbutton_Click);
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.InsertMaterialbutton);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.MaterialsCombobox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.ProductioncosttextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.AmountinstocktextBox);
@@ -236,6 +292,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +316,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox ProductioncosttextBox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox MaterialsCombobox;
+        private System.Windows.Forms.Button InsertMaterialbutton;
     }
 }

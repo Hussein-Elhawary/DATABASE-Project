@@ -167,5 +167,10 @@ namespace Project
                 label6.Text = RunningTotal.ToString();
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

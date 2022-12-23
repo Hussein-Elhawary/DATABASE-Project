@@ -13,10 +13,51 @@ namespace Project
     public partial class EmployeeHomepage : Form
     {
         string username;
-        public EmployeeHomepage(string usernamec)
+        char type;
+        //general = g 
+        //Finance = F
+        //Production = P
+      
+        public EmployeeHomepage(string usernamec,char typec)
         {
             InitializeComponent();
             username = usernamec;
+            type = typec;
+            button2.Visible = true;
+            button3.Visible = true;
+            button5.Visible = false;
+            button1.Visible = false;
+            button4.Visible = false;
+            button6.Visible = false;
+            label1.Visible = true;
+            label2.Visible = true;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+            
+
+            if (type=='g')
+            {
+
+            }
+            else if (type=='f')
+            {
+                button6.Visible = true;
+                label6.Visible = true;
+
+            }
+            else if (type == 'p')
+            {
+                button5.Visible = true;
+                button1.Visible = true;
+                button4.Visible = true;
+                label4.Visible  = true;
+                label5.Visible  = true;
+                label7.Visible  = true;
+
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
