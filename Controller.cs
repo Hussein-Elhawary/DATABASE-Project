@@ -35,7 +35,25 @@ namespace Project
             string query = "Select * from departement;";
             return dbMan.ExecuteReader(query);
         }
-
+        public DataTable Select_ManagerRequests_UNResolved()
+        {
+            string storedproc = StoredProcedures.Select_TotalMR_Unresolved;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
+        public int closetherequest(string isid, int type, string emid)
+        {
+            string query = null;
+            if (type == 1)
+            {
+                query = "Update ManagerRequests set Resolved = '" + true + "', [Resolved by] = '" + emid + "' where [Request ID] = '" + isid + "';";
+            }
+            else if (type == 2)
+            {
+                query = "Update CustomerRequests set Resolved = 'Yes', [IT ID] = '" + emid + "' where[Request ID] = '" + isid + "'  ";
+            }
+            return dbMan.ExecuteNonQuery(query);
+        }
         public DataTable checke(string user, string pass)   //login employees, admins and managers
         {
             string query = "Select * From Employee where Username = '" + user + "' and Password ='" + pass + "';";
@@ -48,7 +66,7 @@ namespace Project
         }
         public DataTable SelectEmployeesbyName(string fname,string mname,string lname)
         {
-            string query = "Select * From Employee where  [First name] = '" + fname + "' and  [Middle name]='" + mname + "' and [Last name]='" + lname + "';";
+            string query = "Select [Employee ID],phone, From Employee where  [First name] = '" + fname + "' and  [Middle name]='" + mname + "' and [Last name]='" + lname + "';";
             return dbMan.ExecuteReader(query);
         }
         public DataTable SelectDepartment(string user)
@@ -58,7 +76,7 @@ namespace Project
         }
         public DataTable SelectProjectName(int id)
         {
-            string query = "Select A.Name From Projects as A,Control as B, Department as C where A.[Project ID]=B.[Project ID] and C.[Department ID] = B.[Department ID] and C.[Department ID] = " + id + " )";
+            string query = " Select A.Name From Projects as A,Control as B, Departement as C where A.[Project ID]=B.[Project ID] and C.[Departement ID] = B.[Department ID] and C.[Departement ID] =" + id + ";";
             return dbMan.ExecuteReader(query);
         }
         public DataTable SelectEmployeeFirstNameFromDepartmentid(int id)
@@ -131,7 +149,12 @@ namespace Project
             }
             return dbMan.ExecuteNonQuery(query);
         }
+        public int UpdateSalary(int salary,string fname,string mname,string lname)
+        {
 
+            string query = "Update Employee Set [Fixed salary] = " + salary + " where [First name]='" + fname + "' and [Middle name]='" + mname + "' and [Last name]='" + lname + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public DataTable fillemployeesnames()
         {
             string query = "Select * From Employee;";
@@ -156,7 +179,11 @@ namespace Project
             string query = "Select max([Customer ID]) from Customers;";
             return dbMan.ExecuteReader(query);
         }
-
+        public DataTable SelectBranches()
+        {
+            string query = "Select * From Branches ";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable GetUsernamefromCustomerUsername(string Username)            //Need it for checking an existing username
         {
             string query = "Select Username from Customers where Username = '" + Username + "';";

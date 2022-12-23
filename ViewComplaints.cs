@@ -13,10 +13,18 @@ namespace Project
     public partial class ViewComplaints : Form
     {
         Controller controllerobj = new Controller();
+        string username;
         public ViewComplaints()
         {
             InitializeComponent();
             dataGridView1.Hide();           
+        }
+
+        public ViewComplaints(string user)
+        {
+            InitializeComponent();
+            dataGridView1.Hide();
+            username = user;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -35,12 +43,12 @@ namespace Project
                 bool em = radioButton2.Checked;
                 if (ma == true)
                 {
-                    Requestdetails rq1 = new Requestdetails(text2, text1, text3, text4, text5, text6,1);
+                    Requestdetails rq1 = new Requestdetails(text2, text1, text3, text4, text5, text6,1,username);
                     rq1.Show();
                 }
                 else if (em == true)
                 {
-                    Requestdetails rq1 = new Requestdetails(text2, text1, text3, text4, text5, text6, 2);
+                    Requestdetails rq1 = new Requestdetails(text2, text1, text3, text4, text5, text6, 2,username);
                     rq1.Show();
                 }
 
@@ -82,7 +90,22 @@ namespace Project
                 }
                 else if (radioButton5.Checked == true)
                 {
-                    //all time,,, we may call its stored here
+                    controllerobj = new Controller();
+                    dt = controllerobj.Select_ManagerRequests_UNResolved();
+                    dataGridView1.DataSource = dt;
+                    if (dt == null)
+                    {
+                        dataGridView1.Hide();
+                        MessageBox.Show("No data is found");
+                    }
+                    else
+                    {
+                        dataGridView1.Show();
+                        dataGridView1.DataSource = dt;
+                        comboBox1.DataSource = dt;
+                        comboBox1.DisplayMember = "Request ID";
+                        comboBox1.ValueMember = "Request ID";
+                    }
                 }
                 else
                 {
