@@ -68,7 +68,7 @@ namespace Project
             h4.Show();
             this.Hide();
         }
-        //finance starts with F , Research P , General G
+        //finance starts with f , Research p , General g
         private void button1_Click(object sender, EventArgs e)
         {
             string un = maskedTextBox1.Text;

@@ -156,12 +156,34 @@ namespace Project
 
         private void UpdateInformation_Click_1(object sender, EventArgs e)
         {
+            if ((PhonenumberTextbox.Text).Length != 11)
+            {
+                MessageBox.Show("Phone number should be 11 digits");
+                return;
+            }
+            else if (DistrictTextbox.Text == "")
+            {
+                MessageBox.Show("Please add district");
+                return;
+            }
+            else if (CityTextbox.Text == "")
+            {
+                MessageBox.Show("Please add City");
+                return;
+            }
+            else if (CountryTextbox.Text == "")
+            {
+                MessageBox.Show("Please add Country");
+                return;
+            }
+
+
             dt.Rows[0]["Phone"] = PhonenumberTextbox.Text;
             dt.Rows[0]["District address"] = DistrictTextbox.Text;
             dt.Rows[0]["City address"] = CityTextbox.Text;
             dt.Rows[0]["Country address"] = CountryTextbox.Text;
-            Checkpasswordandupdate checkpasswordandupdateobj = new Checkpasswordandupdate(username, dt.Rows[0]["Password"].ToString(), dt);
-            checkpasswordandupdateobj.Show();
+           // Checkpasswordandupdate checkpasswordandupdateobj = new Checkpasswordandupdate(username, dt.Rows[0]["Password"].ToString(), dt, "other");
+            //checkpasswordandupdateobj.Show();
         }
 
         private void label44_Click(object sender, EventArgs e)
@@ -172,17 +194,28 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             //change password here
-            
+
+        }
+
+        private void PhonenumberTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //Checkpasswordandupdate checkpasswordandupdateobj = new Checkpasswordandupdate(username, dt.Rows[0]["Password"].ToString(), dt, "pass");
+           // checkpasswordandupdateobj.Show();
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-           
+
         }
     }
 
-        //private void panel6_Paint(object sender, PaintEventArgs e)
-        //{
+    //private void panel6_Paint(object sender, PaintEventArgs e)
+    //{
 
-        //}
-    }
+    //}
+}
