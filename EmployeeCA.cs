@@ -57,10 +57,39 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string user = maskedTextBox10.Text;
+            if (maskedTextBox1.Text == "")
+            {
+                MessageBox.Show("First Name is Empty !");
+                return;
+            }
             string fname = maskedTextBox1.Text;
-            string mname = maskedTextBox2.Text;
+            if (maskedTextBox2.Text == "")
+            {
+                MessageBox.Show("Middle Name is Empty !");
+                return;
+            }
+            string mname = maskedTextBox3.Text;
+            if (maskedTextBox1.Text == "")
+            {
+                MessageBox.Show("Last Name is Empty !");
+                return;
+            }
             string lname = maskedTextBox5.Text;
+            if (maskedTextBox1.Text == "")
+            {
+                MessageBox.Show("First Name is Empty !");
+                return;
+            }
+
+            if (maskedTextBox10.Text == "" || maskedTextBox10.Text[0] != 'f' || maskedTextBox10.Text[0] != 'p' || maskedTextBox10.Text[0] != 'g')
+            {
+                MessageBox.Show("UserName must either start with a f or p or g !");
+                return;
+            }
+            string user = maskedTextBox10.Text;
+
+
+
             string mail = maskedTextBox4.Text;
             //string gender = comboBox3.SelectedText;
             string NID = maskedTextBox8.Text;
