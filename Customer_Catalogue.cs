@@ -48,6 +48,8 @@ namespace Project
             DataTable DT2 = controllerobj.SelectAllProdcutsForDatagrid();
             dataGridView1.DataSource = DT2;
             dataGridView1.Refresh();
+            dataGridView1.ReadOnly = true;
+            dataGridView2.ReadOnly = true;
         }
 
         private void AddToCart_Button_Click(object sender, EventArgs e)
@@ -109,13 +111,13 @@ namespace Project
         {
             controllerobj = new Controller();
 
-            if (dataGridView2.Rows.Count < 2)
+            if (dataGridView2.Rows.Count < 1)
             {
                 MessageBox.Show("Order must contain atleast one item!");
                 return;
             }
 
-            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
                 int StockTaken = Convert.ToInt32(dataGridView2.Rows[i].Cells["Column3"].Value);
                 controllerobj.UpdateProductAfterMakingOrder(dataGridView2.Rows[i].Cells["Column1"].Value.ToString(),StockTaken);
@@ -127,7 +129,7 @@ namespace Project
 
             controllerobj.InsertNewOrder(next_ordernum.ToString(),Note_textbox.Text,DateTime.Now.ToString("yyyy-MM-dd"),"Pending",ExpectedDate.ToString("yyyy-MM-dd"),Cust_ID);
 
-            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
                 DT = controllerobj.GetProductIDFromName(dataGridView2.Rows[i].Cells["Column1"].Value.ToString());
                 string prod_ID = DT.Rows[0][0].ToString();

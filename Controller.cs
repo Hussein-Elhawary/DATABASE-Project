@@ -409,7 +409,7 @@ namespace Project
         {
             string storedproc = StoredProcedures.Select_TotalCM_Unresolved;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
-          
+
             return dbMan.ExecuteReader(storedproc, Parameters);
         }
 
@@ -435,3 +435,52 @@ namespace Project
         }
     }
 }
+
+        public DataTable ViewOrderDetails(string order_num)
+        {
+            string query = "SELECT P.Name,P.Price,C.Quantity as 'Amount',P.Price * C.Quantity as 'Total' from [contains] C,Products P WHERE C.[Product ID] = P.[Product ID] and C.[Order ID] = '" + order_num + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+    }
+}
+
+/*
+ using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Project
+{
+    public partial class OrderDetails : Form
+    {
+        Controller ControllerObj;
+        string Order_Num;
+
+        public OrderDetails()
+        {
+            InitializeComponent();
+        }
+
+        public OrderDetails(string order)
+        {
+            InitializeComponent();
+            Order_Num = order;
+        }
+
+        private void OrderDetails_Load(object sender, EventArgs e)
+        {
+            dataGridView1.ReadOnly = true;
+            ControllerObj = new Controller();
+            DataTable DT = ControllerObj.ViewOrderDetails(Order_Num);
+            dataGridView1.DataSource = DT;
+        }
+    }
+}
+ */

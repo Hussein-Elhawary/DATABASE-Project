@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Return_Label = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Note_textbox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,8 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,17 +60,20 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 160);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 161);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(450, 258);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(398, 258);
             this.dataGridView1.TabIndex = 0;
             // 
             // Product_List
             // 
             this.Product_List.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Product_List.FormattingEnabled = true;
-            this.Product_List.Location = new System.Drawing.Point(76, 81);
+            this.Product_List.Location = new System.Drawing.Point(39, 81);
             this.Product_List.Name = "Product_List";
             this.Product_List.Size = new System.Drawing.Size(98, 21);
             this.Product_List.TabIndex = 3;
@@ -78,7 +81,7 @@
             // AddToCart_Button
             // 
             this.AddToCart_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddToCart_Button.Location = new System.Drawing.Point(331, 78);
+            this.AddToCart_Button.Location = new System.Drawing.Point(294, 78);
             this.AddToCart_Button.Name = "AddToCart_Button";
             this.AddToCart_Button.Size = new System.Drawing.Size(83, 23);
             this.AddToCart_Button.TabIndex = 4;
@@ -106,7 +109,7 @@
             this.Return_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Return_Label.ForeColor = System.Drawing.Color.Black;
             this.Return_Label.LinkColor = System.Drawing.Color.White;
-            this.Return_Label.Location = new System.Drawing.Point(12, 9);
+            this.Return_Label.Location = new System.Drawing.Point(59, 9);
             this.Return_Label.Name = "Return_Label";
             this.Return_Label.Size = new System.Drawing.Size(46, 16);
             this.Return_Label.TabIndex = 6;
@@ -136,15 +139,37 @@
             this.panel1.Controls.Add(this.AddToCart_Button);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(957, 438);
+            this.panel1.Size = new System.Drawing.Size(877, 438);
             this.panel1.TabIndex = 7;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(539, 390);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 12);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Adds extra 100$";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(445, 388);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(87, 17);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Fast Delivery";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(492, 79);
+            this.label7.Location = new System.Drawing.Point(416, 78);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 18);
             this.label7.TabIndex = 18;
@@ -152,7 +177,7 @@
             // 
             // Note_textbox
             // 
-            this.Note_textbox.Location = new System.Drawing.Point(550, 78);
+            this.Note_textbox.Location = new System.Drawing.Point(474, 77);
             this.Note_textbox.Name = "Note_textbox";
             this.Note_textbox.Size = new System.Drawing.Size(382, 20);
             this.Note_textbox.TabIndex = 17;
@@ -160,6 +185,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.Return_Label);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -170,7 +196,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(588, 350);
+            this.label6.Location = new System.Drawing.Point(538, 351);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(28, 18);
             this.label6.TabIndex = 15;
@@ -180,9 +206,9 @@
             // Order_Button
             // 
             this.Order_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Order_Button.Location = new System.Drawing.Point(801, 369);
+            this.Order_Button.Location = new System.Drawing.Point(735, 369);
             this.Order_Button.Name = "Order_Button";
-            this.Order_Button.Size = new System.Drawing.Size(140, 49);
+            this.Order_Button.Size = new System.Drawing.Size(114, 49);
             this.Order_Button.TabIndex = 14;
             this.Order_Button.Text = "Confirm Order";
             this.Order_Button.UseVisualStyleBackColor = true;
@@ -192,7 +218,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(676, 126);
+            this.label5.Location = new System.Drawing.Point(626, 127);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 20);
             this.label5.TabIndex = 13;
@@ -202,7 +228,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(188, 126);
+            this.label4.Location = new System.Drawing.Point(161, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 20);
             this.label4.TabIndex = 12;
@@ -213,7 +239,7 @@
             // 
             this.RunningTotal_Label.AutoSize = true;
             this.RunningTotal_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RunningTotal_Label.Location = new System.Drawing.Point(492, 350);
+            this.RunningTotal_Label.Location = new System.Drawing.Point(442, 351);
             this.RunningTotal_Label.Name = "RunningTotal_Label";
             this.RunningTotal_Label.Size = new System.Drawing.Size(99, 18);
             this.RunningTotal_Label.TabIndex = 11;
@@ -221,15 +247,18 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView2.Location = new System.Drawing.Point(495, 160);
+            this.dataGridView2.Location = new System.Drawing.Point(445, 161);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(437, 175);
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(404, 175);
             this.dataGridView2.TabIndex = 10;
             this.dataGridView2.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick);
             // 
@@ -261,7 +290,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(212, 59);
+            this.label3.Location = new System.Drawing.Point(175, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 9;
@@ -270,7 +299,7 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(215, 82);
+            this.maskedTextBox1.Location = new System.Drawing.Point(178, 82);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(67, 20);
             this.maskedTextBox1.TabIndex = 8;
@@ -280,40 +309,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(95, 59);
+            this.label2.Location = new System.Drawing.Point(58, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Product";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(495, 387);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(87, 17);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Fast Delivery";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(589, 389);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 12);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Adds extra 100$";
-            // 
             // Customer_Catalogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 430);
-            this.Controls.Add(this.Return_Label);
+            this.ClientSize = new System.Drawing.Size(875, 430);
             this.Controls.Add(this.panel1);
             this.Name = "Customer_Catalogue";
             this.Text = "Catalogue";
@@ -325,7 +331,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
