@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Project
 {
@@ -36,6 +37,17 @@ namespace Project
                 label1.Visible = true;
             }
         }
+
+        static string Encrypt(string passbefore)
+        {
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding uTF8 = new UTF8Encoding();
+                byte[] data = md5.ComputeHash(uTF8.GetBytes(passbefore));
+                return Convert.ToBase64String(data);
+            }
+        }
+
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -64,7 +76,8 @@ namespace Project
 
         private void Confirm_Click_1(object sender, EventArgs e)
         {
-            if (textBox1.Text == password)
+            string encryptedpass = Encrypt(textBox1.Text);
+            if (encryptedpass == password)
             {
                 if (type == "pass")
                 {
@@ -75,13 +88,11 @@ namespace Project
                 else
                 {
 
-
                     string Country = (updater.Rows[0]["Country address"]).ToString();
                     string City = (updater.Rows[0]["City address"]).ToString();
                     string District = (updater.Rows[0]["District address"]).ToString();
                     string Phone = (updater.Rows[0]["Phone"]).ToString();
                     int r = Controllerobj.UpdateEmployeeInfo(username, Country, City, District, Phone);
-
                     if (r > 0)
                     {
                         MessageBox.Show("Updated Successfully");
