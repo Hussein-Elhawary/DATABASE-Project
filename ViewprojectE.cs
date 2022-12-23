@@ -44,6 +44,10 @@ namespace Project
                 MessageBox.Show("Please select a status");
             }
             dataGridView1.DataSource = dt;
+            if (dt == null)
+            {
+                MessageBox.Show("No projects found");
+            }
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)

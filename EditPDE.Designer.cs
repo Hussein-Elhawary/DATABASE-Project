@@ -126,6 +126,7 @@ namespace Project
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -210,6 +211,7 @@ namespace Project
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.Info;
+            this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.UpdateInformation);
             this.panel6.Controls.Add(this.label43);
             this.panel6.Controls.Add(this.ExtentionTextbox);
@@ -527,6 +529,7 @@ namespace Project
             this.PhonenumberTextbox.Name = "PhonenumberTextbox";
             this.PhonenumberTextbox.Size = new System.Drawing.Size(150, 22);
             this.PhonenumberTextbox.TabIndex = 2;
+            this.PhonenumberTextbox.TextChanged += new System.EventHandler(this.PhonenumberTextbox_TextChanged);
             // 
             // UsernameTextbox
             // 
@@ -1062,6 +1065,17 @@ namespace Project
             this.button3.TabIndex = 27;
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(53, 457);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(233, 63);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Update Password";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // EditPDE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1185,5 +1199,6 @@ namespace Project
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox ExtentionTextbox;
         private System.Windows.Forms.Button UpdateInformation;
+        private System.Windows.Forms.Button button1;
     }
 }
