@@ -17,6 +17,31 @@ namespace Project
             InitializeComponent();
         }
 
+        public Requestdetails(string id, string type, string date, string from, string on, string details,int ca)
+        {
+            InitializeComponent();
+            if (ca == 1)//manager
+            {
+                textBox5.Hide();
+                label5.Hide();
+                textBox1.Text = id;
+                textBox2.Text = type;
+                textBox3.Text = date;
+                textBox4.Text = details;
+                textBox6.Text = from;
+            }
+            else if (ca == 2)
+            {
+                textBox1.Text = id;
+                textBox2.Text = type;
+                textBox3.Text = date;
+                textBox4.Text = details;
+                textBox5.Text = on;
+                textBox6.Text = from;
+            }
+
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -29,6 +54,16 @@ namespace Project
 
         private void Requestdetails_Load(object sender, EventArgs e)
         {
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

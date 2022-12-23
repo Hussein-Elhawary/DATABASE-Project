@@ -116,6 +116,7 @@ namespace Project
             this.label5.Size = new System.Drawing.Size(84, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Request On";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textBox5
             // 
@@ -124,6 +125,7 @@ namespace Project
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(256, 22);
             this.textBox5.TabIndex = 8;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label4
             // 

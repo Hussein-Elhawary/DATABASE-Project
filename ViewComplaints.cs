@@ -21,17 +21,33 @@ namespace Project
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //DataGridViewRow row;
-            //if (e.RowIndex >= 0)
-            //{
-            //    row = dataGridView1.Rows[e.RowIndex];
-            //    Requestdetails rq1 = new Requestdetails();
-            //    rq1.Show();
-                
-            //    //this.Hide();
-            //}
-        }
+            DataGridViewRow row;
+            if (e.RowIndex >= 0)
+            {
+                row = dataGridView1.Rows[e.RowIndex];
+                string text1 = row.Cells[1].Value.ToString();
+                string text2 = row.Cells[0].Value.ToString();
+                string text3 = row.Cells[2].Value.ToString();
+                string text4 = row.Cells[3].Value.ToString();
+                string text5 = row.Cells[5].Value.ToString();
+                string text6 = row.Cells[6].Value.ToString();
+                bool ma = radioButton1.Checked;
+                bool em = radioButton2.Checked;
+                if (ma == true)
+                {
+                    Requestdetails rq1 = new Requestdetails(text2, text1, text3, text4, text5, text6,1);
+                    rq1.Show();
+                }
+                else if (em == true)
+                {
+                    Requestdetails rq1 = new Requestdetails(text2, text1, text3, text4, text5, text6, 2);
+                    rq1.Show();
+                }
 
+                    
+            }
+        }
+        
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             
@@ -201,10 +217,7 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string reid = comboBox1.SelectedValue.ToString();
-            Requestdetails rq1 = new Requestdetails();
-            rq1.Show();
-            this.Hide();
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
