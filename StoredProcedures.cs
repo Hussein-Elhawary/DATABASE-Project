@@ -19,5 +19,6 @@ namespace Project
         public static string Update_products = "Update_products";
         public static string Add_products = "Add_products";
         public static string Select_TotalCM_Unresolved = "Select_CustomerComplaints_UNResolved";
+        public static string Select_TotalMR_Unresolved = "Select_ManagerRequests_UNResolved";
     }
 }
