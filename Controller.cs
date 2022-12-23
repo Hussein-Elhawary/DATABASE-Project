@@ -491,6 +491,12 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable CustomerViewRequest(string cust_ID)
+        {
+            string query = "select [Request Type],[Date Issued] as 'Date Issued',Details,Resolved,R.[request on] as 'Order' from CustomerRequests R,Customers C where C.[Customer ID] = R.[Request from] and [Request from] = '" + cust_ID + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
     }
 }
 
@@ -518,11 +524,5 @@ namespace Project
             InitializeComponent();
         }
 
-        public DataTable CustomerViewRequest(string cust_ID)
-        {
-            string query = "select [Request Type],[Date Issued] as 'Date Issued',Details,Resolved,R.[request on] as 'Order' from CustomerRequests R,Customers C where C.[Customer ID] = R.[Request from] and [Request from] = '" + cust_ID + "';";
-            return dbMan.ExecuteReader(query);
-        }
-
     }
-}
+}   */
