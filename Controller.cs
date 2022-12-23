@@ -56,6 +56,11 @@ namespace Project
             string query = "Select Department From Employee where Username = '" + user + "';";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable SelectProjectName(int id)
+        {
+            string query = "Select A.Name From Projects as A,Control as B, Department as C where A.[Project ID]=B.[Project ID] and C.[Department ID] = B.[Department ID] and C.[Department ID] = " + id + " )";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectEmployeeFirstNameFromDepartmentid(int id)
         {
             string query = "Select DISTINCT [First name] From Employee where Department = " + id + ";";
@@ -140,6 +145,11 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
+        public int AddNewBranch(int branchno, string country, string city, string district, string email, string phonenum, string type, int id, string date)
+        {
+            string query = "Insert into Branches VALUES(" + branchno + ",'" + country + "','" + city + "','" + district + "','" + email + "','" + phonenum + "','" + type + "'," + id + ",'" + date + "');";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public DataTable SelectMaxCutomerID()            //Gets the max id of the last registered customer
         {
             string query = "Select max([Customer ID]) from Customers;";
@@ -166,7 +176,7 @@ namespace Project
 
         public DataTable retrievemanager(string deptid)
         {
-            string query = "Select * From Employee where[Employee ID] = (Select [Manager ID] from Departement where [Departement ID] = '" + deptid + "' )";
+            string query = "Select * From Employee where[Employee ID] = (Select [Manager ID] from Departement where [Department ID] = '" + deptid + "' )";
             return dbMan.ExecuteReader(query);
         }
 
@@ -176,7 +186,7 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
-        public DataTable GetOdersforSelectedCustomer(string id)            //Gets Orders for specific customer
+        public DataTable GetOrdersforSelectedCustomer(string id)            //Gets Orders for specific customer
         {
             string query = "Select [Order Number],Notes,[Order Date],[Order Status],[Expected Delivery Date] from Customers C,Orders O where C.[Customer ID] = O.[Customer ID] and C.[Customer ID] = '" + id + "';";
             return dbMan.ExecuteReader(query);
@@ -222,13 +232,13 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public DataTable SelectProdcutFromID(string id)
+        public DataTable SelectProductFromID(string id)
         {
             string query = "Select * from Products where [Product ID] = '" + id + "';";
             return dbMan.ExecuteReader(query);
         }
 
-        public int UpdateProductAfterMakingOrder(string name, int amount)                        // Updates Prodcut when someone makes an order
+        public int UpdateProductAfterMakingOrder(string name, int amount)                        // Updates Product when someone makes an order
         {
             string query = "UPDATE Products SET [Amount in stock] -= " + amount + " WHERE Name = '" + name + "';";
             return dbMan.ExecuteNonQuery(query);
@@ -257,7 +267,11 @@ namespace Project
             string query = "Select [Employee ID] from employee where [Employee ID] = '" + idval.ToString() + "';";
             return dbMan.ExecuteReader(query);
         }
-
+        public DataTable GetEmployeeIdFromUsername(string us)
+        {
+            string query = "Select [Employee ID] from Employee where [Username] = '" + us + "';";
+            return dbMan.ExecuteReader(query);
+        }
         public int deleteemployee(string id)
         {
             string query = "Delete From employee where [Employee ID] = '" + id + "';";

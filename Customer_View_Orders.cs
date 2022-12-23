@@ -38,7 +38,7 @@ namespace Project
             DataTable DT = controllerDB.GetNumberofOrdersForSelectedCustomer(Cust_ID);
             OrderCount_Label.Text = DT.Rows[0][0].ToString();
             controllerDB = new Controller();
-            DT = controllerDB.GetOdersforSelectedCustomer(Cust_ID);
+            DT = controllerDB.GetOrdersforSelectedCustomer(Cust_ID);
             dataGridView1.DataSource = DT;
             dataGridView1.Refresh();
         }

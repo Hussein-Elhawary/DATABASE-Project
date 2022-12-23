@@ -85,7 +85,7 @@ namespace Project
         private void ComplaintForm_Load(object sender, EventArgs e)
         {
             controllerobj = new Controller();
-            DataTable DT = controllerobj.GetOdersforSelectedCustomer(Cust_ID);
+            DataTable DT = controllerobj.GetOrdersforSelectedCustomer(Cust_ID);
             comboBox3.DataSource = DT;
             comboBox3.ValueMember = "Order Number";
             comboBox3.DisplayMember = "Order Number";

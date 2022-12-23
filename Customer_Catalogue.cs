@@ -68,7 +68,7 @@ namespace Project
 
             controllerobj = new Controller();
 
-            DataTable DT = controllerobj.SelectProdcutFromID(Product_List.SelectedValue.ToString());
+            DataTable DT = controllerobj.SelectProductFromID(Product_List.SelectedValue.ToString());
 
             int TPrice = Convert.ToInt32(maskedTextBox1.Text) * Convert.ToInt32(DT.Rows[0][1].ToString());
 
