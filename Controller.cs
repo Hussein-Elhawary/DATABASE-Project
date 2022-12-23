@@ -408,8 +408,15 @@ namespace Project
         {
             string storedproc = StoredProcedures.Select_TotalCM_Unresolved;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
-          
+
             return dbMan.ExecuteReader(storedproc, Parameters);
         }
+
+        public DataTable ViewOrderDetails(string order_num)
+        {
+            string query = "SELECT P.Name,P.Price,C.Quantity as 'Amount',P.Price * C.Quantity as 'Total' from [contains] C,Products P WHERE C.[Product ID] = P.[Product ID] and C.[Order ID] = '" + order_num + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
     }
 }
