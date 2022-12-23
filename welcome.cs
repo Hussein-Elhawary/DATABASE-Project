@@ -72,17 +72,17 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             string un = maskedTextBox1.Text;
-            string pass = maskedTextBox2.Text;
+            string pass = Encrypt(maskedTextBox2.Text);
             if (un == "" || pass == "")
             {
                 MessageBox.Show("Please Enter Your Credentials!");
             }
             else if (un[0] == 'I' || un[0] == 'i')//IT
             {
-                string sendpass = Encrypt(pass);
+                
                 DataTable dt = null;
                 controllerobj = new Controller();
-                dt = controllerobj.checke(un, sendpass);
+                dt = controllerobj.checke(un, pass);
                 if (dt == null)
                 {
                     MessageBox.Show("No Employee with this credentials");

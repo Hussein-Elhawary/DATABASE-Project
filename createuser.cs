@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Project
 {
@@ -33,6 +35,16 @@ namespace Project
             else
                 DBGender = "F";
             DBPreTime = PreTime + ":00";
+        }
+
+        static string Encrypt(string passbefore)
+        {
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding uTF8 = new UTF8Encoding();
+                byte[] data = md5.ComputeHash(uTF8.GetBytes(passbefore));
+                return Convert.ToBase64String(data);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -90,7 +102,9 @@ namespace Project
 
             int newID = Convert.ToInt16(DT.Rows[0][0]) + 1;
 
-            ControllerDB.InsertNewCustomer(newID.ToString(),Password.Text,Username.Text,DBFirstName,DBMiddleName,DBLastName,DBCOR,DBCity,DBAddress,DBEmail,DBCcode,DBphone,DB_BDate,DBGender,DBPreTime);
+            string crypted_pass = Encrypt(Password.Text);
+
+            ControllerDB.InsertNewCustomer(newID.ToString(),crypted_pass,Username.Text,DBFirstName,DBMiddleName,DBLastName,DBCOR,DBCity,DBAddress,DBEmail,DBCcode,DBphone,DB_BDate,DBGender,DBPreTime);
 
             welcome a = new welcome();
             this.Hide();
