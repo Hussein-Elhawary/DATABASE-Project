@@ -134,7 +134,7 @@ namespace Project
                 DataTable dt = null;
                 controllerobj = new Controller();
                 string pass = Encrypt(Pass);
-                dt = controllerobj.checke(un, pass);
+                dt = controllerobj.checke(un, Pass);
                 if (dt == null)
                 {
                     MessageBox.Show("No Employee with this credentials");

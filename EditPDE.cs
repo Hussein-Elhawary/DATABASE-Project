@@ -68,10 +68,6 @@ namespace Project
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -210,6 +206,11 @@ namespace Project
         {
             Checkpasswordandupdate checkpasswordandupdateobj = new Checkpasswordandupdate(username, dt.Rows[0]["Password"].ToString(), dt, "pass");
             checkpasswordandupdateobj.Show();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+           
         }
     }
 

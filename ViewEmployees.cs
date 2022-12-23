@@ -14,16 +14,19 @@ namespace Project
     {
         DataTable dt;
         Controller controllerobj;
+        Manager m;
+        string username;
         public ViewEmployees()
         {
             
             InitializeComponent();
            
         }
-        public ViewEmployees(string fname,string mname,string lname)
+        public ViewEmployees(string fname,string mname,string lname,string us)
         {
-
+            username = us;
             InitializeComponent();
+            m = new Manager(username);
             controllerobj = new Controller();
             dt = new DataTable();
             dt = controllerobj.SelectEmployeesbyName(fname, mname, lname);
@@ -31,7 +34,7 @@ namespace Project
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            // m.Show();
+            m.Show();
             this.Close();
         }
 

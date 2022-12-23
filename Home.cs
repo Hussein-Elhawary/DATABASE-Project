@@ -32,7 +32,7 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ViewComplaints vca = new ViewComplaints();
+            ViewComplaints vca = new ViewComplaints(username);
             vca.Show();
             this.Hide();
         }

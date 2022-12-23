@@ -16,7 +16,7 @@ namespace Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeHomepage("ghussein_elhawary",'p'));
+            Application.Run(new welcome());
         }
     }
 }
