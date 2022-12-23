@@ -21,7 +21,15 @@ namespace Project
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            //DataGridViewRow row;
+            //if (e.RowIndex >= 0)
+            //{
+            //    row = dataGridView1.Rows[e.RowIndex];
+            //    Requestdetails rq1 = new Requestdetails();
+            //    rq1.Show();
+                
+            //    //this.Hide();
+            //}
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
