@@ -31,6 +31,8 @@ namespace Project
                 DateTime ENDCM = new DateTime(Today.Year, Today.Month, 1).AddMonths(1).AddDays(-1);
                 comdate = StartCM.ToString("M/d/yyyy");
                 comdate1 = ENDCM.ToString("M/d/yyyy");
+                dt = controllerobj.getorders(comdate,comdate1);
+                comboBox1.DataSource = dt;
             }
             else if (radioButton3.Checked == true)//last month
             {
@@ -68,6 +70,11 @@ namespace Project
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

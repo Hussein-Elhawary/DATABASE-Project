@@ -13,6 +13,7 @@ namespace Project
     public partial class EmployeeCA : Form
     {
         Controller controllerobj = new Controller();
+        DataTable dt1 = null;
         public EmployeeCA()
         {
             InitializeComponent();
@@ -20,6 +21,12 @@ namespace Project
             dt = controllerobj.filldepartements();
             comboBox4.DataSource = dt;
             comboBox4.DisplayMember = "Name";
+            comboBox4.ValueMember = "Departement ID";
+            controllerobj = new Controller();
+            dt1 = controllerobj.fillbranch();
+            comboBox2.DataSource = dt1;
+            comboBox2.DisplayMember = "Branch District Address";
+            comboBox2.ValueMember = "Branch Number";
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -39,14 +46,34 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string user = maskedTextBox10.Text;
+            string pass = maskedTextBox9.Text;
             string fname = maskedTextBox1.Text;
             string mname = maskedTextBox2.Text;
             string lname = maskedTextBox5.Text;
             string mail = maskedTextBox4.Text;
-            string gender = comboBox3.SelectedText;
+            //string gender = comboBox3.SelectedText;
             string NID = maskedTextBox8.Text;
             string PN = maskedTextBox7.Text;
-            string nation = comboBox5.SelectedText;
+            //string nation = comboBox5.SelectedItem.ToString();
+            string id = maskedTextBox8.Text;
+            string BD = monthCalendar1.Text;
+            string salary = maskedTextBox6.Text;
+            string IP = maskedTextBox11.Text;
+            string branch = comboBox2.SelectedValue.ToString();
+            string spe = maskedTextBox3.Text;
+            string dept = comboBox4.SelectedValue.ToString();
+
+            controllerobj = new Controller();
+            int resu = controllerobj.addnewEmployee(id, PN, mail, user, pass, "0", "0", "0", fname, mname, lname, "true", spe, salary, BD, "00", IP,dept,branch);
+            if (resu == 1)
+            {
+                MessageBox.Show("Added Successfully");
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -108,6 +135,26 @@ namespace Project
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox6_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

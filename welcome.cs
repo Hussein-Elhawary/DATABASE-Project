@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Project
 {
@@ -17,6 +18,17 @@ namespace Project
         {
             InitializeComponent();
         }
+
+        static string Encrypt(string passbefore)
+        {
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding uTF8 = new UTF8Encoding();
+                byte[] data = md5.ComputeHash(uTF8.GetBytes(passbefore));
+                return Convert.ToBase64String(data);
+            }
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -67,9 +79,10 @@ namespace Project
             }
             else if (un[0] == 'I' || un[0] == 'i')//IT
             {
+                string sendpass = Encrypt(pass);
                 DataTable dt = null;
                 controllerobj = new Controller();
-                dt = controllerobj.checke(un, pass);
+                dt = controllerobj.checke(un, sendpass);
                 if (dt == null)
                 {
                     MessageBox.Show("No Employee with this credentials");

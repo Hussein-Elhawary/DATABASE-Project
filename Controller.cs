@@ -150,6 +150,7 @@ namespace Project
             string query = "Insert into Branches VALUES(" + branchno + ",'" + country + "','" + city + "','" + district + "','" + email + "','" + phonenum + "','" + type + "'," + id + ",'" + date + "');";
             return dbMan.ExecuteNonQuery(query);
         }
+
         public DataTable SelectMaxCutomerID()            //Gets the max id of the last registered customer
         {
             string query = "Select max([Customer ID]) from Customers;";
@@ -410,6 +411,27 @@ namespace Project
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
           
             return dbMan.ExecuteReader(storedproc, Parameters);
+        }
+
+        public DataTable getorders (string date1, string date2)
+        {
+            string query = "Select * From [contains] where [Order ID] = (Select [Order Number] From Orders " +
+                "where [Order Date] >= '" + date1 + "' and [Order Date] <= '" + date2 + "')";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int addnewEmployee (string id, string phone, string email, string user, string pass, string city, string district, string country,string f, string m, string l, string g, string spe, string fix, string bd, string nation, string extne, string dept, string bran)
+        {
+            string query = "Insert into Employee Values ('" + id + "','" + phone + "','" + email + "','" + user + "','" + pass + "','" + city + "'," +
+                "'" + district + "','" + country + "','" + f + "','" + m + "','" + l + "',,' true ','" + spe + "',," + fix + ", 0 ,'" + bd + "'," +
+                ",'" + nation + "','" + extne + "'," + dept + "," + bran + ")";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public DataTable fillbranch()
+        {
+            string query = "Select * From Branches;";
+            return dbMan.ExecuteReader(query);
         }
     }
 }
