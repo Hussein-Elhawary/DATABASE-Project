@@ -17,6 +17,7 @@ namespace Project
         Controller controllerobj;
         string Cust_ID;
         int RunningTotal = 0;
+        int Total_Production_Cost = 0;
         DateTime ExpectedDate = DateTime.Now.AddDays(20);
 
         public Customer_Catalogue()
@@ -74,10 +75,13 @@ namespace Project
 
             int TPrice = Convert.ToInt32(maskedTextBox1.Text) * Convert.ToInt32(DT.Rows[0][1].ToString());
 
+            int Production_Price = Convert.ToInt32(maskedTextBox1.Text) * Convert.ToInt32(DT.Rows[0][5].ToString());
+
             string[] row = new string[] { DT.Rows[0][3].ToString(), DT.Rows[0][1].ToString(),maskedTextBox1.Text,TPrice.ToString()};
 
             dataGridView2.Rows.Add(row);
             RunningTotal += TPrice;
+            Total_Production_Cost += Production_Price;
             label6.Text = RunningTotal.ToString() + " $";
 
         }
@@ -127,7 +131,7 @@ namespace Project
             int next_ordernum = Convert.ToInt32(DT.Rows[0][0]) + 1;
 
 
-            controllerobj.InsertNewOrder(next_ordernum.ToString(),Note_textbox.Text,DateTime.Now.ToString("yyyy-MM-dd"),"Pending",ExpectedDate.ToString("yyyy-MM-dd"),Cust_ID);
+            controllerobj.InsertNewOrder(next_ordernum.ToString(),Note_textbox.Text,DateTime.Now.ToString("yyyy-MM-dd"),"Pending",ExpectedDate.ToString("yyyy-MM-dd"),Cust_ID,RunningTotal.ToString(),Total_Production_Cost.ToString());
 
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
@@ -162,6 +166,11 @@ namespace Project
                 label8.Hide();
                 label6.Text = RunningTotal.ToString();
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

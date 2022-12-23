@@ -34,6 +34,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.Reffreshdata = new System.Windows.Forms.Button();
             this.AddProduct = new System.Windows.Forms.Button();
             this.deleteProductbutton = new System.Windows.Forms.Button();
             this.updatedata = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.disc = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.Discriptiontextbox = new System.Windows.Forms.TextBox();
-            this.Reffreshdata = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -137,6 +137,16 @@
             this.panel6.Size = new System.Drawing.Size(774, 565);
             this.panel6.TabIndex = 32;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // Reffreshdata
+            // 
+            this.Reffreshdata.Location = new System.Drawing.Point(3, 54);
+            this.Reffreshdata.Name = "Reffreshdata";
+            this.Reffreshdata.Size = new System.Drawing.Size(80, 43);
+            this.Reffreshdata.TabIndex = 26;
+            this.Reffreshdata.Text = "Refresh\r\nData";
+            this.Reffreshdata.UseVisualStyleBackColor = true;
+            this.Reffreshdata.Click += new System.EventHandler(this.Reffreshdata_Click);
             // 
             // AddProduct
             // 
@@ -225,13 +235,17 @@
             this.PricetextBox.Name = "PricetextBox";
             this.PricetextBox.Size = new System.Drawing.Size(150, 22);
             this.PricetextBox.TabIndex = 16;
+            this.PricetextBox.TextChanged += new System.EventHandler(this.PricetextBox_TextChanged);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(84, 234);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(600, 318);
             this.dataGridView1.TabIndex = 15;
@@ -264,9 +278,9 @@
             this.disc.AutoSize = true;
             this.disc.Location = new System.Drawing.Point(44, 104);
             this.disc.Name = "disc";
-            this.disc.Size = new System.Drawing.Size(70, 16);
+            this.disc.Size = new System.Drawing.Size(75, 16);
             this.disc.TabIndex = 12;
-            this.disc.Text = "Discription";
+            this.disc.Text = "Description";
             this.disc.Click += new System.EventHandler(this.label27_Click);
             // 
             // label36
@@ -287,16 +301,6 @@
             this.Discriptiontextbox.Size = new System.Drawing.Size(150, 22);
             this.Discriptiontextbox.TabIndex = 2;
             this.Discriptiontextbox.TextChanged += new System.EventHandler(this.PhonenumberTextbox_TextChanged);
-            // 
-            // Reffreshdata
-            // 
-            this.Reffreshdata.Location = new System.Drawing.Point(3, 54);
-            this.Reffreshdata.Name = "Reffreshdata";
-            this.Reffreshdata.Size = new System.Drawing.Size(80, 43);
-            this.Reffreshdata.TabIndex = 26;
-            this.Reffreshdata.Text = "Refresh\r\nData";
-            this.Reffreshdata.UseVisualStyleBackColor = true;
-            this.Reffreshdata.Click += new System.EventHandler(this.Reffreshdata_Click);
             // 
             // EditProduct
             // 

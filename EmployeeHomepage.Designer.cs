@@ -62,7 +62,7 @@ namespace Project
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1179, 46);
+            this.panel1.Size = new System.Drawing.Size(658, 46);
             this.panel1.TabIndex = 28;
             // 
             // linkLabel1
@@ -71,7 +71,7 @@ namespace Project
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(1078, 9);
+            this.linkLabel1.Location = new System.Drawing.Point(557, 9);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(98, 29);
             this.linkLabel1.TabIndex = 220;
@@ -98,9 +98,9 @@ namespace Project
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 618);
+            this.panel4.Location = new System.Drawing.Point(0, 447);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1179, 46);
+            this.panel4.Size = new System.Drawing.Size(658, 46);
             this.panel4.TabIndex = 32;
             // 
             // panel5
@@ -120,7 +120,7 @@ namespace Project
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(184, 174);
+            this.label1.Location = new System.Drawing.Point(63, 164);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 16);
             this.label1.TabIndex = 33;
@@ -130,7 +130,7 @@ namespace Project
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(388, 174);
+            this.label2.Location = new System.Drawing.Point(457, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 16);
             this.label2.TabIndex = 34;
@@ -143,7 +143,7 @@ namespace Project
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.BackgroundImage = global::Project.Properties.Resources.download__1_;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(378, 84);
+            this.button3.Location = new System.Drawing.Point(447, 74);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(111, 87);
             this.button3.TabIndex = 31;
@@ -155,7 +155,7 @@ namespace Project
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.BackgroundImage = global::Project.Properties.Resources.png_transparent_computer_icons_complaint_complaints_cdr_angle_logo;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(187, 84);
+            this.button2.Location = new System.Drawing.Point(66, 74);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 87);
             this.button2.TabIndex = 30;
@@ -165,7 +165,7 @@ namespace Project
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(651, 190);
+            this.label3.Location = new System.Drawing.Point(634, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 36;
@@ -176,7 +176,7 @@ namespace Project
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.BackgroundImage = global::Project.Properties.Resources.download__1_;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(654, 84);
+            this.button1.Location = new System.Drawing.Point(66, 315);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 87);
             this.button1.TabIndex = 35;
@@ -186,11 +186,11 @@ namespace Project
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(845, 174);
+            this.label4.Location = new System.Drawing.Point(444, 405);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 16);
+            this.label4.Size = new System.Drawing.Size(124, 16);
             this.label4.TabIndex = 38;
-            this.label4.Text = "View Rawmaterials";
+            this.label4.Text = "View Raw materials";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button4
@@ -198,7 +198,7 @@ namespace Project
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.BackgroundImage = global::Project.Properties.Resources.download__1_;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(848, 84);
+            this.button4.Location = new System.Drawing.Point(447, 315);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(111, 87);
             this.button4.TabIndex = 37;
@@ -208,7 +208,7 @@ namespace Project
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(733, 361);
+            this.label5.Location = new System.Drawing.Point(246, 279);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 16);
             this.label5.TabIndex = 40;
@@ -220,7 +220,7 @@ namespace Project
             this.button5.BackColor = System.Drawing.Color.White;
             this.button5.BackgroundImage = global::Project.Properties.Resources.download__1_;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Location = new System.Drawing.Point(746, 271);
+            this.button5.Location = new System.Drawing.Point(259, 189);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(111, 87);
             this.button5.TabIndex = 39;
@@ -230,7 +230,7 @@ namespace Project
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(265, 361);
+            this.label6.Location = new System.Drawing.Point(247, 405);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(136, 16);
             this.label6.TabIndex = 42;
@@ -242,7 +242,7 @@ namespace Project
             this.button6.BackColor = System.Drawing.Color.White;
             this.button6.BackgroundImage = global::Project.Properties.Resources.download__1_;
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Location = new System.Drawing.Point(278, 271);
+            this.button6.Location = new System.Drawing.Point(259, 315);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(111, 87);
             this.button6.TabIndex = 41;
@@ -252,7 +252,7 @@ namespace Project
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(669, 174);
+            this.label7.Location = new System.Drawing.Point(81, 405);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 16);
             this.label7.TabIndex = 43;
@@ -264,7 +264,7 @@ namespace Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1179, 664);
+            this.ClientSize = new System.Drawing.Size(658, 493);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button6);

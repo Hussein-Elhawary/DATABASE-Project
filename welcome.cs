@@ -68,7 +68,7 @@ namespace Project
             h4.Show();
             this.Hide();
         }
-        //finance starts with F , Research P , General G
+        //finance starts with f , Research p , General g
         private void button1_Click(object sender, EventArgs e)
         {
             string un = maskedTextBox1.Text;
@@ -107,7 +107,7 @@ namespace Project
                 }
                 else
                 {
-                    EmployeeHomepage h2 = new EmployeeHomepage(un);
+                    EmployeeHomepage h2 = new EmployeeHomepage(un,'g');
                     h2.Show();
                     this.Hide();
                 }
@@ -124,7 +124,7 @@ namespace Project
                 }
                 else
                 {
-                    EmployeeHomepage h2 = new EmployeeHomepage(un);
+                    EmployeeHomepage h2 = new EmployeeHomepage(un,'g');
                     h2.Show();
                     this.Hide();
                 }
@@ -158,7 +158,24 @@ namespace Project
                 }
                 else
                 {
-                    EmployeeHomepage h2 = new EmployeeHomepage(un);
+                    EmployeeHomepage h2 = new EmployeeHomepage(un,'f');
+                    h2.Show();
+                    this.Hide();
+                }
+            }
+            else if (un[0] == 'P' || un[0] == 'P')//Production
+            {
+                DataTable dt = null;
+                controllerobj = new Controller();
+                string pass = Encrypt(Pass);
+                dt = controllerobj.checke(un, pass);
+                if (dt == null)
+                {
+                    MessageBox.Show("No Employee with this credentials");
+                }
+                else
+                {
+                    EmployeeHomepage h2 = new EmployeeHomepage(un, 'p');
                     h2.Show();
                     this.Hide();
                 }

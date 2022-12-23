@@ -14,6 +14,7 @@ using System.Security;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Xml.Linq;
+using System.Collections;
 
 namespace Project
 {
@@ -271,7 +272,7 @@ namespace Project
         }
         public int InsertNewCustRequest(string R_ID, string type, string date, string details, string Resolved, string Emp_ID, string Cust_ID, string Order_ID)
         {
-            string query = "insert into CustomerRequests VALUES ('" + R_ID + "','" + type + "','" + date + "','" + details + "','" + Resolved + "','" + Emp_ID + "','" + Cust_ID + "','" + Order_ID + "');";
+            string query = "insert into CustomerRequests VALUES ('" + R_ID + "','" + type + "','" + date + "','" + details + "','" + Resolved + "'," + Emp_ID + ",'" + Cust_ID + "','" + Order_ID + "');";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -292,10 +293,10 @@ namespace Project
             string query = "select MAX(Cast([Order Number] as INT)) from Orders;";
             return dbMan.ExecuteReader(query);
         }
-      
-        public int InsertNewOrder(string OrderNum, string Notes, string Date, string Status, string expected, string Cust_ID)
+
+        public int InsertNewOrder(string OrderNum, string Notes, string Date, string Status, string expected, string Cust_ID,string TotalPrice,string TotalProduction)
         {
-            string query = "INSERT INTO Orders VALUES ('" + OrderNum + "','" + Notes + "','" + Date + "','" + Status + "','" + expected + "','" + Cust_ID + "');";
+            string query = "INSERT INTO Orders VALUES ('" + OrderNum + "','" + Notes + "','" + Date + "','" + Status + "','" + expected + "','" + Cust_ID + "','" + TotalPrice + "','" + TotalProduction + "');";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -457,6 +458,30 @@ namespace Project
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
 
             return dbMan.ExecuteReader(storedproc, Parameters);
+        }    
+        public DataTable Select_all_rawmaterials()
+        {
+            string storedproc = StoredProcedures.Select_all_rawmaterials;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }    
+        public DataTable Select_product_By_name(string name)
+        {
+            string storedproc = StoredProcedures.Select_product_By_name;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Name", name);
+            
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        } 
+        public int Insert_in_consumes(string Productid,string rawmaterialsID)
+        {
+            string storedproc = StoredProcedures.Insert_in_consumes;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ProID", Productid);
+            Parameters.Add("@RMID", rawmaterialsID);
+            
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
         }
 
         public DataTable getorders (string date1, string date2)
@@ -483,6 +508,24 @@ namespace Project
         {
             string query = "SELECT P.Name,P.Price,C.Quantity as 'Amount',P.Price * C.Quantity as 'Total' from [contains] C,Products P WHERE C.[Product ID] = P.[Product ID] and C.[Order ID] = '" + order_num + "';";
             return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable CustomerViewRequest(string cust_ID)
+        {
+            string query = "select [Request Type],[Date Issued] as 'Date Issued',Details,Resolved,R.[request on] as 'Order' from CustomerRequests R,Customers C where C.[Customer ID] = R.[Request from] and [Request from] = '" + cust_ID + "';";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public int updatextension (string iddd, string ext)
+        {
+            string query = "Update Employee Set Extension = '" + ext + "' where [Employee ID] = '" + iddd + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int changepassbyit(string passs, string iddd)
+        {
+            string query = "Update Employee Set Password = '" + passs + "' where [Employee ID] = '" + iddd + "';";
+            return dbMan.ExecuteNonQuery(query);
         }
     }
 }
@@ -511,19 +554,5 @@ namespace Project
             InitializeComponent();
         }
 
-        public OrderDetails(string order)
-        {
-            InitializeComponent();
-            Order_Num = order;
-        }
-
-        private void OrderDetails_Load(object sender, EventArgs e)
-        {
-            dataGridView1.ReadOnly = true;
-            ControllerObj = new Controller();
-            DataTable DT = ControllerObj.ViewOrderDetails(Order_Num);
-            dataGridView1.DataSource = DT;
-        }
     }
-}
- */
+}   */
