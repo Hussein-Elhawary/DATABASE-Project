@@ -99,10 +99,10 @@
     <Compile Include="EditProduct.Designer.cs">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderDetails.cs">
+    <Compile Include="Customers\OrderDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderDetails.Designer.cs">
+    <Compile Include="Customers\OrderDetails.Designer.cs">
       <DependentUpon>OrderDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="profit.cs">
@@ -119,35 +119,35 @@
     </Compile>
     <Compile Include="StoredProcedures.cs" />
     <Compile Include="Controller.cs" />
-    <Compile Include="createuser.cs">
+    <Compile Include="Customers\createuser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="createuser.Designer.cs">
+    <Compile Include="Customers\createuser.Designer.cs">
       <DependentUpon>createuser.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerHomePage.cs">
+    <Compile Include="Customers\CustomerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerHomePage.Designer.cs">
+    <Compile Include="Customers\CustomerHomePage.Designer.cs">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer_Catalogue.cs">
+    <Compile Include="Customers\Customer_Catalogue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer_Catalogue.Designer.cs">
+    <Compile Include="Customers\Customer_Catalogue.Designer.cs">
       <DependentUpon>Customer_Catalogue.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer_View_Orders.cs">
+    <Compile Include="Customers\Customer_View_Orders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer_View_Orders.Designer.cs">
+    <Compile Include="Customers\Customer_View_Orders.Designer.cs">
       <DependentUpon>Customer_View_Orders.cs</DependentUpon>
     </Compile>
     <Compile Include="DBManager.cs" />
-    <Compile Include="EditPD.cs">
+    <Compile Include="Customers\EditPD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditPD.Designer.cs">
+    <Compile Include="Customers\EditPD.Designer.cs">
       <DependentUpon>EditPD.cs</DependentUpon>
     </Compile>
     <Compile Include="EditPDE.cs">
@@ -246,22 +246,28 @@
     <Compile Include="ViewRawmaterials.Designer.cs">
       <DependentUpon>ViewRawmaterials.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customers\ViewRequestCustomerSide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\ViewRequestCustomerSide.Designer.cs">
+      <DependentUpon>ViewRequestCustomerSide.cs</DependentUpon>
+    </Compile>
     <Compile Include="welcome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="welcome.Designer.cs">
       <DependentUpon>welcome.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustmerCA.cs">
+    <Compile Include="Customers\CustmerCA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustmerCA.Designer.cs">
+    <Compile Include="Customers\CustmerCA.Designer.cs">
       <DependentUpon>CustmerCA.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComplaintForm.cs">
+    <Compile Include="Customers\ComplaintForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ComplaintForm.Designer.cs">
+    <Compile Include="Customers\ComplaintForm.Designer.cs">
       <DependentUpon>ComplaintForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -275,19 +281,19 @@
     <EmbeddedResource Include="Checkpasswordandupdate.resx">
       <DependentUpon>Checkpasswordandupdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="createuser.resx">
+    <EmbeddedResource Include="Customers\createuser.resx">
       <DependentUpon>createuser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerHomePage.resx">
+    <EmbeddedResource Include="Customers\CustomerHomePage.resx">
       <DependentUpon>CustomerHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer_Catalogue.resx">
+    <EmbeddedResource Include="Customers\Customer_Catalogue.resx">
       <DependentUpon>Customer_Catalogue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer_View_Orders.resx">
+    <EmbeddedResource Include="Customers\Customer_View_Orders.resx">
       <DependentUpon>Customer_View_Orders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditPD.resx">
+    <EmbeddedResource Include="Customers\EditPD.resx">
       <DependentUpon>EditPD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditPDE.resx">
@@ -314,7 +320,7 @@
     <EmbeddedResource Include="ManagersupdatesbyIT.resx">
       <DependentUpon>ManagersupdatesbyIT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderDetails.resx">
+    <EmbeddedResource Include="Customers\OrderDetails.resx">
       <DependentUpon>OrderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personal Data.resx">
@@ -344,13 +350,16 @@
     <EmbeddedResource Include="ViewProjects.resx">
       <DependentUpon>ViewProjects.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customers\ViewRequestCustomerSide.resx">
+      <DependentUpon>ViewRequestCustomerSide.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="welcome.resx">
       <DependentUpon>welcome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustmerCA.resx">
+    <EmbeddedResource Include="Customers\CustmerCA.resx">
       <DependentUpon>CustmerCA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ComplaintForm.resx">
+    <EmbeddedResource Include="Customers\ComplaintForm.resx">
       <DependentUpon>ComplaintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -84,5 +84,11 @@ namespace Project
             DataTable DT = ControllerDB.GetCustomerINFO(Cus_ID);
             UserLabel.Text = DT.Rows[0][3].ToString();
         }
+
+        private void View_Requests_Click(object sender, EventArgs e)
+        {
+            ViewRequestCustomerSide a = new ViewRequestCustomerSide(Cus_ID);
+            a.Show();
+        }
     }
 }

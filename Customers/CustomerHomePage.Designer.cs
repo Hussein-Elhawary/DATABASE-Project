@@ -34,9 +34,10 @@
             this.UserLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.OrderDetails_Button = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Complaint_Button = new System.Windows.Forms.Button();
             this.ProductMenu_Button = new System.Windows.Forms.Button();
+            this.View_Requests = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,6 +104,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.View_Requests);
             this.panel1.Controls.Add(this.ViewProfile_Button);
             this.panel1.Controls.Add(this.UserLabel);
             this.panel1.Controls.Add(this.label1);
@@ -119,7 +121,7 @@
             // 
             // OrderDetails_Button
             // 
-            this.OrderDetails_Button.Location = new System.Drawing.Point(211, 297);
+            this.OrderDetails_Button.Location = new System.Drawing.Point(322, 245);
             this.OrderDetails_Button.Name = "OrderDetails_Button";
             this.OrderDetails_Button.Size = new System.Drawing.Size(126, 23);
             this.OrderDetails_Button.TabIndex = 4;
@@ -127,18 +129,9 @@
             this.OrderDetails_Button.UseVisualStyleBackColor = true;
             this.OrderDetails_Button.Click += new System.EventHandler(this.OrderDetails_Button_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Navy;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Complaint_Button
             // 
-            this.Complaint_Button.Location = new System.Drawing.Point(211, 132);
+            this.Complaint_Button.Location = new System.Drawing.Point(133, 139);
             this.Complaint_Button.Name = "Complaint_Button";
             this.Complaint_Button.Size = new System.Drawing.Size(126, 23);
             this.Complaint_Button.TabIndex = 3;
@@ -148,13 +141,32 @@
             // 
             // ProductMenu_Button
             // 
-            this.ProductMenu_Button.Location = new System.Drawing.Point(211, 214);
+            this.ProductMenu_Button.Location = new System.Drawing.Point(133, 245);
             this.ProductMenu_Button.Name = "ProductMenu_Button";
             this.ProductMenu_Button.Size = new System.Drawing.Size(126, 23);
             this.ProductMenu_Button.TabIndex = 2;
             this.ProductMenu_Button.Text = "View and Buy Prodcuts";
             this.ProductMenu_Button.UseVisualStyleBackColor = true;
             this.ProductMenu_Button.Click += new System.EventHandler(this.ProductMenu_Button_Click);
+            // 
+            // View_Requests
+            // 
+            this.View_Requests.Location = new System.Drawing.Point(322, 139);
+            this.View_Requests.Name = "View_Requests";
+            this.View_Requests.Size = new System.Drawing.Size(126, 23);
+            this.View_Requests.TabIndex = 6;
+            this.View_Requests.Text = "View Requests";
+            this.View_Requests.UseVisualStyleBackColor = true;
+            this.View_Requests.Click += new System.EventHandler(this.View_Requests_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Navy;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -196,5 +208,6 @@
         private System.Windows.Forms.Button OrderDetails_Button;
         private System.Windows.Forms.Button Complaint_Button;
         private System.Windows.Forms.Button ProductMenu_Button;
+        private System.Windows.Forms.Button View_Requests;
     }
 }

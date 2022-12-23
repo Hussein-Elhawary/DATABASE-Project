@@ -67,7 +67,7 @@ namespace Project
             string PN = maskedTextBox7.Text;
             //string nation = comboBox5.SelectedItem.ToString();
             string id = maskedTextBox8.Text;
-            string BD = monthCalendar1.Text;
+            string BD = dateTimePicker1.Text;
             string salary = maskedTextBox6.Text;
             string IP = maskedTextBox11.Text;
             string branch = comboBox2.SelectedValue.ToString();
