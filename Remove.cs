@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Project
 {
@@ -20,6 +21,7 @@ namespace Project
         DataTable dt4 = null;
         DataTable dt5 = null;
         DataTable dt6 = null;
+        DataTable dt7 = null;
         public Remove()
         {
             InitializeComponent();
@@ -39,6 +41,16 @@ namespace Project
             comboBox7.DataSource = dt2;
             comboBox7.DisplayMember = "Name";
             comboBox7.ValueMember = "Departement ID";
+        }
+
+        static string Encrypt(string passbefore)
+        {
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding uTF8 = new UTF8Encoding();
+                byte[] data = md5.ComputeHash(uTF8.GetBytes(passbefore));
+                return Convert.ToBase64String(data);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -98,6 +110,7 @@ namespace Project
                 int value1;
                 Int32.TryParse(comboBox1.SelectedValue.ToString(), out value1);
                 maskedTextBox9.Text = value1.ToString();
+                comboBox1.Refresh();
             }
             else
             {
@@ -129,15 +142,15 @@ namespace Project
                     dt6 = controllerobj.fillemployeebydept(depdel);
                     if (dt6 != null)
                     {
-                        comboBox6.DataSource = dt6;
-                        comboBox6.DisplayMember = "First name";
-                        comboBox6.ValueMember = "Employee ID";
-                        comboBox6.Refresh();
+                        comboBox1.DataSource = dt6;
+                        comboBox1.DisplayMember = "First name";
+                        comboBox1.ValueMember = "Employee ID";
+                        comboBox1.Refresh();
                         maskedTextBox9.ResetText();
                     }
                     else
                     {
-                        comboBox6.DataSource = dt6;
+                        comboBox1.DataSource = dt6;
                     }
                 }
                 else
@@ -178,6 +191,64 @@ namespace Project
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string idd = maskedTextBox1.Text;
+            string extension = maskedTextBox11.Text;
+            if (idd == "" || idd == "0")
+            {
+                MessageBox.Show("Please Choose The Employee!");
+            }
+            else if (extension == "    -")
+            {
+                MessageBox.Show("Please Enter The New Extension");
+            }
+            else
+            {
+                controllerobj = new Controller();
+                int see = controllerobj.updatextension(idd, extension);
+                if (see == 1)
+                {
+                    MessageBox.Show("Update Is Done!");
+                }
+                else
+                {
+                    MessageBox.Show("Error Is Encountered!");
+                }
+
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string pass1 = null;
+            pass1 = textBox1.Text;
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string pass1 = null;
+            pass1 = textBox1.Text;
+            string pass2 = null;
+            pass2 = maskedTextBox2.Text;
+            if (pass2 != null && pass1 != null)
+            {
+                if (pass1 != pass2)
+                {
+                    label2.Text = "The 2 Password Don't Match!";
+                }
+                else
+                {
+                    label2.ResetText();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Enter The Password!");
+            }
         }
     }
 }
