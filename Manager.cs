@@ -22,8 +22,6 @@ namespace Project
         string username;
         DataTable dt;
         DataTable dt2;
-        DataTable dt3;
-        DataTable dt4;
         public Manager()
         {
             InitializeComponent();
@@ -40,19 +38,17 @@ namespace Project
             v = new ViewProjects();
             dt = new DataTable();
             dt2 = new DataTable();
-            dt3= new DataTable();
-            dt4 = new DataTable();
             controllerobj = new Controller();
             dt = controllerobj.SelectFirstName(username);
             label2.Text = dt.Rows[0][0].ToString(); //Manager First name appears
-            dt3 = controllerobj.SelectDepartment(username);//query returns id 
-            dt2 = controllerobj.SelectEmployeeFirstNameFromDepartmentid(Convert.ToInt32(dt3.Rows[0][0])); //gets employees first name from a specific department
-            controllerobj = new Controller();
-            dt4 = controllerobj.SelectProjectName(Convert.ToInt32(dt3.Rows[0][0]));
+            dt = controllerobj.SelectDepartment(username);//query returns id 
+            dt2 = controllerobj.SelectEmployeeFirstNameFromDepartmentid(Convert.ToInt32(dt.Rows[0][0])); //gets employees first name from a specific department
             comboBox2.DataSource = dt2;
             comboBox2.ValueMember = "First name";
             comboBox2.DisplayMember = "First name";
-            comboBox1.DataSource = dt4;
+            controllerobj = new Controller();
+            dt2 = controllerobj.SelectProjectName(Convert.ToInt32(dt.Rows[0][0]));
+            comboBox1.DataSource = dt2;
             comboBox1.DisplayMember = "Name";
             comboBox1.ValueMember = "Name";
             comboBox1.SelectedIndex = -1;
@@ -120,7 +116,7 @@ namespace Project
         {
             if (comboBox5.SelectedIndex != -1 && comboBox4.SelectedIndex != -1 && comboBox2.SelectedIndex != -1)
             {
-                E = new ViewEmployees(comboBox2.Text.ToString(), comboBox4.Text.ToString(), comboBox5.Text.ToString()) ;
+                E = new ViewEmployees(comboBox2.Text.ToString(), comboBox4.Text.ToString(), comboBox5.Text.ToString(),username);
                 E.Show();
                 this.Hide();
                 
@@ -155,7 +151,7 @@ namespace Project
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text!=null)
+            if(textBox1.Text!=null && comboBox5.SelectedIndex != -1 && comboBox4.SelectedIndex != -1 && comboBox2.SelectedIndex != -1)
             {
                 int r = 0;
                 controllerobj = new Controller();
@@ -163,6 +159,8 @@ namespace Project
                 if (r != 0)
                     MessageBox.Show("Updated Successfully");
             }
+            else
+                MessageBox.Show("Error Some Info are missing");
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,18 +169,22 @@ namespace Project
             controllerobj = new Controller();
                 dt2 = controllerobj.SelectEmployeeMiddleNameFromFirstName(comboBox2.Text.ToString()); //gets employees first name from a specific department
                 comboBox4.DataSource = dt2;
-                comboBox4.ValueMember = "Middle name";
+            comboBox4.ValueMember = "Middle name";
                 comboBox4.DisplayMember = "Middle name";
-            
+            comboBox4.SelectedIndex = -1;
+            comboBox5.Enabled = false;
+            textBox1.Enabled = false;
         }
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox5.Enabled = true;
+                comboBox5.Enabled = true;
             controllerobj = new Controller();
             dt2 = controllerobj.SelectEmployeeLastName(comboBox2.Text.ToString(), comboBox4.Text.ToString()); //gets employees first name from a specific department
                 comboBox5.DataSource = dt2;
-                comboBox5.ValueMember = "Last name";
+            comboBox5.ValueMember = "Last name";
                 comboBox5.DisplayMember = "Last name";
+            comboBox5.SelectedIndex = -1;
+            textBox1.Enabled = false;
         }
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
