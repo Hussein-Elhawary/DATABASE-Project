@@ -13,6 +13,7 @@ namespace Project
     public partial class ViewEmployees : Form
     {
         DataTable dt;
+        DataTable dt2;
         Controller controllerobj;
         Manager m;
         string username;
@@ -22,10 +23,22 @@ namespace Project
             InitializeComponent();
            
         }
+        public ViewEmployees(string us,int projectid)
+        {
+            InitializeComponent();
+            username = us;
+            m = new Manager(username);
+            controllerobj = new Controller();
+            dt = new DataTable();
+            dt = controllerobj.SelectDepartment(username); //to get department of manager in order to show employees from his department working on the project
+            controllerobj = new Controller();
+            dt2 = controllerobj.SelectEmployeesWorkOnProject(Convert.ToInt32(dt.Rows[0][0]),projectid);
+            dataGridView1.DataSource = dt2;
+        }
         public ViewEmployees(string fname,string mname,string lname,string us)
         {
-            username = us;
             InitializeComponent();
+            username = us;
             m = new Manager(username);
             controllerobj = new Controller();
             dt = new DataTable();
