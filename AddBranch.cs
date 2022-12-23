@@ -98,7 +98,7 @@ namespace Project
             {
                
                 int r = 0;
-               r= controllerobj.AddNewBranch(Convert.ToInt32(textBox3.Text), textBox4.Text.ToString(), textBox5.Text.ToString(), textBox6.Text.ToString(), textBox2.Text.ToString(), maskedTextBox7.Text.ToString(), textBox3.Text.ToString(), Convert.ToInt32(dt.Rows[0][0]), dateTimePicker1.Text.ToString());
+               r= controllerobj.AddNewBranch(Convert.ToInt32(textBox3.Text), textBox4.Text.ToString(), textBox5.Text.ToString(), textBox6.Text.ToString(), textBox2.Text.ToString(), maskedTextBox7.Text.ToString(), comboBox1.Text.ToString(), Convert.ToInt32(dt.Rows[0][0]), dateTimePicker1.Text.ToString());
                 if (r == 0)
                 {
                     MessageBox.Show("Failed,This Branch No. already exist ");
