@@ -26,12 +26,12 @@ namespace Project
             Order_Num = order;
         }
 
-        private void OrderDetails_Load(object sender, EventArgs e)
+        private void OrderDetails_Load_1(object sender, EventArgs e)
         {
-            dataGridView1.ReadOnly = true;
             ControllerObj = new Controller();
             DataTable DT = ControllerObj.ViewOrderDetails(Order_Num);
             dataGridView1.DataSource = DT;
+            dataGridView1.ReadOnly = true;
         }
     }
 }
