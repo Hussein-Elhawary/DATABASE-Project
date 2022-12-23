@@ -36,7 +36,6 @@ namespace Project
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -65,6 +64,10 @@ namespace Project
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -128,6 +131,8 @@ namespace Project
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel4.Controls.Add(this.button5);
+            this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.groupBox2);
             this.panel4.Controls.Add(this.groupBox1);
             this.panel4.Controls.Add(this.button2);
@@ -140,7 +145,8 @@ namespace Project
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.maskedTextBox4);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.maskedTextBox2);
             this.groupBox2.Controls.Add(this.label9);
@@ -161,13 +167,6 @@ namespace Project
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update User";
             // 
-            // maskedTextBox4
-            // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(350, 157);
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(100, 22);
-            this.maskedTextBox4.TabIndex = 201;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -181,7 +180,8 @@ namespace Project
             // 
             this.maskedTextBox2.Location = new System.Drawing.Point(172, 157);
             this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(120, 22);
+            this.maskedTextBox2.PasswordChar = '*';
+            this.maskedTextBox2.Size = new System.Drawing.Size(127, 22);
             this.maskedTextBox2.TabIndex = 199;
             // 
             // label9
@@ -215,7 +215,7 @@ namespace Project
             // maskedTextBox11
             // 
             this.maskedTextBox11.Location = new System.Drawing.Point(6, 94);
-            this.maskedTextBox11.Mask = "0000-0000";
+            this.maskedTextBox11.Mask = "00000000";
             this.maskedTextBox11.Name = "maskedTextBox11";
             this.maskedTextBox11.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox11.TabIndex = 198;
@@ -358,18 +358,19 @@ namespace Project
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(606, 525);
+            this.button2.Location = new System.Drawing.Point(247, 525);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(342, 30);
+            this.button2.Size = new System.Drawing.Size(199, 30);
             this.button2.TabIndex = 192;
-            this.button2.Text = "Update";
+            this.button2.Text = "Update Extension";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(45, 525);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(342, 30);
+            this.button1.Size = new System.Drawing.Size(196, 30);
             this.button1.TabIndex = 182;
             this.button1.Text = "Remove/Delete";
             this.button1.UseVisualStyleBackColor = true;
@@ -426,6 +427,43 @@ namespace Project
             this.panel7.Size = new System.Drawing.Size(1243, 661);
             this.panel7.TabIndex = 20;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(654, 525);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(196, 30);
+            this.button4.TabIndex = 201;
+            this.button4.Text = "Update Pssword";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(452, 525);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(196, 30);
+            this.button5.TabIndex = 202;
+            this.button5.Text = "Update Pssword";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(350, 157);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
+            this.textBox1.Size = new System.Drawing.Size(127, 22);
+            this.textBox1.TabIndex = 201;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(347, 182);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.TabIndex = 202;
+            // 
             // Remove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -480,12 +518,15 @@ namespace Project
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

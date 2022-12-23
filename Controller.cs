@@ -497,6 +497,13 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
+        public int updatextension (string iddd, string ext)
+        {
+            string query = "Update Employee Set Extension = '" + ext + "' where [Employee ID] = '" + iddd + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        
     }
 }
 
