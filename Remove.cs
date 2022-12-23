@@ -38,9 +38,6 @@ namespace Project
             comboBox5.DisplayMember = "Name";
             comboBox5.ValueMember = "Departement ID";
             
-            comboBox7.DataSource = dt2;
-            comboBox7.DisplayMember = "Name";
-            comboBox7.ValueMember = "Departement ID";
         }
 
         static string Encrypt(string passbefore)
@@ -122,7 +119,7 @@ namespace Project
         {
             welcome newform = new welcome();
             newform.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -201,12 +198,13 @@ namespace Project
             {
                 MessageBox.Show("Please Choose The Employee!");
             }
-            else if (extension == "    -")
+            else if (extension == "")
             {
                 MessageBox.Show("Please Enter The New Extension");
             }
             else
             {
+                
                 controllerobj = new Controller();
                 int see = controllerobj.updatextension(idd, extension);
                 if (see == 1)
@@ -225,7 +223,39 @@ namespace Project
         {
             string pass1 = null;
             pass1 = textBox1.Text;
+            string pass2 = null;
+            pass2 = maskedTextBox2.Text;
+            string idd = maskedTextBox1.Text;            
+            if (idd == "" || idd == "0")
+            {
+                MessageBox.Show("Please Choose The Employee!");
+            }
+            else if (pass2 == "")
+            {
+                MessageBox.Show("Please Enter The New Password!");
+            }
+            else
+            {
+                if (pass1 == "")
+                {
+                    MessageBox.Show("Please Enter The Confirmation Password!");
+                }
+                else
+                {
+                    controllerobj = new Controller();
+                    string correctpass = Encrypt(pass1);
+                    int seee = controllerobj.changepassbyit(correctpass, idd);
+                    if (seee == 1)
+                    {
+                        MessageBox.Show("Update Is Done!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Is Encountered!");
+                    }
 
+                }
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -249,6 +279,54 @@ namespace Project
             {
                 MessageBox.Show("Please Enter The Password!");
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string pass1 = null;
+            pass1 = textBox1.Text;
+            string pass2 = null;
+            pass2 = maskedTextBox2.Text;
+            string idd = maskedTextBox1.Text;
+            string extension = maskedTextBox11.Text;
+           
+            if (idd == "" || idd == "0")
+            {
+                MessageBox.Show("Please Choose The Employee!");
+            }
+            else if (extension == "")
+            {
+                MessageBox.Show("Please Enter The New Extension");
+            }
+            else if (pass2 == "")
+            {
+                MessageBox.Show("Please Enter The New Password!");
+            }
+            else
+            {
+                if (pass1 == "")
+                {
+                    MessageBox.Show("Please Enter The Confirmation Password!");
+                }
+                else
+                {
+                    controllerobj = new Controller();
+                    string correctpass = Encrypt(pass1);
+                    int seee = controllerobj.changepassbyit(correctpass, idd);
+                    controllerobj = new Controller();
+                    int see = controllerobj.updatextension(idd, extension);
+                    if (seee == 1 && see == 1)
+                    {
+                        MessageBox.Show("Update Is Done!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Is Encountered!");
+                    }
+
+                }
+            }
+
         }
     }
 }

@@ -503,7 +503,11 @@ namespace Project
             return dbMan.ExecuteNonQuery(query);
         }
 
-        
+        public int changepassbyit(string passs, string iddd)
+        {
+            string query = "Update Employee Set Password = '" + passs + "' where [Employee ID] = '" + iddd + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }
 

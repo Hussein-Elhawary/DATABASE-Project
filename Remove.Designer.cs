@@ -31,16 +31,17 @@ namespace Project
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.maskedTextBox11 = new System.Windows.Forms.MaskedTextBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,10 +65,7 @@ namespace Project
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -102,18 +100,6 @@ namespace Project
             this.linkLabel1.Text = "Log Out";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(54, 42);
-            this.button3.TabIndex = 27;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(515, 49);
@@ -143,6 +129,26 @@ namespace Project
             this.panel4.Size = new System.Drawing.Size(1036, 621);
             this.panel4.TabIndex = 23;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(555, 525);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(196, 30);
+            this.button5.TabIndex = 202;
+            this.button5.Text = "Update Pssword";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(807, 525);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(196, 30);
+            this.button4.TabIndex = 201;
+            this.button4.Text = "Update All";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label2);
@@ -150,8 +156,6 @@ namespace Project
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.maskedTextBox2);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.comboBox7);
-            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.maskedTextBox11);
             this.groupBox2.Controls.Add(this.comboBox5);
             this.groupBox2.Controls.Add(this.label3);
@@ -167,10 +171,28 @@ namespace Project
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update User";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(182, 177);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.TabIndex = 202;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(185, 152);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
+            this.textBox1.Size = new System.Drawing.Size(127, 22);
+            this.textBox1.TabIndex = 201;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(347, 135);
+            this.label11.Location = new System.Drawing.Point(182, 130);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(181, 17);
             this.label11.TabIndex = 200;
@@ -178,7 +200,7 @@ namespace Project
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(172, 157);
+            this.maskedTextBox2.Location = new System.Drawing.Point(7, 152);
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.PasswordChar = '*';
             this.maskedTextBox2.Size = new System.Drawing.Size(127, 22);
@@ -187,30 +209,11 @@ namespace Project
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(176, 135);
+            this.label9.Location = new System.Drawing.Point(11, 130);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 17);
             this.label9.TabIndex = 198;
             this.label9.Text = "New Password";
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(12, 155);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 24);
-            this.comboBox7.TabIndex = 199;
-            this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 135);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(121, 17);
-            this.label8.TabIndex = 198;
-            this.label8.Text = "New Departement";
             // 
             // maskedTextBox11
             // 
@@ -358,7 +361,7 @@ namespace Project
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(247, 525);
+            this.button2.Location = new System.Drawing.Point(298, 525);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(199, 30);
             this.button2.TabIndex = 192;
@@ -427,42 +430,17 @@ namespace Project
             this.panel7.Size = new System.Drawing.Size(1243, 661);
             this.panel7.TabIndex = 20;
             // 
-            // button4
+            // button3
             // 
-            this.button4.Location = new System.Drawing.Point(654, 525);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(196, 30);
-            this.button4.TabIndex = 201;
-            this.button4.Text = "Update Pssword";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(452, 525);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(196, 30);
-            this.button5.TabIndex = 202;
-            this.button5.Text = "Update Pssword";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(350, 157);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(127, 22);
-            this.textBox1.TabIndex = 201;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(347, 182);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
-            this.label2.TabIndex = 202;
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(54, 42);
+            this.button3.TabIndex = 27;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Remove
             // 
@@ -516,8 +494,6 @@ namespace Project
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;

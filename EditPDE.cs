@@ -191,11 +191,6 @@ namespace Project
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //change password here
-            
-        }
 
         private void PhonenumberTextbox_TextChanged(object sender, EventArgs e)
         {
@@ -214,8 +209,4 @@ namespace Project
         }
     }
 
-    //private void panel6_Paint(object sender, PaintEventArgs e)
-    //{
-
-    //}
 }
