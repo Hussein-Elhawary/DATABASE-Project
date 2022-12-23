@@ -15,6 +15,7 @@ namespace Project
         Manager m;
         Controller controllerobj;
         DataTable dt;
+        string username;
         public AddBranch()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace Project
         public AddBranch(string us)
         {
             InitializeComponent();
-            m = new Manager(us);
+            username = us;
             controllerobj = new Controller();
             dt = new DataTable();
             dt = controllerobj.GetEmployeeIdFromUsername(us);
@@ -50,6 +51,7 @@ namespace Project
 
         private void button3_Click(object sender, EventArgs e)
         {
+            m = new Manager(username);
             this.Hide();
             m.Show();
 
@@ -87,18 +89,24 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox3.SelectedText == null || textBox2.SelectedText == null || comboBox1.SelectedIndex < 0 || maskedTextBox7.SelectedText == null || textBox4.SelectedText == null || textBox5.SelectedText == null || textBox6.SelectedText == null)
+            if (textBox3.Text == null || textBox2.Text == null || comboBox1.SelectedIndex < 0 || maskedTextBox7.Text == null || textBox4.Text == null || textBox5.Text == null || textBox6.Text == null)
                 MessageBox.Show("There is some info missing");
+            
+            else if(maskedTextBox7.TextLength<11)
+                MessageBox.Show("Telephone Number Not Correct");
             else
             {
+               
                 int r = 0;
-               r= controllerobj.AddNewBranch(Convert.ToInt32(textBox3.SelectedText), textBox4.SelectedText.ToString(), textBox5.SelectedText.ToString(), textBox6.SelectedText.ToString(), textBox2.SelectedText.ToString(), maskedTextBox7.SelectedText.ToString(), textBox3.SelectedText.ToString(), Convert.ToInt32(dt.Rows[0][0]), dateTimePicker1.CustomFormat.ToString());
+               r= controllerobj.AddNewBranch(Convert.ToInt32(textBox3.Text), textBox4.Text.ToString(), textBox5.Text.ToString(), textBox6.Text.ToString(), textBox2.Text.ToString(), maskedTextBox7.Text.ToString(), textBox3.Text.ToString(), Convert.ToInt32(dt.Rows[0][0]), dateTimePicker1.Text.ToString());
                 if (r == 0)
                 {
                     MessageBox.Show("Failed,This Branch No. already exist ");
                 }
                 else
+                {
                     MessageBox.Show("Success");
+                }
             }
         }
     }

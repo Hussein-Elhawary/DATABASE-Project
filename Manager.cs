@@ -55,7 +55,7 @@ namespace Project
             comboBox4.SelectedIndex = -1;
             comboBox5.SelectedIndex = -1;
 
-            }
+        }
         
         private void label1_Click(object sender, EventArgs e)
         {
