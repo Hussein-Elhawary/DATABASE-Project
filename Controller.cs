@@ -205,7 +205,7 @@ namespace Project
 
         public DataTable retrievemanager(string deptid)
         {
-            string query = "Select * From Employee where[Employee ID] = (Select [Manager ID] from Departement where [Department ID] = '" + deptid + "' )";
+            string query = "Select * From Employee where[Employee ID] = (Select [Manager ID] from Departement where [Departement ID] = '" + deptid + "' )";
             return dbMan.ExecuteReader(query);
         }
 
@@ -287,13 +287,13 @@ namespace Project
 
         public DataTable fillemployeebydept(int val)
         {
-            string query = "Select [First name], [Employee ID] From employee where Department = '" + val.ToString() + "';";
+            string query = "Select [First name], [Employee ID], Username From employee where Department = '" + val.ToString() + "';";
             return dbMan.ExecuteReader(query);
         }
 
         public DataTable retrieveemployeebyid(int idval)
         {
-            string query = "Select [Employee ID] from employee where [Employee ID] = '" + idval.ToString() + "';";
+            string query = "Select [Employee ID], Username from employee where [Employee ID] = '" + idval.ToString() + "';";
             return dbMan.ExecuteReader(query);
         }
         public DataTable GetEmployeeIdFromUsername(string us)
@@ -508,32 +508,17 @@ namespace Project
             string query = "Update Employee Set Password = '" + passs + "' where [Employee ID] = '" + iddd + "';";
             return dbMan.ExecuteNonQuery(query);
         }
-    }
-}
 
-
-/*
- using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Project
-{
-    public partial class OrderDetails : Form
-    {
-        Controller ControllerObj;
-        string Order_Num;
-
-        public OrderDetails()
+        public int updateuserma(string usern, string idddd)
         {
-            InitializeComponent();
+            string query = "Update Employee Set Username = '" + usern +"' Where [Employee ID] = '" + idddd + "';";
+            return dbMan.ExecuteNonQuery(query);
         }
 
+        public int updateuserem(string usern, string idddd)
+        {
+            string query = "Update Employee Set Username = '" + usern + "' Where [Employee ID] = '" + idddd + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
-}   */
+}

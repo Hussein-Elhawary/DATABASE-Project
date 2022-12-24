@@ -15,9 +15,11 @@ namespace Project
         Controller controllerobj = new Controller();
         DataTable dt = null;
         DataTable dt1 = null;
+        DataTable dt4 = null;
         public ManagersupdatesbyIT()
         {
             InitializeComponent();
+            controllerobj = new Controller();
             dt = controllerobj.filldepartements();
             comboBox4.DataSource = dt;
             comboBox4.DisplayMember = "Name";
@@ -49,6 +51,8 @@ namespace Project
                 comboBox1.DataSource = dt1;
                 comboBox1.DisplayMember = "First name";
                 comboBox1.ValueMember = "Employee ID";
+                textBox3.Text = dt1.Rows[0]["Username"].ToString();
+                textBox2.Text = dt.Rows[0]["Username"].ToString();
             }
             else
             {
@@ -70,6 +74,8 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int resul1 = 0;
+            int resul2 = 0;
             controllerobj = new Controller();
             string newname = comboBox1.SelectedValue.ToString();    // id of new manager
             string deptid = comboBox4.SelectedValue.ToString();     // id of the department
@@ -77,14 +83,23 @@ namespace Project
             if (newname != maskedTextBox9.Text)
             {
                 int result = controllerobj.updatemanager(newname, deptid, startdate);
-                if (result == 1)
+                
+                if (textBox2.Text != "" && textBox3.Text != "")
+                {
+                    controllerobj = new Controller();
+                    resul1 = controllerobj.updateuserma(textBox3.Text,newname);
+                    controllerobj = new Controller();
+                    resul2 = controllerobj.updateuserem(textBox2.Text, maskedTextBox9.Text);
+                }
+                if (result == 1 && resul1 == 1 && resul2 == 1)
                 {
                     MessageBox.Show("Update Done!");
-                    //find another method instead of calling the query
                     dt = controllerobj.retrievemanager(deptid.ToString());
                     textBox1.Text = dt.Rows[0]["First name"].ToString();
+                    textBox2.Text = dt.Rows[0]["Username"].ToString();
                     maskedTextBox9.Text = newname;
-                    maskedTextBox5.ResetText();
+                    maskedTextBox1.ResetText();
+                    textBox3.ResetText();
                 }
                 else
                 {
@@ -111,22 +126,30 @@ namespace Project
         {
             if (dt1 != null)
             {
+                DataTable dt2 = null; 
                 int value1;
                 Int32.TryParse(comboBox1.SelectedValue.ToString(), out value1);
-                maskedTextBox5.Text = value1.ToString();
+                maskedTextBox1.Text = value1.ToString();
+                controllerobj = new Controller();
+                dt2 = controllerobj.retrieveemployeebyid(value1);
+                if (dt2 != null)
+                {
+                    textBox3.Text = dt2.Rows[0]["Username"].ToString();
+                }
             }
             else
             {
-                maskedTextBox5.ResetText();
+                maskedTextBox1.ResetText();
+                textBox3.ResetText();
             }
         }
 
-        private void maskedTextBox5_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
 
         }
 
-        private void maskedTextBox5_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }
