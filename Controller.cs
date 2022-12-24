@@ -396,11 +396,13 @@ namespace Project
             string query = "UPDATE Customers SET Password = '" + newPass + "' where [Customer ID] = '" + Cust_ID + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+
         public DataTable SelectMaxRequestID()
         {
             string query = "select MAX(Cast([Request ID] as INT)) from ManagerRequests;";
             return dbMan.ExecuteReader(query);
         }
+
         public int InsertContains(string ordernum,string productid,string quantity)
         {
             string query = "INSERT INTO[contains] VALUES('" + ordernum + "','" + productid + "','" + quantity + "');";
@@ -412,6 +414,7 @@ namespace Project
             string query = "SELECT [Product ID] FROM Products WHERE Name = '" + name + "';";
             return dbMan.ExecuteReader(query);
         }
+
         public DataTable SelectProjectsByUsernameAndtatusdone(string username, string status)
         {
             string storedproc = StoredProcedures.Select_Projects_by_username_and_status_Done;
@@ -539,9 +542,19 @@ namespace Project
 
         public int addnewEmployee (string id, string phone, string email, string user, string pass, string city, string district, string country,string f, string m, string l, string g, string spe, string fix, string bd, string nation, string extne, string dept, string bran)
         {
-            string query = "Insert into Employee Values ('" + id + "','" + phone + "','" + email + "','" + user + "','" + pass + "','" + city + "'," +
-                "'" + district + "','" + country + "','" + f + "','" + m + "','" + l + "',' true ','" + spe + "','" + fix + "', 0 ,'" + bd + "'," +
-                "'" + nation + "','" + extne + "'," + dept + "," + bran + ")";
+            string query = null;
+            if (g == "M")
+            {
+                query = "Insert into Employee Values ('" + id + "','" + phone + "','" + email + "','" + user + "','" + pass + "','" + city + "'," +
+                    "'" + district + "','" + country + "','" + f + "','" + m + "','" + l + "','" + true + "','" + spe + "','" + fix + "', 0 ,'" + bd + "'," +
+                    "'" + nation + "','" + extne + "'," + dept + "," + bran + ")";
+            }
+            else if ( g == "F")
+            {
+                query = "Insert into Employee Values ('" + id + "','" + phone + "','" + email + "','" + user + "','" + pass + "','" + city + "'," +
+                     "'" + district + "','" + country + "','" + f + "','" + m + "','" + l + "','" + false + "','" + spe + "','" + fix + "', 0 ,'" + bd + "'," +
+                     "'" + nation + "','" + extne + "'," + dept + "," + bran + ")";
+            }
             return dbMan.ExecuteNonQuery(query);
         }
 
