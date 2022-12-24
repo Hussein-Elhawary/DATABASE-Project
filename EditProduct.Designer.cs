@@ -94,6 +94,7 @@
             this.button3.Size = new System.Drawing.Size(53, 42);
             this.button3.TabIndex = 27;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel3
             // 
@@ -194,7 +195,7 @@
             this.poduction.AutoSize = true;
             this.poduction.Location = new System.Drawing.Point(573, 104);
             this.poduction.Name = "poduction";
-            this.poduction.Size = new System.Drawing.Size(99, 16);
+            this.poduction.Size = new System.Drawing.Size(106, 17);
             this.poduction.TabIndex = 21;
             this.poduction.Text = "Production cost";
             // 
@@ -210,7 +211,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(391, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 16);
+            this.label1.Size = new System.Drawing.Size(108, 17);
             this.label1.TabIndex = 19;
             this.label1.Text = "Amount in stock";
             // 
@@ -226,7 +227,7 @@
             this.Price.AutoSize = true;
             this.Price.Location = new System.Drawing.Point(220, 104);
             this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(38, 16);
+            this.Price.Size = new System.Drawing.Size(40, 17);
             this.Price.TabIndex = 17;
             this.Price.Text = "Price";
             // 
@@ -279,7 +280,7 @@
             this.disc.AutoSize = true;
             this.disc.Location = new System.Drawing.Point(44, 104);
             this.disc.Name = "disc";
-            this.disc.Size = new System.Drawing.Size(75, 16);
+            this.disc.Size = new System.Drawing.Size(79, 17);
             this.disc.TabIndex = 12;
             this.disc.Text = "Description";
             this.disc.Click += new System.EventHandler(this.label27_Click);
@@ -289,7 +290,7 @@
             this.label36.AutoSize = true;
             this.label36.Location = new System.Drawing.Point(304, 51);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(90, 16);
+            this.label36.Size = new System.Drawing.Size(96, 17);
             this.label36.TabIndex = 7;
             this.label36.Text = "Product name";
             this.label36.Click += new System.EventHandler(this.label36_Click);
