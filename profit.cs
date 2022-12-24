@@ -18,7 +18,7 @@ namespace Project
         public profit()
         {
             InitializeComponent();
-            dataGridView1.Hide();
+            //dataGridView1.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,8 +43,8 @@ namespace Project
                 comboBox1.DataSource = dt;
                 comboBox1.DisplayMember = "Order Number";
                 comboBox1.ValueMember = "Order Number";
-                dataGridView1.Show();
-                dataGridView1.DataSource = dt;
+                //dataGridView1.Show();
+                //dataGridView1.DataSource = dt;
             }
             else if (radioButton3.Checked == true)//last month
             {
