@@ -70,6 +70,7 @@ namespace Project
             this.label14 = new System.Windows.Forms.Label();
             this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -78,7 +79,6 @@ namespace Project
             this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -569,7 +569,6 @@ namespace Project
             // 
             this.maskedTextBox11.Location = new System.Drawing.Point(7, 116);
             this.maskedTextBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox11.Mask = "000-0000";
             this.maskedTextBox11.Name = "maskedTextBox11";
             this.maskedTextBox11.Size = new System.Drawing.Size(76, 20);
             this.maskedTextBox11.TabIndex = 174;
@@ -578,7 +577,7 @@ namespace Project
             // 
             this.maskedTextBox7.Location = new System.Drawing.Point(7, 76);
             this.maskedTextBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox7.Mask = "000-00000000";
+            this.maskedTextBox7.Mask = "000000000000";
             this.maskedTextBox7.Name = "maskedTextBox7";
             this.maskedTextBox7.Size = new System.Drawing.Size(76, 20);
             this.maskedTextBox7.TabIndex = 170;
@@ -738,6 +737,15 @@ namespace Project
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Personal Data";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(5, 292);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(115, 20);
+            this.dateTimePicker1.TabIndex = 198;
+            this.dateTimePicker1.Value = new System.DateTime(2022, 12, 24, 14, 28, 53, 0);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -762,6 +770,200 @@ namespace Project
             // 
             this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "Afghanistan",
+            "Albania",
+            "Algeria",
+            "Andorra",
+            "Angola",
+            "Antigua and Barbuda",
+            "Argentina",
+            "Armenia",
+            "Australia",
+            "Austria",
+            "Azerbaijan",
+            "Bahamas ",
+            "Bahrain",
+            "Bangladesh",
+            "Barbados",
+            "Belarus",
+            "Belgium",
+            "Belize",
+            "Benin",
+            "Bhutan",
+            "Bolivia ",
+            "Bosnia and Herzegovina",
+            "Botswana",
+            "Brazil",
+            "Brunei Darussalam",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Cabo Verde",
+            "Cambodia",
+            "Cameroon",
+            "Canada",
+            "Central African Republic ",
+            "Chad",
+            "Chile",
+            "China",
+            "Colombia",
+            "Comoros ",
+            "Congo ",
+            "Costa Rica",
+            "Côte d\'Ivoire",
+            "Croatia",
+            "Cuba",
+            "Cyprus",
+            "Czechia",
+            "Democratic People\'s Republic of Korea ",
+            "Democratic Republic of the Congo ",
+            "Denmark",
+            "Djibouti",
+            "Dominica",
+            "Dominican Republic ",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Equatorial Guinea",
+            "Eritrea",
+            "Estonia",
+            "Eswatini",
+            "Ethiopia",
+            "Fiji",
+            "Finland",
+            "France",
+            "Gabon",
+            "Gambia ",
+            "Georgia",
+            "Germany",
+            "Ghana",
+            "Greece",
+            "Grenada",
+            "Guatemala",
+            "Guinea",
+            "Guinea-Bissau",
+            "Guyana",
+            "Haiti",
+            "Honduras",
+            "Hungary",
+            "Iceland",
+            "India",
+            "Indonesia",
+            "Iran ",
+            "Iraq",
+            "Ireland",
+            "Israel",
+            "Italy",
+            "Jamaica",
+            "Japan",
+            "Jordan",
+            "Kazakhstan",
+            "Kenya",
+            "Kiribati",
+            "Kuwait",
+            "Kyrgyzstan",
+            "Lao People\'s Democratic Republic ",
+            "Latvia",
+            "Lebanon",
+            "Lesotho",
+            "Liberia",
+            "Libya",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Madagascar",
+            "Malawi",
+            "Malaysia",
+            "Maldives",
+            "Mali",
+            "Malta",
+            "Marshall Islands ",
+            "Mauritania",
+            "Mauritius",
+            "Mexico",
+            "Micronesia ",
+            "Monaco",
+            "Mongolia",
+            "Montenegro",
+            "Morocco",
+            "Mozambique",
+            "Myanmar",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "Netherlands ",
+            "New Zealand",
+            "Nicaragua",
+            "Niger ",
+            "Nigeria",
+            "North Macedonia",
+            "Norway",
+            "Oman",
+            "Pakistan",
+            "Palau",
+            "Panama",
+            "Papua New Guinea",
+            "Paraguay",
+            "Peru",
+            "Philippines ",
+            "Poland",
+            "Portugal",
+            "Qatar",
+            "Republic of Korea ",
+            "Republic of Moldova ",
+            "Romania",
+            "Russian Federation ",
+            "Rwanda",
+            "Saint Kitts and Nevis",
+            "Saint Lucia",
+            "Saint Vincent and the Grenadines",
+            "Samoa",
+            "San Marino",
+            "Sao Tome and Principe",
+            "Saudi Arabia",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leone",
+            "Singapore",
+            "Slovakia",
+            "Slovenia",
+            "Solomon Islands",
+            "Somalia",
+            "South Africa",
+            "South Sudan",
+            "Spain",
+            "Sri Lanka",
+            "Sudan ",
+            "Suriname",
+            "Sweden",
+            "Switzerland",
+            "Syrian Arab Republic ",
+            "Tajikistan",
+            "Thailand",
+            "Timor-Leste",
+            "Togo",
+            "Tonga",
+            "Trinidad and Tobago",
+            "Tunisia",
+            "Türkiye",
+            "Turkmenistan",
+            "Tuvalu",
+            "Uganda",
+            "Ukraine",
+            "United Arab Emirates ",
+            "United Kingdom of Great Britain and Northern Ireland ",
+            "United Republic of Tanzania ",
+            "United States of America ",
+            "Uruguay",
+            "Uzbekistan",
+            "Vanuatu",
+            "Venezuela",
+            "Viet Nam",
+            "Yemen",
+            "Zambia",
+            "Zimbabwe"});
             this.comboBox5.Location = new System.Drawing.Point(4, 203);
             this.comboBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox5.Name = "comboBox5";
@@ -818,13 +1020,6 @@ namespace Project
             this.label25.TabIndex = 193;
             this.label25.Text = "Gender";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(5, 292);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 198;
-            // 
             // EmployeeCA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -836,6 +1031,7 @@ namespace Project
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EmployeeCA";
             this.Text = "EmployeeCA";
+            this.Load += new System.EventHandler(this.EmployeeCA_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);

@@ -45,12 +45,10 @@ namespace Project
             this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel8
@@ -81,7 +79,6 @@ namespace Project
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SeaShell;
-            this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.groupBox3);
@@ -229,16 +226,6 @@ namespace Project
             this.panel2.Size = new System.Drawing.Size(1243, 661);
             this.panel2.TabIndex = 20;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(71, 198);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(938, 305);
-            this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // profit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -255,7 +242,6 @@ namespace Project
             this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,6 +264,5 @@ namespace Project
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

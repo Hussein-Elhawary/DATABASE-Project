@@ -159,5 +159,10 @@ namespace Project
             this.Hide();
             a.Show();
         }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

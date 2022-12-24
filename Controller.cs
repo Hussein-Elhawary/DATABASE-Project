@@ -540,8 +540,8 @@ namespace Project
         public int addnewEmployee (string id, string phone, string email, string user, string pass, string city, string district, string country,string f, string m, string l, string g, string spe, string fix, string bd, string nation, string extne, string dept, string bran)
         {
             string query = "Insert into Employee Values ('" + id + "','" + phone + "','" + email + "','" + user + "','" + pass + "','" + city + "'," +
-                "'" + district + "','" + country + "','" + f + "','" + m + "','" + l + "',,' true ','" + spe + "',," + fix + ", 0 ,'" + bd + "'," +
-                ",'" + nation + "','" + extne + "'," + dept + "," + bran + ")";
+                "'" + district + "','" + country + "','" + f + "','" + m + "','" + l + "',' true ','" + spe + "','" + fix + "', 0 ,'" + bd + "'," +
+                "'" + nation + "','" + extne + "'," + dept + "," + bran + ")";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -585,5 +585,12 @@ namespace Project
             string query = "Update Employee Set Username = '" + usern + "' Where [Employee ID] = '" + idddd + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable SelectMaxEmployeeID()
+        {
+            string query = "select max(Cast(([Employee ID]) as int)) from Employee";
+            return dbMan.ExecuteReader(query);
+        }
+
     }
 }
