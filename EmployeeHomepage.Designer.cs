@@ -49,6 +49,8 @@ namespace Project
             this.label6 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.ViewInsurancelabel = new System.Windows.Forms.Label();
+            this.ViewInsurancebutton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -186,7 +188,7 @@ namespace Project
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(256, 269);
+            this.label4.Location = new System.Drawing.Point(256, 283);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 16);
             this.label4.TabIndex = 38;
@@ -199,7 +201,7 @@ namespace Project
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.BackgroundImage = global::Project.Properties.Resources.download__1_;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(259, 179);
+            this.button4.Location = new System.Drawing.Point(259, 193);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(111, 87);
             this.button4.TabIndex = 37;
@@ -232,7 +234,7 @@ namespace Project
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(247, 405);
+            this.label6.Location = new System.Drawing.Point(247, 164);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(136, 16);
             this.label6.TabIndex = 42;
@@ -244,7 +246,7 @@ namespace Project
             this.button6.BackColor = System.Drawing.Color.White;
             this.button6.BackgroundImage = global::Project.Properties.Resources.download__1_;
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Location = new System.Drawing.Point(259, 315);
+            this.button6.Location = new System.Drawing.Point(259, 74);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(111, 87);
             this.button6.TabIndex = 41;
@@ -261,12 +263,36 @@ namespace Project
             this.label7.Text = "Edit Product";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // ViewInsurancelabel
+            // 
+            this.ViewInsurancelabel.AutoSize = true;
+            this.ViewInsurancelabel.Location = new System.Drawing.Point(265, 405);
+            this.ViewInsurancelabel.Name = "ViewInsurancelabel";
+            this.ViewInsurancelabel.Size = new System.Drawing.Size(97, 16);
+            this.ViewInsurancelabel.TabIndex = 45;
+            this.ViewInsurancelabel.Text = "View Insurance";
+            this.ViewInsurancelabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // ViewInsurancebutton
+            // 
+            this.ViewInsurancebutton.BackColor = System.Drawing.Color.White;
+            this.ViewInsurancebutton.BackgroundImage = global::Project.Properties.Resources.download__1_;
+            this.ViewInsurancebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ViewInsurancebutton.Location = new System.Drawing.Point(259, 315);
+            this.ViewInsurancebutton.Name = "ViewInsurancebutton";
+            this.ViewInsurancebutton.Size = new System.Drawing.Size(111, 87);
+            this.ViewInsurancebutton.TabIndex = 44;
+            this.ViewInsurancebutton.UseVisualStyleBackColor = false;
+            this.ViewInsurancebutton.Click += new System.EventHandler(this.ViewInsurancebutton_Click);
+            // 
             // EmployeeHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(658, 493);
+            this.Controls.Add(this.ViewInsurancelabel);
+            this.Controls.Add(this.ViewInsurancebutton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button6);
@@ -315,5 +341,7 @@ namespace Project
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label ViewInsurancelabel;
+        private System.Windows.Forms.Button ViewInsurancebutton;
     }
 }

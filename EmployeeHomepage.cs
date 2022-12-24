@@ -127,5 +127,12 @@ namespace Project
         {
 
         }
+
+        private void ViewInsurancebutton_Click(object sender, EventArgs e)
+        {
+            ViewInsurance vf = new ViewInsurance(username);
+            vf.Show();
+            this.Hide();
+        }
     }
 }
