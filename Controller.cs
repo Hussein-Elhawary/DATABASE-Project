@@ -267,7 +267,7 @@ namespace Project
 
         public DataTable SelectMaxCustRequetID()            //Gets the max id of the last Request
         {
-            string query = "Select Max([Request ID]) from CustomerRequests;";
+            string query = "Select Max(Cast(([Request ID]) as int)) from CustomerRequests;";
             return dbMan.ExecuteReader(query);
         }
         public int InsertNewCustRequest(string R_ID, string type, string date, string details, string Resolved, string Emp_ID, string Cust_ID, string Order_ID)
