@@ -75,9 +75,24 @@ namespace Project
             string query = "Select Department From Employee where Username = '" + user + "';";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable GetProjectDetails(string user)
+        {
+            string query = "Select * From Projects where Name = '" + user + "';";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectProjectName(int id)
         {
             string query = " Select A.Name From Projects as A,Control as B, Departement as C where A.[Project ID]=B.[Project ID] and C.[Departement ID] = B.[Department ID] and C.[Departement ID] =" + id + ";";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectProjectid(string name)
+        {
+            string query = " Select [Project ID] From Projects where Name='" + name + "';";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectEmployeesWorkOnProject(int id, int Pid)
+        {
+            string query = "Select DISTINCT A.Name,B.[Employee ID],D.[Time spent] From Projects as A,Employee as B, Work_on as D, Control as E where B.Department=E.[Department ID] and D.[Employee ID]=B.[Employee ID] and D.[ Project ID]=A.[Project ID] and E.[Project ID]=a.[Project ID] and E.[Department ID]=" + id + " and A.[Project ID]=" + Pid + ";";
             return dbMan.ExecuteReader(query);
         }
         public DataTable SelectEmployeeFirstNameFromDepartmentid(int id)
@@ -363,7 +378,11 @@ namespace Project
             string query = "UPDATE Customers SET Password = '" + newPass + "' where [Customer ID] = '" + Cust_ID + "';";
             return dbMan.ExecuteNonQuery(query);
         }
-
+        public DataTable SelectMaxRequestID()
+        {
+            string query = "select MAX(Cast([Request ID] as INT)) from ManagerRequests;";
+            return dbMan.ExecuteReader(query);
+        }
         public int InsertContains(string ordernum,string productid,string quantity)
         {
             string query = "INSERT INTO[contains] VALUES('" + ordernum + "','" + productid + "','" + quantity + "');";

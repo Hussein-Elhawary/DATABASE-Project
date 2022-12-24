@@ -35,7 +35,6 @@ namespace Project
             t = new Personal_Data();
             b = new AddBranch(username);
             p = new EditPDE(username);
-            v = new ViewProjects();
             dt = new DataTable();
             dt2 = new DataTable();
             controllerobj = new Controller();
@@ -58,8 +57,7 @@ namespace Project
             textBox1.Enabled = false;
             comboBox4.Enabled = false;
             comboBox5.Enabled = false;
-           
-
+          
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -92,8 +90,14 @@ namespace Project
 
         private void button5_Click(object sender, EventArgs e)
         {
-            v.Show();
-            this.Hide();
+            if (comboBox1.SelectedIndex != -1)
+            {
+                v = new ViewProjects(username,comboBox1.Text.ToString());
+                v.Show();
+                this.Hide();
+            }
+            else
+                MessageBox.Show("Error You must choose");
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -221,7 +225,23 @@ namespace Project
 
         private void label4_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex != -1)
+            {
+                controllerobj = new Controller();
+                dt = controllerobj.SelectProjectid(comboBox1.Text.ToString());
+                E = new ViewEmployees(username, Convert.ToInt32(dt.Rows[0][0]));
+                E.Show();
+                this.Hide();
+            }
+            else
+                MessageBox.Show("Error You must choose");
+          
+        }
 
+        private void textBox2_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+                e.Handled = true;
         }
     }
 }
