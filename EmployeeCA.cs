@@ -77,7 +77,7 @@ namespace Project
             }
             string lname = maskedTextBox5.Text;
             string Gender;
-            if (comboBox1.SelectedIndex == 0)
+            if (comboBox3.SelectedIndex == 0)
             {
                 Gender = "M";
             }
@@ -177,7 +177,7 @@ namespace Project
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Server Side Error!");
             }
         }
 
