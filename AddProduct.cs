@@ -132,5 +132,10 @@ namespace Project
         {
 
         }
+
+        private void ProductnametextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

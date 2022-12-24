@@ -108,6 +108,12 @@
     <Compile Include="Customers\OrderDetails.Designer.cs">
       <DependentUpon>OrderDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMaterial.Designer.cs">
+      <DependentUpon>AddMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="profit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,8 +284,14 @@
     <EmbeddedResource Include="AddBranch.resx">
       <DependentUpon>AddBranch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddMaterial.resx">
+      <DependentUpon>AddMaterial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeRawmaterials.resx">
+      <DependentUpon>ChangeRawmaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Checkpasswordandupdate.resx">
       <DependentUpon>Checkpasswordandupdate.cs</DependentUpon>
@@ -298,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\EditPD.resx">
       <DependentUpon>EditPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEmployeeSalary.resx">
+      <DependentUpon>EditEmployeeSalary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditPDE.resx">
       <DependentUpon>EditPDE.cs</DependentUpon>

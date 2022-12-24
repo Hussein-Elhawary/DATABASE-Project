@@ -302,7 +302,7 @@ namespace Project
 
         public DataTable fillemployeebydept(int val)
         {
-            string query = "Select [First name], [Employee ID], Username From employee where Department = '" + val.ToString() + "';";
+            string query = "Select [First name], [Employee ID], Username, [Fixed Salary] From employee where Department = '" + val.ToString() + "';";
             return dbMan.ExecuteReader(query);
         }
 
@@ -358,8 +358,26 @@ namespace Project
             Parameters.Add("@City", City);
             Parameters.Add("@District", District);
             return dbMan.ExecuteNonQuery(storedproc, Parameters);
-        }
+        }public int Update_Raw_materials(string ID,  string Name , string Description,float Price, string weight_in_stock, string type)
+        {
+            string storedproc = StoredProcedures.Update_Raw_materials;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ID", ID);
+            Parameters.Add("@Name", Name);
+            Parameters.Add("@Description", Description);
+            Parameters.Add("@Price", Price);
+            Parameters.Add("@weight_in_stock", weight_in_stock);
+            Parameters.Add("@type", type);
 
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
+        }
+        public DataTable Select_All_raw_materials_and_their_suppliers()
+        {
+            string storedproc = StoredProcedures.Select_All_raw_materials_and_their_suppliers;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
 
         public int updatemanager(string midn, string deptid, string date)
         {
@@ -378,11 +396,13 @@ namespace Project
             string query = "UPDATE Customers SET Password = '" + newPass + "' where [Customer ID] = '" + Cust_ID + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+
         public DataTable SelectMaxRequestID()
         {
             string query = "select MAX(Cast([Request ID] as INT)) from ManagerRequests;";
             return dbMan.ExecuteReader(query);
         }
+
         public int InsertContains(string ordernum,string productid,string quantity)
         {
             string query = "INSERT INTO[contains] VALUES('" + ordernum + "','" + productid + "','" + quantity + "');";
@@ -394,6 +414,7 @@ namespace Project
             string query = "SELECT [Product ID] FROM Products WHERE Name = '" + name + "';";
             return dbMan.ExecuteReader(query);
         }
+
         public DataTable SelectProjectsByUsernameAndtatusdone(string username, string status)
         {
             string storedproc = StoredProcedures.Select_Projects_by_username_and_status_Done;
@@ -427,6 +448,14 @@ namespace Project
             Parameters.Add("@ID", ID);
             
             return dbMan.ExecuteNonQuery(storedproc, Parameters);
+        }   
+        public int Delete_Rawmaterial(string ID)
+        {
+            string storedproc = StoredProcedures.Delete_Rawmaterial;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ID", ID);
+            
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
         }
         public int UpdateProduct(string ID, string Name, string discription, float price, int amountinstock, int production_cost)
         {
@@ -450,6 +479,20 @@ namespace Project
             Parameters.Add("@Amount_in_stock", amountinstock);
             Parameters.Add("@Production_Cost", production_cost);
             return dbMan.ExecuteNonQuery(storedproc, Parameters);
+        }     
+        public int Add_Raw_material(string Name, string discription, float price, int weight, string supID,string type)
+        {
+            string storedproc = StoredProcedures.Add_Raw_material;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Name", Name);
+            Parameters.Add("@type", type);
+            Parameters.Add("@supID", supID);
+            Parameters.Add("@Price", price);
+            Parameters.Add("@wight", weight);
+            Parameters.Add("@descrition", discription);
+            
+            
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
         }
 
         public DataTable Select_CustomerComplaints_UNResolved()
@@ -462,6 +505,13 @@ namespace Project
         public DataTable Select_all_rawmaterials()
         {
             string storedproc = StoredProcedures.Select_all_rawmaterials;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }    
+        public DataTable Select_all_Suppliers()
+        {
+            string storedproc = StoredProcedures.Select_all_Suppliers;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
 
             return dbMan.ExecuteReader(storedproc, Parameters);
@@ -492,9 +542,19 @@ namespace Project
 
         public int addnewEmployee (string id, string phone, string email, string user, string pass, string city, string district, string country,string f, string m, string l, string g, string spe, string fix, string bd, string nation, string extne, string dept, string bran)
         {
-            string query = "Insert into Employee Values ('" + id + "','" + phone + "','" + email + "','" + user + "','" + pass + "','" + city + "'," +
-                "'" + district + "','" + country + "','" + f + "','" + m + "','" + l + "',' true ','" + spe + "','" + fix + "', 0 ,'" + bd + "'," +
-                "'" + nation + "','" + extne + "'," + dept + "," + bran + ")";
+            string query = null;
+            if (g == "M")
+            {
+                query = "Insert into Employee Values ('" + id + "','" + phone + "','" + email + "','" + user + "','" + pass + "','" + city + "'," +
+                    "'" + district + "','" + country + "','" + f + "','" + m + "','" + l + "','" + true + "','" + spe + "','" + fix + "', 0 ,'" + bd + "'," +
+                    "'" + nation + "','" + extne + "'," + dept + "," + bran + ")";
+            }
+            else if ( g == "F")
+            {
+                query = "Insert into Employee Values ('" + id + "','" + phone + "','" + email + "','" + user + "','" + pass + "','" + city + "'," +
+                     "'" + district + "','" + country + "','" + f + "','" + m + "','" + l + "','" + false + "','" + spe + "','" + fix + "', 0 ,'" + bd + "'," +
+                     "'" + nation + "','" + extne + "'," + dept + "," + bran + ")";
+            }
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -545,5 +605,10 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
+        public int Editsalary(string sala, string id)
+        {
+            string query = "Update Employee Set [Fixed salary] = '" + sala + "' where [Employee ID] = '" + id + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }
