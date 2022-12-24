@@ -186,19 +186,20 @@ namespace Project
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(444, 405);
+            this.label4.Location = new System.Drawing.Point(256, 269);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 16);
+            this.label4.Size = new System.Drawing.Size(106, 16);
             this.label4.TabIndex = 38;
-            this.label4.Text = "View Raw materials";
+            this.label4.Text = "This idk what is it";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.BackgroundImage = global::Project.Properties.Resources.download__1_;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(447, 315);
+            this.button4.Location = new System.Drawing.Point(259, 179);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(111, 87);
             this.button4.TabIndex = 37;
@@ -208,19 +209,20 @@ namespace Project
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(246, 279);
+            this.label5.Location = new System.Drawing.Point(434, 405);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 16);
             this.label5.TabIndex = 40;
             this.label5.Text = "change raw materials ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.White;
             this.button5.BackgroundImage = global::Project.Properties.Resources.download__1_;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Location = new System.Drawing.Point(259, 189);
+            this.button5.Location = new System.Drawing.Point(447, 315);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(111, 87);
             this.button5.TabIndex = 39;

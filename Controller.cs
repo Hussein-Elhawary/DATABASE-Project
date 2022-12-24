@@ -358,8 +358,26 @@ namespace Project
             Parameters.Add("@City", City);
             Parameters.Add("@District", District);
             return dbMan.ExecuteNonQuery(storedproc, Parameters);
-        }
+        }public int Update_Raw_materials(string ID,  string Name , string Description,float Price, string weight_in_stock, string type)
+        {
+            string storedproc = StoredProcedures.Update_Raw_materials;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ID", ID);
+            Parameters.Add("@Name", Name);
+            Parameters.Add("@Description", Description);
+            Parameters.Add("@Price", Price);
+            Parameters.Add("@weight_in_stock", weight_in_stock);
+            Parameters.Add("@type", type);
 
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
+        }
+        public DataTable Select_All_raw_materials_and_their_suppliers()
+        {
+            string storedproc = StoredProcedures.Select_All_raw_materials_and_their_suppliers;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }
 
         public int updatemanager(string midn, string deptid, string date)
         {
@@ -427,6 +445,14 @@ namespace Project
             Parameters.Add("@ID", ID);
             
             return dbMan.ExecuteNonQuery(storedproc, Parameters);
+        }   
+        public int Delete_Rawmaterial(string ID)
+        {
+            string storedproc = StoredProcedures.Delete_Rawmaterial;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ID", ID);
+            
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
         }
         public int UpdateProduct(string ID, string Name, string discription, float price, int amountinstock, int production_cost)
         {
@@ -450,6 +476,20 @@ namespace Project
             Parameters.Add("@Amount_in_stock", amountinstock);
             Parameters.Add("@Production_Cost", production_cost);
             return dbMan.ExecuteNonQuery(storedproc, Parameters);
+        }     
+        public int Add_Raw_material(string Name, string discription, float price, int weight, string supID,string type)
+        {
+            string storedproc = StoredProcedures.Add_Raw_material;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Name", Name);
+            Parameters.Add("@type", type);
+            Parameters.Add("@supID", supID);
+            Parameters.Add("@Price", price);
+            Parameters.Add("@wight", weight);
+            Parameters.Add("@descrition", discription);
+            
+            
+            return dbMan.ExecuteNonQuery(storedproc, Parameters);
         }
 
         public DataTable Select_CustomerComplaints_UNResolved()
@@ -462,6 +502,13 @@ namespace Project
         public DataTable Select_all_rawmaterials()
         {
             string storedproc = StoredProcedures.Select_all_rawmaterials;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+
+            return dbMan.ExecuteReader(storedproc, Parameters);
+        }    
+        public DataTable Select_all_Suppliers()
+        {
+            string storedproc = StoredProcedures.Select_all_Suppliers;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
 
             return dbMan.ExecuteReader(storedproc, Parameters);

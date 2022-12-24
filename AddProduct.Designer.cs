@@ -39,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.AmountinstocktextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ProductioncosttextBox = new System.Windows.Forms.TextBox();
@@ -48,6 +47,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MaterialsCombobox = new System.Windows.Forms.ComboBox();
             this.InsertMaterialbutton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -72,6 +72,7 @@
             this.ProductnametextBox.Name = "ProductnametextBox";
             this.ProductnametextBox.Size = new System.Drawing.Size(96, 22);
             this.ProductnametextBox.TabIndex = 245;
+            this.ProductnametextBox.TextChanged += new System.EventHandler(this.ProductnametextBox_TextChanged);
             // 
             // PricetextBox
             // 
@@ -165,18 +166,6 @@
             this.panel1.Size = new System.Drawing.Size(199, 553);
             this.panel1.TabIndex = 235;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(68, 39);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(53, 42);
-            this.button3.TabIndex = 29;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // AmountinstocktextBox
             // 
             this.AmountinstocktextBox.Location = new System.Drawing.Point(419, 292);
@@ -262,6 +251,18 @@
             this.InsertMaterialbutton.Text = "Insert Maretial";
             this.InsertMaterialbutton.UseVisualStyleBackColor = true;
             this.InsertMaterialbutton.Click += new System.EventHandler(this.InsertMaterialbutton_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(68, 39);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(53, 42);
+            this.button3.TabIndex = 29;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // AddProduct
             // 
