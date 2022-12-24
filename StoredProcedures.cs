@@ -23,5 +23,10 @@ namespace Project
         public static string Select_product_By_name = "Select_product_By_name";
         public static string Insert_in_consumes = "Insert_in_consumes";
         public static string Select_TotalMR_Unresolved = "Select_ManagerRequests_UNResolved";
+        public static string Select_All_raw_materials_and_their_suppliers = "Select_All_raw_materials_and_their_suppliers";
+        public static string Update_Raw_materials = "Update_Raw_materials";
+        public static string Delete_Rawmaterial = "Delete_Rawmaterial";
+        public static string Select_all_Suppliers = "Select_all_Suppliers";
+        public static string Add_Raw_material = "Add_Raw_material";
     }
 }
