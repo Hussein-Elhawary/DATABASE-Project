@@ -192,7 +192,7 @@ namespace Project
 
         public DataTable SelectMaxCutomerID()            //Gets the max id of the last registered customer
         {
-            string query = "Select max([Customer ID]) from Customers;";
+            string query = "Select max(Cast([Customer ID] as int)) from Customers;";
             return dbMan.ExecuteReader(query);
         }
         public DataTable SelectBranches()
@@ -267,7 +267,7 @@ namespace Project
 
         public DataTable SelectMaxCustRequetID()            //Gets the max id of the last Request
         {
-            string query = "Select Max([Request ID]) from CustomerRequests;";
+            string query = "Select Max(Cast(([Request ID]) as int)) from CustomerRequests;";
             return dbMan.ExecuteReader(query);
         }
         public int InsertNewCustRequest(string R_ID, string type, string date, string details, string Resolved, string Emp_ID, string Cust_ID, string Order_ID)
@@ -302,7 +302,7 @@ namespace Project
 
         public DataTable fillemployeebydept(int val)
         {
-            string query = "Select [First name], [Employee ID], Username From employee where Department = '" + val.ToString() + "';";
+            string query = "Select [First name], [Employee ID], Username, [Fixed Salary] From employee where Department = '" + val.ToString() + "';";
             return dbMan.ExecuteReader(query);
         }
 
@@ -605,5 +605,10 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
+        public int Editsalary(string sala, string id)
+        {
+            string query = "Update Employee Set [Fixed salary] = '" + sala + "' where [Employee ID] = '" + id + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }

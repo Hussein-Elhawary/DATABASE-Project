@@ -311,6 +311,9 @@
     <EmbeddedResource Include="Customers\EditPD.resx">
       <DependentUpon>EditPD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditEmployeeSalary.resx">
+      <DependentUpon>EditEmployeeSalary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditPDE.resx">
       <DependentUpon>EditPDE.cs</DependentUpon>
     </EmbeddedResource>
