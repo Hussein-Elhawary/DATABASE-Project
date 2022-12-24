@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,15 @@ namespace Project
 {
     public partial class EditPD : Form
     {
+        static string Encrypt(string passbefore)
+        {
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding uTF8 = new UTF8Encoding();
+                byte[] data = md5.ComputeHash(uTF8.GetBytes(passbefore));
+                return Convert.ToBase64String(data);
+            }
+        }
 
         Controller ControllerDB;
         string Cust_ID;
@@ -74,6 +84,7 @@ namespace Project
             maskedTextBox7.ReadOnly = false;
             maskedTextBox4.ReadOnly = false;
             Ccode_textbox.ReadOnly = false;
+            comboBox1.SelectedIndex = 0;
 
         }
 
@@ -121,7 +132,8 @@ namespace Project
                 return;
             }
             ControllerDB = new Controller();
-            ControllerDB.UpdateCustomerPassword(Cust_ID,chngPass_textbox.Text);
+            string Encrypted_Pass = Encrypt(chngPass_textbox.Text);
+            ControllerDB.UpdateCustomerPassword(Cust_ID,Encrypted_Pass);
             MessageBox.Show("Password Updated");
             this.Hide();
         }

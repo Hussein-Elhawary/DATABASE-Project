@@ -36,6 +36,9 @@ namespace Project
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ConfirmPassword_Button = new System.Windows.Forms.Button();
+            this.changePass_textbox = new System.Windows.Forms.LinkLabel();
+            this.chngPass_textbox = new System.Windows.Forms.TextBox();
             this.COD_textbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Ccode_textbox = new System.Windows.Forms.TextBox();
@@ -52,10 +55,7 @@ namespace Project
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.chngPass_textbox = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.changePass_textbox = new System.Windows.Forms.LinkLabel();
-            this.ConfirmPassword_Button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -148,9 +148,37 @@ namespace Project
             this.panel4.TabIndex = 25;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
+            // ConfirmPassword_Button
+            // 
+            this.ConfirmPassword_Button.Location = new System.Drawing.Point(217, 296);
+            this.ConfirmPassword_Button.Name = "ConfirmPassword_Button";
+            this.ConfirmPassword_Button.Size = new System.Drawing.Size(100, 23);
+            this.ConfirmPassword_Button.TabIndex = 244;
+            this.ConfirmPassword_Button.Text = "Confirm Password";
+            this.ConfirmPassword_Button.UseVisualStyleBackColor = true;
+            this.ConfirmPassword_Button.Click += new System.EventHandler(this.ConfirmPassword_Button_Click);
+            // 
+            // changePass_textbox
+            // 
+            this.changePass_textbox.AutoSize = true;
+            this.changePass_textbox.Location = new System.Drawing.Point(214, 160);
+            this.changePass_textbox.Name = "changePass_textbox";
+            this.changePass_textbox.Size = new System.Drawing.Size(93, 13);
+            this.changePass_textbox.TabIndex = 243;
+            this.changePass_textbox.TabStop = true;
+            this.changePass_textbox.Text = "Change Password";
+            this.changePass_textbox.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.changePass_textbox_LinkClicked);
+            // 
+            // chngPass_textbox
+            // 
+            this.chngPass_textbox.Location = new System.Drawing.Point(217, 179);
+            this.chngPass_textbox.Name = "chngPass_textbox";
+            this.chngPass_textbox.Size = new System.Drawing.Size(116, 20);
+            this.chngPass_textbox.TabIndex = 242;
+            // 
             // COD_textbox
             // 
-            this.COD_textbox.Location = new System.Drawing.Point(54, 75);
+            this.COD_textbox.Location = new System.Drawing.Point(53, 75);
             this.COD_textbox.Name = "COD_textbox";
             this.COD_textbox.Size = new System.Drawing.Size(100, 20);
             this.COD_textbox.TabIndex = 241;
@@ -492,34 +520,6 @@ namespace Project
             this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 216;
             this.label2.Text = "Country Of Residence ";
-            // 
-            // chngPass_textbox
-            // 
-            this.chngPass_textbox.Location = new System.Drawing.Point(217, 179);
-            this.chngPass_textbox.Name = "chngPass_textbox";
-            this.chngPass_textbox.Size = new System.Drawing.Size(116, 20);
-            this.chngPass_textbox.TabIndex = 242;
-            // 
-            // changePass_textbox
-            // 
-            this.changePass_textbox.AutoSize = true;
-            this.changePass_textbox.Location = new System.Drawing.Point(214, 160);
-            this.changePass_textbox.Name = "changePass_textbox";
-            this.changePass_textbox.Size = new System.Drawing.Size(93, 13);
-            this.changePass_textbox.TabIndex = 243;
-            this.changePass_textbox.TabStop = true;
-            this.changePass_textbox.Text = "Change Password";
-            this.changePass_textbox.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.changePass_textbox_LinkClicked);
-            // 
-            // ConfirmPassword_Button
-            // 
-            this.ConfirmPassword_Button.Location = new System.Drawing.Point(217, 296);
-            this.ConfirmPassword_Button.Name = "ConfirmPassword_Button";
-            this.ConfirmPassword_Button.Size = new System.Drawing.Size(100, 23);
-            this.ConfirmPassword_Button.TabIndex = 244;
-            this.ConfirmPassword_Button.Text = "Confirm Password";
-            this.ConfirmPassword_Button.UseVisualStyleBackColor = true;
-            this.ConfirmPassword_Button.Click += new System.EventHandler(this.ConfirmPassword_Button_Click);
             // 
             // EditPD
             // 

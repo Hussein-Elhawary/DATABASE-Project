@@ -192,7 +192,7 @@ namespace Project
 
         public DataTable SelectMaxCutomerID()            //Gets the max id of the last registered customer
         {
-            string query = "Select max([Customer ID]) from Customers;";
+            string query = "Select max(Cast([Customer ID] as int)) from Customers;";
             return dbMan.ExecuteReader(query);
         }
         public DataTable SelectBranches()
