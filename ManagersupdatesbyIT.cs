@@ -15,7 +15,6 @@ namespace Project
         Controller controllerobj = new Controller();
         DataTable dt = null;
         DataTable dt1 = null;
-        DataTable dt4 = null;
         public ManagersupdatesbyIT()
         {
             InitializeComponent();
@@ -150,6 +149,16 @@ namespace Project
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

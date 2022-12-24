@@ -302,7 +302,7 @@ namespace Project
 
         public DataTable fillemployeebydept(int val)
         {
-            string query = "Select [First name], [Employee ID], Username From employee where Department = '" + val.ToString() + "';";
+            string query = "Select [First name], [Employee ID], Username, [Fixed Salary] From employee where Department = '" + val.ToString() + "';";
             return dbMan.ExecuteReader(query);
         }
 
@@ -605,5 +605,10 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
+        public int Editsalary(string sala, string id)
+        {
+            string query = "Update Employee Set [Fixed salary] = '" + sala + "' where [Employee ID] = '" + id + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }
