@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project
 {
@@ -106,20 +107,29 @@ namespace Project
             }
             string salary = maskedTextBox6.Text;
             string branch = comboBox2.SelectedValue.ToString();
-            if (maskedTextBox10.Text == "" || maskedTextBox10.Text[0] != 'f' || maskedTextBox10.Text[0] != 'p' || maskedTextBox10.Text[0] != 'g')
+            if (maskedTextBox10.Text == "")
             {
-                MessageBox.Show("UserName must either start with an (f or p or g) !");
+                MessageBox.Show("UserName is Empty !");
                 return;
+            }
+            if (maskedTextBox10.Text[0] == 'f' || maskedTextBox10.Text[0] == 'g' || maskedTextBox10.Text[0] == 'p')
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("UserName must either start with an(f or p or g) !");
+                    return;
             }
             string user = maskedTextBox10.Text;
             if (maskedTextBox9.Text.Length > 20 || maskedTextBox9.Text.Length < 8)
             {
-                label4.Text = "Password Must be between 8 and 20 characters!";
+                MessageBox.Show("Password Must be between 8 and 20 characters!");
                 return;
             }
             string password = maskedTextBox9.Text;
             password = Encrypt(password);
-            string COD = comboBox1.SelectedValue.ToString();
+            string COD = comboBox1.SelectedItem.ToString();
             if (maskedTextBox13.Text == "")
             {
                 MessageBox.Show("City is Empty !");
@@ -128,7 +138,7 @@ namespace Project
             string City = maskedTextBox13.Text;
             if (maskedTextBox12.Text == "")
             {
-                MessageBox.Show("Salary is Empty !");
+                MessageBox.Show("Address is Empty !");
                 return;
             }
             string Address = maskedTextBox12.Text;
@@ -146,19 +156,24 @@ namespace Project
             string Phone = maskedTextBox7.Text;
             if (maskedTextBox11.Text == "")
             {
-                MessageBox.Show("Salary is Empty !");
+                MessageBox.Show("Extention is Empty !");
                 return;
             }
             string Extention = maskedTextBox11.Text;
 
             controllerobj = new Controller();
-            string New_Emp_ID = "1"; 
+            DataTable DT = controllerobj.SelectMaxEmployeeID();
+            int New_Emp_ID = Convert.ToInt32(DT.Rows[0][0]);
+            New_Emp_ID++;
 
 
-            int result = controllerobj.addnewEmployee(New_Emp_ID,Phone,Email,user,password,City,Address,COD,fname,mname,lname,Gender,specialization,salary,B_Date,nation,Extention,dept,branch);
+            int result = controllerobj.addnewEmployee(New_Emp_ID.ToString(),Phone,Email,user,password,City,Address,COD,fname,mname,lname,Gender,specialization,salary,B_Date,nation,Extention,dept,branch);
             if (result == 1)
             {
                 MessageBox.Show("Added Successfully");
+                this.Hide();
+                welcome a = new welcome();
+                a.Show();
             }
             else
             {
