@@ -39,7 +39,7 @@ namespace Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Personal_Data pd = new Personal_Data(username);
+            EditPDE pd = new EditPDE(username);
             pd.Show();
             this.Hide();
         }
