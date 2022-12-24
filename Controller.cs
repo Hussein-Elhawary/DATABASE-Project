@@ -484,10 +484,9 @@ namespace Project
             return dbMan.ExecuteNonQuery(storedproc, Parameters);
         }
 
-        public DataTable getorders (string date1, string date2)
+        public DataTable getordersnew (string date1, string date2)
         {
-            string query = "Select * From [contains] where [Order ID] = (Select [Order Number] From Orders " +
-                "where [Order Date] >= '" + date1 + "' and [Order Date] <= '" + date2 + "')";
+            string query = "Select * From Orders where [Order Date] >= '" + date1 + "' and [Order Date] <= '" + date2 + "'";
             return dbMan.ExecuteReader(query);
         }
 
