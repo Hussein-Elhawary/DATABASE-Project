@@ -268,7 +268,7 @@ namespace Project
                 newrequestid = 1 + Convert.ToInt32(dt.Rows[0][0]);
                 dt = controllerobj.GetEmployeeIdFromUsername(username);
                 int r = 0;
-                r = controllerobj.InsertManagerRequest(newrequestid, textBox2.Text.ToString(), DateTime.Now.ToString("M-d-yyyy"), textBox6.Text.ToString(), "false", Convert.ToInt32(null), Convert.ToInt32(dt.Rows[0][0]));
+                r = controllerobj.InsertManagerRequest(newrequestid, textBox2.Text.ToString(), DateTime.Now.ToString("M-d-yyyy"), textBox6.Text.ToString(), "false", Convert.ToInt32(dt.Rows[0][0]));
                 if (r != 0)
                     MessageBox.Show(" Your Request has been sent successfully ");
                 else

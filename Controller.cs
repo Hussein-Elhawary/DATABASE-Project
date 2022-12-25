@@ -284,9 +284,9 @@ namespace Project
             string query = "insert into CustomerRequests VALUES ('" + R_ID + "','" + type + "','" + date + "','" + details + "','" + Resolved + "'," + Emp_ID + ",'" + Cust_ID + "','" + Order_ID + "');";
             return dbMan.ExecuteNonQuery(query);
         }
-        public int InsertManagerRequest(int id, string type, string date, string details, string resolved, int employeeid, int managerid)
+        public int InsertManagerRequest(int id, string type, string date, string details, string resolved, int managerid)
         {
-            string query = "insert into ManagerRequests VALUES(" + id + ",'" + type + "','" + date + "','" + details + "','" + resolved + "'," + employeeid + "," + managerid + ");";
+            string query = "insert into ManagerRequests VALUES(" + id + ",'" + type + "','" + date + "','" + details + "','" + resolved + "','" + null + "'," + managerid + ");";
             return dbMan.ExecuteNonQuery(query);
         }
         public DataTable SelectProductFromID(string id)
