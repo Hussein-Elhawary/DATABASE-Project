@@ -12,12 +12,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project
 {
+    
     public partial class EmployeeCA : Form
     {
+        string username22 = null;
         Controller controllerobj = new Controller();
         DataTable dt1 = null;
-        public EmployeeCA()
+        public EmployeeCA(string user)
         {
+            username22 = user;
             InitializeComponent();
             DataTable dt = null;
             dt = controllerobj.filldepartements();
@@ -183,8 +186,9 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Home h1 = new Home();
+            Home h1 = new Home(username22);
             h1.Show();
+            this.Hide();
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)

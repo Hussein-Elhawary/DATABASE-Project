@@ -171,7 +171,8 @@ namespace Project
             this.maskedTextBox2.Location = new System.Drawing.Point(28, 268);
             this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(294, 20);
+            this.maskedTextBox2.PasswordChar = '*';
+            this.maskedTextBox2.Size = new System.Drawing.Size(391, 22);
             this.maskedTextBox2.TabIndex = 1;
             this.maskedTextBox2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
             // 

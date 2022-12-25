@@ -25,7 +25,7 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EmployeeCA eca = new EmployeeCA();
+            EmployeeCA eca = new EmployeeCA(username);
             eca.Show();
             this.Hide();
         }
@@ -48,7 +48,7 @@ namespace Project
         {
             welcome w1 = new welcome();
             w1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -60,6 +60,26 @@ namespace Project
         {
             ViewInsurance vi = new ViewInsurance(username);
             vi.Show();
+            this.Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Remove ri = new Remove(username);
+            ri.Show();
+            this.Hide();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ManagersupdatesbyIT mi = new ManagersupdatesbyIT(username);
+            mi.Show();
             this.Hide();
         }
     }
