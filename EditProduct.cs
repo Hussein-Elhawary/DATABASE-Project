@@ -88,7 +88,7 @@ namespace Project
         {
             AddProduct button = new AddProduct(username);
             button.Show();
-            
+            this.Hide();
         }
 
         private void Viewdatabutton_Click(object sender, EventArgs e)

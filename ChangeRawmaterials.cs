@@ -135,6 +135,7 @@ namespace Project
         {
             AddMaterial addMaterial = new AddMaterial(username);
             addMaterial.Show();
+            this.Hide();
         }
 
         private void Reffreshdata_Click(object sender, EventArgs e)
