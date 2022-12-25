@@ -286,7 +286,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "AddMaterial";
-            this.Text = "Form1";
+            this.Text = "Add Raw Material";
             this.Load += new System.EventHandler(this.AddMaterial_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

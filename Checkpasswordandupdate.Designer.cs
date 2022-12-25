@@ -63,7 +63,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(12, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 17);
+            this.label3.Size = new System.Drawing.Size(122, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Enter old password";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -74,7 +74,7 @@
             this.label2.BackColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(12, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 17);
+            this.label2.Size = new System.Drawing.Size(121, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Password Incorrect";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -94,7 +94,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(12, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 17);
+            this.label1.Size = new System.Drawing.Size(134, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter Password Here";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -138,7 +138,7 @@
             this.ClientSize = new System.Drawing.Size(339, 165);
             this.Controls.Add(this.panel1);
             this.Name = "Checkpasswordandupdate";
-            this.Text = "Form1";
+            this.Text = "Confirm Password";
             this.Load += new System.EventHandler(this.Checkpasswordandupdate_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

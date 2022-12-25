@@ -31,6 +31,7 @@ namespace Project
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -65,7 +66,6 @@ namespace Project
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -99,6 +99,18 @@ namespace Project
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Log Out";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(54, 42);
+            this.button3.TabIndex = 27;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel3
             // 
@@ -177,7 +189,7 @@ namespace Project
             this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(182, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 202;
             // 
             // textBox1
@@ -194,7 +206,7 @@ namespace Project
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(182, 130);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(181, 17);
+            this.label11.Size = new System.Drawing.Size(172, 16);
             this.label11.TabIndex = 200;
             this.label11.Text = "Confirm The New Password";
             // 
@@ -211,7 +223,7 @@ namespace Project
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(11, 130);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 17);
+            this.label9.Size = new System.Drawing.Size(97, 16);
             this.label9.TabIndex = 198;
             this.label9.Text = "New Password";
             // 
@@ -238,7 +250,7 @@ namespace Project
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 17);
+            this.label3.Size = new System.Drawing.Size(130, 16);
             this.label3.TabIndex = 177;
             this.label3.Text = "Current Departement";
             // 
@@ -247,7 +259,7 @@ namespace Project
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(4, 74);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 17);
+            this.label12.Size = new System.Drawing.Size(68, 16);
             this.label12.TabIndex = 193;
             this.label12.Text = "Extension ";
             // 
@@ -275,7 +287,7 @@ namespace Project
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(175, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 17);
+            this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 181;
             this.label4.Text = "Name";
             // 
@@ -284,7 +296,7 @@ namespace Project
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(347, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 17);
+            this.label5.Size = new System.Drawing.Size(20, 16);
             this.label5.TabIndex = 195;
             this.label5.Text = "ID";
             // 
@@ -318,7 +330,7 @@ namespace Project
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(3, 23);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 17);
+            this.label10.Size = new System.Drawing.Size(85, 16);
             this.label10.TabIndex = 177;
             this.label10.Text = "Departement";
             // 
@@ -346,7 +358,7 @@ namespace Project
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(182, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 181;
             this.label1.Text = "Name";
             // 
@@ -355,7 +367,7 @@ namespace Project
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(3, 74);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(21, 17);
+            this.label19.Size = new System.Drawing.Size(20, 16);
             this.label19.TabIndex = 195;
             this.label19.Text = "ID";
             // 
@@ -430,18 +442,6 @@ namespace Project
             this.panel7.Size = new System.Drawing.Size(1243, 661);
             this.panel7.TabIndex = 20;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(54, 42);
-            this.button3.TabIndex = 27;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // Remove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -451,7 +451,7 @@ namespace Project
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Name = "Remove";
-            this.Text = "Form1";
+            this.Text = "Remove";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);

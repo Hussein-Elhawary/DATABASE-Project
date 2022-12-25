@@ -67,9 +67,9 @@ namespace Project
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label4.Location = new System.Drawing.Point(28, 255);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(355, 110);
+            this.label4.Size = new System.Drawing.Size(403, 108);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Welcome TO \r\nGeneral Motors";
+            this.label4.Text = "Welcome TO \r\nGeneral Company";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
@@ -97,9 +97,9 @@ namespace Project
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(153, 364);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(129, 21);
+            this.checkBox1.Size = new System.Drawing.Size(125, 20);
             this.checkBox1.TabIndex = 9;
             this.checkBox1.Text = "Show Password";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -123,7 +123,7 @@ namespace Project
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(280, 412);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 17);
+            this.label3.Size = new System.Drawing.Size(140, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Forgot Your Password";
             // 
@@ -133,7 +133,7 @@ namespace Project
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Location = new System.Drawing.Point(275, 430);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(154, 17);
+            this.linkLabel2.Size = new System.Drawing.Size(145, 16);
             this.linkLabel2.TabIndex = 5;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Don\'t Worry! Click Here";
@@ -145,7 +145,7 @@ namespace Project
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(131, 523);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(170, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(162, 16);
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "New Customer! Click Here";
@@ -157,7 +157,7 @@ namespace Project
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(35, 310);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
@@ -167,7 +167,7 @@ namespace Project
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(35, 255);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 17);
+            this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "User Name";
             // 
@@ -224,7 +224,7 @@ namespace Project
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "welcome";
-            this.Text = "Form1";
+            this.Text = "Welcome";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
