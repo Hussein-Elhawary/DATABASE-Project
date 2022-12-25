@@ -77,5 +77,12 @@ namespace Project
         {
             
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcome w2 = new welcome();
+            w2.Show();
+            this.Close();
+        }
     }
 }

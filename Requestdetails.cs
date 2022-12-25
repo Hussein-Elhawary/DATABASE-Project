@@ -104,5 +104,12 @@ namespace Project
                 MessageBox.Show("Resolve The Request First!");
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcome w2 = new welcome();
+            w2.Show();
+            this.Close();
+        }
     }
 }

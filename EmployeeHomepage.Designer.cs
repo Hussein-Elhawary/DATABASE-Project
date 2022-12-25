@@ -79,6 +79,7 @@ namespace Project
             this.linkLabel1.TabIndex = 220;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Log Out";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // panel3
             // 
@@ -124,7 +125,7 @@ namespace Project
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(63, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 16);
+            this.label1.Size = new System.Drawing.Size(124, 17);
             this.label1.TabIndex = 33;
             this.label1.Text = "Edit Personal data";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -134,7 +135,7 @@ namespace Project
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(457, 164);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 16);
+            this.label2.Size = new System.Drawing.Size(91, 17);
             this.label2.TabIndex = 34;
             this.label2.Text = "View projects";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -169,7 +170,7 @@ namespace Project
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(634, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 16);
+            this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 36;
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -190,7 +191,7 @@ namespace Project
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(256, 283);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 16);
+            this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 38;
             this.label4.Text = "This idk what is it";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -213,7 +214,7 @@ namespace Project
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(434, 405);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 16);
+            this.label5.Size = new System.Drawing.Size(146, 17);
             this.label5.TabIndex = 40;
             this.label5.Text = "change raw materials ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -236,7 +237,7 @@ namespace Project
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(247, 164);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 16);
+            this.label6.Size = new System.Drawing.Size(142, 17);
             this.label6.TabIndex = 42;
             this.label6.Text = " edit employee salary";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -258,7 +259,7 @@ namespace Project
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(81, 405);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 16);
+            this.label7.Size = new System.Drawing.Size(85, 17);
             this.label7.TabIndex = 43;
             this.label7.Text = "Edit Product";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -268,7 +269,7 @@ namespace Project
             this.ViewInsurancelabel.AutoSize = true;
             this.ViewInsurancelabel.Location = new System.Drawing.Point(265, 405);
             this.ViewInsurancelabel.Name = "ViewInsurancelabel";
-            this.ViewInsurancelabel.Size = new System.Drawing.Size(97, 16);
+            this.ViewInsurancelabel.Size = new System.Drawing.Size(103, 17);
             this.ViewInsurancelabel.TabIndex = 45;
             this.ViewInsurancelabel.Text = "View Insurance";
             this.ViewInsurancelabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
