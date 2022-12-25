@@ -82,5 +82,12 @@ namespace Project
             mi.Show();
             this.Hide();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ViewprojectE v1 = new ViewprojectE(username);
+            v1.Show();
+            this.Hide();
+        }
     }
 }
