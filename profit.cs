@@ -34,8 +34,7 @@ namespace Project
             dataGridView2.Visible = false;
             dataGridView1.ReadOnly = true;
             dataGridView2.ReadOnly = true;
-            chart1.Hide();
-            chart2.Hide();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,8 +45,7 @@ namespace Project
             string comdate1e = null;
             string comdate2s = null;
             string comdate2e = null;
-            chart1.Hide();
-            chart2.Hide();
+   
             DateTime ENDCM = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, 1).AddMonths(1).AddDays(-1);
             comdate1e = ENDCM.ToString("M/d/yyyy");
             DateTime StartCM = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, 1);
@@ -79,21 +77,24 @@ namespace Project
 
                 dt.Columns.Add("Profit", typeof(float));
                 dt1.Columns.Add("Profit", typeof(float));
-            for (int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 0; i < dt1.Rows.Count; i++)
             {
-                string x = (dt.Rows[i]["Total selling price"]).ToString();
-                float xf = float.Parse(x);
-                string y = (dt.Rows[i]["Total cost"]).ToString();
-                float yf = float.Parse(y);
-                dt.Rows[i]["Profit"] = xf - yf;
-                total1 = total1 + xf - yf;
-                textBox1.Text = total1.ToString();
+                if (i < dt.Rows.Count)
+                {
+                    string x = (dt.Rows[i]["Total selling price"]).ToString();
+                    float xf = float.Parse(x);
+                    string y = (dt.Rows[i]["Total cost"]).ToString();
+                    float yf = float.Parse(y);
+                    dt.Rows[i]["Profit"] = xf - yf;
+                    total1 = total1 + xf - yf;
+                    textBox1.Text = total1.ToString();
+                }
                 string x1 = (dt1.Rows[i]["Total selling price"]).ToString();
                 float xf1 = float.Parse(x1);
                 string y1 = (dt1.Rows[i]["Total cost"]).ToString();
                 float yf1 = float.Parse(y1);
-                dt1.Rows[i]["Profit"] = xf - yf;
-                total2 = total2 + xf - yf;
+                dt1.Rows[i]["Profit"] = xf1 - yf1;
+                total2 = total2 + xf1 - yf1;
                 textBox2.Text = total2.ToString();
             }
             
@@ -167,18 +168,8 @@ namespace Project
             string comdate2s = StartCM2.ToString("M/d/yyyy");
             dataGridView1.Visible = false;
             dataGridView2.Visible = false;
-            controllerobj = new Controller();
-            dt = controllerobj.getordersnew(comdate1e,comdate1s);
-            if (dt != null)
-            {
-                chart2.Hide();
-                chart1.Show();
-                chart1.DataSource = dt;
-                chart1.Series["New"].XValueMember = "";
-                chart1.Series["New"].YValueMembers = "Qunantity";
-                chart1.Titles.Add("Profit of this month");
-                chart1.DataBind();
-            }
+           
+   
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -188,12 +179,14 @@ namespace Project
                 EmployeeHomepage h11 = new EmployeeHomepage(username, 'F');
                 h11.Show();
                 this.Hide();
-            }
+            }   
             else if (username[0] == 'm' || username[0] == 'M')
             {
-                Manager m1 = new Manager(username);
-                m1.Show();
-                this.Hide();
+                
+                    Manager m1 = new Manager(username);
+                    m1.Show();
+                    this.Hide();
+                
             }
 
 

@@ -43,10 +43,14 @@ namespace Project
             dt = controllerobj.SelectDepartment(username);//query returns id 
             int x = Convert.ToInt32(dt.Rows[0][0]);
             if (x!=12321 &&x != 1463)
-                {
+            {
                 label7.Visible = false;
             }
-            dt2 = controllerobj.SelectEmployeeFirstNameFromDepartmentid(Convert.ToInt32(dt.Rows[0][0])); //gets employees first name from a specific department
+            if (x != 12321)
+            {
+                label12.Visible = false;
+            }
+                dt2 = controllerobj.SelectEmployeeFirstNameFromDepartmentid(Convert.ToInt32(dt.Rows[0][0])); //gets employees first name from a specific department
             comboBox2.DataSource = dt2;
             comboBox2.ValueMember = "First name";
             comboBox2.DisplayMember = "First name";
@@ -305,6 +309,13 @@ namespace Project
         {
             stat s = new stat(username);
             s.Show();
+            this.Hide();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            profit pf = new profit(username);
+            pf.Show();
             this.Hide();
         }
     }
