@@ -48,6 +48,8 @@ namespace Project
             this.button5 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -244,12 +246,35 @@ namespace Project
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(262, 344);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 17);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "View Projects";
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.White;
+            this.button7.BackgroundImage = global::Project.Properties.Resources.download__1_;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Location = new System.Drawing.Point(265, 254);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(111, 87);
+            this.button7.TabIndex = 37;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1090, 628);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label5);
@@ -295,5 +320,7 @@ namespace Project
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button7;
     }
 }
