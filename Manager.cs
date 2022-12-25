@@ -257,21 +257,23 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(textBox2.Text!=null&& textBox6.Text!=null)
+            if(textBox2.Text==null|| textBox6.Text==null)
+            {
+                MessageBox.Show(" Some Data are missing ");
+            }
+            else
             {
                 controllerobj = new Controller();
                 dt = controllerobj.SelectMaxRequestID();
                 newrequestid = 1 + Convert.ToInt32(dt.Rows[0][0]);
                 dt = controllerobj.GetEmployeeIdFromUsername(username);
                 int r = 0;
-                r = controllerobj.InsertManagerRequest(newrequestid, textBox2.Text.ToString(), DateTime.Now.ToString("M-d-yyyy"), textBox6.Text.ToString(),"false", Convert.ToInt32(null), Convert.ToInt32(dt.Rows[0][0]));
+                r = controllerobj.InsertManagerRequest(newrequestid, textBox2.Text.ToString(), DateTime.Now.ToString("M-d-yyyy"), textBox6.Text.ToString(), "false", Convert.ToInt32(null), Convert.ToInt32(dt.Rows[0][0]));
                 if (r != 0)
                     MessageBox.Show(" Your Request has been sent successfully ");
                 else
                     MessageBox.Show(" Failed ");
             }
-            else
-                MessageBox.Show(" Some Data are missing ");
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -281,6 +283,11 @@ namespace Project
             Vb = new ViewBranchesAndRequests(username, Convert.ToInt32(dt.Rows[0][0]));
             Vb.Show();
             this.Hide();
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

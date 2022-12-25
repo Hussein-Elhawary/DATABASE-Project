@@ -48,9 +48,6 @@ namespace Project
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -69,11 +66,12 @@ namespace Project
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -117,6 +115,7 @@ namespace Project
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label5);
@@ -192,9 +191,9 @@ namespace Project
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(646, 296);
+            this.groupBox2.Location = new System.Drawing.Point(329, 80);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(229, 135);
+            this.groupBox2.Size = new System.Drawing.Size(229, 195);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Branches";
@@ -235,9 +234,9 @@ namespace Project
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(323, 296);
+            this.groupBox4.Location = new System.Drawing.Point(291, 296);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(288, 135);
+            this.groupBox4.Size = new System.Drawing.Size(290, 135);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Projects";
@@ -306,46 +305,10 @@ namespace Project
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox3.Controls.Add(this.button6);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(646, 80);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(229, 159);
-            this.groupBox3.TabIndex = 12;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Statistics";
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.SlateGray;
-            this.button6.Font = new System.Drawing.Font("MS PGothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.Control;
-            this.button6.Location = new System.Drawing.Point(69, 92);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(103, 23);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "View By Year";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.SlateGray;
-            this.button3.Font = new System.Drawing.Font("MS PGothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(69, 37);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "View By Month";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox5.Controls.Add(this.button3);
             this.groupBox5.Controls.Add(this.groupBox9);
             this.groupBox5.Controls.Add(this.groupBox8);
             this.groupBox5.Controls.Add(this.groupBox7);
@@ -353,9 +316,9 @@ namespace Project
             this.groupBox5.Controls.Add(this.button8);
             this.groupBox5.Controls.Add(this.button7);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(323, 80);
+            this.groupBox5.Location = new System.Drawing.Point(587, 80);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(288, 195);
+            this.groupBox5.Size = new System.Drawing.Size(288, 351);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Employee";
@@ -363,7 +326,7 @@ namespace Project
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.textBox1);
-            this.groupBox9.Location = new System.Drawing.Point(6, 120);
+            this.groupBox9.Location = new System.Drawing.Point(6, 167);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(108, 58);
             this.groupBox9.TabIndex = 183;
@@ -372,7 +335,7 @@ namespace Project
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 28);
+            this.textBox1.Location = new System.Drawing.Point(3, 23);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(82, 24);
             this.textBox1.TabIndex = 181;
@@ -446,7 +409,7 @@ namespace Project
             this.button8.BackColor = System.Drawing.Color.SlateGray;
             this.button8.Font = new System.Drawing.Font("MS PGothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.Control;
-            this.button8.Location = new System.Drawing.Point(153, 151);
+            this.button8.Location = new System.Drawing.Point(159, 190);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(129, 23);
             this.button8.TabIndex = 175;
@@ -546,9 +509,33 @@ namespace Project
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(265, 105);
             this.textBox6.TabIndex = 11;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Navy;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.Location = new System.Drawing.Point(135, 21);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(71, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "ViewOrders";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.SlateGray;
+            this.button3.Font = new System.Drawing.Font("MS PGothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(109, 285);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 23);
+            this.button3.TabIndex = 184;
+            this.button3.Text = "ViewAll";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // Manager
             // 
@@ -559,7 +546,6 @@ namespace Project
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -573,7 +559,6 @@ namespace Project
             this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
@@ -601,9 +586,6 @@ namespace Project
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button7;
@@ -628,5 +610,7 @@ namespace Project
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button3;
     }
 }

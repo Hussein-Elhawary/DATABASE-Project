@@ -37,7 +37,7 @@ namespace Project
             {
                 MessageBox.Show("There Are No Employees From Your Department Working On That Project");
                 m.Show();
-                this.Hide();
+                this.Close();
             }
             else
             dataGridView1.DataSource = dt2;
