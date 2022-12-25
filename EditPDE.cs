@@ -35,7 +35,7 @@ namespace Project
                 PhonenumberTextbox.Text = dt.Rows[0]["Phone"].ToString();
                 DistrictTextbox.Text = dt.Rows[0]["District address"].ToString();
                 CityTextbox.Text = dt.Rows[0]["City address"].ToString();
-                CountryTextbox.Text = dt.Rows[0]["Country address"].ToString();
+                comboBox1.SelectedItem = dt.Rows[0]["Country address"].ToString();
                 if ((dt.Rows[0]["Gender"]).ToString() == "True")
                 {
                     GenderTextbox.Text = "Male";
@@ -171,7 +171,7 @@ namespace Project
                 MessageBox.Show("Please add City");
                 return;
             }
-            else if (CountryTextbox.Text == "")
+            else if (comboBox1.Text == "")
             {
                 MessageBox.Show("Please add Country");
                 return;
@@ -181,7 +181,7 @@ namespace Project
             dt.Rows[0]["Phone"] = PhonenumberTextbox.Text;
             dt.Rows[0]["District address"] = DistrictTextbox.Text;
             dt.Rows[0]["City address"] = CityTextbox.Text;
-            dt.Rows[0]["Country address"] = CountryTextbox.Text;
+            dt.Rows[0]["Country address"] = comboBox1.Text;
             Checkpasswordandupdate checkpasswordandupdateobj = new Checkpasswordandupdate(username, dt.Rows[0]["Password"].ToString(), dt,"other");
             checkpasswordandupdateobj.Show();
         }
