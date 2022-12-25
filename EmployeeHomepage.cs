@@ -113,9 +113,9 @@ namespace Project
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ViewRawmaterials viewRawmaterials = new ViewRawmaterials(username);
-            viewRawmaterials.Show();
-            this.Hide();
+           // ViewRawmaterials viewRawmaterials = new ViewRawmaterials(username);
+           // viewRawmaterials.Show();
+           // this.Hide();
         }
 
         private void label5_Click(object sender, EventArgs e)
