@@ -231,8 +231,10 @@ namespace Project
                 controllerobj = new Controller();
                 dt = controllerobj.SelectProjectid(comboBox1.Text.ToString());
                 E = new ViewEmployees(username, Convert.ToInt32(dt.Rows[0][0]));
-                E.Show();
-                this.Hide();
+                {
+                    E.Show();
+                    this.Hide();
+                }
             }
             else
                 MessageBox.Show("Error You must choose");

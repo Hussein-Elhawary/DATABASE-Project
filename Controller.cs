@@ -634,5 +634,19 @@ namespace Project
             string query = "Update Orders set [Order Status] = 'delivered' where [Expected Delivery Date] <= '" + date + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public DataTable groupproducts()
+        {
+            string query = "Select[Product ID], Sum([Quantity]) as Qunantity From[contains] Group BY[Product ID]";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable grouporders()
+        {
+            string query = "Select [Country Delivery Address] as [Country],Count(o.[Order Number]) as [Number of Orders] from Orders o,Customers c where o.[Customer ID] = c.[Customer ID] GROUP BY [Country Delivery Address];";
+            return dbMan.ExecuteReader(query);
+        }
+
+
     }
 }

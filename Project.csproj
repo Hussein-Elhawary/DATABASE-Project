@@ -67,6 +67,7 @@
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -96,12 +97,6 @@
     <Compile Include="ChangeRawmaterials.Designer.cs">
       <DependentUpon>ChangeRawmaterials.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="EditEmployeeSalary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,21 +121,29 @@
     <Compile Include="AddMaterial.Designer.cs">
       <DependentUpon>AddMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneralManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralManager.Designer.cs">
+      <DependentUpon>GeneralManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="profit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="profit.Designer.cs">
       <DependentUpon>profit.cs</DependentUpon>
     </Compile>
-    <Compile Include="report1.cs" />
-    <Compile Include="report1.Designer.cs">
-      <DependentUpon>report1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Requestdetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Requestdetails.Designer.cs">
       <DependentUpon>Requestdetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="stat.Designer.cs">
+      <DependentUpon>stat.cs</DependentUpon>
     </Compile>
     <Compile Include="StoredProcedures.cs" />
     <Compile Include="Controller.cs" />
@@ -318,10 +321,6 @@
     <EmbeddedResource Include="Checkpasswordandupdate.resx">
       <DependentUpon>Checkpasswordandupdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Customers\createuser.resx">
       <DependentUpon>createuser.cs</DependentUpon>
     </EmbeddedResource>
@@ -355,6 +354,9 @@
     <EmbeddedResource Include="Forgotpassowrd.resx">
       <DependentUpon>Forgotpassowrd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GeneralManager.resx">
+      <DependentUpon>GeneralManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,11 +378,11 @@
     <EmbeddedResource Include="Remove.resx">
       <DependentUpon>Remove.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="report1.resx">
-      <DependentUpon>report1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Requestdetails.resx">
       <DependentUpon>Requestdetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stat.resx">
+      <DependentUpon>stat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewBranchesAndRequests.resx">
       <DependentUpon>ViewBranchesAndRequests.cs</DependentUpon>
