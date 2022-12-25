@@ -16,15 +16,18 @@ namespace Project
         DataTable dt = null;
         DataTable dt2 = null;
         DataTable dt3 = null;
+        DataTable dt4 = null;
         public stat()
         {
             InitializeComponent();
             chart1.Hide();
             chart2.Hide();
             chart3.Hide();
+            chart4.Hide();
             chart3.Titles.Add("Materials Consumed");
             chart2.Titles.Add("Most Countries Buying Products");
             chart1.Titles.Add("Sold Products");
+            chart4.Titles.Add("Number of Materials Supplied Per Supplier");
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -50,7 +53,25 @@ namespace Project
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void RawMaterials_Click(object sender, EventArgs e)
+        {
+            controllerobj = new Controller();
+            dt3 = controllerobj.groupRawMaterials();
+            if (dt3 != null)
+            {
+                chart3.Hide();
+                chart1.Hide();
+                chart2.Hide();
+                chart4.Hide();
+                chart3.DataSource = dt3;
+                chart3.Series["RawMaterials"].XValueMember = "Name";
+                chart3.Series["RawMaterials"].YValueMembers = "Consumed Amount";             
+                chart3.DataBind();
+                chart3.Show();
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
         {
             controllerobj = new Controller();
             dt2 = controllerobj.grouporders();
@@ -67,20 +88,27 @@ namespace Project
             }
         }
 
-        private void RawMaterials_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
         {
             controllerobj = new Controller();
-            dt3 = controllerobj.groupRawMaterials();
-            if (dt3 != null)
+            dt4 = controllerobj.groupsuppliers();
+            if (dt4 != null)
             {
-                chart3.Hide();
                 chart1.Hide();
                 chart2.Hide();
-                chart3.DataSource = dt3;
-                chart3.Series["RawMaterials"].XValueMember = "Name";
-                chart3.Series["RawMaterials"].YValueMembers = "Consumed Amount";             
-                chart3.DataBind();
-                chart3.Show();
+                chart3.Hide();
+                chart4.Hide();
+                chart4.DataSource = dt4;
+                chart4.Series["Suppliers"].XValueMember = "Name";
+                chart4.Series["Suppliers"].YValueMembers = "Number of Materials";
+                chart4.DataBind();
+                chart4.Show();
             }
         }
     }
