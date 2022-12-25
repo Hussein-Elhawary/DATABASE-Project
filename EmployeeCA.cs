@@ -148,9 +148,9 @@ namespace Project
                 return;
             }
             string Email = maskedTextBox4.Text;
-            if (maskedTextBox7.Text == "")
+            if (maskedTextBox7.Text.Length < 11)
             {
-                MessageBox.Show("Phone Number is Empty !");
+                MessageBox.Show("Please Enter a valid Phone Number !");
                 return;
             }
             string Phone = maskedTextBox7.Text;
@@ -269,6 +269,56 @@ namespace Project
             comboBox3.SelectedIndex = 0;
             comboBox5.SelectedIndex = 0;
             comboBox1.SelectedIndex = 0;
+        }
+
+        private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
+        }
+
+        private void maskedTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
+        }
+
+        private void maskedTextBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
+        }
+
+        private void maskedTextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
+        }
+
+        private void maskedTextBox13_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
         }
     }
 }

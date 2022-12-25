@@ -75,7 +75,7 @@ namespace Project
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1069, 37);
             this.panel1.TabIndex = 19;
@@ -83,7 +83,7 @@ namespace Project
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(2, 42);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(932, 537);
             this.panel2.TabIndex = 20;
@@ -93,7 +93,7 @@ namespace Project
             this.dateTimePicker1.Checked = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(4, 42);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 20);
             this.dateTimePicker1.TabIndex = 37;
@@ -299,7 +299,7 @@ namespace Project
             "Zambia",
             "Zimbabwe"});
             this.comboBox1.Location = new System.Drawing.Point(4, 41);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(92, 21);
             this.comboBox1.TabIndex = 35;
@@ -308,16 +308,17 @@ namespace Project
             // maskedTextBox5
             // 
             this.maskedTextBox5.Location = new System.Drawing.Point(4, 143);
-            this.maskedTextBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox5.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox5.Name = "maskedTextBox5";
             this.maskedTextBox5.Size = new System.Drawing.Size(76, 20);
             this.maskedTextBox5.TabIndex = 33;
             this.maskedTextBox5.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox5_MaskInputRejected);
+            this.maskedTextBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBox5_KeyPress);
             // 
             // maskedTextBox4
             // 
             this.maskedTextBox4.Location = new System.Drawing.Point(4, 42);
-            this.maskedTextBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox4.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(141, 20);
             this.maskedTextBox4.TabIndex = 32;
@@ -325,7 +326,7 @@ namespace Project
             // maskedTextBox3
             // 
             this.maskedTextBox3.Location = new System.Drawing.Point(4, 143);
-            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(76, 20);
             this.maskedTextBox3.TabIndex = 31;
@@ -333,16 +334,17 @@ namespace Project
             // maskedTextBox2
             // 
             this.maskedTextBox2.Location = new System.Drawing.Point(4, 91);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(76, 20);
             this.maskedTextBox2.TabIndex = 30;
             this.maskedTextBox2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
+            this.maskedTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBox2_KeyPress);
             // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(4, 41);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(76, 20);
             this.maskedTextBox1.TabIndex = 29;
@@ -437,7 +439,7 @@ namespace Project
             // maskedTextBox7
             // 
             this.maskedTextBox7.Location = new System.Drawing.Point(44, 91);
-            this.maskedTextBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox7.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox7.Mask = "00000000000";
             this.maskedTextBox7.Name = "maskedTextBox7";
             this.maskedTextBox7.Size = new System.Drawing.Size(75, 20);
@@ -473,7 +475,7 @@ namespace Project
             "Male",
             "Female"});
             this.comboBox4.Location = new System.Drawing.Point(4, 91);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(77, 21);
             this.comboBox4.TabIndex = 44;
@@ -491,7 +493,7 @@ namespace Project
             // maskedTextBox6
             // 
             this.maskedTextBox6.Location = new System.Drawing.Point(4, 143);
-            this.maskedTextBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox6.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox6.Mask = "90:00";
             this.maskedTextBox6.Name = "maskedTextBox6";
             this.maskedTextBox6.Size = new System.Drawing.Size(76, 20);
@@ -507,9 +509,9 @@ namespace Project
             this.groupBox1.Controls.Add(this.maskedTextBox5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(42, 54);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(236, 209);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
@@ -525,9 +527,9 @@ namespace Project
             this.groupBox2.Controls.Add(this.maskedTextBox3);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(42, 282);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(226, 209);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
@@ -539,6 +541,7 @@ namespace Project
             this.City_Box.Name = "City_Box";
             this.City_Box.Size = new System.Drawing.Size(92, 20);
             this.City_Box.TabIndex = 36;
+            this.City_Box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.City_Box_KeyPress);
             // 
             // groupBox3
             // 
@@ -549,9 +552,9 @@ namespace Project
             this.groupBox3.Controls.Add(this.maskedTextBox7);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Location = new System.Drawing.Point(588, 54);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(220, 209);
             this.groupBox3.TabIndex = 49;
             this.groupBox3.TabStop = false;
@@ -582,9 +585,9 @@ namespace Project
             this.groupBox4.Controls.Add(this.maskedTextBox6);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Location = new System.Drawing.Point(588, 268);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(226, 209);
             this.groupBox4.TabIndex = 50;
             this.groupBox4.TabStop = false;
@@ -636,7 +639,7 @@ namespace Project
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CustmerCA";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.CustmerCA_Load);
