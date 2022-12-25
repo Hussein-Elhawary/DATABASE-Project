@@ -16,10 +16,12 @@ namespace Project
         Controller controllerobj = new Controller();
         DataTable dt = null;
         DataTable dt1 = null;
-        public profit()
+        string username = null;
+        public profit(string user)
         {
             InitializeComponent();
             //dataGridView1.Hide();
+            username = user;
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "MM/yyyy";
             dateTimePicker1.ShowUpDown = true;
@@ -181,7 +183,27 @@ namespace Project
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (username[0] == 'F' || username[0] == 'F')
+            {
+                EmployeeHomepage h11 = new EmployeeHomepage(username, 'F');
+                h11.Show();
+                this.Hide();
+            }
+            else if (username[0] == 'm' || username[0] == 'M')
+            {
+                Manager m1 = new Manager(username);
+                m1.Show();
+                this.Hide();
+            }
 
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcome w1 = new welcome();
+            w1.Show();
+            this.Close();
         }
     }
 }

@@ -219,7 +219,7 @@ namespace Project
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "stat";
             this.Text = "stat";
-            this.Load += new System.EventHandler(this.stat_Load);
+            //this.Load += new System.EventHandler(this.stat_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();

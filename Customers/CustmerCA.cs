@@ -56,7 +56,7 @@ namespace Project
                 return;
             }
 
-            if (Ccode_textbox.Text.Length < 1)
+            if (Ccode_textbox.Text.Length < 1 || Ccode_textbox.Text.Length > 3)
             {
                 label13.Text = "Please Enter a valid Country Code!";
                 return;
