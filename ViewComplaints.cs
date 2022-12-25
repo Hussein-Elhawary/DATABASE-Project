@@ -70,6 +70,7 @@ namespace Project
             DataTable dt = null;
             string comdate = null;
             string comdate1 = null;
+
             DateTime Today = DateTime.Today;
             if (radioButton1.Checked == true)//manager
             {
@@ -203,6 +204,7 @@ namespace Project
             {
                 MessageBox.Show("Please Choose a type of requests to show its data");
             }
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

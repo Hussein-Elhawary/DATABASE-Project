@@ -27,12 +27,12 @@ namespace Project
             button3.Visible = true;
             button5.Visible = false;
             button1.Visible = false;
-            button4.Visible = false;
+            //button4.Visible = false;
             button6.Visible = false;
             label1.Visible = true;
             label2.Visible = true;
             label3.Visible = false;
-            label4.Visible = false;
+            //label4.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
             label7.Visible = false;
@@ -52,8 +52,8 @@ namespace Project
             {
                 button5.Visible = true;
                 button1.Visible = true;
-                button4.Visible = true;
-                label4.Visible  = true;
+                //button4.Visible = true;
+                //label4.Visible  = true;
                 label5.Visible  = true;
                 label7.Visible  = true;
 

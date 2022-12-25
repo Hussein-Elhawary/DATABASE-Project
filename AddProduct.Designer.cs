@@ -38,6 +38,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -49,7 +50,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MaterialsCombobox = new System.Windows.Forms.ComboBox();
             this.InsertMaterialbutton = new System.Windows.Forms.Button();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -160,6 +161,19 @@
             this.panel2.Size = new System.Drawing.Size(224, 553);
             this.panel2.TabIndex = 236;
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
+            this.linkLabel2.Location = new System.Drawing.Point(-5, 60);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(98, 29);
+            this.linkLabel2.TabIndex = 255;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Log Out";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
@@ -268,7 +282,7 @@
             this.MaterialsCombobox.Location = new System.Drawing.Point(419, 405);
             this.MaterialsCombobox.Margin = new System.Windows.Forms.Padding(4);
             this.MaterialsCombobox.Name = "MaterialsCombobox";
-            this.MaterialsCombobox.Size = new System.Drawing.Size(96, 24);
+            this.MaterialsCombobox.Size = new System.Drawing.Size(131, 24);
             this.MaterialsCombobox.TabIndex = 253;
             this.MaterialsCombobox.SelectedIndexChanged += new System.EventHandler(this.Product_List_SelectedIndexChanged);
             // 
@@ -282,24 +296,22 @@
             this.InsertMaterialbutton.UseVisualStyleBackColor = true;
             this.InsertMaterialbutton.Click += new System.EventHandler(this.InsertMaterialbutton_Click);
             // 
-            // linkLabel2
+            // button4
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkColor = System.Drawing.Color.White;
-            this.linkLabel2.Location = new System.Drawing.Point(-5, 60);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(98, 29);
-            this.linkLabel2.TabIndex = 255;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Log Out";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.button4.Location = new System.Drawing.Point(568, 199);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(138, 23);
+            this.button4.TabIndex = 255;
+            this.button4.Text = "Clear Maretials";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.InsertMaterialbutton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.MaterialsCombobox);
@@ -356,5 +368,6 @@
         private System.Windows.Forms.Button InsertMaterialbutton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Button button4;
     }
 }

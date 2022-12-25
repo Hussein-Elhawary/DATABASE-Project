@@ -16,7 +16,7 @@ namespace Project
         Controller controllerobj = new Controller();
         DataTable dt = null;
         DataTable dt1 = null;
-        DataTable dt4 = null;       
+        DataTable dt4 = null;
         public EditEmployeeSalary(string usernamec)
         {
             InitializeComponent();
@@ -77,7 +77,7 @@ namespace Project
             {
                 MessageBox.Show("Please Select An Employee!");
             }
-            else if(newsalary == "")
+            else if (newsalary == "")
             {
                 MessageBox.Show("Please Enter The New Salary");
             }
@@ -104,8 +104,10 @@ namespace Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Home h1 = new Home();
-            h1.Show();
+
+
+            EmployeeHomepage eh = new EmployeeHomepage(username,username[0]);
+            eh.Show();
             this.Hide();
         }
 

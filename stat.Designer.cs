@@ -113,7 +113,7 @@ namespace Project
             this.button3.TabIndex = 7;
             this.button3.Text = "Orders";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            //this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // chart2
             // 
@@ -139,7 +139,7 @@ namespace Project
             this.RawMaterials.TabIndex = 5;
             this.RawMaterials.Text = "RawMaterials";
             this.RawMaterials.UseVisualStyleBackColor = true;
-            this.RawMaterials.Click += new System.EventHandler(this.RawMaterials_Click);
+           // this.RawMaterials.Click += new System.EventHandler(this.RawMaterials_Click);
             // 
             // chart3
             // 
@@ -209,6 +209,12 @@ namespace Project
             this.button5.TabIndex = 28;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button4.Location = new System.Drawing.Point(186, 467);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(116, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Suppliers";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // stat
             // 
@@ -219,7 +225,7 @@ namespace Project
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "stat";
             this.Text = "stat";
-            //this.Load += new System.EventHandler(this.stat_Load);
+           // this.Load += new System.EventHandler(this.stat_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();

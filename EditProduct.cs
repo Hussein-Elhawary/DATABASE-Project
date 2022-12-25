@@ -88,7 +88,7 @@ namespace Project
         {
             AddProduct button = new AddProduct(username);
             button.Show();
-            
+            this.Hide();
         }
 
         private void Viewdatabutton_Click(object sender, EventArgs e)
@@ -191,7 +191,7 @@ namespace Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Home h1 = new Home();
+            EmployeeHomepage h1 = new EmployeeHomepage(username,'p');
             h1.Show();
             this.Hide();
         }

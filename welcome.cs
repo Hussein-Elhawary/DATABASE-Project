@@ -167,7 +167,7 @@ namespace Project
                     this.Hide();
                 }
             }
-            else if (un[0] == 'P' || un[0] == 'P')//Production
+            else if (un[0] == 'P' || un[0] == 'p')//Production
             {
                 DataTable dt = null;
                 controllerobj = new Controller();

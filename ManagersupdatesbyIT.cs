@@ -168,7 +168,7 @@ namespace Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Home h1 = new Home();
+            Home h1 = new Home(username22);
             h1.Show();
             this.Hide();
         }

@@ -42,8 +42,6 @@ namespace Project
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -125,7 +123,7 @@ namespace Project
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(63, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 17);
+            this.label1.Size = new System.Drawing.Size(117, 16);
             this.label1.TabIndex = 33;
             this.label1.Text = "Edit Personal data";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -135,7 +133,7 @@ namespace Project
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(457, 164);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 17);
+            this.label2.Size = new System.Drawing.Size(87, 16);
             this.label2.TabIndex = 34;
             this.label2.Text = "View projects";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -170,7 +168,7 @@ namespace Project
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(634, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 17);
+            this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 36;
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -186,35 +184,12 @@ namespace Project
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(256, 283);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 17);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "This idk what is it";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImage = global::Project.Properties.Resources.download__1_;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(259, 193);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(111, 87);
-            this.button4.TabIndex = 37;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(434, 405);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 17);
+            this.label5.Size = new System.Drawing.Size(137, 16);
             this.label5.TabIndex = 40;
             this.label5.Text = "change raw materials ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -237,7 +212,7 @@ namespace Project
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(247, 164);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 17);
+            this.label6.Size = new System.Drawing.Size(136, 16);
             this.label6.TabIndex = 42;
             this.label6.Text = " edit employee salary";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -259,7 +234,7 @@ namespace Project
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(81, 405);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 17);
+            this.label7.Size = new System.Drawing.Size(79, 16);
             this.label7.TabIndex = 43;
             this.label7.Text = "Edit Product";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -269,7 +244,7 @@ namespace Project
             this.ViewInsurancelabel.AutoSize = true;
             this.ViewInsurancelabel.Location = new System.Drawing.Point(265, 405);
             this.ViewInsurancelabel.Name = "ViewInsurancelabel";
-            this.ViewInsurancelabel.Size = new System.Drawing.Size(103, 17);
+            this.ViewInsurancelabel.Size = new System.Drawing.Size(97, 16);
             this.ViewInsurancelabel.TabIndex = 45;
             this.ViewInsurancelabel.Text = "View Insurance";
             this.ViewInsurancelabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -299,8 +274,6 @@ namespace Project
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -335,8 +308,6 @@ namespace Project
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label6;
