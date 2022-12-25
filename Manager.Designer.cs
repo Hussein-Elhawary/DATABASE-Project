@@ -174,9 +174,9 @@ namespace Project
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(329, 80);
+            this.groupBox2.Location = new System.Drawing.Point(313, 80);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(229, 210);
+            this.groupBox2.Size = new System.Drawing.Size(245, 210);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Branches";
