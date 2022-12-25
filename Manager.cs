@@ -14,7 +14,6 @@ namespace Project
     {
         Controller controllerobj;
         welcome f;
-        Personal_Data t;
         AddBranch b;
         ViewBranchesAndRequests Vb;
         EditPDE p;
@@ -34,7 +33,6 @@ namespace Project
             InitializeComponent();
             username = us;
             f = new welcome();
-            t = new Personal_Data();
             b = new AddBranch(username);
             p = new EditPDE(username);
             dt = new DataTable();
@@ -79,7 +77,7 @@ namespace Project
 
         private void label3_Click(object sender, EventArgs e)
         {
-            t.Show();
+            p.Show();
             this.Hide();
         }
 
@@ -104,8 +102,7 @@ namespace Project
 
         private void label7_Click(object sender, EventArgs e)
         {
-            p.Show();
-            this.Hide();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -173,8 +170,8 @@ namespace Project
         {
                 comboBox4.Enabled = true;
             controllerobj = new Controller();
-                dt2 = controllerobj.SelectEmployeeMiddleNameFromFirstName(comboBox2.Text.ToString()); //gets employees first name from a specific department
-                comboBox4.DataSource = dt2;
+                dt2 = controllerobj.SelectEmployeeMiddleNameFromFirstName(comboBox2.Text.ToString()); //gets employees second name from the first name 
+                comboBox4.DataSource = dt2;                                //example mohamed ahmed and mohamed ibrahim we will use mohamed to get the second combobox to have ahmed and ibrahim only 
             comboBox4.ValueMember = "Middle name";
                 comboBox4.DisplayMember = "Middle name";
             comboBox4.SelectedIndex = -1;
@@ -185,7 +182,7 @@ namespace Project
         {
                 comboBox5.Enabled = true;
             controllerobj = new Controller();
-            dt2 = controllerobj.SelectEmployeeLastName(comboBox2.Text.ToString(), comboBox4.Text.ToString()); //gets employees first name from a specific department
+            dt2 = controllerobj.SelectEmployeeLastName(comboBox2.Text.ToString(), comboBox4.Text.ToString()); //gets employees last name from middle
                 comboBox5.DataSource = dt2;
             comboBox5.ValueMember = "Last name";
                 comboBox5.DisplayMember = "Last name";
@@ -234,8 +231,10 @@ namespace Project
                 controllerobj = new Controller();
                 dt = controllerobj.SelectProjectid(comboBox1.Text.ToString());
                 E = new ViewEmployees(username, Convert.ToInt32(dt.Rows[0][0]));
-                E.Show();
-                this.Hide();
+                {
+                    E.Show();
+                    this.Hide();
+                }
             }
             else
                 MessageBox.Show("Error You must choose");
@@ -268,7 +267,7 @@ namespace Project
                 newrequestid = 1 + Convert.ToInt32(dt.Rows[0][0]);
                 dt = controllerobj.GetEmployeeIdFromUsername(username);
                 int r = 0;
-                r = controllerobj.InsertManagerRequest(newrequestid, textBox2.Text.ToString(), DateTime.Now.ToString("M-d-yyyy"), textBox6.Text.ToString(), "false", Convert.ToInt32(null), Convert.ToInt32(dt.Rows[0][0]));
+                r = controllerobj.InsertManagerRequest(newrequestid, textBox2.Text.ToString(), DateTime.Now.ToString("M-d-yyyy"), textBox6.Text.ToString(), "false","NULL", Convert.ToInt32(dt.Rows[0][0]));
                 if (r != 0)
                     MessageBox.Show(" Your Request has been sent successfully ");
                 else
@@ -288,6 +287,13 @@ namespace Project
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            E = new ViewEmployees(username);
+            E.Show();
+            this.Hide();
         }
     }
 }

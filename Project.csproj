@@ -121,6 +121,12 @@
     <Compile Include="AddMaterial.Designer.cs">
       <DependentUpon>AddMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneralManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralManager.Designer.cs">
+      <DependentUpon>GeneralManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="profit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forgotpassowrd.resx">
       <DependentUpon>Forgotpassowrd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralManager.resx">
+      <DependentUpon>GeneralManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
