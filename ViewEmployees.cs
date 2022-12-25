@@ -30,6 +30,7 @@ namespace Project
             m = new Manager(username);
             controllerobj = new Controller();
             dt = new DataTable();
+            dt2 = new DataTable();
             dt = controllerobj.SelectDepartment(username); //to get department of manager in order to show employees from his department working on the project
             controllerobj = new Controller();
             dt2 = controllerobj.SelectEmployeesWorkOnProject(Convert.ToInt32(dt.Rows[0][0]),projectid);
@@ -51,6 +52,18 @@ namespace Project
             dt = new DataTable();
             dt = controllerobj.SelectEmployeesbyName(fname, mname, lname);
             dataGridView1.DataSource = dt;
+        }
+        public ViewEmployees(string us)
+        {
+            InitializeComponent();
+            username = us;
+            m = new Manager(username);
+            controllerobj = new Controller();
+            dt = new DataTable();
+            dt = controllerobj.SelectDepartment(username);//query returns id 
+            dt2 = new DataTable();
+            dt2=controllerobj.SelectEmployeesBYidWithNames(Convert.ToInt32(dt.Rows[0][0]));
+            dataGridView1.DataSource = dt2;
         }
         private void button1_Click(object sender, EventArgs e)
         {
