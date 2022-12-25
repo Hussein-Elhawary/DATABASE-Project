@@ -291,7 +291,7 @@ namespace Project
         }
         public int InsertManagerRequest(int id, string type, string date, string details, string resolved,string employeeid, int managerid)
         {
-            string query = "insert into ManagerRequests VALUES(" + id + ",'" + type + "','" + date + "','" + details + "','" + resolved + "','"+employeeid+"' ," + managerid + ");";
+            string query = "insert into ManagerRequests VALUES(" + id + ",'" + type + "','" + date + "','" + details + "','" + resolved + "'," + employeeid + " ," + managerid + ");";
             return dbMan.ExecuteNonQuery(query);
         }
         public DataTable SelectProductFromID(string id)
