@@ -97,12 +97,6 @@
     <Compile Include="ChangeRawmaterials.Designer.cs">
       <DependentUpon>ChangeRawmaterials.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="EditEmployeeSalary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,10 +126,6 @@
     </Compile>
     <Compile Include="profit.Designer.cs">
       <DependentUpon>profit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="report1.cs" />
-    <Compile Include="report1.Designer.cs">
-      <DependentUpon>report1.cs</DependentUpon>
     </Compile>
     <Compile Include="Requestdetails.cs">
       <SubType>Form</SubType>
@@ -325,10 +315,6 @@
     <EmbeddedResource Include="Checkpasswordandupdate.resx">
       <DependentUpon>Checkpasswordandupdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Customers\createuser.resx">
       <DependentUpon>createuser.cs</DependentUpon>
     </EmbeddedResource>
@@ -382,9 +368,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Remove.resx">
       <DependentUpon>Remove.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="report1.resx">
-      <DependentUpon>report1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Requestdetails.resx">
       <DependentUpon>Requestdetails.cs</DependentUpon>
