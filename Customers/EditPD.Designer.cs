@@ -150,7 +150,8 @@ namespace Project
             // 
             // ConfirmPassword_Button
             // 
-            this.ConfirmPassword_Button.Location = new System.Drawing.Point(217, 296);
+            this.ConfirmPassword_Button.ForeColor = System.Drawing.Color.Red;
+            this.ConfirmPassword_Button.Location = new System.Drawing.Point(217, 242);
             this.ConfirmPassword_Button.Name = "ConfirmPassword_Button";
             this.ConfirmPassword_Button.Size = new System.Drawing.Size(100, 23);
             this.ConfirmPassword_Button.TabIndex = 244;
@@ -419,6 +420,7 @@ namespace Project
             // 
             // Confirm_Edits_Button
             // 
+            this.Confirm_Edits_Button.ForeColor = System.Drawing.Color.Red;
             this.Confirm_Edits_Button.Location = new System.Drawing.Point(53, 242);
             this.Confirm_Edits_Button.Name = "Confirm_Edits_Button";
             this.Confirm_Edits_Button.Size = new System.Drawing.Size(100, 23);
@@ -439,7 +441,7 @@ namespace Project
             // 
             // Return_Button
             // 
-            this.Return_Button.Location = new System.Drawing.Point(217, 242);
+            this.Return_Button.Location = new System.Drawing.Point(53, 296);
             this.Return_Button.Name = "Return_Button";
             this.Return_Button.Size = new System.Drawing.Size(100, 23);
             this.Return_Button.TabIndex = 26;

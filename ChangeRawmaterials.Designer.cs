@@ -30,9 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TypetextBox = new System.Windows.Forms.TextBox();
             this.Reffreshdata = new System.Windows.Forms.Button();
             this.AddRawMaterialbutton = new System.Windows.Forms.Button();
             this.DeleteRawMaterialbutton = new System.Windows.Forms.Button();
@@ -50,9 +53,7 @@
             this.disc = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.Discriptiontextbox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TypetextBox = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -61,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel1.Controls.Add(this.linkLabel2);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.panel3);
@@ -83,6 +85,19 @@
             this.linkLabel1.TabIndex = 220;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Log Out";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(3, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(53, 42);
+            this.button3.TabIndex = 27;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel3
             // 
@@ -129,6 +144,22 @@
             this.panel6.Size = new System.Drawing.Size(800, 576);
             this.panel6.TabIndex = 34;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(573, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 17);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Type";
+            // 
+            // TypetextBox
+            // 
+            this.TypetextBox.Location = new System.Drawing.Point(576, 123);
+            this.TypetextBox.Name = "TypetextBox";
+            this.TypetextBox.Size = new System.Drawing.Size(150, 22);
+            this.TypetextBox.TabIndex = 27;
             // 
             // Reffreshdata
             // 
@@ -185,7 +216,7 @@
             this.poduction.AutoSize = true;
             this.poduction.Location = new System.Drawing.Point(426, 52);
             this.poduction.Name = "poduction";
-            this.poduction.Size = new System.Drawing.Size(57, 16);
+            this.poduction.Size = new System.Drawing.Size(60, 17);
             this.poduction.TabIndex = 21;
             this.poduction.Text = "Supplier";
             // 
@@ -203,7 +234,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(391, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 16);
+            this.label1.Size = new System.Drawing.Size(104, 17);
             this.label1.TabIndex = 19;
             this.label1.Text = "Weight in stock";
             // 
@@ -219,7 +250,7 @@
             this.Price.AutoSize = true;
             this.Price.Location = new System.Drawing.Point(220, 104);
             this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(38, 16);
+            this.Price.Size = new System.Drawing.Size(40, 17);
             this.Price.TabIndex = 17;
             this.Price.Text = "Price";
             // 
@@ -269,7 +300,7 @@
             this.disc.AutoSize = true;
             this.disc.Location = new System.Drawing.Point(44, 104);
             this.disc.Name = "disc";
-            this.disc.Size = new System.Drawing.Size(75, 16);
+            this.disc.Size = new System.Drawing.Size(79, 17);
             this.disc.TabIndex = 12;
             this.disc.Text = "Description";
             // 
@@ -278,7 +309,7 @@
             this.label36.AutoSize = true;
             this.label36.Location = new System.Drawing.Point(197, 53);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(122, 16);
+            this.label36.Size = new System.Drawing.Size(128, 17);
             this.label36.TabIndex = 7;
             this.label36.Text = "Raw Material name";
             // 
@@ -290,33 +321,18 @@
             this.Discriptiontextbox.Size = new System.Drawing.Size(150, 22);
             this.Discriptiontextbox.TabIndex = 2;
             // 
-            // label2
+            // linkLabel2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(573, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 16);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Type";
-            // 
-            // TypetextBox
-            // 
-            this.TypetextBox.Location = new System.Drawing.Point(576, 123);
-            this.TypetextBox.Name = "TypetextBox";
-            this.TypetextBox.Size = new System.Drawing.Size(150, 22);
-            this.TypetextBox.TabIndex = 27;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = global::Project.Properties.Resources.imgbin_computer_icons_home_button_sign_home_MkjkgcTaBkXHYRzyyEgLbmQ2m;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(3, 4);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(53, 42);
-            this.button3.TabIndex = 27;
-            this.button3.UseVisualStyleBackColor = false;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
+            this.linkLabel2.Location = new System.Drawing.Point(702, 17);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(98, 29);
+            this.linkLabel2.TabIndex = 221;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Log Out";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // ChangeRawmaterials
             // 
@@ -363,5 +379,6 @@
         private System.Windows.Forms.TextBox Discriptiontextbox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TypetextBox;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

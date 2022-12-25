@@ -207,6 +207,30 @@ namespace Project
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           string str= username.Substring(0, 1);
+            if (str == "m" || str == "M")
+            {
+                Manager m1 = new Manager(username);
+                m1.Show();
+                this.Hide();
+            }
+            else
+            {
+                Home h1 = new Home();
+                h1.Show();
+                this.Hide();
+            }
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcome newform = new welcome();
+            newform.Show();
+            this.Hide();
+        }
     }
 
 }

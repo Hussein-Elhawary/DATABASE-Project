@@ -48,6 +48,7 @@ namespace Project
         {
             welcome w1 = new welcome();
             w1.Show();
+            this.Hide();
         }
 
         private void Home_Load(object sender, EventArgs e)

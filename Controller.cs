@@ -67,7 +67,17 @@ namespace Project
         }
         public DataTable SelectEmployeesbyName(string fname,string mname,string lname)
         {
-            string query = "Select [Employee ID],phone, From Employee where  [First name] = '" + fname + "' and  [Middle name]='" + mname + "' and [Last name]='" + lname + "';";
+            string query = "Select [Employee ID],phone,Email,[City address],[District address],[Country address],Gender,[Fixed salary],Nationality,Branch From Employee where  [First name] = '" + fname + "' and  [Middle name]='" + mname + "' and [Last name]='" + lname + "';";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectEmployeesBYid(int id)
+        {
+            string query = "Select [Employee ID],phone,Email,[City address],[District address],[Country address],Gender,[Fixed salary],Nationality,Branch From Employee where Department=" + id+"; ";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectEmployeesBYidWithNames(int id)
+        {
+            string query = "Select [First name],[Middle name],[Last name],[Employee ID],phone,Email,[City address],[District address],[Country address],Gender,[Fixed salary],Nationality,Branch From Employee where Department=" + id + "; ";
             return dbMan.ExecuteReader(query);
         }
         public DataTable SelectDepartment(string user)
@@ -128,7 +138,11 @@ namespace Project
                 "[Date Issued] <= '" + date2 + "' and [Resolved] = '" + false + "';";
             return dbMan.ExecuteReader(query);
         }
-
+        public DataTable SelectManagerRequests(int id)
+        {
+            string query = "Select * From ManagerRequests where [Request By]="+id+";";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable viewcustomersrequests(string date1, string date2)
         {
             string query = "Select * From CustomerRequests where [Date Issued] >= '" + date1 + "' and " +
@@ -275,7 +289,11 @@ namespace Project
             string query = "insert into CustomerRequests VALUES ('" + R_ID + "','" + type + "','" + date + "','" + details + "','" + Resolved + "'," + Emp_ID + ",'" + Cust_ID + "','" + Order_ID + "');";
             return dbMan.ExecuteNonQuery(query);
         }
-
+        public int InsertManagerRequest(int id, string type, string date, string details, string resolved,string employeeid, int managerid)
+        {
+            string query = "insert into ManagerRequests VALUES(" + id + ",'" + type + "','" + date + "','" + details + "','" + resolved + "'," + employeeid + " ," + managerid + ");";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public DataTable SelectProductFromID(string id)
         {
             string query = "Select * from Products where [Product ID] = '" + id + "';";
@@ -608,6 +626,12 @@ namespace Project
         public int Editsalary(string sala, string id)
         {
             string query = "Update Employee Set [Fixed salary] = '" + sala + "' where [Employee ID] = '" + id + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        public int updatepending (string date)
+        {
+            string query = "Update Orders set [Order Status] = 'delivered' where [Expected Delivery Date] <= '" + date + "';";
             return dbMan.ExecuteNonQuery(query);
         }
     }

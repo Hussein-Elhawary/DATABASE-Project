@@ -137,5 +137,19 @@ namespace Project
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Home h1 = new Home();
+            h1.Show();
+            this.Hide();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcome newform = new welcome();
+            newform.Show();
+            this.Hide();
+        }
     }
 }
