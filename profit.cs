@@ -32,15 +32,20 @@ namespace Project
             dataGridView2.Visible = false;
             dataGridView1.ReadOnly = true;
             dataGridView2.ReadOnly = true;
+            chart1.Hide();
+            chart2.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            float total1 = 0;
+            float total2 = 0;
             string comdate1s = null;
             string comdate1e = null;
             string comdate2s = null;
             string comdate2e = null;
-
+            chart1.Hide();
+            chart2.Hide();
             DateTime ENDCM = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, 1).AddMonths(1).AddDays(-1);
             comdate1e = ENDCM.ToString("M/d/yyyy");
             DateTime StartCM = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, 1);
@@ -72,55 +77,26 @@ namespace Project
 
                 dt.Columns.Add("Profit", typeof(float));
                 dt1.Columns.Add("Profit", typeof(float));
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    string x = (dt.Rows[i]["Total selling price"]).ToString();
-                    float xf = float.Parse(x);
-                    string y = (dt.Rows[i]["Total cost"]).ToString();
-                    float yf = float.Parse(y);
-                    dt.Rows[i]["Profit"] = xf - yf;
-                    string x1 = (dt1.Rows[i]["Total selling price"]).ToString();
-                    float xf1 = float.Parse(x1);
-                    string y1 = (dt1.Rows[i]["Total cost"]).ToString();
-                    float yf1 = float.Parse(y1);
-                    dt1.Rows[i]["Profit"] = xf - yf;
-                }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string x = (dt.Rows[i]["Total selling price"]).ToString();
+                float xf = float.Parse(x);
+                string y = (dt.Rows[i]["Total cost"]).ToString();
+                float yf = float.Parse(y);
+                dt.Rows[i]["Profit"] = xf - yf;
+                total1 = total1 + xf - yf;
+                textBox1.Text = total1.ToString();
+                string x1 = (dt1.Rows[i]["Total selling price"]).ToString();
+                float xf1 = float.Parse(x1);
+                string y1 = (dt1.Rows[i]["Total cost"]).ToString();
+                float yf1 = float.Parse(y1);
+                dt1.Rows[i]["Profit"] = xf - yf;
+                total2 = total2 + xf - yf;
+                textBox2.Text = total2.ToString();
+            }
+            
                 dataGridView1.Columns["Customer ID"].Visible = false;
                 dataGridView2.Columns["Customer ID"].Visible = false;
-                //    if (radioButton4.Checked == true)   //this month
-                //    {
-                //        
-                //        DateTime StartCMLY = new DateTime(Today.Year, Today.Month, 1).AddYears(-1);
-                //        DateTime ENDCMLY = new DateTime(Today.Year, Today.Month, 1).AddYears(-1).AddMonths(1).AddDays(-1);
-                //        comdate2 = StartCMLY.ToString("M/d/yyyy");
-                //        comdate3 = ENDCMLY.ToString("M/d/yyyy");
-
-                //        dt = controllerobj.getordersnew(comdate,comdate1);
-                //        dt1 = controllerobj.getordersnew(comdate2,comdate3);
-                //        comboBox1.DataSource = dt;
-                //        comboBox1.DisplayMember = "Order Number";
-                //        comboBox1.ValueMember = "Order Number";
-                //        //dataGridView1.Show();
-                //        //dataGridView1.DataSource = dt;
-                //    }
-                //    else if (radioButton3.Checked == true)//last month
-                //    {
-                //        DateTime StartLM = new DateTime(Today.Year, Today.Month, 1).AddMonths(-1);
-                //        DateTime ENDLM = new DateTime(Today.Year, Today.Month, 1).AddDays(-1);
-                //        comdate = StartLM.ToString("M/d/yyyy");
-                //        comdate1 = ENDLM.ToString("M/d/yyyy");
-                //    }
-                //    else if (radioButton1.Checked == true)//this year
-                //    {
-                //        DateTime STARTY = new DateTime(Today.Year, 1, 1);
-                //        DateTime ENDY = new DateTime(Today.Year, 12, 31);
-                //        comdate = STARTY.ToString("M/d/yyyy");
-                //        comdate1 = ENDY.ToString("M/d/yyyy");
-                //    }
-                //    else if (radioButton5.Checked == true)//all time
-                //    {
-
-                //    }
 
             
         }
@@ -168,6 +144,39 @@ namespace Project
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DateTime ENDCM = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, 1).AddMonths(1).AddDays(-1);
+            string comdate1e = ENDCM.ToString("M/d/yyyy");
+            DateTime StartCM = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, 1);
+            string comdate1s = StartCM.ToString("M/d/yyyy");
+
+
+            DateTime ENDCM2 = new DateTime(dateTimePicker2.Value.Year, dateTimePicker2.Value.Month, 1).AddMonths(1).AddDays(-1);
+            string comdate2e = ENDCM2.ToString("M/d/yyyy");
+            DateTime StartCM2 = new DateTime(dateTimePicker2.Value.Year, dateTimePicker2.Value.Month, 1);
+            string comdate2s = StartCM2.ToString("M/d/yyyy");
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
+            controllerobj = new Controller();
+            dt = controllerobj.getordersnew(comdate1e,comdate1s);
+            if (dt != null)
+            {
+                chart2.Hide();
+                chart1.Show();
+                chart1.DataSource = dt;
+                chart1.Series["New"].XValueMember = "";
+                chart1.Series["New"].YValueMembers = "Qunantity";
+                chart1.Titles.Add("Profit of this month");
+                chart1.DataBind();
+            }
         }
     }
 }

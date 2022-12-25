@@ -69,27 +69,25 @@ namespace Project
             // 
             // chart2
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart2.Legends.Add(legend5);
-            this.chart2.Location = new System.Drawing.Point(166, 10);
-            this.chart2.Margin = new System.Windows.Forms.Padding(2);
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(222, 12);
             this.chart2.Name = "chart2";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Order";
-            this.chart2.Series.Add(series5);
-            this.chart2.Size = new System.Drawing.Size(742, 435);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Order";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(989, 535);
             this.chart2.TabIndex = 3;
             this.chart2.Text = "chart2";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(544, 462);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(725, 568);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 25);
+            this.button2.Size = new System.Drawing.Size(170, 31);
             this.button2.TabIndex = 2;
             this.button2.Text = "Orders";
             this.button2.UseVisualStyleBackColor = true;
