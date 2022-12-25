@@ -104,8 +104,16 @@ namespace Project
 
             string crypted_pass = Encrypt(Password.Text);
 
-            ControllerDB.InsertNewCustomer(newID.ToString(),crypted_pass,Username.Text,DBFirstName,DBMiddleName,DBLastName,DBCOR,DBCity,DBAddress,DBEmail,DBCcode,DBphone,DB_BDate,DBGender,DBPreTime);
-
+            int r = ControllerDB.InsertNewCustomer(newID.ToString(),crypted_pass,Username.Text,DBFirstName,DBMiddleName,DBLastName,DBCOR,DBCity,DBAddress,DBEmail,DBCcode,DBphone,DB_BDate,DBGender,DBPreTime);
+            if (r == 0)
+            {
+                MessageBox.Show("Error!");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Account Created!");
+            }
             welcome a = new welcome();
             this.Hide();
             a.Show();

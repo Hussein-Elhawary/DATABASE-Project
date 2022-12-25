@@ -93,18 +93,25 @@ namespace Project
 
             ControllerDB = new Controller();
 
-            if (maskedTextBox13.Text.Length < 1 || maskedTextBox3.Text.Length < 1 || maskedTextBox4.Text.Length < 1 || maskedTextBox7.Text.Length < 11)
+            if (maskedTextBox13.Text.Length < 1 || maskedTextBox3.Text.Length < 1 || maskedTextBox4.Text.Length < 1 || maskedTextBox7.Text.Length < 11 || Ccode_textbox.Text.Length > 3 || Ccode_textbox.Text.Length < 1)
             {
-                MessageBox.Show("Incomplete Information!");
+                MessageBox.Show("Incomplete or Inaccurate Information!");
                 return;
             }
             else
             {
-                ControllerDB.UpdateCustomerInfo(Cust_ID,comboBox1.Text,maskedTextBox13.Text,maskedTextBox3.Text,Ccode_textbox.Text,maskedTextBox7.Text,maskedTextBox4.Text);
-                MessageBox.Show("Info Updated");
-                this.Hide();
+                int r = ControllerDB.UpdateCustomerInfo(Cust_ID,comboBox1.Text,maskedTextBox13.Text,maskedTextBox3.Text,Ccode_textbox.Text,maskedTextBox7.Text,maskedTextBox4.Text);
+                if (r != 0)
+                {
+                    MessageBox.Show("Info Updated");
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Error!");
+                    return;
+                }    
             }
-
             
         }
 
