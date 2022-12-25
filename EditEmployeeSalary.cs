@@ -54,7 +54,12 @@ namespace Project
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int value;
+            Int32.TryParse(comboBox1.SelectedValue.ToString(), out value);
+            //controllerobj = new Controller();
+            //dt1 = controllerobj.fillemployeebydept(value);
+            maskedTextBox1.Text = dt1.Rows[comboBox1.SelectedIndex]["Employee ID"].ToString();
+            maskedTextBox2.Text = dt1.Rows[comboBox1.SelectedIndex]["Fixed salary"].ToString();
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
