@@ -75,6 +75,11 @@ namespace Project
             string query = "Select [Employee ID],phone,Email,[City address],[District address],[Country address],Gender,[Fixed salary],Nationality,Branch From Employee where Department=" + id+"; ";
             return dbMan.ExecuteReader(query);
         }
+        public DataTable SelectEmployeesBYidWithNames(int id)
+        {
+            string query = "Select [First name],[Middle name],[Last name],[Employee ID],phone,Email,[City address],[District address],[Country address],Gender,[Fixed salary],Nationality,Branch From Employee where Department=" + id + "; ";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectDepartment(string user)
         {
             string query = "Select Department From Employee where Username = '" + user + "';";
@@ -284,9 +289,9 @@ namespace Project
             string query = "insert into CustomerRequests VALUES ('" + R_ID + "','" + type + "','" + date + "','" + details + "','" + Resolved + "'," + Emp_ID + ",'" + Cust_ID + "','" + Order_ID + "');";
             return dbMan.ExecuteNonQuery(query);
         }
-        public int InsertManagerRequest(int id, string type, string date, string details, string resolved, int employeeid, int managerid)
+        public int InsertManagerRequest(int id, string type, string date, string details, string resolved,string employeeid, int managerid)
         {
-            string query = "insert into ManagerRequests VALUES(" + id + ",'" + type + "','" + date + "','" + details + "','" + resolved + "'," + employeeid + "," + managerid + ");";
+            string query = "insert into ManagerRequests VALUES(" + id + ",'" + type + "','" + date + "','" + details + "','" + resolved + "','"+employeeid+"' ," + managerid + ");";
             return dbMan.ExecuteNonQuery(query);
         }
         public DataTable SelectProductFromID(string id)
