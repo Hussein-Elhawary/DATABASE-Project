@@ -212,10 +212,34 @@ namespace Project
                 m1.Show();
                 this.Hide();
             }
-            else
+            else if (str == "i" || str == "I")
             {
-                Home h1 = new Home();
+                Home h1 = new Home(username);
                 h1.Show();
+                this.Hide();
+            }
+            else if (str == "e" || str == "E")
+            {
+                EmployeeHomepage h2 = new EmployeeHomepage(username, 'g');
+                h2.Show();
+                this.Hide();
+            }
+            else if (str == "g" || str == "G")
+            {
+                EmployeeHomepage h2 = new EmployeeHomepage(username, 'g');
+                h2.Show();
+                this.Hide();
+            }
+            else if (str == "f" || str == "F") //finance
+            {
+                EmployeeHomepage h2 = new EmployeeHomepage(username, 'f');
+                h2.Show();
+                this.Hide();
+            }
+            else if (str == "p" || str == "P") //production
+            {
+                EmployeeHomepage h2 = new EmployeeHomepage(username, 'p');
+                h2.Show();
                 this.Hide();
             }
         }

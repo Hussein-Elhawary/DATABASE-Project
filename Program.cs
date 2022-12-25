@@ -16,7 +16,7 @@ namespace Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EditPDE("mosassd"));
+            Application.Run(new welcome());
         }
     }
 }

@@ -24,6 +24,7 @@ namespace Project
         public Requestdetails(string id, string type, string date, string from, string on, string details,int ca,string user)
         {
             InitializeComponent();
+            button3.Hide();
             if (ca == 1)//manager
             {
                 controllerobj = new Controller();
@@ -110,6 +111,11 @@ namespace Project
             welcome w2 = new welcome();
             w2.Show();
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
