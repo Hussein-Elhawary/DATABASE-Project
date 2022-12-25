@@ -174,9 +174,6 @@ namespace Project
             if (result == 1)
             {
                 MessageBox.Show("Added Successfully");
-                this.Hide();
-                welcome a = new welcome();
-                a.Show();
             }
             else
             {
