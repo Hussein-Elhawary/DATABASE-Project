@@ -84,5 +84,12 @@ namespace Project
             w2.Show();
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            EmployeeHomepage w2 = new EmployeeHomepage(username,username[0]);
+            w2.Show();
+            this.Hide();
+        }
     }
 }

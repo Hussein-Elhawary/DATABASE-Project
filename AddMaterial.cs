@@ -96,7 +96,7 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Home h1 = new Home();
+            EmployeeHomepage h1 = new EmployeeHomepage(username,'p');
             h1.Show();
             this.Hide();
         }

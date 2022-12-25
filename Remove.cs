@@ -53,7 +53,7 @@ namespace Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Home h2 = new Home();
+            Home h2 = new Home(username22);
             h2.Show();
             this.Hide();
         }
