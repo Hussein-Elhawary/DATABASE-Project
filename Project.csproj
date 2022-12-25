@@ -274,6 +274,12 @@
     <Compile Include="ViewProjects.Designer.cs">
       <DependentUpon>ViewProjects.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewRawmaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewRawmaterials.Designer.cs">
+      <DependentUpon>ViewRawmaterials.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customers\ViewRequestCustomerSide.cs">
       <SubType>Form</SubType>
     </Compile>
