@@ -67,6 +67,7 @@
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -141,6 +142,12 @@
     </Compile>
     <Compile Include="Requestdetails.Designer.cs">
       <DependentUpon>Requestdetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="stat.Designer.cs">
+      <DependentUpon>stat.cs</DependentUpon>
     </Compile>
     <Compile Include="StoredProcedures.cs" />
     <Compile Include="Controller.cs" />
@@ -381,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Requestdetails.resx">
       <DependentUpon>Requestdetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stat.resx">
+      <DependentUpon>stat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewBranchesAndRequests.resx">
       <DependentUpon>ViewBranchesAndRequests.cs</DependentUpon>
