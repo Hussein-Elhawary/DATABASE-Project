@@ -21,6 +21,13 @@ namespace Project
             username = user;
         }
 
+        public ViewInsurance()
+        {
+            InitializeComponent();
+            dataGridView1.Hide();
+        }
+
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

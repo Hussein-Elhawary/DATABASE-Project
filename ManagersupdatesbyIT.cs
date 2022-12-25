@@ -15,9 +15,12 @@ namespace Project
         Controller controllerobj = new Controller();
         DataTable dt = null;
         DataTable dt1 = null;
-        public ManagersupdatesbyIT()
+        string username22 = null;
+        public ManagersupdatesbyIT(string user)
         {
+            
             InitializeComponent();
+            username22 = user;
             controllerobj = new Controller();
             dt = controllerobj.filldepartements();
             comboBox4.DataSource = dt;

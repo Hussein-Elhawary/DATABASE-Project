@@ -22,10 +22,11 @@ namespace Project
         DataTable dt5 = null;
         DataTable dt6 = null;
         DataTable dt7 = null;
-        public Remove()
+        string username22 = null;
+        public Remove(string user)
         {
             InitializeComponent();
-            
+            username22 = user;
             dt = controllerobj.filldepartements();
             dt1 = controllerobj.filldepartements();
             dt2 = controllerobj.filldepartements();
