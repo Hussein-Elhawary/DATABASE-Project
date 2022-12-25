@@ -16,12 +16,14 @@ namespace Project
         welcome f;
         Personal_Data t;
         AddBranch b;
+        ViewBranchesAndRequests Vb;
         EditPDE p;
         ViewProjects v;
         ViewEmployees E;
         string username;
         DataTable dt;
         DataTable dt2;
+        int newrequestid;
         public Manager()
         {
             InitializeComponent();
@@ -219,7 +221,9 @@ namespace Project
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-           //for branches
+            Vb = new ViewBranchesAndRequests(username);
+            Vb.Show();
+            this.Hide();
             
         }
 
@@ -242,6 +246,41 @@ namespace Project
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
                 e.Handled = true;
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            ViewInsurance i = new ViewInsurance(username);
+            i.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(textBox2.Text!=null&& textBox6.Text!=null)
+            {
+                controllerobj = new Controller();
+                dt = controllerobj.SelectMaxRequestID();
+                newrequestid = 1 + Convert.ToInt32(dt.Rows[0][0]);
+                dt = controllerobj.GetEmployeeIdFromUsername(username);
+                int r = 0;
+                r = controllerobj.InsertManagerRequest(newrequestid, textBox2.Text.ToString(), DateTime.Now.ToString("M-d-yyyy"), textBox6.Text.ToString(),"false", Convert.ToInt32(null), Convert.ToInt32(dt.Rows[0][0]));
+                if (r != 0)
+                    MessageBox.Show(" Your Request has been sent successfully ");
+                else
+                    MessageBox.Show(" Failed ");
+            }
+            else
+                MessageBox.Show(" Some Data are missing ");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            controllerobj = new Controller();
+            dt = controllerobj.GetEmployeeIdFromUsername(username);
+            Vb = new ViewBranchesAndRequests(username, Convert.ToInt32(dt.Rows[0][0]));
+            Vb.Show();
+            this.Hide();
         }
     }
 }

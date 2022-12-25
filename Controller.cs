@@ -128,7 +128,11 @@ namespace Project
                 "[Date Issued] <= '" + date2 + "' and [Resolved] = '" + false + "';";
             return dbMan.ExecuteReader(query);
         }
-
+        public DataTable SelectManagerRequests(int id)
+        {
+            string query = "Select * From ManagerRequests where [Request By]="+id+";";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable viewcustomersrequests(string date1, string date2)
         {
             string query = "Select * From CustomerRequests where [Date Issued] >= '" + date1 + "' and " +
@@ -275,7 +279,11 @@ namespace Project
             string query = "insert into CustomerRequests VALUES ('" + R_ID + "','" + type + "','" + date + "','" + details + "','" + Resolved + "'," + Emp_ID + ",'" + Cust_ID + "','" + Order_ID + "');";
             return dbMan.ExecuteNonQuery(query);
         }
-
+        public int InsertManagerRequest(int id, string type, string date, string details, string resolved, int employeeid, int managerid)
+        {
+            string query = "insert into ManagerRequests VALUES(" + id + ",'" + type + "','" + date + "','" + details + "','" + resolved + "'," + employeeid + "," + managerid + ");";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public DataTable SelectProductFromID(string id)
         {
             string query = "Select * from Products where [Product ID] = '" + id + "';";

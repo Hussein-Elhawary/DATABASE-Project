@@ -132,9 +132,7 @@
     <Compile Include="profit.Designer.cs">
       <DependentUpon>profit.cs</DependentUpon>
     </Compile>
-    <Compile Include="report1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="report1.cs" />
     <Compile Include="report1.Designer.cs">
       <DependentUpon>report1.cs</DependentUpon>
     </Compile>
@@ -236,6 +234,12 @@
     </Compile>
     <Compile Include="Remove.Designer.cs">
       <DependentUpon>Remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBranchesAndRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewBranchesAndRequests.Designer.cs">
+      <DependentUpon>ViewBranchesAndRequests.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewComplaints.cs">
       <SubType>Form</SubType>
@@ -377,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Requestdetails.resx">
       <DependentUpon>Requestdetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBranchesAndRequests.resx">
+      <DependentUpon>ViewBranchesAndRequests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewComplaints.resx">
       <DependentUpon>ViewComplaints.cs</DependentUpon>

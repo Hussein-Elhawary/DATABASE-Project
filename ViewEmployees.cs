@@ -33,6 +33,13 @@ namespace Project
             dt = controllerobj.SelectDepartment(username); //to get department of manager in order to show employees from his department working on the project
             controllerobj = new Controller();
             dt2 = controllerobj.SelectEmployeesWorkOnProject(Convert.ToInt32(dt.Rows[0][0]),projectid);
+            if(dt2==null)
+            {
+                MessageBox.Show("There Are No Employees From Your Department Working On That Project");
+                m.Show();
+                this.Hide();
+            }
+            else
             dataGridView1.DataSource = dt2;
         }
         public ViewEmployees(string fname,string mname,string lname,string us)

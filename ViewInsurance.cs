@@ -112,5 +112,16 @@ namespace Project
             w2.Show();
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string str = username.Substring(0, 1);
+            if (str == "m" || str == "M")
+            {
+                Manager m1 = new Manager(username);
+                m1.Show();
+                this.Hide();
+            }
+        }
     }
 }

@@ -210,9 +210,19 @@ namespace Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Home h1 = new Home();
-            h1.Show();
-            this.Hide();
+           string str= username.Substring(0, 1);
+            if (str == "m" || str == "M")
+            {
+                Manager m1 = new Manager(username);
+                m1.Show();
+                this.Hide();
+            }
+            else
+            {
+                Home h1 = new Home();
+                h1.Show();
+                this.Hide();
+            }
         }
     }
 
