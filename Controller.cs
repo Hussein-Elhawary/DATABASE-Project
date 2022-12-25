@@ -637,7 +637,7 @@ namespace Project
 
         public DataTable groupproducts()
         {
-            string query = "Select[Product ID], Sum([Quantity]) as Qunantity From[contains] Group BY[Product ID]";
+            string query = "Select p.Name, Sum([Quantity]) as Quantity From[contains] c,Products p where p.[Product ID] = c.[Product ID] Group BY p.Name";
             return dbMan.ExecuteReader(query);
         }
 
