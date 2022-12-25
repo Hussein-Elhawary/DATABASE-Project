@@ -44,10 +44,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -60,7 +60,7 @@
             this.SupplierCombobox.Location = new System.Drawing.Point(419, 405);
             this.SupplierCombobox.Margin = new System.Windows.Forms.Padding(4);
             this.SupplierCombobox.Name = "SupplierCombobox";
-            this.SupplierCombobox.Size = new System.Drawing.Size(96, 24);
+            this.SupplierCombobox.Size = new System.Drawing.Size(123, 24);
             this.SupplierCombobox.TabIndex = 271;
             // 
             // label6
@@ -215,6 +215,19 @@
             this.panel2.Size = new System.Drawing.Size(220, 553);
             this.panel2.TabIndex = 257;
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
+            this.linkLabel2.Location = new System.Drawing.Point(-5, 60);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(98, 29);
+            this.linkLabel2.TabIndex = 222;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Log Out";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
@@ -250,19 +263,6 @@
             this.button3.Size = new System.Drawing.Size(53, 42);
             this.button3.TabIndex = 29;
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkColor = System.Drawing.Color.White;
-            this.linkLabel2.Location = new System.Drawing.Point(-5, 60);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(98, 29);
-            this.linkLabel2.TabIndex = 222;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Log Out";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // AddMaterial
             // 

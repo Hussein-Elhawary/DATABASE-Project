@@ -44,12 +44,12 @@ namespace Project
         {
             float fdistance;
             int idistance;
-            if (ProductnametextBox.Text=="")
+            if (ProductnametextBox.Text == "")
             {
                 MessageBox.Show("Please Enter Product name");
                 return;
             }
-            else if (DescriptiontextBox.Text=="")
+            else if (DescriptiontextBox.Text == "")
             {
                 MessageBox.Show("Please add a Product description");
                 return;
@@ -150,6 +150,20 @@ namespace Project
             welcome newform = new welcome();
             newform.Show();
             this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            dt = Controllerobj.Select_all_rawmaterials();
+            dataGridView1.ClearSelection();
+            MaterialsCombobox.DataSource = dt;
+            int x = dtmaterialsused.Rows.Count;
+            for (int i = 0; i <x ; i++)
+            {
+                dtmaterialsused.Rows.Remove(dtmaterialsused.Rows[0]);
+            }
+            
+            dataGridView1.Refresh();
         }
     }
 }

@@ -176,7 +176,7 @@ namespace Project
             dt.Rows[0]["Phone"] = PhonenumberTextbox.Text;
             dt.Rows[0]["District address"] = DistrictTextbox.Text;
             dt.Rows[0]["City address"] = CityTextbox.Text;
-            dt.Rows[0]["Country address"] = CountryTextbox.Text;
+            dt.Rows[0]["Country address"] = comboBox1.Text;
             Checkpasswordandupdate checkpasswordandupdateobj = new Checkpasswordandupdate(username, dt.Rows[0]["Password"].ToString(), dt,"other");
             checkpasswordandupdateobj.Show();
         }
