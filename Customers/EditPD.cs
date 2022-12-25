@@ -60,6 +60,7 @@ namespace Project
             maskedTextBox7.Text = DT.Rows[0][10].ToString();
             Ccode_textbox.Text = DT.Rows[0][11].ToString();
             maskedTextBox4.Text = DT.Rows[0][9].ToString();
+            comboBox1.SelectedItem = DT.Rows[0][6].ToString();
 
             COD_textbox.ReadOnly = true;
             comboBox1.Enabled = false;
@@ -84,7 +85,6 @@ namespace Project
             maskedTextBox7.ReadOnly = false;
             maskedTextBox4.ReadOnly = false;
             Ccode_textbox.ReadOnly = false;
-            comboBox1.SelectedIndex = 0;
 
         }
 
