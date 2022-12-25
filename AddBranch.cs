@@ -52,9 +52,8 @@ namespace Project
         private void button3_Click(object sender, EventArgs e)
         {
             m = new Manager(username);
-            this.Hide();
             m.Show();
-
+            this.Hide();
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
