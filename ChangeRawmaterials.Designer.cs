@@ -53,6 +53,7 @@
             this.disc = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.Discriptiontextbox = new System.Windows.Forms.TextBox();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -61,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel1.Controls.Add(this.linkLabel2);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.panel3);
@@ -319,6 +321,19 @@
             this.Discriptiontextbox.Size = new System.Drawing.Size(150, 22);
             this.Discriptiontextbox.TabIndex = 2;
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
+            this.linkLabel2.Location = new System.Drawing.Point(702, 17);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(98, 29);
+            this.linkLabel2.TabIndex = 221;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Log Out";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // ChangeRawmaterials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -364,5 +379,6 @@
         private System.Windows.Forms.TextBox Discriptiontextbox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TypetextBox;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

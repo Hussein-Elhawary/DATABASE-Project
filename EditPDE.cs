@@ -224,6 +224,13 @@ namespace Project
                 this.Hide();
             }
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcome newform = new welcome();
+            newform.Show();
+            this.Hide();
+        }
     }
 
 }

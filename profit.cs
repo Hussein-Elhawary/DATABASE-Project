@@ -176,5 +176,12 @@ namespace Project
             h1.Show();
             this.Hide();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            welcome w2 = new welcome();
+            w2.Show();
+            this.Close();
+        }
     }
 }
