@@ -15,11 +15,16 @@ namespace Project
         Controller controllerobj = new Controller();
         DataTable dt = null;
         DataTable dt2 = null;
+        DataTable dt3 = null;
         public stat()
         {
             InitializeComponent();
             chart1.Hide();
             chart2.Hide();
+            chart3.Hide();
+            chart3.Titles.Add("Materials Consumed");
+            chart2.Titles.Add("Most Countries Buying Products");
+            chart1.Titles.Add("Sold Products");
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -33,13 +38,15 @@ namespace Project
             dt = controllerobj.groupproducts();
             if (dt!=null)
             {
+                chart1.Hide();
                 chart2.Hide();
-                chart1.Show();
+                chart3.Hide();
                 chart1.DataSource = dt;
                 chart1.Series["Products"].XValueMember = "Product ID";
                 chart1.Series["Products"].YValueMembers = "Qunantity";
-                chart1.Titles.Add("Sold Products");
+
                 chart1.DataBind();
+                chart1.Show();
             }
         }
 
@@ -49,13 +56,31 @@ namespace Project
             dt2 = controllerobj.grouporders();
             if (dt2 != null)
             {
+                chart2.Hide();
                 chart1.Hide();
-                chart2.Show();
+                chart3.Hide();
                 chart2.DataSource = dt2;
                 chart2.Series["Order"].XValueMember = "Country";
                 chart2.Series["Order"].YValueMembers = "Number of Orders";
-                chart2.Titles.Add("Most Countries Buying Products");
                 chart2.DataBind();
+                chart2.Show();
+            }
+        }
+
+        private void RawMaterials_Click(object sender, EventArgs e)
+        {
+            controllerobj = new Controller();
+            dt3 = controllerobj.groupRawMaterials();
+            if (dt3 != null)
+            {
+                chart3.Hide();
+                chart1.Hide();
+                chart2.Hide();
+                chart3.DataSource = dt3;
+                chart3.Series["RawMaterials"].XValueMember = "Name";
+                chart3.Series["RawMaterials"].YValueMembers = "Consumed Amount";             
+                chart3.DataBind();
+                chart3.Show();
             }
         }
     }

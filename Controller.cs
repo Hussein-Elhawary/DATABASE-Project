@@ -647,6 +647,12 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable groupRawMaterials()
+        {
+            string query = "select r.Name,Count(c.[Raw material ID]) as [Consumed Amount] from [Raw Materials] r,Consume c where r.[Material ID] = c.[Raw material ID] group by r.Name;";
+            return dbMan.ExecuteReader(query);
+        }
+
 
     }
 }
