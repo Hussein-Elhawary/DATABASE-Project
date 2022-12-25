@@ -67,7 +67,12 @@ namespace Project
         }
         public DataTable SelectEmployeesbyName(string fname,string mname,string lname)
         {
-            string query = "Select [Employee ID],phone, From Employee where  [First name] = '" + fname + "' and  [Middle name]='" + mname + "' and [Last name]='" + lname + "';";
+            string query = "Select [Employee ID],phone,Email,[City address],[District address],[Country address],Gender,[Fixed salary],Nationality,Branch From Employee where  [First name] = '" + fname + "' and  [Middle name]='" + mname + "' and [Last name]='" + lname + "';";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectEmployeesBYid(int id)
+        {
+            string query = "Select [Employee ID],phone,Email,[City address],[District address],[Country address],Gender,[Fixed salary],Nationality,Branch From Employee where Department=" + id+"; ";
             return dbMan.ExecuteReader(query);
         }
         public DataTable SelectDepartment(string user)
