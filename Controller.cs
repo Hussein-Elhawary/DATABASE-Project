@@ -637,7 +637,7 @@ namespace Project
 
         public DataTable groupproducts()
         {
-            string query = "Select[Product ID], Sum([Quantity]) as Qunantity From[contains] Group BY[Product ID]";
+            string query = "Select p.Name, Sum([Quantity]) as Quantity From[contains] c,Products p where p.[Product ID] = c.[Product ID] Group BY p.Name";
             return dbMan.ExecuteReader(query);
         }
 
@@ -647,6 +647,16 @@ namespace Project
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable groupRawMaterials()
+        {
+            string query = "select r.Name,Count(c.[Raw material ID]) as [Consumed Amount] from [Raw Materials] r,Consume c where r.[Material ID] = c.[Raw material ID] group by r.Name;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable groupsuppliers()
+        {
+            string query = "select a.Name,Count(b.[Supplied by]) as [Number of Materials] from [Raw Materials] b,Suppliers a where b.[Supplied by]=a.[Supplier ID] group by a.Name;";
+            return dbMan.ExecuteReader(query);
+        }
 
     }
 }
