@@ -86,45 +86,13 @@ namespace Project
         private void RawMaterials_Click(object sender, EventArgs e)
         {
 
-            if (chart3.Visible == false)
-            {
-                controllerobj = new Controller();
-                dt3 = controllerobj.groupRawMaterials();
-                if (dt3 != null)
-                {
-                    chart3.Hide();
-                    chart1.Hide();
-                    chart2.Hide();
-                    chart4.Hide();
-                    chart3.DataSource = dt3;
-                    chart3.Series["RawMaterials"].XValueMember = "Name";
-                    chart3.Series["RawMaterials"].YValueMembers = "Consumed Amount";
-                    chart3.DataBind();
-                    chart3.Show();
-                }
-            }
+           
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
 
-            if (chart2.Visible == false)
-            {
-                controllerobj = new Controller();
-                dt2 = controllerobj.grouporders();
-                if (dt2 != null)
-                {
-                    chart2.Hide();
-                    chart1.Hide();
-                    chart3.Hide();
-                    chart4.Hide();
-                    chart2.DataSource = dt2;
-                    chart2.Series["Order"].XValueMember = "Country";
-                    chart2.Series["Order"].YValueMembers = "Number of Orders";
-                    chart2.DataBind();
-                    chart2.Show();
-                }
-            }
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -172,6 +140,48 @@ namespace Project
                 Manager m1 = new Manager(username);
                 m1.Show();
                 this.Hide();
+            }
+        }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            if (chart2.Visible == false)
+            {
+                controllerobj = new Controller();
+                dt2 = controllerobj.grouporders();
+                if (dt2 != null)
+                {
+                    chart2.Hide();
+                    chart1.Hide();
+                    chart3.Hide();
+                    chart4.Hide();
+                    chart2.DataSource = dt2;
+                    chart2.Series["Order"].XValueMember = "Country";
+                    chart2.Series["Order"].YValueMembers = "Number of Orders";
+                    chart2.DataBind();
+                    chart2.Show();
+                }
+            }
+        }
+
+        private void RawMaterials_Click_1(object sender, EventArgs e)
+        {
+            if (chart3.Visible == false)
+            {
+                controllerobj = new Controller();
+                dt3 = controllerobj.groupRawMaterials();
+                if (dt3 != null)
+                {
+                    chart3.Hide();
+                    chart1.Hide();
+                    chart2.Hide();
+                    chart4.Hide();
+                    chart3.DataSource = dt3;
+                    chart3.Series["RawMaterials"].XValueMember = "Name";
+                    chart3.Series["RawMaterials"].YValueMembers = "Consumed Amount";
+                    chart3.DataBind();
+                    chart3.Show();
+                }
             }
         }
     }
