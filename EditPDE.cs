@@ -35,7 +35,7 @@ namespace Project
                 PhonenumberTextbox.Text = dt.Rows[0]["Phone"].ToString();
                 DistrictTextbox.Text = dt.Rows[0]["District address"].ToString();
                 CityTextbox.Text = dt.Rows[0]["City address"].ToString();
-                CountryTextbox.Text = dt.Rows[0]["Country address"].ToString();
+                comboBox1.SelectedItem = dt.Rows[0]["Country address"].ToString();
                 if ((dt.Rows[0]["Gender"]).ToString() == "True")
                 {
                     GenderTextbox.Text = "Male";
@@ -171,17 +171,12 @@ namespace Project
                 MessageBox.Show("Please add City");
                 return;
             }
-            else if (CountryTextbox.Text == "")
-            {
-                MessageBox.Show("Please add Country");
-                return;
-            }
 
 
             dt.Rows[0]["Phone"] = PhonenumberTextbox.Text;
             dt.Rows[0]["District address"] = DistrictTextbox.Text;
             dt.Rows[0]["City address"] = CityTextbox.Text;
-            dt.Rows[0]["Country address"] = CountryTextbox.Text;
+            dt.Rows[0]["Country address"] = comboBox1.SelectedItem.ToString();
             Checkpasswordandupdate checkpasswordandupdateobj = new Checkpasswordandupdate(username, dt.Rows[0]["Password"].ToString(), dt,"other");
             checkpasswordandupdateobj.Show();
         }
@@ -254,6 +249,26 @@ namespace Project
             welcome newform = new welcome();
             newform.Show();
             this.Hide();
+        }
+
+        private void PhonenumberTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void CityTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
+        }
+
+        private void DistrictTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 

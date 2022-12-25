@@ -54,8 +54,9 @@ namespace Project
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1223, 665);
+            this.panel1.Size = new System.Drawing.Size(917, 540);
             this.panel1.TabIndex = 0;
             // 
             // chart2
@@ -90,7 +91,8 @@ namespace Project
             this.chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(222, 12);
+            this.chart1.Location = new System.Drawing.Point(166, 10);
+            this.chart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart1.Name = "chart1";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -98,16 +100,17 @@ namespace Project
             series2.XValueMember = "Product ID";
             series2.YValueMembers = "Quantity";
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(989, 536);
+            this.chart1.Size = new System.Drawing.Size(742, 436);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1017, 568);
+            this.button1.Location = new System.Drawing.Point(763, 462);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 31);
+            this.button1.Size = new System.Drawing.Size(128, 25);
             this.button1.TabIndex = 0;
             this.button1.Text = "Products";
             this.button1.UseVisualStyleBackColor = true;
@@ -115,10 +118,11 @@ namespace Project
             // 
             // stat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1223, 665);
+            this.ClientSize = new System.Drawing.Size(917, 540);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "stat";
             this.Text = "stat";
             this.panel1.ResumeLayout(false);
