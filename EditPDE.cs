@@ -171,17 +171,12 @@ namespace Project
                 MessageBox.Show("Please add City");
                 return;
             }
-            else if (comboBox1.Text == "")
-            {
-                MessageBox.Show("Please add Country");
-                return;
-            }
 
 
             dt.Rows[0]["Phone"] = PhonenumberTextbox.Text;
             dt.Rows[0]["District address"] = DistrictTextbox.Text;
             dt.Rows[0]["City address"] = CityTextbox.Text;
-            dt.Rows[0]["Country address"] = comboBox1.Text;
+            dt.Rows[0]["Country address"] = CountryTextbox.Text;
             Checkpasswordandupdate checkpasswordandupdateobj = new Checkpasswordandupdate(username, dt.Rows[0]["Password"].ToString(), dt,"other");
             checkpasswordandupdateobj.Show();
         }
@@ -217,10 +212,34 @@ namespace Project
                 m1.Show();
                 this.Hide();
             }
-            else
+            else if (str == "i" || str == "I")
             {
-                Home h1 = new Home();
+                Home h1 = new Home(username);
                 h1.Show();
+                this.Hide();
+            }
+            else if (str == "e" || str == "E")
+            {
+                EmployeeHomepage h2 = new EmployeeHomepage(username, 'g');
+                h2.Show();
+                this.Hide();
+            }
+            else if (str == "g" || str == "G")
+            {
+                EmployeeHomepage h2 = new EmployeeHomepage(username, 'g');
+                h2.Show();
+                this.Hide();
+            }
+            else if (str == "f" || str == "F") //finance
+            {
+                EmployeeHomepage h2 = new EmployeeHomepage(username, 'f');
+                h2.Show();
+                this.Hide();
+            }
+            else if (str == "p" || str == "P") //production
+            {
+                EmployeeHomepage h2 = new EmployeeHomepage(username, 'p');
+                h2.Show();
                 this.Hide();
             }
         }
@@ -230,6 +249,26 @@ namespace Project
             welcome newform = new welcome();
             newform.Show();
             this.Hide();
+        }
+
+        private void PhonenumberTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void CityTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
+        }
+
+        private void DistrictTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 

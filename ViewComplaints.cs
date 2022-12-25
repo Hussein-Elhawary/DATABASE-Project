@@ -17,7 +17,9 @@ namespace Project
         public ViewComplaints()
         {
             InitializeComponent();
-            dataGridView1.Hide();           
+            dataGridView1.Hide();
+            button2.Hide();
+            comboBox1.Hide();
         }
 
         public ViewComplaints(string user)
@@ -25,6 +27,8 @@ namespace Project
             InitializeComponent();
             dataGridView1.Hide();
             username = user;
+            button2.Hide();
+            comboBox1.Hide();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -245,6 +249,14 @@ namespace Project
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Home h1 = new Home(username);
+            h1.Show();
+            this.Hide();
 
         }
     }

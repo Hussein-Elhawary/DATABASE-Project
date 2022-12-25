@@ -36,7 +36,7 @@ namespace Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            maskedTextBox2.UseSystemPasswordChar = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -76,14 +76,14 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             string un = maskedTextBox1.Text;
-            string Pass = maskedTextBox2.Text; 
+            string Pass = maskedTextBox2.Text;
             if (un == "" || Pass == "")
             {
                 MessageBox.Show("Please Enter Your Credentials!");
             }
             else if (un[0] == 'I' || un[0] == 'i')//IT
             {
-                
+
                 DataTable dt = null;
                 controllerobj = new Controller();
                 string pass = Encrypt(Pass);
@@ -111,7 +111,7 @@ namespace Project
                 }
                 else
                 {
-                    EmployeeHomepage h2 = new EmployeeHomepage(un,'g');
+                    EmployeeHomepage h2 = new EmployeeHomepage(un, 'g');
                     h2.Show();
                     this.Hide();
                 }
@@ -128,7 +128,7 @@ namespace Project
                 }
                 else
                 {
-                    EmployeeHomepage h2 = new EmployeeHomepage(un,'g');
+                    EmployeeHomepage h2 = new EmployeeHomepage(un, 'g');
                     h2.Show();
                     this.Hide();
                 }
@@ -162,7 +162,7 @@ namespace Project
                 }
                 else
                 {
-                    EmployeeHomepage h2 = new EmployeeHomepage(un,'f');
+                    EmployeeHomepage h2 = new EmployeeHomepage(un, 'f');
                     h2.Show();
                     this.Hide();
                 }
@@ -215,9 +215,11 @@ namespace Project
                     }
                 }
             }
-            
+            else
+            {
+                MessageBox.Show("Incorrect Credintials!");
+            }
         }
-
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
@@ -231,6 +233,14 @@ namespace Project
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked==true)
+                maskedTextBox2.UseSystemPasswordChar = false;
+            else
+                maskedTextBox2.UseSystemPasswordChar = true;
         }
     }
 }

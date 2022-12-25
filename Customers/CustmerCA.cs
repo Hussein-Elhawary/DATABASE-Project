@@ -68,11 +68,13 @@ namespace Project
                 return;
             }
 
-            if (maskedTextBox1.Text.Length < 1)
+            if (maskedTextBox6.Text.Length < 5)
             {
                 label13.Text = "Please Enter Your Prefered Delivery Time!";
                 return;
             }
+
+
 
             label13.Text = "";
 
@@ -163,6 +165,46 @@ namespace Project
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
+        }
+
+        private void maskedTextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
+        }
+
+        private void maskedTextBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
+        }
+
+        private void City_Box_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
         }
     }
 }
