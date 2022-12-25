@@ -164,5 +164,15 @@ namespace Project
         {
 
         }
+
+        private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) //letters only
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter letters!");
+                return;
+            }
+        }
     }
 }
