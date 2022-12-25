@@ -41,6 +41,11 @@ namespace Project
             dt = controllerobj.SelectFirstName(username);
             label2.Text = dt.Rows[0][0].ToString(); //Manager First name appears
             dt = controllerobj.SelectDepartment(username);//query returns id 
+            int x = Convert.ToInt32(dt.Rows[0][0]);
+            if (x!=12321 &&x != 1463)
+                {
+                label7.Visible = false;
+            }
             dt2 = controllerobj.SelectEmployeeFirstNameFromDepartmentid(Convert.ToInt32(dt.Rows[0][0])); //gets employees first name from a specific department
             comboBox2.DataSource = dt2;
             comboBox2.ValueMember = "First name";
@@ -293,6 +298,13 @@ namespace Project
         {
             E = new ViewEmployees(username);
             E.Show();
+            this.Hide();
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+            stat s = new stat(username);
+            s.Show();
             this.Hide();
         }
     }
