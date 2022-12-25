@@ -17,6 +17,10 @@ namespace Project
         public welcome()
         {
             InitializeComponent();
+            DateTime today = DateTime.Today;
+            string comdate = today.ToString("M/d/yyyy");
+            controllerobj = new Controller();
+            int result = controllerobj.updatepending(comdate);
         }
 
         static string Encrypt(string passbefore)
@@ -220,6 +224,11 @@ namespace Project
         }
 
         private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

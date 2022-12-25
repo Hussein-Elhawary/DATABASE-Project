@@ -610,5 +610,11 @@ namespace Project
             string query = "Update Employee Set [Fixed salary] = '" + sala + "' where [Employee ID] = '" + id + "';";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public int updatepending (string date)
+        {
+            string query = "Update Orders set [Order Status] = 'delivered' where [Expected Delivery Date] <= '" + date + "';";
+            return dbMan.ExecuteNonQuery(query);
+        }
     }
 }
